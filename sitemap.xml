@@ -2,6 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://hakant.github.io/blog/archives/</loc>
+<<<<<<< HEAD
         <lastmod>2013-12-24T18:17:26+01:00</lastmod>
     </url>
     <url>
@@ -15,5 +16,16 @@
     <url>
         <loc>http://hakant.github.io/robots.txt</loc>
         <lastmod>2013-12-24T18:11:58+01:00</lastmod>
+=======
+        <lastmod>2013-12-23T22:40:18+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hakant.github.io/</loc>
+        <lastmod>2013-12-23T22:40:18+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hakant.github.io/robots.txt</loc>
+        <lastmod>2013-12-23T22:40:18+01:00</lastmod>
+>>>>>>> 4bc8295f11de97ad67acfe9c403eacf8e53f963a
     </url>
 </urlset>
