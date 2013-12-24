@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://hakant.github.io/sitemap.xml 
