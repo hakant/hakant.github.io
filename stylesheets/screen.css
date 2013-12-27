@@ -1444,6 +1444,12 @@ left:10px;
 margin-bottom:10px;
 }
 
+.container .left-col h2{
+	color: darkgray;
+	margin-top: 1em;
+	font-size: 1.1em;
+}
+
 .archives .title {
 font-size:1.2em;
 }
