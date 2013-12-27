@@ -1413,6 +1413,7 @@ opacity:1;
 -ms-transition:all .2s ease-in;
 transition:all .2s ease-in;
 height:100%;
+background-color: #2d3339;
 }
 
 .container .left-col .intrude-less {
