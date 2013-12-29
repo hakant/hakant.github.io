@@ -1407,14 +1407,13 @@ transition:color .3s;
 .container .left-col {
 width:23%;
 position:fixed;
-opacity:1;
+opacity:0.3;
 -webkit-transition:all .2s ease-in;
 -moz-transition:all .2s ease-in;
 -o-transition:all .2s ease-in;
 -ms-transition:all .2s ease-in;
 transition:all .2s ease-in;
 height:100%;
-background-color: #2d3339;
 }
 
 .container .left-col .intrude-less {
