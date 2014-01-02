@@ -1,0 +1,470 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"back",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "stylesheets/screen.css",
+			"settings":
+			{
+				"buffer_size": 40995,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hakantuncer/octopress/_config.yml",
+			"settings":
+			{
+				"buffer_size": 2911,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_includes/navigation.html",
+			"settings":
+			{
+				"buffer_size": 151,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_includes/custom/navigation.html",
+			"settings":
+			{
+				"buffer_size": 144,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 585,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_includes/custom/footer.html",
+			"settings":
+			{
+				"buffer_size": 165,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_includes/footer.html",
+			"settings":
+			{
+				"buffer_size": 32,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/hakantuncer/Dropbox/NipoSoftware/Temp Work Notes.txt",
+		"/Users/hakantuncer/octopress/source/_includes/footer.html",
+		"/Users/hakantuncer/octopress/source/index.html",
+		"/Users/hakantuncer/octopress/source/_includes/custom/footer.html",
+		"/Users/hakantuncer/octopress/_config.yml",
+		"/Users/hakantuncer/octopress/source/stylesheets/screen.css",
+		"/Users/hakantuncer/octopress/.gitignore",
+		"/Users/hakantuncer/octopress/source/robots.txt",
+		"/Users/hakantuncer/octopress/index.html",
+		"/Users/hakantuncer/Desktop/Information/appleId.txt",
+		"/Users/hakantuncer/octopress/sass/_greyshade.scss",
+		"/Users/hakantuncer/octopress/_deploy/stylesheets/screen.css",
+		"/Users/hakantuncer/Desktop/Safari Bookmarks.html",
+		"/Users/hakantuncer/Projects/octopress/_deploy/index.html",
+		"/Users/hakantuncer/Projects/octopress/_config.yml",
+		"/Users/hakantuncer/Dropbox/NotesForHealthInsurance.txt",
+		"/Users/hakantuncer/Desktop/Information/NotesForHealthInsurance.txt",
+		"/Users/hakantuncer/Desktop/Information/digid.nl.txt",
+		"/Users/hakantuncer/.bash_profile",
+		"/Users/hakantuncer/Desktop/Information/wordpress.com.txt",
+		"/Users/hakantuncer/Desktop/Information/github.com.txt",
+		"/Volumes/Git 1.8.4.2 Snow Leopard Intel Universal/README.txt",
+		"/Users/hakantuncer/Desktop/Bookmarks",
+		"/Users/hakantuncer/Library/Caches/Metadata/Safari/Bookmarks/4C4AD73E-DA07-4275-9FDD-34ED526B4DFA.webbookmark",
+		"/Users/hakantuncer/Dropbox/experteer.com.txt",
+		"/Users/hakantuncer/Dropbox/NipoSoftware/_Passwords_Codes.txt",
+		"/Users/hakantuncer/Dropbox/Sabanci Alumni/SabanciAlumni_EU.txt",
+		"/Users/hakantuncer/Downloads/experteer.com.txt",
+		"/Users/hakantuncer/Desktop/wunderlist",
+		"/Users/hakantuncer/Desktop/Blog_AboutMe",
+		"/Users/hakantuncer/Desktop/10 world-shaping Swedish companies | sweden.se.webarchive",
+		"/Users/hakantuncer/Desktop/Information/baskentsitesi_tumblr.txt",
+		"/Users/hakantuncer/Dropbox/lotto.nl.txt",
+		"/Users/hakantuncer/Dropbox/_My Work/SilkRoad/Current Work Notes.txt",
+		"/Users/hakantuncer/Desktop/Information/allsecur.nl.txt",
+		"/Users/hakantuncer/Desktop/Information/paypal..txt",
+		"/Users/hakantuncer/Desktop/Temp_Konusma",
+		"/Users/hakantuncer/Desktop/Information/easyjet.com.txt",
+		"/Users/hakantuncer/Dropbox/_Other/Exp/exp_list.txt",
+		"/Users/hakantuncer/Dropbox/_My Work/EtiketiUstunde/Current Work Notes.txt",
+		"/Users/hakantuncer/Desktop/Information/Banks/_Kredi Kartları.txt",
+		"/Users/hakantuncer/Desktop/AditNetwork/AditNetwork_Hakan_Hande_Meral_Argun_Ipek",
+		"/Users/hakantuncer/Desktop/AditNetwork/AditNetworkAutomation_Argun copy.html",
+		"/Users/hakantuncer/Desktop/AditNetwork/AditNetworkAutomation.html",
+		"/Users/hakantuncer/Desktop/AditNetwork/AditNetworkAutomation_Hakan.html",
+		"/Users/hakantuncer/Desktop/AditNetwork/AditNetworkAutomation_Argun.html",
+		"/Users/hakantuncer/Desktop/Information/ov-chipkaart.txt",
+		"/Users/hakantuncer/Dropbox/feedspot.com.txt",
+		"/Users/hakantuncer/Dropbox/elma.txt",
+		"/Users/hakantuncer/Dropbox/booking.com.txt",
+		"/Users/hakantuncer/Desktop/Information/BluePortal.org.txt",
+		"/Users/hakantuncer/Desktop/Information/bol.com.txt",
+		"/Volumes/Seagate Backup Plus Drive/Insanity/READ ME.txt",
+		"/Users/hakantuncer/Desktop/Information/tweetdeck_sync account.txt",
+		"/Users/hakantuncer/Downloads/Insanity Deluxe DVDs - Direct Links/READ ME!!!.txt",
+		"/Users/hakantuncer/Desktop/Information/dropbox.txt",
+		"/Users/hakantuncer/Desktop/Information/Mail Accounts.txt",
+		"/Users/hakantuncer/Desktop/Information/linkedin.txt",
+		"/Users/hakantuncer/Desktop/Information/SkyPe.txt",
+		"/Users/hakantuncer/Downloads/hakantuncer@gmail.com-takeout/Reader/subscriptions.xml",
+		"/Users/hakantuncer/Desktop/Information/rememberthemilk.com.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";\n",
+			"left-col",
+			";\n",
+			"header",
+			".container .left-col",
+			".left-col",
+			"left",
+			"font-size",
+			"#header #main-nav ul li a",
+			"opacity",
+			" */",
+			"media",
+			";\n",
+			"#main-nav>ul>li>a",
+			";\n",
+			"#main-nav",
+			".left-col",
+			"#sub-nav",
+			".left-col",
+			"#sub-nav",
+			"#sub-nav .social a:hover, .container .left-col:hover",
+			"#sub-nav",
+			"social",
+			"left-co"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "stylesheets/screen.css",
+					"settings":
+					{
+						"buffer_size": 40995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39056,
+								39056
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 29652.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/hakantuncer/octopress/_config.yml",
+					"settings":
+					{
+						"buffer_size": 2911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								258,
+								258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_includes/navigation.html",
+					"settings":
+					{
+						"buffer_size": 151,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_includes/custom/navigation.html",
+					"settings":
+					{
+						"buffer_size": 144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								578,
+								578
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "_includes/custom/footer.html",
+					"settings":
+					{
+						"buffer_size": 165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "_includes/footer.html",
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
