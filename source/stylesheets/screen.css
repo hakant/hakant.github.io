@@ -571,7 +571,6 @@ a {
     *display: inline;
     text-indent: -9999px;
     margin: 0 15px 15px 0;
-    opacity: 0.5;
     width: 28px;
     height: 28px;
     -webkit-transition: 0.3s;
@@ -1824,6 +1823,7 @@ body {
 #header #main-nav {
     float: none;
     margin-left: 0px;
+    font-size: 1.4em;
 }
 
 #header #main-nav ul li {
@@ -2035,6 +2035,7 @@ body {
 
 .container .left-col #header #main-nav {
     margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .container .left-col #header .profilepic img {
