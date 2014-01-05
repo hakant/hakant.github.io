@@ -120,6 +120,9 @@ a {
     padding: 30px 0;
     border-bottom: 1px solid #ddd;
     line-height: 30px;
+
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif-webkit-body;
+    -webkit-font-smoothing: antialiased;
 }
 
 @media screen and (max-width: 1040px) {
@@ -144,8 +147,8 @@ a {
 
 #header h1 {
     float: left;
-    font-weight: 300;
-    font-size: 3em;
+    font-weight: 100;
+    font-size: 3.7em;
     line-height: 1.1em;
 }
 
@@ -547,11 +550,7 @@ a {
 }
 
 @media screen and (max-width: 1040px) {
-    #sub-nav .social {
-        float: none;
-        margin-right: 0;
-    }
-
+    
     #sub-nav .social a:last-of-type {
         margin-right: 0;
     }
@@ -1807,6 +1806,7 @@ body {
 
 #header #sub-nav .social {
     float: none;
+    margin-right: 0;
 }
 
 #header #sub-nav .search {
@@ -1824,11 +1824,12 @@ body {
 #header #main-nav {
     float: none;
     margin-left: 0px;
-    font-size: 1.4em;
+    font-size: 1.7em;
 }
 
 #header #main-nav ul li {
     margin-left: 0px;
+    margin-bottom: 15px;
     display: block;
 }
 
@@ -2022,7 +2023,7 @@ body {
     color: darkgray;
     margin-top: 1em;
     margin-bottom: 2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 .container .left-col .intrude-less {
@@ -2035,14 +2036,14 @@ body {
 }
 
 .container .left-col #header #main-nav {
-    margin-top: 10px;
+    margin-top: 100px;
     margin-bottom: 50px;
 }
 
 .container .left-col #header .profilepic img {
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+    border-radius: 10%;
+    -moz-border-radius: 10%;
+    -webkit-border-radius: 10%;
 }
 
 .container .left-col #header a {
@@ -2093,7 +2094,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 980px) {
     .container .credit-box {
         display: none;
     }
