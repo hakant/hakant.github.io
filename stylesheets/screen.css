@@ -2016,14 +2016,14 @@ body {
     -ms-transition: all .2s ease-in;
     transition: all .2s ease-in;
     height: 100%;
-    background-color: #2d3339;
+    background-color: #2d3340;
 }
 
 .container .left-col h2{
     color: darkgray;
     margin-top: 1em;
     margin-bottom: 2em;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .container .left-col .intrude-less {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Houston we have a problem...]]></title>
+  <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://hakant.github.io/atom.xml" rel="self"/>
   <link href="http://hakant.github.io/"/>
-  <updated>2014-01-05T18:39:44+01:00</updated>
+  <updated>2014-01-11T22:39:41+01:00</updated>
   <id>http://hakant.github.io/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>

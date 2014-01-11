@@ -4,12 +4,12 @@
 		"selected_items":
 		[
 			[
-				"font",
-				"font-size"
+				"margin",
+				"margin-bottom"
 			],
 			[
-				"margin",
-				"margin-top"
+				"font",
+				"font-size"
 			],
 			[
 				"back",
@@ -23,7 +23,7 @@
 			"file": "stylesheets/screen.css",
 			"settings":
 			{
-				"buffer_size": 40995,
+				"buffer_size": 41173,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,7 +31,7 @@
 			"file": "/Users/hakantuncer/octopress/_config.yml",
 			"settings":
 			{
-				"buffer_size": 2911,
+				"buffer_size": 2920,
 				"line_ending": "Unix"
 			}
 		},
@@ -178,6 +178,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"max-width: 10",
+			"max-width: 1000px",
+			"max-width: 700px",
+			"#sub-nav .social",
+			"#header #sub-nav .social",
+			"max-width: 700px",
+			"#header #main-nav",
+			"header",
 			";\n",
 			"left-col",
 			";\n",
@@ -227,15 +235,15 @@
 					"file": "stylesheets/screen.css",
 					"settings":
 					{
-						"buffer_size": 40995,
+						"buffer_size": 41173,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39056,
-								39056
+								39595,
+								39595
 							]
 						],
 						"settings":
@@ -244,8 +252,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 1.0,
-						"translation.y": 29652.0,
+						"translation.x": 0.0,
+						"translation.y": 30255.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -255,15 +263,15 @@
 					"file": "/Users/hakantuncer/octopress/_config.yml",
 					"settings":
 					{
-						"buffer_size": 2911,
+						"buffer_size": 2920,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								258,
-								258
+								380,
+								380
 							]
 						],
 						"settings":
