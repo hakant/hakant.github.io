@@ -20,26 +20,26 @@
 	"buffers":
 	[
 		{
-			"file": "stylesheets/screen.css",
+			"file": "_posts/2014-01-18-zombie-ninjas-attack-a-survivors-retrospective.markdown",
 			"settings":
 			{
-				"buffer_size": 41173,
+				"buffer_size": 1952,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/hakantuncer/octopress/_config.yml",
+			"file": "_posts/2014-01-13-moving-my-blog-to-octopress.markdown",
 			"settings":
 			{
-				"buffer_size": 2920,
+				"buffer_size": 1442,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "_includes/navigation.html",
+			"file": "consulting-services/index.markdown",
 			"settings":
 			{
-				"buffer_size": 151,
+				"buffer_size": 118,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,31 +47,26 @@
 			"file": "_includes/custom/navigation.html",
 			"settings":
 			{
-				"buffer_size": 144,
+				"buffer_size": 196,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html",
+			"contents": "<!--Fonts from Google\"s Web font directory at http://google.com/webfonts -->\n<link href=\"http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic\" rel=\"stylesheet\" type=\"text/css\">\n<link href=\"http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic\" rel=\"stylesheet\" type=\"text/css\">\n\n",
+			"file": "_includes/custom/head.html",
+			"file_size": 328,
+			"file_write_time": 1387905118000000,
 			"settings":
 			{
-				"buffer_size": 585,
+				"buffer_size": 329,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "_includes/custom/footer.html",
+			"file": "_includes/head.html",
 			"settings":
 			{
-				"buffer_size": 165,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_includes/footer.html",
-			"settings":
-			{
-				"buffer_size": 32,
+				"buffer_size": 1778,
 				"line_ending": "Unix"
 			}
 		}
@@ -100,12 +95,26 @@
 	},
 	"file_history":
 	[
-		"/Users/hakantuncer/Dropbox/NipoSoftware/Temp Work Notes.txt",
-		"/Users/hakantuncer/octopress/source/_includes/footer.html",
+		"/Users/hakantuncer/octopress/source/stylesheets/code.css",
 		"/Users/hakantuncer/octopress/source/index.html",
+		"/Users/hakantuncer/octopress/source/_posts/2014-01-11-first-test-post.markdown",
+		"/Users/hakantuncer/octopress/source/_layouts/default.html",
+		"/Users/hakantuncer/octopress/source/_includes/header.html",
+		"/Users/hakantuncer/octopress/source/_includes/custom/header.html",
+		"/Users/hakantuncer/octopress/source/_includes/custom/navigation.html",
 		"/Users/hakantuncer/octopress/source/_includes/custom/footer.html",
+		"/Users/hakantuncer/octopress/source/_includes/footer.html",
+		"/Users/hakantuncer/octopress/source/_includes/navigation.html",
+		"/Users/hakantuncer/octopress/source/_posts/2014-01-13-moving-my-blog-to-octopress.markdown",
+		"/Users/hakantuncer/octopress/source/_includes/article.html",
+		"/Users/hakantuncer/octopress/source/_layouts/post.html",
 		"/Users/hakantuncer/octopress/_config.yml",
 		"/Users/hakantuncer/octopress/source/stylesheets/screen.css",
+		"/Users/hakantuncer/octopress/source/_includes/head.html",
+		"/Users/hakantuncer/octopress/source/_includes/custom/head.html",
+		"/Users/hakantuncer/octopress/source/_includes/fancybox.html",
+		"/Users/hakantuncer/octopress/source/_includes/custom/asides/about.html",
+		"/Users/hakantuncer/Dropbox/NipoSoftware/Temp Work Notes.txt",
 		"/Users/hakantuncer/octopress/.gitignore",
 		"/Users/hakantuncer/octopress/source/robots.txt",
 		"/Users/hakantuncer/octopress/index.html",
@@ -164,13 +173,14 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/hakantuncer/octopress/source"
 		]
 	},
 	"find_state":
@@ -178,6 +188,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".highlight",
+			"screen.css",
+			"%}\n",
+			"id=\"pagenavi\"",
+			"<nav id=\"pagenavi\">",
+			"---",
+			"left-col",
+			"head_title",
+			"...\n",
 			"max-width: 10",
 			"max-width: 1000px",
 			"max-width: 700px",
@@ -232,51 +251,49 @@
 			[
 				{
 					"buffer": 0,
-					"file": "stylesheets/screen.css",
+					"file": "_posts/2014-01-18-zombie-ninjas-attack-a-survivors-retrospective.markdown",
 					"settings":
 					{
-						"buffer_size": 41173,
+						"buffer_size": 1952,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39595,
-								39595
+								612,
+								612
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 30255.0,
+						"translation.y": 56.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/hakantuncer/octopress/_config.yml",
+					"file": "_posts/2014-01-13-moving-my-blog-to-octopress.markdown",
 					"settings":
 					{
-						"buffer_size": 2920,
+						"buffer_size": 1442,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								380,
-								380
+								35,
+								35
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/YAML/YAML.tmLanguage"
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -286,23 +303,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "_includes/navigation.html",
+					"file": "consulting-services/index.markdown",
 					"settings":
 					{
-						"buffer_size": 151,
+						"buffer_size": 118,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								113,
+								113
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -315,15 +332,15 @@
 					"file": "_includes/custom/navigation.html",
 					"settings":
 					{
-						"buffer_size": 144,
+						"buffer_size": 196,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								121,
-								121
+								180,
+								180
 							]
 						],
 						"settings":
@@ -338,18 +355,18 @@
 				},
 				{
 					"buffer": 4,
-					"file": "index.html",
+					"file": "_includes/custom/head.html",
 					"settings":
 					{
-						"buffer_size": 585,
+						"buffer_size": 329,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								578,
-								578
+								8,
+								9
 							]
 						],
 						"settings":
@@ -364,44 +381,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "_includes/custom/footer.html",
+					"file": "_includes/head.html",
 					"settings":
 					{
-						"buffer_size": 165,
+						"buffer_size": 1778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								159,
-								159
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "_includes/footer.html",
-					"settings":
-					{
-						"buffer_size": 32,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32,
-								32
+								1147,
+								1147
 							]
 						],
 						"settings":
@@ -473,6 +464,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 373.0,
 	"status_bar_visible": true
 }

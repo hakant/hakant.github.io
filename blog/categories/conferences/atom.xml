@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Hakan Tuncer's Blog]]></title>
-  <link href="http://localhost:4000/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Conferences | Hakan Tuncer's Blog]]></title>
+  <link href="http://localhost:4000/blog/categories/conferences/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
   <updated>2014-01-25T18:51:51+01:00</updated>
   <id>http://localhost:4000/</id>
@@ -51,7 +51,7 @@
 </ul>
 
 
-<p><img src="http://localhost:4000/assets/Mountains_from_plane.jpg" alt="My helpful screenshot" /></p>
+<p><img src="/assets/Mountains_from_plane.jpg" alt="My helpful screenshot" /></p>
 ]]></content>
   </entry>
   
