@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
-  <link href="http://localhost:4000/atom.xml" rel="self"/>
-  <link href="http://localhost:4000/"/>
-  <updated>2014-01-25T18:51:51+01:00</updated>
-  <id>http://localhost:4000/</id>
+  <link href="http://hakant.github.io//atom.xml" rel="self"/>
+  <link href="http://hakant.github.io//"/>
+  <updated>2014-01-25T19:00:39+01:00</updated>
+  <id>http://hakant.github.io//</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights]]></title>
-    <link href="http://localhost:4000/blog/2014/01/25/microsoft-build-conference-2012-thoughts-and-highlights/"/>
+    <link href="http://hakant.github.io//blog/2014/01/25/microsoft-build-conference-2012-thoughts-and-highlights/"/>
     <updated>2014-01-25T18:29:03+01:00</updated>
-    <id>http://localhost:4000/blog/2014/01/25/microsoft-build-conference-2012-thoughts-and-highlights</id>
+    <id>http://hakant.github.io//blog/2014/01/25/microsoft-build-conference-2012-thoughts-and-highlights</id>
     <content type="html"><![CDATA[<p>Microsoft is heading towards a new era with it’s Windows ecosystem and Azure cloud platform.</p>
 
 <h2>Azure adoption on fire</h2>
@@ -51,7 +51,7 @@
 </ul>
 
 
-<p><img src="http://localhost:4000/assets/Mountains_from_plane.jpg" alt="My helpful screenshot" /></p>
+<p><img src="http://hakant.github.io//assets/Mountains_from_plane.jpg" alt="My helpful screenshot" /></p>
 ]]></content>
   </entry>
   
