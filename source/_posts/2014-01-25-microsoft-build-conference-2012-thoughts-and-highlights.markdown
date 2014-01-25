@@ -43,4 +43,4 @@ Monday – October 29
 
 * It was somewhat stressful to fly on the worst day of Hurricane Sandy. Fortunately the flight was not cancelled. The route was over the Greenland and there was quite some scene through the window.
 
-![My helpful screenshot]({{ site.url }}/assets/Mountains_from_plane.jpg)
+![My helpful screenshot](/assets/MountainsFromPlane.JPG)
