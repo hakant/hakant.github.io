@@ -46,7 +46,7 @@ h3 {
 a {
     text-decoration: none;
     outline-width: 0;
-    color: #258fb8;
+    color: #4466C5;
 }
 
 .basic-alignment.left,article .entry-content img.left,article .entry-content video.left {
@@ -781,6 +781,14 @@ article h1.title a {
 article h3.archive-title{
     font-size: 1.5em;
     font-weight: normal;
+}
+
+article h3.archive-title a{
+    color: #232828;
+}
+
+article h3.archive-title a:hover{
+    color: #4466C5;
 }
 
 article .entry-content {
@@ -1996,7 +2004,7 @@ body {
 }
 
 .container .mid-col .mid-col-container #content article h1.title a:hover {
-    color: #232828;
+    color: #4466C5;
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
@@ -2086,11 +2094,11 @@ body {
 }
 
 a {
-    color: #232828;
+    color: #4466C5;
 }
 
 a:hover {
-    color: #232828;
+    color: #4466C5;
 }
 
 @media screen and (max-width: 1040px) {
