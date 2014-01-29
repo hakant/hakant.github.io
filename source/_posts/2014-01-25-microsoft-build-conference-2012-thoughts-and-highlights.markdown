@@ -52,7 +52,7 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 <br>
 * First day was only about registration. There was a long registration queue all day but fortunately it  got much shorter later around 19:00. And I got my badge.
 <br>
-![Build Badge](/assets/BuildConference_2012/BuildBadge.JPG)
+![Build Badge](/assets/BuildConference_2012/BuildBadge.jpg)
 
 
 <h5>Tuesday – October 30</h5>
@@ -76,7 +76,7 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 
 * We were having breakfast and lunch in the big tents that were built right next to the conference buildings. Yes, tents are not very exciting but the food was.
 
-![Good Food](/assets/BuildConference_2012/photo1.JPG)
+![Good Food](/assets/BuildConference_2012/photo1.jpg)
 
 <h5>Wednesday – October 31</h5>
 
