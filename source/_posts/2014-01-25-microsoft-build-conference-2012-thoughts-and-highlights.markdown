@@ -38,9 +38,50 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
  
 <h2>Some Highlights from the Trip</h2>
  
-
-Monday – October 29
+<br>
+<h5>Monday – October 29</h5>
 
 * It was somewhat stressful to fly on the worst day of Hurricane Sandy. Fortunately the flight was not cancelled. The route was over the Greenland and there was quite some scene through the window.
 
-![My helpful screenshot](/assets/MountainsFromPlane.JPG)
+![Mountains from the plane](/assets/BuildConference_2012/MountainsFromPlane.JPG)
+
+![Flight map](/assets/BuildConference_2012/Flight_Map.JPG)
+
+![Ice everywhere](/assets/BuildConference_2012/IceEverywhere.JPG)
+
+<br>
+* First day was only about registration. There was a long registration queue all day but fortunately it  got much shorter later around 19:00. And I got my badge.
+<br>
+![Build Badge](/assets/BuildConference_2012/BuildBadge.JPG)
+
+
+<h5>Tuesday – October 30</h5>
+
+* Heading to the tent for breakfast. Further down, there is a much bigger tent with a Windows logo on it. That’s where keynotes will take place.
+
+![BigTent](/assets/BuildConference_2012/TreesRedmond.JPG)
+
+* First keynote was given by Steve Ballmer, CEO of Microsoft. It was about the most important delivery of Microsoft: Windows 8. About how the family of Windows 8 PC’s and mobile devices live in harmony together, with SkyDrive backing them up.
+ 
+
+* Steve Ballmer actually gave a demo himself, which was unusual but I think very positive. It’s a general expectation these days: CEO of a high tech company should be “hands on” with the technology. Technically savvy managers are more popular indeed. It looks like Steve also pushes himself towards that direction.
+
+* You can watch the whole show here:
+
+ http://channel9.msdn.com/Events/Build/2012/1-001
+
+![BallmerOnStage](/assets/BuildConference_2012/IMG_0091.JPG)
+
+* This first day was completely about Windows 8. In fact, Azure Cloud Platform would be the topic of the second keynote on the second day of BUILD conference.
+
+* We were having breakfast and lunch in the big tents that were built right next to the conference buildings. Yes, tents are not very exciting but the food was.
+
+![Good Food](/assets/BuildConference_2012/photo1.JPG)
+
+<h5>Wednesday – October 31</h5>
+
+* The second keynote of the BUILD conference was about the other important pursuit of Microsoft, the Azure Cloud, and the applications that developers can build into it. Applications that can be built lego style, using the tools and pulling the libraries as you like.
+
+![Second Keynote](/assets/BuildConference_2012/IMG_0122.JPG)
+
+* Scott Guthrie presented Azure Mobile & Media Services and Hanselman gave a short demo of new ASP.NET features and support for known social networks. All applications written during demos are eventually getting deployed on Azure. So basically now Azure plays a role in every server side technology of Microsoft.
