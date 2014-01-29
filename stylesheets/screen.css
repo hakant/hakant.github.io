@@ -2144,4 +2144,8 @@ a:hover {
     .container .mid-col .mid-col-container #content article .meta {
         float: none;
     }
+
+    .container .mid-col .mid-col-container #content article .entry-content{
+        font-size: 1.4em;
+    }
 }
