@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights"
-date: 2014-01-25 18:29:03 +0100
+date: 2012-11-18 18:29:03 +0100
 comments: true
 categories: [microsoft, conferences]
 footer: true
@@ -85,3 +85,65 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 ![Second Keynote](/assets/BuildConference_2012/IMG_0122.JPG)
 
 * Scott Guthrie presented Azure Mobile & Media Services and Hanselman gave a short demo of new ASP.NET features and support for known social networks. All applications written during demos are eventually getting deployed on Azure. So basically now Azure plays a role in every server side technology of Microsoft.
+
+![Scott Guthrie](/assets/BuildConference_2012/IMG_0127.JPG)
+
+![Hanselman](/assets/BuildConference_2012/IMG_0128.JPG)
+
+* After the keynote, heading towards the session buildings. And the red trees of Seattle…
+
+![Redmond Red Trees](/assets/BuildConference_2012/IMG_0131.JPG)
+
+<h5>Thursday – November 1</h5>
+ 
+* There were four rooms where you can borrow some brain from the experts. Everyone had certain office hours. This was not a very easy experience though. For some of these brains one had to wait a long time in the queue.
+
+![Brain Box](/assets/BuildConference_2012/photo.jpg)
+
+* Channel9 broadcasting studio. It was in the same building where some of the sessions took place.
+
+![Channel 9](/assets/BuildConference_2012/IMG_0108.JPG)
+
+* BUILD conference map on the ground.
+
+![Conference Map](/assets/BuildConference_2012/IMG_0109.JPG)
+
+
+<h5>Friday – November 2</h5> 
+
+* Two public figures Scott Hanselman and Jon Galloway preparing for the last session of the BUILD.
+
+![Build Last Session](/assets/BuildConference_2012/IMG_0211.JPG)
+
+* This strange sign took my attention.
+
+![Strange Notification](/assets/BuildConference_2012/IMG_0203.JPG)
+
+<h5>Saturday – November 3</h5>
+ 
+* At the final day of my trip, after the conference, I found some time to hang around in Seattle.
+
+* A Windows Store in Seattle. At the time of this writing, there are around 60 of these in various states  in U.S.
+
+![Windows Store in Seattle](/assets/BuildConference_2012/IMG_0057.JPG)
+
+* Seattle is the birthplace of Starbucks. As a matter of fact, this Starbucks shop is where it all started.
+
+![Birthplace of Starbucks](/assets/BuildConference_2012/IMG_0267.JPG)
+
+* Somewhere in Seattle, a building on which everybody is sticking gums. I don’t know the reason or the story behind it. But it was really disgusting to be there next to it…
+
+![Gum Wall](/assets/BuildConference_2012/IMG_02821.JPG)
+
+* Space Needle is one of the symbols of Seattle. I also went up there, obviously a great view.
+
+![Seattle Space Needle](/assets/BuildConference_2012/IMG_0350.JPG)
+
+* I’ve also seen Chihuly’s Garden & Glass Exhibition. The art here was truly amazing.
+<a href="http://www.chihulygardenandglass.com/" target="_blank">Chihuly Garden And Glass - Website</a>
+
+![Seattle Space Needle](/assets/BuildConference_2012/IMG_0361.JPG)
+
+![Seattle Space Needle](/assets/BuildConference_2012/IMG_0329.JPG)
+
+![Seattle Space Needle](/assets/BuildConference_2012/IMG_0338.JPG)
