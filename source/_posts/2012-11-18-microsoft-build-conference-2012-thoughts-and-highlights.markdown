@@ -106,8 +106,7 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 
 * BUILD conference map on the ground.
 
-![Conference Map](/assets/BuildConference_2012/IMG_0109.JPG)
-
+![Conference Map](/assets/BuildConference_2012/IMG_0109.jpg)
 
 <h5>Friday – November 2</h5> 
 
@@ -117,7 +116,7 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 
 * This strange sign took my attention.
 
-![Strange Notification](/assets/BuildConference_2012/IMG_0203.JPG)
+![Strange Notification](/assets/BuildConference_2012/IMG_0203.jpg)
 
 <h5>Saturday – November 3</h5>
  
@@ -125,7 +124,7 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 
 * A Windows Store in Seattle. At the time of this writing, there are around 60 of these in various states  in U.S.
 
-![Windows Store in Seattle](/assets/BuildConference_2012/IMG_0057.JPG)
+![Windows Store in Seattle](/assets/BuildConference_2012/img_0057.jpg)
 
 * Seattle is the birthplace of Starbucks. As a matter of fact, this Starbucks shop is where it all started.
 
@@ -133,17 +132,17 @@ Who would think one day someone would be able to run Linux servers on Microsoft 
 
 * Somewhere in Seattle, a building on which everybody is sticking gums. I don’t know the reason or the story behind it. But it was really disgusting to be there next to it…
 
-![Gum Wall](/assets/BuildConference_2012/IMG_02821.JPG)
+![Gum Wall](/assets/BuildConference_2012/img_02821.jpg)
 
 * Space Needle is one of the symbols of Seattle. I also went up there, obviously a great view.
 
-![Seattle Space Needle](/assets/BuildConference_2012/IMG_0350.JPG)
+![Seattle Space Needle](/assets/BuildConference_2012/img_0350.jpg)
 
 * I’ve also seen Chihuly’s Garden & Glass Exhibition. The art here was truly amazing.
 <a href="http://www.chihulygardenandglass.com/" target="_blank">Chihuly Garden And Glass - Website</a>
 
-![Seattle Space Needle](/assets/BuildConference_2012/IMG_0361.JPG)
+![Seattle Space Needle](/assets/BuildConference_2012/img_0361.jpg)
 
-![Seattle Space Needle](/assets/BuildConference_2012/IMG_0329.JPG)
+![Seattle Space Needle](/assets/BuildConference_2012/img_0329.jpg)
 
-![Seattle Space Needle](/assets/BuildConference_2012/IMG_0338.JPG)
+![Seattle Space Needle](/assets/BuildConference_2012/img_0338.jpg)
