@@ -11,3 +11,5 @@ source/_stash
 vendor
 node_modules
 _code_cache
+*.sublime-project
+*.sublime-workspace
