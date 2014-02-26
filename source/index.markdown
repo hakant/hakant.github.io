@@ -9,7 +9,7 @@ footer: true
 
 I’m a software engineer, web enthusiast, rock guitar player, traveller, an expatriate, a whiskey lover and sometimes a control freak.
 
-I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a Computer Science & Engineering bachelor's degree in 2005. Since then I've been building software in various companies & projects while at the same time trying to increase my and others' knowledge about software craftsmanship and it's patterns & practices. 
+I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a Computer Science & Engineering bachelor's degree in 2005. Since then I've been building software in various <a href="{{ root_url }}/portfolio">companies & projects</a> while at the same time trying to increase my and others' knowledge about software craftsmanship and it's patterns & practices. 
 
 I moved to Amsterdam around 6 years ago and currently working at <a href="http://www.niposoftware.com/" target="_blank">Nipo Software</a>, building next generation data collection platforms for the market research industry.
 
