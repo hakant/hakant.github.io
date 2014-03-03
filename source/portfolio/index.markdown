@@ -14,7 +14,7 @@ I've been working at NIPO Software in Amsterdam since the beginning of 2011. We 
 
 **NFIELD Web & Mobile:**
 
-NFIELD is a data collection platform. It's back-end is running on Microsoft Azure and it has 2 front-ends: Web and Android. So customers can reach NFIELD through their web browsers or using a native app on their Android devices.
+NFIELD is a data collection platform. It's back-end is running on Microsoft Azure and it has 2 front-ends: Web and Android. Customers can reach NFIELD through their web browsers or using a native app on their Android devices.
 
 The product and services targeting the Android devices are collectively called <a href="http://www.nfieldmr.com/" target="_blank">NFIELD CAPI</a> (computer assisted personal interviewing). The product website is <a href="http://www.nfieldmr.com/" target="_blank">www.nfieldmr.com</a>.
 
@@ -57,9 +57,9 @@ First 6-8 months of my time in NIPO Software is spent on building social media i
 
 <h2 class="title">2007 - 2011</h2>
 
-In this section, you can find links and references to the projects that I worked on between 2007 and 2011. My role and contribution varies from one project to the other. I architected or worked as the lead developer for some of the projects while helping for the others.
+In this section, you can find links and references to the projects that I worked on between 2007 and 2011. My role and contribution varies from one project to the other. I was an architect or lead developer for some of the projects and just crunching code for some others.
 
-UPDATE: Last time I checked I noticed that some of these sites don't exist anymore. Well, quite normal if you think about the fast pace of change in online businesses.
+UPDATE: I noticed that some of these sites don't exist anymore. Well, quite normal if you think about the fast pace of change in online businesses. In case you need some extra information just send me an email.
 
 * **Friendhunter** – <a href="http://www.friendhunter.nl" target="_blank">www.friendhunter.nl</a>
 Friendhunter is a social employment website, where users (networkers) can introduce their friends (candidates) to job positions and earn some predefined bonus if the candidate is accepted by the company at the end of the interview process.

@@ -5,18 +5,18 @@ sharing: false
 footer: true
 ---
 
-<h2 class="title">Hi I'm Hakan</h2>
+<h2 class="title">I'm Hakan</h2>
 
-I’m a software engineer, web enthusiast, rock guitar player, traveller, an expatriate, a whiskey lover and sometimes a control freak.
+A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - usually not together at once.
 
-I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a Computer Science & Engineering bachelor's degree in 2005. Since then I've been building software in various <a href="{{ root_url }}/portfolio">companies & projects</a> while at the same time trying to increase my and others' knowledge about software craftsmanship and it's patterns & practices. 
+I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software in various <a href="{{ root_url }}/portfolio">companies & projects</a> while at the same time trying to increase my and others' knowledge about software craftsmanship and it's patterns & practices. 
 
-I moved to Amsterdam around 6 years ago and currently working at <a href="http://www.niposoftware.com/" target="_blank">Nipo Software</a>, building next generation data collection platforms for the market research industry.
+I moved to Amsterdam around 6 years ago and currently working at <a href="http://www.niposoftware.com/" target="_blank">Nipo Software</a>, building the next generation data collection platforms for the market research industry.
 
 <h2 class="title">I'm working on a couple of projects...</h2>
 <br/>
 >Always have a side project. 
-<a href="https://www.google.com/?q=always+have+a+side+project#q=always+have+a+side+project" target="_blank">There are many reasons why.</a>
+<a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
 * One of the projects I've been working on is this blog that you're reading at the moment. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning the Terminal and trying to balance my time with Windows and Mac as a developer.
 
