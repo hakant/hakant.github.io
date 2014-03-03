@@ -7,7 +7,7 @@ footer: true
 
 <h2 class="title">I'm Hakan</h2>
 
-A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - usually not together at once.
+A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - usually not together.
 
 I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software in various <a href="{{ root_url }}/portfolio">companies & projects</a> while at the same time trying to increase my and others' knowledge about software craftsmanship and it's patterns & practices. 
 
