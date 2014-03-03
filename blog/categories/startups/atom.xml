@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Startups | Hakan Tuncer's Blog]]></title>
-  <link href="http://hakant.github.io//blog/categories/startups/atom.xml" rel="self"/>
-  <link href="http://hakant.github.io//"/>
-  <updated>2014-03-03T20:56:42+01:00</updated>
-  <id>http://hakant.github.io//</id>
+  <link href="http://hakantuncer.com/blog/categories/startups/atom.xml" rel="self"/>
+  <link href="http://hakantuncer.com/"/>
+  <updated>2014-03-03T21:34:46+01:00</updated>
+  <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Startup Weekend Amsterdam Experience]]></title>
-    <link href="http://hakant.github.io//blog/2010/10/20/startup-weekend-amsterdam-experience/"/>
+    <link href="http://hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience/"/>
     <updated>2010-10-20T20:52:30+02:00</updated>
-    <id>http://hakant.github.io//blog/2010/10/20/startup-weekend-amsterdam-experience</id>
+    <id>http://hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience</id>
     <content type="html"><![CDATA[<p>A few weeks ago I attended Startup Weeekend Amsterdam. I should say, it was really a weekend full of ideas, creativity, productivity and nice people.</p>
 
 <p>To describe very briefly, Startup Weekend events are short, weekend long events that are organized all around the world where attenders join together to pitch ideas and build products/services around those ideas. It is all self-contained. Everything is done by the attenders, from pitching ideas to forming teams, working over the weekend to realize those ideas and presenting them to the panelists. The organization behind Startup Weekend  provides place, food and the panelists. ;) ..and by the way, as far as I heard, they’re not earning money from these events.</p>
