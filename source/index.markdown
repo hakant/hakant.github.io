@@ -9,7 +9,7 @@ footer: true
 
 A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - usually not together.
 
-I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software in various <a href="{{ root_url }}/portfolio">companies & projects</a> while at the same time trying to increase my and others' knowledge about software craftsmanship and it's patterns & practices. 
+I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software for various <a href="{{ root_url }}/portfolio">companies & projects</a>. Over the past years I've been particularly interested in Microsoft .NET stack and the tools around it but in the recent years things are changing within our industry. Different technologies live together side by side as it has never been before. Freedom of choice is the king.
 
 I moved to Amsterdam around 6 years ago and currently working at <a href="http://www.niposoftware.com/" target="_blank">Nipo Software</a>, building the next generation data collection platforms for the market research industry.
 
@@ -18,9 +18,9 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 >Always have a side project. 
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* One of the projects I've been working on is this blog that you're reading at the moment. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning the Terminal and trying to balance my time with Windows and Mac as a developer.
+* One of the projects I've been working on is this blog that you're reading at the moment. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning Bash and trying to balance my time with Windows and Mac as a developer.
 
-* I'm building a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the images to see what I've done so far or even take a look at the <a href="http://hakant.github.io/BaskentSitesi/reference.html" target="_blank">campaign</a> that I've started (Turkish content) you may find yourself making some money.
+* I'm building a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the images to see what I've done so far or even take a look at the <a href="http://www.karasubaskent.com/reference.html" target="_blank">campaign</a> that I've started (Turkish content) you may find yourself making some money.
 
 <a href="http://www.karasubaskent.com/" target="_blank">
 ![Karasu Başkent Sitesi](/assets/HomePage/KarasuBaskentSitesi.png)

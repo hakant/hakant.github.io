@@ -14,9 +14,9 @@ I've been working at NIPO Software in Amsterdam since the beginning of 2011. We 
 
 **NFIELD Web & Mobile:**
 
-NFIELD is a data collection platform. It's back-end is running on Microsoft Azure and it has 2 front-ends: Web and Android. Customers can reach NFIELD through their web browsers or using a native app on their Android devices.
+NFIELD is a data collection platform. It's back-end is running on Microsoft Azure and at this moment it has 2 front-ends: Web and Android. Customers can reach NFIELD through their web browsers or using a native app on their Android devices.
 
-The product and services targeting the Android devices are collectively called <a href="http://www.nfieldmr.com/" target="_blank">NFIELD CAPI</a> (computer assisted personal interviewing). The product website is <a href="http://www.nfieldmr.com/" target="_blank">www.nfieldmr.com</a>.
+The app and the services targeting Android devices are collectively called <a href="http://www.nfieldmr.com/" target="_blank">NFIELD CAPI</a> (computer assisted personal interviewing). The product website is <a href="http://www.nfieldmr.com/" target="_blank">www.nfieldmr.com</a>.
 
 **Social Media Integrations:** 
 
@@ -34,7 +34,7 @@ First 6-8 months of my time in NIPO Software is spent on building social media i
 
 **Some technical details about what's keeping me busy at the office:**
 
-* Using Visual Studio 2012.
+* Using Visual Studio 2013 IDE.
 
 * Backend development. Scalability and resilience is significant. We use ServiceBus, Message Queues, NoSQL and Blob data storage together with SQL Azure. 
 
