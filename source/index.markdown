@@ -26,7 +26,7 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 ![Karasu Başkent Sitesi](/assets/HomePage/KarasuBaskentSitesi.png)
 </a>
 <a href="http://www.karasubaskent.com/reference.html" target="_blank">
-![Karasu Başkent Sitesi Reference Campaign](/assets/HomePage/KarasuBaskentSitesi2.png)
+![Karasu Başkent Sitesi Reference Campaign](/assets/HomePage/KarasuBaskentSitesi3.png)
 </a>
 
 <h2 class="title">I'm reading a couple of books...</h2>
