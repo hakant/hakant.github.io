@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2014-03-03T21:34:46+01:00</updated>
+  <updated>2014-04-13T17:14:28+02:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -12,6 +12,253 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
+    <link href="http://hakantuncer.com/blog/2014/04/07/publishing-nfield-dot-sdk-to-nuget/"/>
+    <updated>2014-04-07T21:34:32+02:00</updated>
+    <id>http://hakantuncer.com/blog/2014/04/07/publishing-nfield-dot-sdk-to-nuget</id>
+    <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
+
+<h2>What is Nfield SDK</h2>
+
+<p>Me and my colleagues at <a href="http://www.niposoftware.com/">NIPO Software</a> are building the next generation data collection platform called <a href="http://www.nfieldmr.com/">Nfield</a>. Nfield has an <a href="https://github.com/NIPOSoftware/Nfield-SDK">open source SDK</a> that market research offices can use to streamline and automate setting up their research projects.</p>
+
+<h2>NuGet and Package Management Systems</h2>
+
+<p>If you&rsquo;re a .NET developer or familiar with Microsoft development environment you probably know what Nuget is. Nuget is an open source package manager for Microsoft development platform (including .NET). Package management systems make poor developers&#8217; lives rock (well almost). It eases everything about installing libraries and managing dependencies. It also opens up lots of automation possibilities &ndash; like integrating dependency management into the build process. The home of nuget is <a href="http://www.nuget.org">www.nuget.org</a>.</p>
+
+<p>Most platforms have their own package management systems. Ruby has <a href="https://rubygems.org">RubyGems</a>, Node.js has <a href="https://www.npmjs.org">npm</a>, Apache has <a href="http://maven.apache.org">Maven</a> and it works with multiple platforms but it&rsquo;s primarily used by the Java community. Package managers don&rsquo;t only exist in the context of software development. There are also system-wide package managers to install components and applications for operating systems. For more information check out <a href="http://en.wikipedia.org/wiki/Package_management_system">Package Management System</a> and <a href="http://en.wikipedia.org/wiki/List_of_software_package_management_systems">List of Package Management Systems</a> on Wikipedia.</p>
+
+<h2>Step by step &ndash; Publishing Nfield.SDK to NuGet</h2>
+
+<br><br>
+
+
+<h3>1. Cloning Nfield.SDK from GitHub</h3>
+
+<p>When it comes to Git I have a couple of ways to interact. I either directly use the Git commands from a shell or <a href="https://windows.github.com/">GitHub for Windows</a> and lately I&rsquo;m also very happy with the Git integration of Visual Studio 2013. In this case I&rsquo;ll just go ahead and use GitHub for Windows to clone Nfield.SDK to my local repository.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/NfieldSDK_GitHub_For_Windows.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>After cloning is finished, now all files are on my local repository.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/NfieldSDK_Folder.png" alt="Cloning Nfield.SDK" /></p>
+
+<br>
+
+
+<h3>2. Creating a .nuspec file for Nfield.SDK project</h3>
+
+<p>.nuspec files are XML manifests which describe nuget packages. A .nuspec manifest is used to build a nuget package and it&rsquo;s also stored inside the package after the package is created. There is a <a href="http://docs.nuget.org/docs/reference/nuspec-reference">.nuspec reference</a> in nuget.org.</p>
+
+<p>So whenever we want to create a nuget package, we first need to create a .nuspec file. Nuget.exe command line utility allows us to create .nuspec files from .csproj files. You can also create a blank .nuspec file but pointing to an existing .csproj file makes things a lot easier since it&rsquo;s automatically detecting some of the metadata for us.</p>
+
+<figure class='code'><figcaption><span>run this command on the directory where the .csproj file is located</span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>nuget spec</div></code></pre></td></tr></table></div></figure>
+
+
+<p>After running this nuget command NField.SDK.nuspec file is created for us under the same directory.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/nuspec_file.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>Let&rsquo;s look at the .nuspec file that is generated:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+</pre></td><td class='code' width='100%'><pre><code class='xml'><div class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</div><div class='line'><span class="nt">&lt;package</span> <span class="nt">&gt;</span>
+</div><div class='line'>  <span class="nt">&lt;metadata&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;id&gt;</span>$id$<span class="nt">&lt;/id&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;version&gt;</span>$version$<span class="nt">&lt;/version&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;title&gt;</span>$title$<span class="nt">&lt;/title&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;authors&gt;</span>$author$<span class="nt">&lt;/authors&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;owners&gt;</span>$author$<span class="nt">&lt;/owners&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;licenseUrl&gt;</span>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE<span class="nt">&lt;/licenseUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;projectUrl&gt;</span>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE<span class="nt">&lt;/projectUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;iconUrl&gt;</span>http://ICON_URL_HERE_OR_DELETE_THIS_LINE<span class="nt">&lt;/iconUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;requireLicenseAcceptance&gt;</span>false<span class="nt">&lt;/requireLicenseAcceptance&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;description&gt;</span>$description$<span class="nt">&lt;/description&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;releaseNotes&gt;</span>Summary of changes made in this release of the package.<span class="nt">&lt;/releaseNotes&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;copyright&gt;</span>Copyright 2014<span class="nt">&lt;/copyright&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;tags&gt;</span>Tag1 Tag2<span class="nt">&lt;/tags&gt;</span>
+</div><div class='line'>  <span class="nt">&lt;/metadata&gt;</span>
+</div><div class='line'><span class="nt">&lt;/package&gt;</span></div></code></pre></td></tr></table></div></figure>
+
+
+<p>First thing you&rsquo;ll notice is the variable names that start and end with a $ sign. In the next step, when we generate the actual package, the package generator will be told to grab these metadata from the assembly information.</p>
+
+<p>Here is how the assembly information of Nfield.SDK looks like:</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/Nfield.SDK_AssemblyInfo.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>Other fields which don&rsquo;t contain variable names need to be filled in before generating the package. Here is the .nuspec file after I edited all these fields:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+</pre></td><td class='code' width='100%'><pre><code class='xml'><div class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</div><div class='line'><span class="nt">&lt;package</span> <span class="nt">&gt;</span>
+</div><div class='line'>  <span class="nt">&lt;metadata&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;id&gt;</span>$id$<span class="nt">&lt;/id&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;version&gt;</span>$version$<span class="nt">&lt;/version&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;title&gt;</span>$title$<span class="nt">&lt;/title&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;authors&gt;</span>$author$<span class="nt">&lt;/authors&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;owners&gt;</span>$author$<span class="nt">&lt;/owners&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;licenseUrl&gt;</span>http://www.gnu.org/licenses<span class="nt">&lt;/licenseUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;projectUrl&gt;</span>https://github.com/NIPOSoftware/Nfield-SDK<span class="nt">&lt;/projectUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;iconUrl&gt;&lt;/iconUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;requireLicenseAcceptance&gt;</span>false<span class="nt">&lt;/requireLicenseAcceptance&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;description&gt;</span>$description$<span class="nt">&lt;/description&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;releaseNotes&gt;&lt;/releaseNotes&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;copyright&gt;</span>Copyright © NIPO Software 2013<span class="nt">&lt;/copyright&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;tags&gt;</span>nfield marketresearch capi cawi<span class="nt">&lt;/tags&gt;</span>
+</div><div class='line'>  <span class="nt">&lt;/metadata&gt;</span>
+</div><div class='line'><span class="nt">&lt;/package&gt;</span></div></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<h3>3. Creating the actual nuget package (.nupkg) for Nfield.SDK</h3>
+
+<br>
+
+
+
+
+<figure class='code'><figcaption><span>executing the nuget package command for Nfield.SDK in release mode</span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>nuget pack Nfield.SDK.csproj -Prop <span class="nv">Configuration</span><span class="o">=</span>Release</div></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice that &ldquo;nuget pack&rdquo; command is not executed on the .nuspec file but on the .csproj file. But according to the nuget documentation this command picks up both the .nuspec file and the .csproj file from the directory. After executing the pack command here is what I got:</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/Icon_URL_CanNotBeEmpty.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>For a moment, I thought ignoring the iconUrl entry in the .nuspec file would not be a big deal but I was wrong.</p>
+
+<p>This is what <a href="">.nuspec reference</a> says about the iconUrl:</p>
+
+<blockquote><p>A URL for the image to use as the icon for the package in the Manage NuGet Packages dialog box. This should be a 32x32-pixel .png file that has a transparent background.</p></blockquote>
+
+<p>I immediately headed to <a href="http://nfieldmr.com/">http://nfieldmr.com/</a> to steal an nfield icon and indeed I found one. I shrinked the size to 32x32 and then committed it to the root of Nfield.SDK github repository.. hoping to be able to get a public URL for it afterwards. And voila! check the image below. Clicking the &ldquo;Raw&rdquo; button gives me this URL for my new icon: <a href="https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png">https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png</a></p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/nfield-icon-on-github.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>So after putting the icon URL into the .nuspec file here is what I have.. the final version of the .nuspec file:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+</pre></td><td class='code' width='100%'><pre><code class='xml'><div class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</div><div class='line'><span class="nt">&lt;package</span> <span class="nt">&gt;</span>
+</div><div class='line'>  <span class="nt">&lt;metadata&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;id&gt;</span>$id$<span class="nt">&lt;/id&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;version&gt;</span>$version$<span class="nt">&lt;/version&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;title&gt;</span>$title$<span class="nt">&lt;/title&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;authors&gt;</span>$author$<span class="nt">&lt;/authors&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;owners&gt;</span>$author$<span class="nt">&lt;/owners&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;licenseUrl&gt;</span>http://www.gnu.org/licenses<span class="nt">&lt;/licenseUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;projectUrl&gt;</span>https://github.com/NIPOSoftware/Nfield-SDK<span class="nt">&lt;/projectUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;iconUrl&gt;</span>https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png<span class="nt">&lt;/iconUrl&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;requireLicenseAcceptance&gt;</span>false<span class="nt">&lt;/requireLicenseAcceptance&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;description&gt;</span>$description$<span class="nt">&lt;/description&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;releaseNotes&gt;&lt;/releaseNotes&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;copyright&gt;</span>Copyright © NIPO Software 2013<span class="nt">&lt;/copyright&gt;</span>
+</div><div class='line'>    <span class="nt">&lt;tags&gt;</span>nfield marketresearch capi cawi<span class="nt">&lt;/tags&gt;</span>
+</div><div class='line'>  <span class="nt">&lt;/metadata&gt;</span>
+</div><div class='line'><span class="nt">&lt;/package&gt;</span></div></code></pre></td></tr></table></div></figure>
+
+
+<p>After running the same nuget pack command one more time, the package is successfully created.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_1.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>And here is how the package (.nupkg) looks like in the library folder:</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_2.png" alt="Cloning Nfield.SDK" /></p>
+
+<h3>4. Publishing the Nfield.SDK package to nuget</h3>
+
+<p>Now I have my nuget package file waiting to be published. Or wait&hellip; maybe I should test it before publishing it to the public NuGet repository. There is a way to create a local package repository on the local file system of the machine and test the package using this local nuget repository. But because this blog post is getting longer than I expected I will save it for another day.</p>
+
+<p>Let&rsquo;s assume that I&rsquo;ve tested the Nfield.SDK nuget package and I&rsquo;m ready to publish it. First thing that is necessary is to get the long due NIPO Software account on nuget.org.</p>
+
+<p>Checkout the screenshot below from nuget.org account page of NIPO Software. Two big buttons on the first row tells me that I can upload packages using nuget.org and I can also manage my existing packages. The other interesting information is the &ldquo;API Key&rdquo; at the bottom. This is a GUID that can be used from the nuget command utility. Using this key it&rsquo;s possible to publish nuget packages from the command line without signing in to nuget.org.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/NIPOSoftware-NuGet.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>So this means it&rsquo;s possible to publish a nuget package both using nuget.exe from command line and using nuget.org. This is how nuget packages are pushed using nuget.exe:</p>
+
+<figure class='code'><figcaption><span>publishing Nfield.SDK using nuget.exe</span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>nuget SetApiKey NIPOSoftware-API-Key
+</div><div class='line'>nuget push Nfield.SDK.1.0.0.0.nupkg</div></code></pre></td></tr></table></div></figure>
+
+
+<p>I took the other approach and directly uploaded the package using nuget.org web interface. After I uploaded the &ldquo;Nfield.SDK.1.0.0.0.nupkg&rdquo; file, nuget.org asked me to verify the details of the package before clicking publish the last time.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/VerifyingUpload_RightBeforePublish.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>All seems fine for now and I click publish. The package is published for the world to see. Below you see the Nfield.SDK page from the NuGet Gallery. Using &ldquo;Install-Package Nfield.SDK&rdquo; command from the VS Package Manager Console will install Nfield SDK to your project. Also notice near the bottom there is a section called &ldquo;Dependencies&rdquo;. Nfield.SDK depends on one other nuget package and it&rsquo;s visible here. This was automatically handled by nuget when I created the package using the .csproj file.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/SuccessfullyUploadedNfield.SDK.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>So now as a final step, let&rsquo;s go to Visual Studio and find Nfield.SDK in package manager. Searching for Nfield brings me the Nfield.SDK package. Here is a screenshot right before I installed Nfield.SDK for my Nfield test project which I will discuss in my next blog post.</p>
+
+<p><img src="http://hakantuncer.com/assets/NfieldSDK_Nuget/NfieldSDK_Online_InNuget.png" alt="Cloning Nfield.SDK" /></p>
+
+<p>Now that Nfield.SDK is online on NuGet, I can easily install and access it from my own projects. In the next blog post I&rsquo;ll show you how you can install Nfield.SDK and use it to do something useful &ndash; like adding an interviewer to your market research office.</p>
+
+<p>Until then, take care.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights]]></title>
