@@ -4,7 +4,7 @@
   <title><![CDATA[Category: .net | Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/blog/categories/dot-net/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2014-04-13T17:59:20+02:00</updated>
+  <updated>2014-04-13T18:07:12+02:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -39,11 +39,11 @@
 
 <p>When it comes to Git I have a couple of ways to interact. I either directly use the Git commands from a shell or <a href="https://windows.github.com/">GitHub for Windows</a> and lately I&rsquo;m also very happy with the Git integration of Visual Studio 2013. In this case I&rsquo;ll just go ahead and use GitHub for Windows to clone Nfield.SDK to my local repository.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/NfieldSDK_GitHub_For_Windows.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/NfieldSDK_GitHub_For_Windows.png" alt="Cloning Nfield SDK" /></p>
 
 <p>After cloning is finished, now all files are on my local repository.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/NfieldSDK_Folder.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/NfieldSDK_Folder.png" alt="Nfield SDK Folder" /></p>
 
 <br>
 
@@ -60,7 +60,7 @@ nuget spec
 
 <p>After running this nuget command NField.SDK.nuspec file is created for us under the same directory.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/nuspec_file.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/nuspec_file.png" alt="Nfield SDK nuspec file" /></p>
 
 <p>Let&rsquo;s look at the .nuspec file that is generated:
 ``` xml
@@ -91,7 +91,7 @@ nuget spec
 
 <p>Here is how the assembly information of Nfield.SDK looks like:</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/Nfield.SDK_AssemblyInfo.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/Nfield.SDK_AssemblyInfo.png" alt="Nfield SDK Assembly info" /></p>
 
 <p>Other fields which don&rsquo;t contain variable names need to be filled in before generating the package. Here is the .nuspec file after I edited all these fields:</p>
 
@@ -133,7 +133,7 @@ nuget pack Nfield.SDK.csproj -Prop Configuration=Release
 
 <p>Notice that &ldquo;nuget pack&rdquo; command is not executed on the .nuspec file but on the .csproj file. But according to the nuget documentation this command picks up both the .nuspec file and the .csproj file from the directory. After executing the pack command here is what I got:</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/Icon_URL_CanNotBeEmpty.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/Icon_URL_CanNotBeEmpty.png" alt="Nfield SDK - Icon Url Can't be empty" /></p>
 
 <p>For a moment, I thought ignoring the iconUrl entry in the .nuspec file would not be a big deal but I was wrong.</p>
 
@@ -143,7 +143,7 @@ nuget pack Nfield.SDK.csproj -Prop Configuration=Release
 
 <p>I immediately headed to <a href="http://nfieldmr.com/">http://nfieldmr.com/</a> to steal an nfield icon and indeed I found one. I shrinked the size to 32x32 and then committed it to the root of Nfield.SDK github repository.. hoping to be able to get a public URL for it afterwards. And voila! check the image below. Clicking the &ldquo;Raw&rdquo; button gives me this URL for my new icon: <a href="https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png">https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png</a></p>
 
-<p><img src="/assets/NfieldSDK_Nuget/nfield-icon-on-github.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/nfield-icon-on-github.png" alt="Nfield icon on github" /></p>
 
 <p>So after putting the icon URL into the .nuspec file here is what I have.. the final version of the .nuspec file:</p>
 
@@ -173,11 +173,11 @@ nuget pack Nfield.SDK.csproj -Prop Configuration=Release
 
 <p>After running the same nuget pack command one more time, the package is successfully created.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_1.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_1.png" alt="Nfield SDK - Successful Package Creation 1" /></p>
 
 <p>And here is how the package (.nupkg) looks like in the library folder:</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_2.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_2.png" alt="Nfield SDK - Successful Package Creation 2" /></p>
 
 <h3>4. Publishing the Nfield.SDK package to nuget</h3>
 
@@ -187,7 +187,7 @@ nuget pack Nfield.SDK.csproj -Prop Configuration=Release
 
 <p>Checkout the screenshot below from nuget.org account page of NIPO Software. Two big buttons on the first row tells me that I can upload packages using nuget.org and I can also manage my existing packages. The other interesting information is the &ldquo;API Key&rdquo; at the bottom. This is a GUID that can be used from the nuget command utility. Using this key it&rsquo;s possible to publish nuget packages from the command line without signing in to nuget.org.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/NIPOSoftware-NuGet.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/NIPOSoftware-NuGet.png" alt="Nipo Software NuGet Account" /></p>
 
 <p>So this means it&rsquo;s possible to publish a nuget package both using nuget.exe from command line and using nuget.org. This is how nuget packages are pushed using nuget.exe:</p>
 
@@ -198,15 +198,15 @@ nuget push Nfield.SDK.1.0.0.0.nupkg
 
 <p>I took the other approach and directly uploaded the package using nuget.org web interface. After I uploaded the &ldquo;Nfield.SDK.1.0.0.0.nupkg&rdquo; file, nuget.org asked me to verify the details of the package before clicking publish the last time.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/VerifyingUpload_RightBeforePublish.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/VerifyingUpload_RightBeforePublish.png" alt="Nfield SDK - Verify NuGet Publish" /></p>
 
 <p>All seems fine for now and I click publish. The package is published for the world to see. Below you see the Nfield.SDK page from the NuGet Gallery. Using &ldquo;Install-Package Nfield.SDK&rdquo; command from the VS Package Manager Console will install Nfield SDK to your project. Also notice near the bottom there is a section called &ldquo;Dependencies&rdquo;. Nfield.SDK depends on one other nuget package and it&rsquo;s visible here. This was automatically handled by nuget when I created the package using the .csproj file.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/SuccessfullyUploadedNfield.SDK.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/SuccessfullyUploadedNfield.SDK.png" alt="Nfield SDK - Successfully uploaded to Nuget" /></p>
 
 <p>So now as a final step, let&rsquo;s go to Visual Studio and find Nfield.SDK in package manager. Searching for Nfield brings me the Nfield.SDK package. Here is a screenshot right before I installed Nfield.SDK for my Nfield test project which I will discuss in my next blog post.</p>
 
-<p><img src="/assets/NfieldSDK_Nuget/NfieldSDK_Online_InNuget.png" alt="Cloning Nfield.SDK" /></p>
+<p><img src="/assets/NfieldSDK_Nuget/NfieldSDK_Online_InNuget.png" alt="Nfield SDK - Online in NuGet" /></p>
 
 <p>Now that Nfield.SDK is online on NuGet, I can easily install and access it from my own projects. In the next blog post I&rsquo;ll show you how you can install Nfield.SDK and use it to do something useful &ndash; like adding an interviewer to your market research office.</p>
 
