@@ -20,7 +20,7 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 
 * One of the projects I've been working on is this blog that you're reading at the moment. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning the Terminal and trying to balance my time with Windows and Mac as a developer.
 
-* I'm building a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the images to see what I've done so far... or even take a look at the <a href="http://hakant.github.io/BaskentSitesi/reference.html" target="_blank">campaign</a> that I've started (Turkish content) you may find yourself making some money.
+* I'm building a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the images to see what I've done so far or even take a look at the <a href="http://hakant.github.io/BaskentSitesi/reference.html" target="_blank">campaign</a> that I've started (Turkish content) you may find yourself making some money.
 
 <a href="http://hakant.github.io/BaskentSitesi" target="_blank">
 ![Karasu Başkent Sitesi](/assets/HomePage/KarasuBaskentSitesi.png)
