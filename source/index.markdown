@@ -22,10 +22,10 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 
 * I'm building a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the images to see what I've done so far or even take a look at the <a href="http://hakant.github.io/BaskentSitesi/reference.html" target="_blank">campaign</a> that I've started (Turkish content) you may find yourself making some money.
 
-<a href="http://hakant.github.io/BaskentSitesi" target="_blank">
+<a href="http://www.karasubaskent.com/" target="_blank">
 ![Karasu Başkent Sitesi](/assets/HomePage/KarasuBaskentSitesi.png)
 </a>
-<a href="http://hakant.github.io/BaskentSitesi/reference.html" target="_blank">
+<a href="http://www.karasubaskent.com/reference.html" target="_blank">
 ![Karasu Başkent Sitesi Reference Campaign](/assets/HomePage/KarasuBaskentSitesi2.png)
 </a>
 
