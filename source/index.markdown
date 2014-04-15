@@ -31,8 +31,6 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 
 <h2 class="title">I'm reading a couple of books...</h2>
 
-I usually read two books at a time. One technical and one non-technical. These are the books that I'm reading at the moment:
-
 * **$100 Startup** is a fantastic book for learning to create and sell value while doing what you love. This book is full of inspirational examples and sound strategies.
 
 * **Patterns of Enterprise Application Architecture** is a design patterns bible. Reading these kind of books line by line is though. Scanning them through is easier and more powerful. This way you learn what patterns are available to you. Learning the instinctive wisdom of when to bring which one is important.
