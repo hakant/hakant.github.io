@@ -10,7 +10,9 @@ sharing: true
 
 In a previous blog post I covered the step by step process of [publishing Nfield.SDK to NuGet]({{ root_url }}/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/). 
 
-After publishing Nfield.SDK to NuGet, a natural follow up is to create a simple app that installs Nfield.SDK and does something useful with it.
+After publishing Nfield.SDK, a natural follow up is to create a simple app that installs Nfield.SDK through NuGet and does something useful with it.
+
+>To learn more about Nfield or to <a href="http://nfieldmr.com/get-started.aspx" target="_blank">get started</a> visit <a href="http://nfieldmr.com/" target="_blank">nfieldmr.com</a>
 
 ## Installing Nfield.SDK in a Console Application
 
