@@ -1193,6 +1193,7 @@ figure.code code,figure.code pre {
 
 figure.code .highlight {
     overflow-x: auto;
+    font-size: 0.8em;
 }
 
 figure.code .line-numbers {
