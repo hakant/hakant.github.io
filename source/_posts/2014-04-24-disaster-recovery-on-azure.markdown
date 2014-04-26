@@ -8,9 +8,9 @@ footer: true
 sharing: true
 ---
 
-There are things we tend to ignore. Things that we don't want to spend any time on or think about. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.
+There are things we tend to ignore. Things that we don't want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.
 
-Because I'm working with Microsoft Azure on a daily basis as part of my job, I'll now be focusing on Azure but the fundamental principles and concepts should be universal for every cloud platform, or even for on premises type scenarios.
+Because I'm working with Microsoft Azure on a daily basis as part of my job, I'll be focusing on Azure but the fundamental principles and concepts should be universal for every cloud platform, or even for on premises type scenarios.
 
 ## Two key objectives
 <br>
@@ -28,7 +28,7 @@ These two key objectives determine the approach that needs to be followed and th
 
 The purpose of this blog post is not to describe solutions for each possible combination of these two objectives, but to describe a couple of approaches that can tolerate relatively long recovery time objective (~24 hours) with a more aggressive (so short) recovery point objective.
 
-Don't forget that having a short RTO and RPO together is both costly and complex to implement.
+Don't forget that having a short RTO and RPO together can be both costly and complex to implement depending on the storage needs of your applications.
 
 ## Running business on a single datacenter
 
@@ -38,7 +38,7 @@ An Azure datacenter is equipped with fault domains and redundancy to keep your s
 
 ![Single Region Deployment](/assets/Disaster_Recovery_On_Azure/Single_Region_Deployment.png)
 
-Assuming that you still have your software in-house somewhere, there should be no risk of losing the compute instances forever. By creating and deploying the cloud packages on another datacenter the compute instances can be recovered. The key to business continuity here is to be able to reach the data that is stored on Azure Storage and/or Azure SQL Databases.
+Assuming that you still have your software in-house somewhere, there should be no risk of losing the compute instances forever. By creating and deploying the cloud packages on another datacenter the compute instances can be recovered. __The key to business continuity is to be able to recover the data that is stored on Azure Storage and Azure SQL Databases.__
 
 ## Frequently backup data outside the datacenter
 
@@ -48,11 +48,11 @@ When there are backups available outside the datacenter, the environment can be 
 
 ![Redeploy to another datacenter](/assets/Disaster_Recovery_On_Azure/Redeploy_Azure_Datacenter.png)
 
-This is called "redeploy" recovery model and as you might guess has a long recovery time objective. All the individual pieces of the environment needs to be moved to another datacenter and redeployed. 
+This is called "redeploy" recovery model and as you might already guess has a long recovery time objective. All the individual pieces of the environment needs to be moved to another datacenter and redeployed. 
 
 ## How to backup Azure data (together with RPO and RTO considerations) 
-<br>
-##### Azure Storage
+<br><br>
+#### 1. Azure Storage
 The good news is that Azure Storage Service has built-in replication strategies. Two of them are geographical redundancy, meaning that all storage data is replicated across datacenters. That's exactly what disaster recovery is about.
 
 ![Azure Storage Geo Redundancy](/assets/Disaster_Recovery_On_Azure/Azure_Storage_Redundancy.png)
@@ -63,14 +63,14 @@ The difference between "Geo Redundant" and "Read-Access Geo Redundant" is that t
 
 In the light of these information 3 options appear for backing up the Azure Storage:
 
-* _Geo-Redundancy_: There is no SLA but RPO is practically very short. RTO is long. Only after about 24 hours the failover process will be completed by Microsoft and the data will be available again.
-* _Read-Access Geo Redundant_: RPO is again the same as above. However almost immediately the redundant data can be accessed (read-only) which allows systems to run in a degraded mode. Then again in 24 hours everything will be fully operational.
-* If RTO needs to be shorter, the only option is to look for a third party product that can replicate an azure storage to another datacenter. This redundant storage will always be available in Read/Write mode (since it's just another regular storage account).
+* __Geo-Redundancy__: There is no SLA but RPO is practically very short. RTO is long. Only after about 24 hours the failover process will be completed by Microsoft and the data will be available again.
+* __Read-Access Geo Redundant__: RPO is again the same as above. However almost immediately the redundant data can be accessed (read-only) which allows systems to run in a degraded mode (if they're designed in such a fault tolerant way of course). Then again in 24 hours everything will be fully operational.
+* __Custom__: If RTO needs to be shorter, the only option is to look for a third party product that can replicate an azure storage to another datacenter. This redundant storage will always be available in Read/Write mode (since it's just another regular storage account, only in another geographical region).
 
-##### Azure SQL Databases
+<br>
+#### 2. Azure SQL Databases
 <br>
 
-After doing quite a bit of research finding out that there is no silver bullet to this problem is disappointing.
 
 
 
