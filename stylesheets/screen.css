@@ -2156,3 +2156,9 @@ a:hover {
         font-size: 1.4em;
     }
 }
+
+@media screen and (max-width: 600px) {
+    figure.code .highlight{
+        font-size: 0.6em;
+    }
+}
