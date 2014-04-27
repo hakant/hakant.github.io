@@ -2161,4 +2161,8 @@ a:hover {
     figure.code .highlight{
         font-size: 0.4em;
     }
+
+    .container .mid-col .mid-col-container #content article .entry-content{
+        font-size: 1.2em;   
+    }
 }
