@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Disaster Recovery on Azure"
-date: 2014-04-24 19:30:37 +0200
+date: 2014-04-27 19:30:37 +0200
 comments: true
 categories: [azure, architecture]
 footer: true
@@ -36,7 +36,7 @@ Let's say you haven't thought on a disaster recovery plan yet. If your software 
 
 An Azure datacenter is equipped with fault domains and redundancy to keep your service highly available but these are all inside the datacenter. If the whole datacenter goes down all the compute instances, databases and storage services will go down with it.
 
-![Single Region Deployment](/assets/Disaster_Recovery_On_Azure/Single_Region_Deployment.png)
+{% img /assets/Disaster_Recovery_On_Azure/Single_Region_Deployment.png 500 438 'Single Region Deployment' %}
 
 Assuming that you still have your software in-house somewhere, there should be no risk of losing the compute instances forever. By creating and deploying the cloud packages on another datacenter the compute instances can be recovered. __The key to business continuity is to be able to recover the data that is stored on Azure Storage and Azure SQL Databases.__
 
@@ -69,7 +69,82 @@ In the light of these information 3 options appear for backing up the Azure Stor
 
 <br>
 #### 2. Azure SQL Databases
+
+Yesterday I woke up to an [annoucement from Microsoft](http://view.email.microsoftemail.com/?j=fe9016787161057a71&m=fe621570756503797d1c&ls=fe1817787c60027e711d79&l=fec21c767365017e&s=fe2212717465037a701d78&jb=ff5e177873&ju=fe5711777060017b7611) introducing new types of databases in Azure with new disaster recovery features:
+
+![Disaster Recovery Per Database Type](/assets/Disaster_Recovery_On_Azure/DisasterRecoveryPerDatabaseType.png)
+
+Let's look at each option and see what it means:
+
+* __Restore to an alternate	Azure region__: This phrase means "no silver bullet". Basic type database owners are responsible with their own backup and restore operations. Luckily there is a convenient way to backup and restore an Azure SQL Database regardless of it's type.
 <br>
+
+##### Automatic Database Export:
+
+Actually there are a couple of ways to replicate or backup a database. But most of these options have their own shortcomings for disaster recovery. There is a feature called [Database Copy](http://msdn.microsoft.com/en-US/library/azure/ff951624.aspx) which creates a [transactionally consistent replica](http://technet.microsoft.com/en-us/library/ms151176.aspx) of the source database in __the same datacenter.__ Because the replica resides in the same datacenter there is no geo-redundancy. But after the copying is completed, this database can be exported to a storage account in another datacenter. 
+
+This is exactly what __Automatic Database Export__ feature does. It first replicates the database with a copy operation, thus getting a transactionally consistent copy of the database, then exports it to the storage account that is configured. To see how it works you can visit [this blog post](http://blogs.msdn.com/b/sql-bi-sap-cloud-crm_all_in_one_place/archive/2013/07/24/sql-azure-automated-database-export.aspx).
+
+A direct manual export operation itself does not generate a transactionally consistent copy of a database. This means you may end up having an Order item in the database with a missing OrderDetails. Automatic Database Export however takes care of this problem. The documentation was not very clear on that so I asked the man himself:
+<br>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/hakant">@hakant</a> <a href="https://twitter.com/Azure">@Azure</a> yes I&#39;m pretty sure it is</p>&mdash; Scott Guthrie (@scottgu) <a href="https://twitter.com/scottgu/statuses/460180886915276801">April 26, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+So we're on the right track here.
+<br>
+
+>__Attention:__ First part of Automatic Database Export is the replication of the database with Database COPY operation which runs two databases at the same time. This means export operations are partially doubling the database costs.
+
+So far so good... But what determines RTO and RPO for Automatic Database Export? This analysis depends on the frequency and the destination storage configured for the database export operation.
+<br>
+
+- _Exporting to a separate storage account on another datacenter:_
+
+In this scenario, the RPO will simply be around [Database Export Frequency]. If the database is exported every 6 hours, in the worst case scenario 6 hours of data may be lost. 
+
+RTO is simply the [Database Restore Duration]. No need to wait for Microsoft to execute the Azure Storage failover process. The database export file is immediately available on the storage account in the other datacenter.
+<br>
+
+- _Exporting to the primary storage account on the same datacenter:_
+
+In this scenario, we're relying on the Automated Azure Storage Geo-Replication to get the exported database transferred to another datacenter. Since this scenario uses the geo-replication feature of the storage account there won't be any additional costs for geo-reduntant storage. But in the worst case scenario the RPO can go as far as [2 * Database Export Frequency] if the datacenter happens to fail during the geo-replication process. In that case, the last export file won't be available after the failure but only the one before that will be. 
+
+On the other hand, the RTO is [Estimated Azure Storage Geo-Failover Time + Database Restore Duration]. Again, Microsoft's estimation for Azure Storage geo-failover is around 24 hours.
+
+So the moral of the story is that having a dedicated separate Azure Storage account on the other datacenter is beneficial for both RPO and RTO. But as usual the downside is financial. The separate storage account is also billed separately. Though it's also worth mentioning that Azure Storage is [fairly cheap](http://azure.microsoft.com/en-us/pricing/details/storage/).
+
+Now let's move to the other disaster recovery features.
+
+* __Geo-Replication Passive Replica__: Unfortunately there is no documentation available for this mysterious feature yet. Frankly there is no single mention of this feature anywhere else at the time of this writing. So the technique described above for the Basic databases also applies here until Microsoft actually ships this feature or shares more about it. I'll update this section when that happens.
+
+* __Active Geo-Replication__: This one is a silver bullet solution. Unfortunately only the Premium database owners can make use of this feature. With Active Geo-Replication, you can create and maintain up to four readable secondary databases across geographic regions. Basically this gives a very short RPO and RTO for the price of running multiple Premium databases ([which is quite a lot](http://azure.microsoft.com/en-us/pricing/details/sql-database/#basic-standard-and-premium)). You can read more about [Active Geo-Replication on MSDN](http://msdn.microsoft.com/en-US/library/azure/dn741339.aspx).
+
+## Final thoughts
+
+If your business can tolerate larger than ~24 hrs recovery time objective (RTO) Azure provides a couple of inexpensive features that you can already start making use of. These features also require very little effort to setup and you guarantee business continuity in case of a catastrophic event.
+
+The most cost effective strategy is the following:
+
+1. Make sure your storage account is configured for Geo-Redundancy (default).
+2. Turn on Automatic Database Export and configure a high frequency that makes sense. Keep track of how long this operation takes and adjust your frequency based on that as well.
+3. Set your default azure storage account as the destination of automatic database export. So rely on the geo-redundancy of your storage account.
+
+If you need a more aggressive RTO build up on this strategy. This post is mainly focused on "Redeploy" pattern. There are other patterns available on MSDN and some are focused on more aggressive RTO's. I recommend reading: [Disaster Recovery and High Availability for Azure Applications](http://msdn.microsoft.com/en-us/library/dn251004.aspx).
+
+## References
+
+Most information on this blog post is obtained from the following MSDN pages. Some others are direct observations & usage from Azure Management Portal.
+
+* [Disaster Recovery and High Availability for Azure Applications](http://msdn.microsoft.com/en-us/library/dn251004.aspx)
+* [Azure SQL Database Business Continuity](http://msdn.microsoft.com/library/azure/hh852669.aspx)
+* [Copying Databases in Azure SQL Database](http://msdn.microsoft.com/en-US/library/azure/ff951624.aspx)
+* [How to: Import and Export a Database (Azure SQL Database)](http://msdn.microsoft.com/en-US/library/azure/hh335292.aspx)
+* [SQL Database updates coming soon to the Premium preview](http://blogs.msdn.com/b/windowsazure/archive/2014/04/04/sql-database-updates-coming-soon-to-the-premium-preview.aspx)
+
+Thanks for reading.
+
+
 
 
 
