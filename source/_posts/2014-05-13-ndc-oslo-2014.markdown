@@ -44,3 +44,5 @@ After we hack enough code during these 2 day workshops the actual conference wil
 This is obviously A LOT OF new stuff. Here is the list of technologies I should get myself familiar with to avoid showing up clueless in the sessions:
 
 ![NDC Oslo Learning List](/assets/NDCOslo2014/NDCOslo_LearningList.png)
+
+That's it for now. More posts will follow during and after the conference.
