@@ -45,4 +45,4 @@ This is obviously A LOT OF new stuff. Here is the list of technologies I should 
 
 ![NDC Oslo Learning List](/assets/NDCOslo2014/NDCOslo_LearningList.png)
 
-That's it for now. More posts will follow during and after the conference.
+That's it for now. Probably more posts will follow during and after the conference.
