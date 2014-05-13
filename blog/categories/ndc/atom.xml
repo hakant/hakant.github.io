@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: NDC | Hakan Tuncer's Blog]]></title>
+  <link href="http://hakantuncer.com/blog/categories/ndc/atom.xml" rel="self"/>
+  <link href="http://hakantuncer.com/"/>
+  <updated>2014-05-13T23:58:06+02:00</updated>
+  <id>http://hakantuncer.com/</id>
+  <author>
+    <name><![CDATA[Hakan Tuncer]]></name>
+    <email><![CDATA[hakantuncer@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[NDC Oslo 2014]]></title>
+    <link href="http://hakantuncer.com/blog/2014/05/13/ndc-oslo-2014/"/>
+    <updated>2014-05-13T22:24:08+02:00</updated>
+    <id>http://hakantuncer.com/blog/2014/05/13/ndc-oslo-2014</id>
+    <content type="html"><![CDATA[<p>Yes! It&rsquo;s happening. We will be at <a href="http://www.ndcoslo.com/" target="_blank">NDC Oslo 2014</a> with 3 developers from NIPOSoftware. <a href="https://twitter.com/bjorn_coltof" target="_blank">Bjorn Coltof</a>, <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a> and I are going to be there between 2-6 of June. We&rsquo;ll be attending the conference as well as the pre-conference workshops. We&rsquo;re all pretty excited and it&rsquo;s going to be awesome. Connect with us if you&rsquo;re also going to be there! We can have a chat over a beer or two. All beers are on NIPOSoftware! (just testing if Jeroen Noordman, our CEO is reading this post. I should soon find out.)</p>
+
+<p>Let&rsquo;s get to the conference content. The sessions are so great that you wish you could have mitosis and attend at least a couple of them at the same time. But again life is all about priorities. Clarifying the priorities was tough.</p>
+
+<p>My thought process involved asking myself these questions:</p>
+
+<ul>
+<li>Am I particularly interested in the main subject of this session? (Doh!)</li>
+<li>Is this session content something I can find in books, online documents or Pluralsight courses? How original is it?</li>
+<li>..and of course it&rsquo;s preferable that I can apply this knowledge somewhere in the office like on <a href="http://nfieldmr.com/get-started.aspx" target="_blank">Nfield</a>.</li>
+</ul>
+
+
+<p>There is a bunch of <a href="http://www.ndcoslo.com/pre-conference-workshops" target="_blank">pre-conference workshops</a> that will take place in the first 2 days, right before the conference starts. First choice had to be made here. This is something you can&rsquo;t change afterwards. It&rsquo;s printed on the ticket.</p>
+
+<p>In the end Bjorn and I picked <a href="http://www.ndcoslo.com/pre-conference-workshop/identity-workshop/1750" target="_blank">Identity and access control for modern web applications and APIs (Dominick Baier &ndash; Brock Allen)</a> and Serif chose to stay away from us by enrolling in <a href="http://www.ndcoslo.com/pre-conference-workshop/angularjs-workshop/1865" target="_blank">AngularJS workshop (Scott Allen)</a>. Can&rsquo;t really blame him, I love Scott Allen&rsquo;s <a href="http://pluralsight.com/training/Authors/Details/scott-allen" target="_blank">Pluralsight courses.</a></p>
+
+<p>The most tricky part in this selection is that all &ldquo;interesting&rdquo; single day workshops are set for 3rd of June. So it becomes very hard to pick two separate single day workshops. This also goes as a feedback to NDC organizers. Don&rsquo;t do that again!</p>
+
+<p>After we hack enough code during these 2 day workshops the actual conference will start. Here are screenshots from the agenda together with my selections based on priority. I&rsquo;ve color coded the talks on the calender:</p>
+
+<br>
+
+
+<ul>
+<li><span style="color:red">Highest priority.</span></li>
+<li><span style="color:orange">Middle priority. Go to this one if you can&rsquo;t somehow make the one above.</span></li>
+<li><span style="color:green">Low priority. Go to this one if you can&rsquo;t make both of them above.</span></li>
+</ul>
+
+
+<p><img src="/assets/NDCOslo2014/NDCOslo_Wednesday.png" alt="NDC Oslo Wednesday Sessions" /></p>
+
+<br>
+
+
+<hr>
+
+
+<p><img src="/assets/NDCOslo2014/NDCOslo_Thursday.png" alt="NDC Oslo Thursday Sessions" /></p>
+
+<br>
+
+
+<hr>
+
+
+<p><img src="/assets/NDCOslo2014/NDCOslo_Friday.png" alt="NDC Oslo Friday Sessions" /></p>
+
+<p>This is obviously A LOT OF new stuff. Here is the list of technologies I should get myself familiar with to avoid showing up clueless in the sessions:</p>
+
+<p><img src="/assets/NDCOslo2014/NDCOslo_LearningList.png" alt="NDC Oslo Learning List" /></p>
+]]></content>
+  </entry>
+  
+</feed>
