@@ -9,9 +9,9 @@ sharing: true
 ---
 
 
-Yes! It's happening. We will be at <a href="http://www.ndcoslo.com/" target="_blank">NDC Oslo 2014</a> with 3 developers from NIPOSoftware. <a href="https://twitter.com/bjorn_coltof" target="_blank">Bjorn Coltof</a>, <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a> and I are going to be there between 2-6 of June. We'll be attending the conference as well as the pre-conference workshops. We're all pretty excited and it's going to be awesome. Connect with us if you're also going to be there! We can have a chat over a beer or two. All beers are on NIPOSoftware! (just testing if Jeroen Noordman, our CEO is reading this post. I should soon find out.)
+Yes! It's happening. We will be at <a href="http://www.ndcoslo.com/" target="_blank">NDC Oslo 2014</a> with 3 developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>. <a href="https://twitter.com/bjorn_coltof" target="_blank">Bjorn Coltof</a>, <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a> and I are going to be there between 2-6th of June. We'll be attending the conference as well as the pre-conference workshops. We're all pretty excited and it's going to be awesome. Connect with us if you're also going to be there! We can have a chat over a beer or two. All beers are on NIPO Software! (just testing if Jeroen Noordman, our CEO, is reading this post. I should soon find out).
 
-Let's get to the conference content. The sessions are so great that you wish you could have mitosis and attend at least a couple of them at the same time. But again life is all about priorities. Clarifying the priorities was tough.
+Let's get to the conference content. The sessions are so great that you wish you could have mitosis and attend at least a couple of them at the same time. But again life is all about priorities. Clarifying the priorities is tough.
 
 My thought process involved asking myself these questions:
 
@@ -30,7 +30,7 @@ After we hack enough code during these 2 day workshops the actual conference wil
 
 * <span style="color:red">Highest priority.</span>
 * <span style="color:orange">Middle priority. Go to this one if you can't somehow make the one above.</span>
-* <span style="color:green">Low priority. Go to this one if you can't make both of them above.</span>
+* <span style="color:green">Low priority. Go to this one if you can't make neither of above.</span>
 
 
 ![NDC Oslo Wednesday Sessions](/assets/NDCOslo2014/NDCOslo_Wednesday.png)
