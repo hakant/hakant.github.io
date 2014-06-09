@@ -8,29 +8,31 @@ footer: true
 sharing: true
 ---
 
-It's over. I'm back in Amsterdam after an awesome week in Oslo. Great sessions, lots of smart people, inspirations everywhere, variety of delicious food and very good coffee.
+It's over. I'm back in Amsterdam after an awesome week in Oslo. Great sessions, lots of smart people, delicious food and very good coffee. Inspirations everywhere.
 
-I didn't know Norwegians were this much into coffee drinking. I can easily say that I didn't drink a single cup of bad coffee in Oslo in 7 days. One of world's best coffeeshop Tim Wendelboe is also located in Oslo. But more on that later.
+I didn't know Norwegians were this much into coffee drinking. I can easily say that I didn't drink a single cup of bad coffee in Oslo in 7 days. One of the world's best coffee shop [Tim Wendelboe](https://timwendelboe.no/) is also located in Oslo. But more on that later.
 
 I've seen a lot of stuff and spent time with very smart people.
 
-Like I did with my previous conference visit in Microsoft / Seattle, I'll write down all the sessions I've attended, together with the links to the video recordings. I didn't know the sessions in NDC were recorded. That was a bit of a nice surprise in the beginning of the conference. Deciding which sessions to attended became a lot easier afterwards. Now I can basically see anything I missed if I want.
+Like I did with my previous conference visit in Microsoft / Seattle, I'll write down all the sessions I've attended, together with the links to the video recordings. 
+
+I didn't know the sessions in NDC were recorded. That was a bit of a nice surprise in the beginning of the conference. Deciding which sessions to attended became a lot easier afterwards. Now I can basically see anything I missed if I want.
 
 ## Workshops
 
 Attending the workshops was the best decision we've made. By far the most educative part of the conference. 2 days of workshop gives enough time to properly dive into a broad topic, allows a good deal of Q/A and lab time.
 
-The workshop was titled as "Identity and Access Control for modern web applications and API's". From Dominick Baier and Brock Allen. 10 out of 10 for those guys. They were well prepared, and were very responsive.
+The workshop I attended was titled as "Identity and Access Control for modern web applications and API's". From Dominick Baier and Brock Allen. 10 out of 10 for those guys. They were well prepared. They were also very responsive to the questions from the attendees.
 
-Unfortunately there is no video recording here. I have pdf's and lab solutions which I'll share in this blog post.
+Unfortunately there is no video recording here. I have pdf's and lab solutions which I'll share in this blog post. Just download [this zip file](#here).
 
-We've covered everything from old security techniques to modern ones. Here are the main points: 
+We've covered everything from the old security techniques to the modern ones. Here are some of the main points: 
 
 * Using security tokens and claims based authentication & authorization is the way to go in to the future. 
 * Separating authentication to another shared service is a good technique once you have multiple services in your deployment. This security service will issue access tokens for other services in the system to consume. This avoids repetition of security related code in every other service in the system. Enables DRY. Single point of configuration and control. Good stuff.
-* Microsoft is already moving in this direction with OWIN and Katana. Claims based identity is baked into the framework at the moment. And there are a number of Katana middlewares that implement token based authentication.
+* Microsoft is already moving in this direction with [OWIN](http://owin.org/) and [Katana](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Claims based identity is baked into the framework at the moment. And there are a number of Katana middlewares that implement token based authentication.
 
-I've left the workshop with many ideas and improvements that can be applied to Nfield. Enabling more secure access scenarios. And making security implementation more elegant.
+I've left the workshop with some ideas and improvements that can be applied to <a href="http://nfieldmr.com/get-started.aspx" target="_blank">Nfield</a>. Ideas that can enable securer access scenarios and can make security implementation more elegant.
 
 ## Keynote
 <br>
@@ -38,7 +40,7 @@ I've left the workshop with many ideas and improvements that can be applied to N
 
 If you're doing anything remotely related to UI or UX design you have to see this keynote. Period.
 
-More and more companies are realizing that the intuitiveness and ease of use of their applications are very critical to their competitive advantage. How many taps or clicks does it take to achieve something? Think again. It's a matter of people using or quiting your application.
+More and more companies are realizing that the intuitiveness and ease of use of their applications are very critical to their competitive advantage. How many taps or clicks does it take to achieve something in your mobile application? Think again. It's a matter of people using or quiting it.
 
 Luke Wroblewski will blow your mind with the statistics and examples he puts up on the screen.
 
