@@ -1,0 +1,100 @@
+---
+layout: post
+title: "After NDC Oslo 2014"
+date: 2014-06-08 15:39:52 +0200
+comments: true
+categories: [conferences, NDC, Oslo]
+footer: true
+sharing: true
+---
+
+It's over. I'm back in Amsterdam after an awesome week in Oslo. Great sessions, lots of smart people, inspirations everywhere, variety of delicious food and very good coffee.
+
+I didn't know Norwegians were this much into coffee drinking. I can easily say that I didn't drink a single cup of bad coffee in Oslo in 7 days. One of world's best coffeeshop Tim Wendelboe is also located in Oslo. But more on that later.
+
+I've seen a lot of stuff and spent time with very smart people.
+
+Like I did with my previous conference visit in Microsoft / Seattle, I'll write down all the sessions I've attended, together with the links to the video recordings. I didn't know the sessions in NDC were recorded. That was a bit of a nice surprise in the beginning of the conference. Deciding which sessions to attended became a lot easier afterwards. Now I can basically see anything I missed if I want.
+
+## Workshops
+
+Attending the workshops was the best decision we've made. By far the most educative part of the conference. 2 days of workshop gives enough time to properly dive into a broad topic, allows a good deal of Q/A and lab time.
+
+The workshop was titled as "Identity and Access Control for modern web applications and API's". From Dominick Baier and Brock Allen. 10 out of 10 for those guys. They were well prepared, and were very responsive.
+
+Unfortunately there is no video recording here. I have pdf's and lab solutions which I'll share in this blog post.
+
+We've covered everything from old security techniques to modern ones. Here are the main points: 
+
+* Using security tokens and claims based authentication & authorization is the way to go in to the future. 
+* Separating authentication to another shared service is a good technique once you have multiple services in your deployment. This security service will issue access tokens for other services in the system to consume. This avoids repetition of security related code in every other service in the system. Enables DRY. Single point of configuration and control. Good stuff.
+* Microsoft is already moving in this direction with OWIN and Katana. Claims based identity is baked into the framework at the moment. And there are a number of Katana middlewares that implement token based authentication.
+
+I've left the workshop with many ideas and improvements that can be applied to Nfield. Enabling more secure access scenarios. And making security implementation more elegant.
+
+## Keynote
+<br>
+* <a href="http://vimeo.com/97305189" target="_blank">It’s a Write/Read (Mobile) Web</a>
+
+If you're doing anything remotely related to UI or UX design you have to see this keynote. Period.
+
+More and more companies are realizing that the intuitiveness and ease of use of their applications are very critical to their competitive advantage. How many taps or clicks does it take to achieve something? Think again. It's a matter of people using or quiting your application.
+
+Luke Wroblewski will blow your mind with the statistics and examples he puts up on the screen.
+
+## Sessions - 4 June 2014
+<br>
+
+* <a href="http://vimeo.com/97315938" target="_blank">Immutability, State and Scale - Functional, Distributed Applications in Azure</a>
+
+* <a href="http://vimeo.com/97318800" target="_blank">Banish Your Inner Critic</a>
+
+* <a href="http://vimeo.com/97329157" target="_blank">Seven Ineffective Coding Habits of Many Programmers</a>
+
+* <a href="http://vimeo.com/97337304" target="_blank">Async C# 5.0 - Patters For Real World Use</a>
+
+* <a href="http://vimeo.com/97344528" target="_blank">Builders versus breakers – 10 online attacks we could have easily prevented</a>
+
+* <a href="http://vimeo.com/97349267" target="_blank">Managing Asynchronicity</a>
+
+
+## Sessions - 5 June 2014
+<br>
+
+* <a href="http://vimeo.com/97408202" target="_blank">Javascript Combinators</a>
+
+* <a href="http://vimeo.com/97415351" target="_blank">An Actor's Life for Me – An introduction to the TPL Dataflow Library and asynchronous programming blocks</a>
+
+* <a href="http://vimeo.com/97419151" target="_blank">Zone out, check in, move on</a>
+
+Nice blog post about this: http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/
+
+* <a href="http://vimeo.com/97473703" target="_blank">GitHub Power Tools</a>
+
+* <a href="http://vimeo.com/97501414" target="_blank">Node.JS Tools For Front-End Developers</a>
+
+* <a href="http://vimeo.com/97505678" target="_blank">The Future of ASP.NET Part II</a>
+
+* <a href="http://vimeo.com/97507560" target="_blank">From Code Monkey to Boss Man</a>
+
+* <a href="http://vimeo.com/97454683" target="_blank">Fun with JavaScript</a>
+
+## Sessions - 6 June 2014
+<br>
+
+* <a href="http://vimeo.com/84676527" target="_blank">Functional Programming: What? Why? When?</a>
+
+* <a href="http://vimeo.com/97516214" target="_blank">Data Modeling Examples in the Real World with MongoDB</a>
+
+* <a href="http://vimeo.com/97519532" target="_blank">Transforming your C# code to functional style</a>
+
+* <a href="http://vimeo.com/97530814" target="_blank">How I hacked my way to Norway</a>
+
+* <a href="http://vimeo.com/97537675" target="_blank">Towards an Evolutionary Architecture</a>
+
+* <a href="http://vimeo.com/97541185" target="_blank">Core Software Design Principles</a>
+
+
+
+
+
