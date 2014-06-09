@@ -22,7 +22,7 @@ I didn't know the sessions in NDC were recorded. That was a bit of a nice surpri
 
 Attending the workshops was the best decision we've made. By far the most educative part of the conference. 2 days of workshop gives enough time to properly dive into a broad topic, allows a good deal of Q/A and lab time.
 
-The workshop I attended was titled as "Identity and Access Control for modern web applications and API's". From Dominick Baier and Brock Allen. 10 out of 10 for those guys. They were well prepared. They were also very responsive to the questions from the attendees.
+The workshop I attended was titled as "Identity and Access Control for modern web applications and API's". From [Dominick Baier](https://twitter.com/leastprivilege) and [Brock Allen](https://twitter.com/BrockLAllen). 10 out of 10 for those guys. They were well prepared. They were also very responsive to the questions from the attendees.
 
 Unfortunately there is no video recording here. I have pdf's and lab solutions which I'll share in this blog post. Just download [this zip file](#here).
 
@@ -51,13 +51,19 @@ Luke Wroblewski will blow your mind with the statistics and examples he puts up 
 
 * <a href="http://vimeo.com/97318800" target="_blank">Banish Your Inner Critic</a>
 
+I'd read a couple of essays written by [Denise Jacobs](https://twitter.com/denisejacobs) about creativity and productivity. I wanted to attend one of her sessions. She explains how to stop (or ignore) your inner critic that tries it's best to scare you from failure and to kill your creativity.
+
 * <a href="http://vimeo.com/97329157" target="_blank">Seven Ineffective Coding Habits of Many Programmers</a>
 
 * <a href="http://vimeo.com/97337304" target="_blank">Async C# 5.0 - Patters For Real World Use</a>
 
 * <a href="http://vimeo.com/97344528" target="_blank">Builders versus breakers – 10 online attacks we could have easily prevented</a>
 
+[Troy Hunt](https://twitter.com/troyhunt)'s talks are like exciting science fiction movies. You don't want it to end, but then time flies quickly. The title is self explanatory. Very interesting online attack stories and most destructive ones have happened in the last 2 years. Maybe this is a sign for what's about to come in the future. Data theft at it's best.
+
 * <a href="http://vimeo.com/97349267" target="_blank">Managing Asynchronicity</a>
+
+One doesn't get to see [Douglas Crockford](http://en.wikipedia.org/wiki/Douglas_Crockford) in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talked about what asynchronicity is, it's effects to our programs and how we can best test these async scenarios using a testing tool called [JSCheck](http://www.jscheck.org).
 
 
 ## Sessions - 5 June 2014
@@ -65,11 +71,21 @@ Luke Wroblewski will blow your mind with the statistics and examples he puts up 
 
 * <a href="http://vimeo.com/97408202" target="_blank">Javascript Combinators</a>
 
+I'm finding Javascript combinators very interesting. Javascript has [first class functions](http://en.wikipedia.org/wiki/First-class_function) meaning that a lot of interesting things can be done with them. Once you start combining and decorating functions with other functions, very interesting ways of expressing programs start to appear. 
+
+Suprisingly programs become DSL-like and more readable because instead of "HOW" the program syntax starts to tell "WHAT". Making it more declarative than imperative.
+
+I really loved this session and the way [Reginald Braithwaite](https://twitter.com/raganwald) presented. I'm hoping to find time to read his book as well: [JavaScript Allonge](http://www.amazon.com/Javascript-Allong%C3%A9-Reginald-Braithwaite-ebook/dp/B00FLKRCVO)
+
 * <a href="http://vimeo.com/97415351" target="_blank">An Actor's Life for Me – An introduction to the TPL Dataflow Library and asynchronous programming blocks</a>
 
 * <a href="http://vimeo.com/97419151" target="_blank">Zone out, check in, move on</a>
 
-Nice blog post about this: http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/
+As programmers our "flow" is something sacred to us. When we're concentrated and in flow we must not be interrupted because it annoys us and costs us too much time to get back into flow again.
+
+[Mark Seemann](https://twitter.com/ploeh) thinks interruptions are going to happen. Instead of trying to avoid them he focuses on ways of working that will allow him to get back into flow easier and much faster.
+
+I've come across a [nice summary blog post](http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/) about this session.
 
 * <a href="http://vimeo.com/97473703" target="_blank">GitHub Power Tools</a>
 
