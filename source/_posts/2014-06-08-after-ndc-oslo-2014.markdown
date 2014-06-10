@@ -24,7 +24,7 @@ Attending the workshops was the best decision we've made. By far the most educat
 
 The workshop I attended was titled as "Identity and Access Control for modern web applications and API's". From [Dominick Baier](https://twitter.com/leastprivilege) and [Brock Allen](https://twitter.com/BrockLAllen). 10 out of 10 for those guys. They were well prepared. They were also very responsive to the questions from the attendees.
 
-Unfortunately there is no video recording here. I have pdf's and lab solutions which I'll share in this blog post. Just download [this zip file](#here).
+Unfortunately there is no video recording here. I have pdf's and lab solutions which I'll share in a next blog post.
 
 We've covered everything from the old security techniques to the modern ones. Here are some of the main points: 
 
@@ -59,11 +59,12 @@ I'd read a couple of essays written by [Denise Jacobs](https://twitter.com/denis
 
 * <a href="http://vimeo.com/97344528" target="_blank">Builders versus breakers – 10 online attacks we could have easily prevented</a>
 
-[Troy Hunt](https://twitter.com/troyhunt)'s talks are like exciting science fiction movies. You don't want it to end, but then time flies quickly. The title is self explanatory. Very interesting online attack stories and most destructive ones have happened in the last 2 years. Maybe this is a sign for what's about to come in the future. Data theft at it's best.
+[Troy Hunt](https://twitter.com/troyhunt)'s talks are like exciting science fiction movies. You don't want it to end, but time flies quickly. The title of the talk is self explanatory. It's about a bunch of very interesting online attacks happened in history and most destructive ones have happened in the last 2 years. Maybe this is a sign for what's about to come in the future. Data theft at it's best.
+<br>
 
 * <a href="http://vimeo.com/97349267" target="_blank">Managing Asynchronicity</a>
 
-One doesn't get to see [Douglas Crockford](http://en.wikipedia.org/wiki/Douglas_Crockford) in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talked about what asynchronicity is, it's effects to our programs and how we can best test these async scenarios using a testing tool called [JSCheck](http://www.jscheck.org).
+One doesn't get to see [Douglas Crockford](http://en.wikipedia.org/wiki/Douglas_Crockford) in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talks about what asynchronicity is, it's effects to our programs and how we can best test these async scenarios using a testing tool called [JSCheck](http://www.jscheck.org).
 
 
 ## Sessions - 5 June 2014
@@ -73,9 +74,9 @@ One doesn't get to see [Douglas Crockford](http://en.wikipedia.org/wiki/Douglas_
 
 I'm finding Javascript combinators very interesting. Javascript has [first class functions](http://en.wikipedia.org/wiki/First-class_function) meaning that a lot of interesting things can be done with them. Once you start combining and decorating functions with other functions, very interesting ways of expressing programs start to appear. 
 
-Suprisingly programs become DSL-like and more readable because instead of "HOW" the program syntax starts to tell "WHAT". Making it more declarative than imperative.
+Surprisingly programs become DSL-like and more readable because instead of "HOW" the program syntax starts to tell "WHAT". Making it more declarative than imperative.
 
-I really loved this session and the way [Reginald Braithwaite](https://twitter.com/raganwald) presented. I'm hoping to find time to read his book as well: [JavaScript Allonge](http://www.amazon.com/Javascript-Allong%C3%A9-Reginald-Braithwaite-ebook/dp/B00FLKRCVO)
+I really loved this session and the way [Reginald Braithwaite](https://twitter.com/raganwald) presented it. I'm hoping to find time to read his book [JavaScript Allonge](http://www.amazon.com/Javascript-Allong%C3%A9-Reginald-Braithwaite-ebook/dp/B00FLKRCVO).
 
 * <a href="http://vimeo.com/97415351" target="_blank">An Actor's Life for Me – An introduction to the TPL Dataflow Library and asynchronous programming blocks</a>
 
@@ -83,11 +84,14 @@ I really loved this session and the way [Reginald Braithwaite](https://twitter.c
 
 As programmers our "flow" is something sacred to us. When we're concentrated and in flow we must not be interrupted because it annoys us and costs us too much time to get back into flow again.
 
-[Mark Seemann](https://twitter.com/ploeh) thinks interruptions are going to happen. Instead of trying to avoid them he focuses on ways of working that will allow him to get back into flow easier and much faster.
+[Mark Seemann](https://twitter.com/ploeh) thinks interruptions are going to happen no matter what. Instead of trying to avoid them he focuses on ways of working that will allow him to get back into flow easier and much faster.
 
-I've come across a [nice summary blog post](http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/) about this session.
+I've come across a nice [summary blog post](http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/) about this session.
+<br>
 
 * <a href="http://vimeo.com/97473703" target="_blank">GitHub Power Tools</a>
+
+This is a useful hands-on session on using GitHub. It's not focused on Git but more about what you can do with GitHub itself. GitHub is more than only Git and has many features for letting developers collaborate on open source projects effectively.
 
 * <a href="http://vimeo.com/97501414" target="_blank">Node.JS Tools For Front-End Developers</a>
 
@@ -102,17 +106,37 @@ I've come across a [nice summary blog post](http://gallarotti.github.io/digitali
 
 * <a href="http://vimeo.com/84676527" target="_blank">Functional Programming: What? Why? When?</a>
 
+Just like with Douglas Crockford, you don't leave a conference without attending a session given by [Bob Martin](https://twitter.com/unclebobmartin). This is one of those talks with some "aha" moments about functional programming.
+
+One thing that I found really interesting is a book that Uncle Bob mentions during his talk. The book is called [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/full-text/book/book.html) which he praised a lot. At some point during his talk he said something along the lines of the following: 
+
+>..almost near the end of the book the authors wrote a couple of pages worth apologies on what's about to come, and then they introduced the assignment statement.. 
+
+This amazed me. They could write almost the whole book without the assignment statement (read as pure functional) and then they introduced it like as if it was a defect in software programs. Funny.
+
 * <a href="http://vimeo.com/97516214" target="_blank">Data Modeling Examples in the Real World with MongoDB</a>
 
 * <a href="http://vimeo.com/97519532" target="_blank">Transforming your C# code to functional style</a>
 
+One of the most effective and indulging sessions I've attended in this conference. I highly recommend everybody to see it. Don't expect complex code examples. [Venkat Subramaniam](https://twitter.com/venkat_s) uses simple examples to make his point. Just listen to what he has to say about functional programming, he'll open up your mind.
+<br>
+
 * <a href="http://vimeo.com/97530814" target="_blank">How I hacked my way to Norway</a>
+
+Another Troy Hunt show off session. He talks about a couple of highly effective web attacks. Watch it if you're looking for fun, but basically it all comes down to a couple of main points:
+
+1. Never ever display a login form on an HTTP connection. Even if you're posting that form to an HTTPS endpoint. A man in the middle can change the form to somewhere else and steal your credentials without you knowing it. Turns out that Iranian government used this technique to steal it's citizens' Facebook credentials for a while before Facebook woke up and made their login page HTTPS only.
+
+2. Always be careful with SQL injection. If you're using latest frameworks you're mostly covered.
+
+3. Make sure your username & password challenge is computationally costly and time-consuming. If an attacker gets a hold of your user database and decides to convert them to clean text, he should be slowed down. It turns out that simple hashing and salting algorithms are easy to break with rainbow table attacks. Even the ASP.NET Membership implementation from 2010.
+<br>
 
 * <a href="http://vimeo.com/97537675" target="_blank">Towards an Evolutionary Architecture</a>
 
 * <a href="http://vimeo.com/97541185" target="_blank">Core Software Design Principles</a>
 
-
+This is what I want to share right now. Maybe I can dive into a number of these topics in some of my next blog posts. Thanks for reading.
 
 
 
