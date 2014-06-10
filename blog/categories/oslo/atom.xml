@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Oslo | Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/blog/categories/oslo/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2014-06-09T22:57:37+02:00</updated>
+  <updated>2014-06-11T00:06:12+02:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -34,7 +34,7 @@
 
 <p>The workshop I attended was titled as &ldquo;Identity and Access Control for modern web applications and API&rsquo;s&rdquo;. From <a href="https://twitter.com/leastprivilege">Dominick Baier</a> and <a href="https://twitter.com/BrockLAllen">Brock Allen</a>. 10 out of 10 for those guys. They were well prepared. They were also very responsive to the questions from the attendees.</p>
 
-<p>Unfortunately there is no video recording here. I have pdf&rsquo;s and lab solutions which I&rsquo;ll share in this blog post. Just download <a href="#here">this zip file</a>.</p>
+<p>Unfortunately there is no video recording here. I have pdf&rsquo;s and lab solutions which I&rsquo;ll share in a next blog post.</p>
 
 <p>We&rsquo;ve covered everything from the old security techniques to the modern ones. Here are some of the main points:</p>
 
@@ -83,14 +83,17 @@
 </ul>
 
 
-<p><a href="https://twitter.com/troyhunt">Troy Hunt</a>&rsquo;s talks are like exciting science fiction movies. You don&rsquo;t want it to end, but then time flies quickly. The title is self explanatory. Very interesting online attack stories and most destructive ones have happened in the last 2 years. Maybe this is a sign for what&rsquo;s about to come in the future. Data theft at it&rsquo;s best.</p>
+<p><a href="https://twitter.com/troyhunt">Troy Hunt</a>&rsquo;s talks are like exciting science fiction movies. You don&rsquo;t want it to end, but time flies quickly. The title of the talk is self explanatory. It&rsquo;s about a bunch of very interesting online attacks happened in history and most destructive ones have happened in the last 2 years. Maybe this is a sign for what&rsquo;s about to come in the future. Data theft at it&rsquo;s best.</p>
+
+<br>
+
 
 <ul>
 <li><a href="http://vimeo.com/97349267" target="_blank">Managing Asynchronicity</a></li>
 </ul>
 
 
-<p>One doesn&rsquo;t get to see <a href="http://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a> in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talked about what asynchronicity is, it&rsquo;s effects to our programs and how we can best test these async scenarios using a testing tool called <a href="http://www.jscheck.org">JSCheck</a>.</p>
+<p>One doesn&rsquo;t get to see <a href="http://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a> in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talks about what asynchronicity is, it&rsquo;s effects to our programs and how we can best test these async scenarios using a testing tool called <a href="http://www.jscheck.org">JSCheck</a>.</p>
 
 <h2>Sessions &ndash; 5 June 2014</h2>
 
@@ -104,9 +107,9 @@
 
 <p>I&rsquo;m finding Javascript combinators very interesting. Javascript has <a href="http://en.wikipedia.org/wiki/First-class_function">first class functions</a> meaning that a lot of interesting things can be done with them. Once you start combining and decorating functions with other functions, very interesting ways of expressing programs start to appear.</p>
 
-<p>Suprisingly programs become DSL-like and more readable because instead of &ldquo;HOW&rdquo; the program syntax starts to tell &ldquo;WHAT&rdquo;. Making it more declarative than imperative.</p>
+<p>Surprisingly programs become DSL-like and more readable because instead of &ldquo;HOW&rdquo; the program syntax starts to tell &ldquo;WHAT&rdquo;. Making it more declarative than imperative.</p>
 
-<p>I really loved this session and the way <a href="https://twitter.com/raganwald">Reginald Braithwaite</a> presented. I&rsquo;m hoping to find time to read his book as well: <a href="http://www.amazon.com/Javascript-Allong%C3%A9-Reginald-Braithwaite-ebook/dp/B00FLKRCVO">JavaScript Allonge</a></p>
+<p>I really loved this session and the way <a href="https://twitter.com/raganwald">Reginald Braithwaite</a> presented it. I&rsquo;m hoping to find time to read his book <a href="http://www.amazon.com/Javascript-Allong%C3%A9-Reginald-Braithwaite-ebook/dp/B00FLKRCVO">JavaScript Allonge</a>.</p>
 
 <ul>
 <li><p><a href="http://vimeo.com/97415351" target="_blank">An Actor&rsquo;s Life for Me – An introduction to the TPL Dataflow Library and asynchronous programming blocks</a></p></li>
@@ -116,12 +119,21 @@
 
 <p>As programmers our &ldquo;flow&rdquo; is something sacred to us. When we&rsquo;re concentrated and in flow we must not be interrupted because it annoys us and costs us too much time to get back into flow again.</p>
 
-<p><a href="https://twitter.com/ploeh">Mark Seemann</a> thinks interruptions are going to happen. Instead of trying to avoid them he focuses on ways of working that will allow him to get back into flow easier and much faster.</p>
+<p><a href="https://twitter.com/ploeh">Mark Seemann</a> thinks interruptions are going to happen no matter what. Instead of trying to avoid them he focuses on ways of working that will allow him to get back into flow easier and much faster.</p>
 
-<p>I&rsquo;ve come across a <a href="http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/">nice summary blog post</a> about this session.</p>
+<p>I&rsquo;ve come across a nice <a href="http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/">summary blog post</a> about this session.</p>
+
+<br>
+
 
 <ul>
-<li><p><a href="http://vimeo.com/97473703" target="_blank">GitHub Power Tools</a></p></li>
+<li><a href="http://vimeo.com/97473703" target="_blank">GitHub Power Tools</a></li>
+</ul>
+
+
+<p>This is a useful hands-on session on using GitHub. It&rsquo;s not focused on Git but more about what you can do with GitHub itself. GitHub is more than only Git and has many features for letting developers collaborate on open source projects effectively.</p>
+
+<ul>
 <li><p><a href="http://vimeo.com/97501414" target="_blank">Node.JS Tools For Front-End Developers</a></p></li>
 <li><p><a href="http://vimeo.com/97505678" target="_blank">The Future of ASP.NET Part II</a></p></li>
 <li><p><a href="http://vimeo.com/97507560" target="_blank">From Code Monkey to Boss Man</a></p></li>
@@ -135,14 +147,53 @@
 
 
 <ul>
-<li><p><a href="http://vimeo.com/84676527" target="_blank">Functional Programming: What? Why? When?</a></p></li>
+<li><a href="http://vimeo.com/84676527" target="_blank">Functional Programming: What? Why? When?</a></li>
+</ul>
+
+
+<p>Just like with Douglas Crockford, you don&rsquo;t leave a conference without attending a session given by <a href="https://twitter.com/unclebobmartin">Bob Martin</a>. This is one of those talks with some &ldquo;aha&rdquo; moments about functional programming.</p>
+
+<p>One thing that I found really interesting is a book that Uncle Bob mentions during his talk. The book is called <a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">Structure and Interpretation of Computer Programs</a> which he praised a lot. At some point during his talk he said something along the lines of the following:</p>
+
+<blockquote><p>..almost near the end of the book the authors wrote a couple of pages worth apologies on what&rsquo;s about to come, and then they introduced the assignment statement..</p></blockquote>
+
+<p>This amazed me. They could write almost the whole book without the assignment statement (read as pure functional) and then they introduced it like as if it was a defect in software programs. Funny.</p>
+
+<ul>
 <li><p><a href="http://vimeo.com/97516214" target="_blank">Data Modeling Examples in the Real World with MongoDB</a></p></li>
 <li><p><a href="http://vimeo.com/97519532" target="_blank">Transforming your C# code to functional style</a></p></li>
-<li><p><a href="http://vimeo.com/97530814" target="_blank">How I hacked my way to Norway</a></p></li>
+</ul>
+
+
+<p>One of the most effective and indulging sessions I&rsquo;ve attended in this conference. I highly recommend everybody to see it. Don&rsquo;t expect complex code examples. <a href="https://twitter.com/venkat_s">Venkat Subramaniam</a> uses simple examples to make his point. Just listen to what he has to say about functional programming, he&rsquo;ll open up your mind.</p>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/97530814" target="_blank">How I hacked my way to Norway</a></li>
+</ul>
+
+
+<p>Another Troy Hunt show off session. He talks about a couple of highly effective web attacks. Watch it if you&rsquo;re looking for fun, but basically it all comes down to a couple of main points:</p>
+
+<ol>
+<li><p>Never ever display a login form on an HTTP connection. Even if you&rsquo;re posting that form to an HTTPS endpoint. A man in the middle can change the form to somewhere else and steal your credentials without you knowing it. Turns out that Iranian government used this technique to steal it&rsquo;s citizens' Facebook credentials for a while before Facebook woke up and made their login page HTTPS only.</p></li>
+<li><p>Always be careful with SQL injection. If you&rsquo;re using latest frameworks you&rsquo;re mostly covered.</p></li>
+<li><p>Make sure your username &amp; password challenge is computationally costly and time-consuming. If an attacker gets a hold of your user database and decides to convert them to clean text, he should be slowed down. It turns out that simple hashing and salting algorithms are easy to break with rainbow table attacks. Even the ASP.NET Membership implementation from 2010.</p></li>
+</ol>
+
+
+<br>
+
+
+<ul>
 <li><p><a href="http://vimeo.com/97537675" target="_blank">Towards an Evolutionary Architecture</a></p></li>
 <li><p><a href="http://vimeo.com/97541185" target="_blank">Core Software Design Principles</a></p></li>
 </ul>
 
+
+<p>This is what I want to share right now. Maybe I can dive into a number of these topics in some of my next blog posts. Thanks for reading.</p>
 ]]></content>
   </entry>
   
