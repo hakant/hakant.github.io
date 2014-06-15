@@ -76,7 +76,7 @@ Yesterday I woke up to an [annoucement from Microsoft](http://view.email.microso
 
 Let's look at each option and see what it means:
 
-* __Restore to an alternate	Azure region__: This phrase means "no silver bullet". Basic type database owners are responsible with their own backup and restore operations. Luckily there is a convenient way to backup and restore an Azure SQL Database regardless of it's type.
+* __Restore to an alternate	Azure region__: This phrase means "no silver bullet". Basic type database owners are responsible with their own backup and restore operations. Luckily there is a convenient way to backup and restore an Azure SQL Database regardless of its type.
 <br>
 
 ##### Automatic Database Export:
