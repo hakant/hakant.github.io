@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Conferences | Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/blog/categories/conferences/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2014-06-11T00:06:12+02:00</updated>
+  <updated>2014-06-15T21:46:04+02:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -74,7 +74,7 @@
 </ul>
 
 
-<p>I&rsquo;d read a couple of essays written by <a href="https://twitter.com/denisejacobs">Denise Jacobs</a> about creativity and productivity. I wanted to attend one of her sessions. She explains how to stop (or ignore) your inner critic that tries it&rsquo;s best to scare you from failure and to kill your creativity.</p>
+<p>I&rsquo;d read a couple of essays written by <a href="https://twitter.com/denisejacobs">Denise Jacobs</a> about creativity and productivity. I wanted to attend one of her sessions. She explains how to stop (or ignore) your inner critic that tries its best to scare you from failure and to kill your creativity.</p>
 
 <ul>
 <li><p><a href="http://vimeo.com/97329157" target="_blank">Seven Ineffective Coding Habits of Many Programmers</a></p></li>
@@ -83,7 +83,7 @@
 </ul>
 
 
-<p><a href="https://twitter.com/troyhunt">Troy Hunt</a>&rsquo;s talks are like exciting science fiction movies. You don&rsquo;t want it to end, but time flies quickly. The title of the talk is self explanatory. It&rsquo;s about a bunch of very interesting online attacks happened in history and most destructive ones have happened in the last 2 years. Maybe this is a sign for what&rsquo;s about to come in the future. Data theft at it&rsquo;s best.</p>
+<p><a href="https://twitter.com/troyhunt">Troy Hunt</a>&rsquo;s talks are like exciting science fiction movies. You don&rsquo;t want it to end, but time flies quickly. The title of the talk is self explanatory. It&rsquo;s about a bunch of very interesting online attacks happened in history and most destructive ones have happened in the last 2 years. Maybe this is a sign for what&rsquo;s about to come in the future. Data theft at its best.</p>
 
 <br>
 
@@ -93,7 +93,7 @@
 </ul>
 
 
-<p>One doesn&rsquo;t get to see <a href="http://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a> in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talks about what asynchronicity is, it&rsquo;s effects to our programs and how we can best test these async scenarios using a testing tool called <a href="http://www.jscheck.org">JSCheck</a>.</p>
+<p>One doesn&rsquo;t get to see <a href="http://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a> in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talks about what asynchronicity is, its effects to our programs and how we can best test these async scenarios using a testing tool called <a href="http://www.jscheck.org">JSCheck</a>.</p>
 
 <h2>Sessions &ndash; 5 June 2014</h2>
 
@@ -178,7 +178,7 @@
 <p>Another Troy Hunt show off session. He talks about a couple of highly effective web attacks. Watch it if you&rsquo;re looking for fun, but basically it all comes down to a couple of main points:</p>
 
 <ol>
-<li><p>Never ever display a login form on an HTTP connection. Even if you&rsquo;re posting that form to an HTTPS endpoint. A man in the middle can change the form to somewhere else and steal your credentials without you knowing it. Turns out that Iranian government used this technique to steal it&rsquo;s citizens' Facebook credentials for a while before Facebook woke up and made their login page HTTPS only.</p></li>
+<li><p>Never ever display a login form on an HTTP connection. Even if you&rsquo;re posting that form to an HTTPS endpoint. A man in the middle can change the form to somewhere else and steal your credentials without you knowing it. Turns out that Iranian government used this technique to steal its citizens' Facebook credentials for a while before Facebook woke up and made their login page HTTPS only.</p></li>
 <li><p>Always be careful with SQL injection. If you&rsquo;re using latest frameworks you&rsquo;re mostly covered.</p></li>
 <li><p>Make sure your username &amp; password challenge is computationally costly and time-consuming. If an attacker gets a hold of your user database and decides to convert them to clean text, he should be slowed down. It turns out that simple hashing and salting algorithms are easy to break with rainbow table attacks. Even the ASP.NET Membership implementation from 2010.</p></li>
 </ol>
