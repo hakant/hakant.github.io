@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Azure | Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/blog/categories/azure/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2014-06-15T21:46:04+02:00</updated>
+  <updated>2014-06-15T21:52:09+02:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -101,7 +101,7 @@
 <p>Let&rsquo;s look at each option and see what it means:</p>
 
 <ul>
-<li><strong>Restore to an alternate Azure region</strong>: This phrase means &ldquo;no silver bullet&rdquo;. Basic type database owners are responsible with their own backup and restore operations. Luckily there is a convenient way to backup and restore an Azure SQL Database regardless of it&rsquo;s type.</li>
+<li><strong>Restore to an alternate Azure region</strong>: This phrase means &ldquo;no silver bullet&rdquo;. Basic type database owners are responsible with their own backup and restore operations. Luckily there is a convenient way to backup and restore an Azure SQL Database regardless of its type.</li>
 </ul>
 
 
