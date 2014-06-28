@@ -977,7 +977,10 @@ article .entry-content .video-container iframe,article .entry-content .video-con
 }
 
 @media screen and (max-width: 800px) {
-    .post .meta .date,.post .meta .tags,.post .meta .comments {
+    .post .meta .date,
+    .post .meta .tags,
+    .post .meta .comments,
+    .post .meta .twitter {
         display: -moz-inline-stack;
         display: inline-block;
         vertical-align: middle;
