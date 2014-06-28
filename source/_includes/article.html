@@ -1,10 +1,15 @@
 {% if index %}
 	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
 		<div class="date">{% include post/date.html %}{{ time }}</div>
 		<div class="tags">{% include post/categories.html %}</div>
 		{% if site.disqus_short_name and site.disqus_show_comment_count == true %}
 			<span class="comments"><a href="{{ root_url }}{{ post.url }}#disqus_thread">Comments</a></span>
 		{% endif %}
+
 	</div>
 	<h1 class="title" itemprop="name"><a href="{{ root_url }}{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
 	<div class="entry-content" itemprop="articleBody">
@@ -14,6 +19,10 @@
 	</div>
 {% else %}
 	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
 		<div class="date">{% include post/date.html %}{{ time }}</div>
 		<div class="tags">{% include post/categories.html %}</div>
 		{% if site.disqus_short_name and site.disqus_show_comment_count == true %}
