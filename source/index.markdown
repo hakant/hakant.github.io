@@ -33,7 +33,7 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 
 * **$100 Startup** is a fantastic book for learning to create and sell value while doing what you love. This book is full of inspirational examples and sound strategies.
 
-* **Patterns of Enterprise Application Architecture** is a design patterns bible. Reading these kind of books line by line is though. Scanning them through is easier and more powerful. This way you learn what patterns are available to you. Learning the instinctive wisdom of when to bring which one is important.
+* **Patterns of Enterprise Application Architecture** is a design patterns bible. Reading these kind of books line by line is tough. Scanning them through is easier and more powerful. This way you learn what patterns are available to you. Learning the instinctive wisdom of when to bring which one is important.
 
 ![$100 Startup](http://ecx.images-amazon.com/images/I/51xrSIGzOdL._SY344_PJ-v2,TopRight,1,0_SH20_BO1,204,203,200_.jpg)
 ![Patterns of Enterprise Application Architecture](http://ecx.images-amazon.com/images/I/51qUDlTiScL._BO2,204,203,200_PIsitb_AA300_SH20_OU01_.jpg)
