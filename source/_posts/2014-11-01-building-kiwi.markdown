@@ -43,7 +43,7 @@ On the other hand we're totally newbies in a few other areas. We still need to:
 * _Figure out a pricing strategy_. We've been discussing about this for a while but haven't come to a final decision yet. We're also gathering ideas from friends in NIPO Software.  It turns out that pricing is a much bigger concept than just simply putting a price tag on a product. It involves a bit more than that. Things get especially complicated around the topic of customer support.
 * _Create a site for the product and decide on some kind of a payment methodology_. The company we're going to start will need a website. The product also needs a site of its own. When Kiwi becomes commercially available there will also be a payment system in place.
 
-Still a bunch of things to do. We've been making steady progress but we're not in a hurry. Going at our own pace. Current target is to release Kiwi no later than 15th of January. No idea what happens next but one thing is clear: it will be adventurous!
+Still a bunch of things to do. We've been making steady progress but we're not in a hurry. Going at our own pace. Current target is to release Kiwi no later than 15th of January. No idea what happens next but one thing is clear: it will be adventurous.
 
 Thanks for reading and if you have any comments please don't hesitate to add them below.
 
