@@ -47,8 +47,6 @@ Still a bunch of things to do. We've been making steady progress but we're not i
 
 Thanks for reading and if you have any comments please don't hesitate to add them below.
 
-Take care.
-
 Hakan
 
 
