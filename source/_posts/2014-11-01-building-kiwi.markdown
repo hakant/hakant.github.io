@@ -25,7 +25,7 @@ Even if we end up making no money or even wasting money, I knew we could learn a
 Not everyone reading this blog is working in the area of market research let alone even familiar with the technical market research terminology. So instead of a single long technical definition I'll try to list some facts about Kiwi:
 
 * Kiwi is a web based application that can be hosted in the cloud or in customer premises.
-* Kiwi takes collected data that is either in NIPO or Triple-S format and transfers it to a SQL database in relational format and makes analysis & monitoring a lot easier. Apart from the data, Kiwi will also create question references in the target SQL database.
+* Kiwi takes collected data that is either in NIPO or Triple-S format and transfers it to a SQL database in relational format and makes analysis & monitoring a lot easier. Apart from the data itself, Kiwi will also create the questionnaire structure in the target SQL database as a reference.
 * Kiwi can transfer closed and open data files. It also allows consecutive transfers where it will continue adding to the existing data set in SQL without changing it.
 * For these reasons Kiwi can be used by any market research company that is utilizing data collection platforms built by NIPO Software or any other platform that supports Triple-S standard.
 
