@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2014-11-02T21:51:35+01:00</updated>
+  <updated>2014-11-02T21:57:22+01:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -36,9 +36,9 @@
 
 <ul>
 <li>Kiwi is a web based application that can be hosted in the cloud or in customer premises.</li>
-<li>Kiwi takes collected data that is either in NIPO or TripleS format and transfers it to a SQL database in relational format and makes analysis &amp; monitoring a lot easier. Apart from the data, Kiwi will also create question references in the target SQL database.</li>
+<li>Kiwi takes collected data that is either in NIPO or Triple-S format and transfers it to a SQL database in relational format and makes analysis &amp; monitoring a lot easier. Apart from the data, Kiwi will also create question references in the target SQL database.</li>
 <li>Kiwi can transfer closed and open data files. It also allows consecutive transfers where it will continue adding to the existing data set in SQL without changing it.</li>
-<li>For these reasons Kiwi can be used by any market research company that is utilizing data collection platforms built by NIPO Software or any other platform that supports TripleS standard.</li>
+<li>For these reasons Kiwi can be used by any market research company that is utilizing data collection platforms built by NIPO Software or any other platform that supports Triple-S standard.</li>
 </ul>
 
 
