@@ -1,0 +1,124 @@
+---
+layout: post
+title: "Playing around with Redis & SignalR - (Part 1)"
+date: 2014-10-26 20:32:27 +0200
+comments: true
+categories: [redis, architecture]
+footer: true
+sharing: true
+---
+
+A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn't allow any further room for the new requirements they had - he told me during our skype conversation. I thought it was fun and took the offer. R&D and freelancing.. not bad huh!
+
+So as part of the assignment I've been doing some interesting reasearch and prototyping so why not blog about it as well I thought. As long as no confidential information is shared it should be OK. This can easily become a couple of posts. So I'll call this Part 1.
+
+##Going technical:
+
+One of the requirements is to decouple the system components so that they can be deployed and run on different boxes. So a typical "scaling out" problem.
+
+The other requirement is to enable these components to talk to each other about the changes happening through-out the system. So these components have to be able to send/receive messages to/from each other. This is especially important after separating these components obviously.
+
+After studying the existing architecture and reading through some code, this was my initial design. I've changed the application names to something more generic to keep it confidential but the technical idea behind it is still the same:
+
+![System Architecture Diagram](/assets/Playing_Around_With_Redis/SystemArchitectureDiagram.png)
+
+Let's look at some of the key components:
+
+* __App Server__: The application server is running a mission critical service that needs to be very fast. It is actually orchestrating incoming and outgoing voice calls, can't afford to be slow. Obviously there is also some bookkeeping that the application server does. The states of the calls and users change over time and this kind of application state information is also interesting to the other parts of the system for various reasons like monitoring, dashboards or some other type of actions that needs to be taken.
+* __Web UI__: This is basically where customers will sign in and manage their system and data. They can do administrative work as well as look at various dashboards to see what is going on. This is going to become a self-hosted (yes OWIN) MVC 5 application.
+* __Web API__: Most things that can be done with the Web UI should be done with API as well. So that customers can be creative and build their own solutions & extensions. This will be built with Web API 2.0 and self hosted.
+
+I will tell more about the other components in the future posts. But careful readers should have already noticed that some of the requirements beg for a "message broker" / "service bus" type of a system in between to coordinate messaging.
+Let's talk a bit about <a href="http://redis.io/" target="_blank">Redis</a> now.
+
+##Redis:
+
+Here is the official definiton of Redis:
+>Redis is an open source, BSD licensed, advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
+
+At <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> we've been using Redis for a while but frankly I didn't know that Redis was also supporting pub/sub messaging. As a solution the first thing that came to my mind was <a href="http://www.rabbitmq.com/" target="_blank">RabbitMQ</a>, which is a message broker. But Redis can do other interesting things as well. So I focused on Redis instead.
+
+Here is what Wikipedia says about the "Publish–subscribe pattern":
+>In software architecture, publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers. Instead, published messages are characterized into classes, without knowledge of what, if any, subscribers there may be. Similarly, subscribers express interest in one or more classes, and only receive messages that are of interest, without knowledge of what, if any, publishers there are.
+
+And what Redis adds to it:
+>This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
+
+Redis is also a cache store and a persistent storage. If you tell Redis to do so, it will take occasional snapshots of the data in it's memory and persist it to disk. As you progress through the Redis documentation it feels like Redis is all you need : ) F.ex here is where Redis snapshotting feature is configured:
+
+```bash
+################################ SNAPSHOTTING  #################################
+#
+# Save the DB on disk:
+#
+#   save <seconds> <changes>
+#
+#   Will save the DB if both the given number of seconds and the given
+#   number of write operations against the DB occurred.
+#
+#   In the example below the behaviour will be to save:
+#   after 900 sec (15 min) if at least 1 key changed
+#   after 300 sec (5 min) if at least 10 keys changed
+#   after 60 sec if at least 10000 keys changed
+#
+#   Note: you can disable saving at all commenting all the "save" lines.
+#
+#   It is also possible to remove all the previously configured save
+#   points by adding a save directive with a single empty string argument
+#   like in the following example:
+#
+#   save ""
+
+#save 900 1
+#save 300 10
+#save 60 10000
+
+```
+
+Depending on how critical your data is you can specify different levels of aggressiveness. As with everything the more aggressively you save the more stress you put on the system. On the other hand you can disable saving completely which will make Redis a purely caching server.
+
+If you want to quickly get up and running with Redis I recommend the <a href="http://www.pluralsight.com/courses/building-nosql-apps-redis" target="_blank">Pluralsight course from John Sonmez</a>. It does a great job on getting you from zero to sixty.
+
+##Redis on Windows
+
+Redis is an open source project and only supports Linux. But Microsoft Open Tech group develops and supports a <a href="https://github.com/MSOpenTech/redis" target="_blank">Windows port targeting Win64</a>. On the other hand I haven't seen a single source that recommends running Redis Windows in production even though Microsoft claims that it's heavily tested and production ready. General sentiment is like "why would you do that when you can just run it on a Linux VM" which I can understand for SAAS scenarios.
+
+For the project that I'm working on there is also installation scenarios on customer premises so asking them to get a Linux machine is a bit over the top my friend says. So we're willing to give the Microsoft Redis a chance. Hey these guys are also running <a href="http://azure.microsoft.com/en-us/services/cache/" target="_blank">Redis on Azure</a> after all...
+
+<a href="https://servicestack.net/" target="_blank">ServiceStack</a> is one of the frameworks that put focus on Redis. Supporting Redis is one of their selling points:
+
+![ServiceStack products](/assets/Playing_Around_With_Redis/ServiceStack.png)
+
+ServiceStack also distributes <a href="https://github.com/ServiceStack/redis-windows" target="_blank">MS Open Tech Redis port of Windows on GitHub</a>. If you want to run the Windows version of Redis there are very useful information here on how to install Redis Windows as a service or how to use <a href="http://docs-v1.vagrantup.com/v1/docs/getting-started/index.html" target="_blank">Vagrant</a> to install the Linux version of Redis on a Windows box with virtualization through <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a>.
+
+##Redis C# Clients
+
+There are <a href="http://redis.io/clients" target="_blank">a bunch of clients</a> out there implemented for Redis with various languages. As of this writing this is how the list looks like for C#. The ones that are starred are the recommended clients by Redis.
+
+![Redis C# Clients](/assets/Playing_Around_With_Redis/RedisCSharpClients.png)
+
+I've picked the ServiceStack client over StackExchange because of the richer and nicer to use library. It looks like the StackExchange client is claiming to be the fastest though.
+
+Right after starting to use the latest ServiceStack Redis client I've noticed that they've switched to a commercial license with version 4. But <a href="https://github.com/ServiceStackV3/ServiceStackV3" target="_blank">the previous version 3</a> continues to be BSD license. So I fell back to this version after finding that out. Version 3 is also a pretty complete library and for my current purposes it doesn't really matter. 
+
+Here is how the API looks like (click <a href="http://mono.servicestack.net/img/Redis-annotated.png" target="_blank">here</a> for a version that you can zoom):
+
+![Redis Client API Overview](/assets/Playing_Around_With_Redis/Redis-annotated.png)
+
+##A User Scenario
+
+One of the scenarios that needs to be implemented with this prototype is as follows (remember the architecture diagram from the beginning of this post):
+
+* When a user adds a record to the system through the Web UI (management site) the App Server needs to know about that record without going to the database.
+* When something interesting happens on the App Server the Web UI needs to be notified and then it should refresh the information on the connected clients' browsers. A typical dashboard scenario which should not require manual page refresh.
+
+In the next blog post I'll write about how to implement these features using Redis and SignalR.
+
+Until then, take care.
+
+Hakan
+
+
+
+
+
