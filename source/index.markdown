@@ -11,16 +11,21 @@ A software engineer, web enthusiast, rock guitar player, traveller and an expatr
 
 I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software for various <a href="{{ root_url }}/portfolio">companies & projects</a>. Over the past years I've been particularly interested in Microsoft .NET stack and the tools around it but in the recent years things are changing within our industry. Different technologies live together side by side as it has never been before. Freedom of choice is the king.
 
-I moved to Amsterdam around 6 years ago and currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for the market research industry.
+I moved to Amsterdam around 6 years ago and I'm currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for the market research industry.
 
 <h2 class="title">I'm working on a couple of projects</h2>
 <br/>
 >Always have a side project. 
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* One of the projects I've been working on is this blog that you're reading at the moment. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning Bash and trying to balance my time with Windows and Mac as a developer.
+* **A new Startup:** For about 6 months me and two of my colleagues are working on a startup. We're building a product focused on market research. It's name is Kiwi. We're going to have a public website for the company and the product soon. I'll put it up here when it's available but I've also written two blog posts about it so far. <a href="{{ root_url }}/blog/2014/11/01/building-kiwi/">Building Kiwi</a> and <a href="{{ root_url }}/blog/2014/12/08/kiwi-updates-and-first-demo/">Kiwi - Updates & First Demo</a>. Take a look at them if it sounds any interesting. I'm learning a lot from this whole experience, both technical and non-technical.
 
-* I've built a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the image to see what I've done so far (Turkish content).
+* **Reviewing a book about Azure Storage:** I'm currently reviewing an upcoming book from <a href="https://www.packtpub.com/" target="_blank">Packt Publishing</a> titled "Azure Storage Essentials". They've asked me if I could review this book for them and I said why not. My short-bio will be in the reviewers section. Yay! :p
+It's taking me quite some time to properly review this book but I'm learning a lot while doing it. So no regrets there.
+
+* **This Blog:** I'd like to think of blogging as a side project too. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning Bash and trying to balance my time with Windows and Mac as a developer.
+
+* **A responsive e-commerce site:** I've built a website for my parents. My parents own a couple of houses near Black Sea / Turkey. They're on sale. Click on the image to see what I've done so far (Turkish content). I keep updating it when necessary.
 
 <a href="http://www.karasubaskent.com/" target="_blank">
 ![Karasu Başkent Sitesi](/assets/HomePage/KarasuBaskentSitesi.png)
@@ -58,3 +63,7 @@ I moved to Amsterdam around 6 years ago and currently working at <a href="http:/
 * **$100 Startup** is a fantastic book for learning to create and sell value while doing what you love. This book is full of inspirational examples and sound strategies. 
 
 ![$100 Startup](http://ecx.images-amazon.com/images/I/51xrSIGzOdL._SY344_PJ-v2,TopRight,1,0_SH20_BO1,204,203,200_.jpg)
+
+* **Charisma Myth** really demystifies the charismatic behaviors in the sense that it classifies the types of charisma, the kind of behaviors that leads to charisma and how to get there as a person without transforming your fundamental personality. This is a kind of book I want to keep next to me and remind myself of these best practices over and over again until they stick.
+
+![Charisma Myth](http://ecx.images-amazon.com/images/I/51DY8Mb84XL.jpg =240x240)
