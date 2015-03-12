@@ -18,7 +18,7 @@ In the last month a lot has happened. Therefore I had to postpone the demo for a
 
 So first things first. Here is a ~6 minute demo below. Also read on if you're interested in the things that kept us busy in this period.
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="480" src="//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
 
 
 ##TripleS vs NIPO format
