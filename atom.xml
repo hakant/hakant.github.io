@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://hakantuncer.com/"/>
-  <updated>2015-02-18T22:53:44+01:00</updated>
+  <updated>2015-03-12T22:15:43+01:00</updated>
   <id>http://hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Notes on Finalization and Disposition in .NET]]></title>
+    <link href="http://hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net/"/>
+    <updated>2015-03-12T22:04:15+01:00</updated>
+    <id>http://hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net</id>
+    <content type="html"><![CDATA[<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
+
+<p>Nicole Calinoiu&rsquo;s talk from NDC Oslo taught me many things one of which is how IDisposable pattern is designed and became the way it is. It&rsquo;s an awesome talk, one that I can strongly recommend. I&rsquo;ve embedded the video at the bottom of this page, make sure to check it out.</p>
+
+<p>I saw the talk twice and wanted to take notes for myself. Notes that I can revisit when the details get blurry in my head six months or a year down the path. I&rsquo;ve also double checked or dived into some other details through MSDN and included those in the notes as well.</p>
+
+<h2>Finalization</h2>
+
+<ul>
+<li><p>Never ever set any object to NULL to &ldquo;help&rdquo; Garbage Collector do his job. You&rsquo;re not helping him and even making things worse.</p></li>
+<li><p>Although .NET Runtime knows about cleaning up memory really well, it can&rsquo;t possibly know the shared resources (file system, network connections, registery etc&hellip;) that your objects are using. Finalization is the object&rsquo;s opportunity to cleanup those resources when it&rsquo;s about to be removed from the memory.</p></li>
+<li><p>If a .NET object overrides the method Object.Finalize(), the Garbage Collector will call the Finalize method before cleaning up the object from memory.</p></li>
+<li><p>If the object does not override the method Finalize, Garbage Collector doesn&rsquo;t finalize the object (obviously). Here is what <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says:</p></li>
+</ul>
+
+
+<blockquote><p>The garbage collector does not mark types derived from Object for finalization unless they override the Finalize method.</p></blockquote>
+
+<ul>
+<li>Now comes the part that&rsquo;s obscure in the MSDN documentation. <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says (emphasis mine):</li>
+</ul>
+
+
+<blockquote><p>You should override Finalize for a class that uses <strong>unmanaged resources</strong> such as file handles or database connections that must be released when the managed object that uses them is discarded during garbage collection.</p></blockquote>
+
+<ul>
+<li><p><strong>Unmanaged resources</strong> mentioned in the documentation are <strong>NOT</strong> the managed wrappers. If you have code that directly uses IntPtr and DllImport then you&rsquo;re using unmanaged resources and you need to be thinking about Finalization.</p></li>
+<li><p>Managed wrappers have their own Finalizers (hopefully) so it&rsquo;s not your responsibility to supply another Finalizer on top of that. But if you have any code in a class that looks like the one below, then you need a Finalizer for that specific class.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="na">[DllImport(&quot;advapi32.dll&quot;, CharSet= CharSet.Auto, SetLastError=true)]</span>
+</div><div class='line'><span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">int</span> <span class="nf">RegOpenKeyEx</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hKey</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="n">String</span> <span class="n">lpSubKey</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="kt">int</span> <span class="n">ulOptions</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="kt">int</span> <span class="n">samDesired</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="k">out</span> <span class="n">IntPtr</span> <span class="n">phkResult</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<ul>
+<li><p>Writing an <strong>unnecessary</strong> Finalizer comes with a cost: delaying the cleanup process of your objects. Finalization brings extra steps to the cleaning process (adding those objects to Finalization queue and running their Finalization logic in a separate thread) which delay freeing up memory for those objects. So beware.</p></li>
+<li><p>Finalizers should not access any managed resources. Any managed resource at that point could already be harvested by garbage collector. So basically none of the managed objects can be trusted to exist. Finalizers should only cleanup the unmanaged resources and return.</p></li>
+</ul>
+
+
+<h2>Disposition</h2>
+
+<ul>
+<li><p>Finalization happens when the Garbage Collector &ldquo;feels like it&rdquo;. In general you don&rsquo;t have (and shouldn&rsquo;t take) any control on when the GC is running or not. But wouldn&rsquo;t it be nice to cleanup and let go of those shared resources when they&rsquo;re not needed anymore? Hell yeah. It would be terrible to keep locking a file and wait until GC comes to clean it up. This is exactly why Disposition exists.</p></li>
+<li><p>When a class implements IDisposable it is basically declaring that it needs to be cleaned up. Whenever you&rsquo;re done with an IDisposable class and you know you&rsquo;re the <strong>only</strong> one using it or the <strong>owner</strong> of its lifecycle, you need to call its Dispose method to clean it up.</p></li>
+<li><p>While Disposing a class and releasing its shared resources, we also want to call Finalize if our class is Finalizable. If you try to do that though, compiler gives an error message: &ldquo;Destructors and Finalize can not be called directly&rdquo;. That&rsquo;s why there is a pattern called IDisposable pattern.</p></li>
+<li><p><a href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx" target="_blank">MSDN documentation on IDisposable interface</a> includes a C# code sample showing how the pattern should be implemented. Notice that because Finalize can not be called directly, another Dispose method is introduced that takes a boolean argument which determines whether the class is being disposed or finalized.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+<span class='line'>19</span>
+<span class='line'>20</span>
+<span class='line'>21</span>
+<span class='line'>22</span>
+<span class='line'>23</span>
+<span class='line'>24</span>
+<span class='line'>25</span>
+<span class='line'>26</span>
+<span class='line'>27</span>
+<span class='line'>28</span>
+<span class='line'>29</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</div><div class='line'><span class="k">class</span> <span class="nc">BaseClass</span> <span class="p">:</span> <span class="n">IDisposable</span>
+</div><div class='line'><span class="p">{</span>
+</div><div class='line'>   <span class="c1">// Flag: Has Dispose already been called? </span>
+</div><div class='line'>   <span class="kt">bool</span> <span class="n">disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</div><div class='line'>   <span class="c1">// Public implementation of Dispose pattern callable by consumers. </span>
+</div><div class='line'>   <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</div><div class='line'>      <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'>   <span class="c1">// Protected implementation of Dispose pattern. </span>
+</div><div class='line'>   <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposed</span><span class="p">)</span>
+</div><div class='line'>         <span class="k">return</span><span class="p">;</span>
+</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span> <span class="p">{</span>
+</div><div class='line'>         <span class="c1">// Free any other managed objects here. </span>
+</div><div class='line'>         <span class="c1">//</span>
+</div><div class='line'>      <span class="p">}</span>
+</div><div class='line'>      <span class="c1">// Free any unmanaged objects here. </span>
+</div><div class='line'>      <span class="c1">//</span>
+</div><div class='line'>      <span class="n">disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'>   <span class="p">~</span><span class="n">BaseClass</span><span class="p">()</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'><span class="p">}</span></div></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Let&rsquo;s look at a few important aspects of this implementation:
+
+<ul>
+<li>Class keeps track of whether it has been disposed or not and prevents being disposed more than once.</li>
+<li>When a class is being Disposed, the Finalization logic also runs. So it tells the Garbage Collector not to bother Finalizing this object anymore (performance gain):</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>These days writing a Finalizer is fairly uncommon. Most .NET applications doesn&rsquo;t require a usage of direct pointer to an unmanaged resource. On top of that, now there is a class called <a href="https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.safehandle%28v=vs.100%29.aspx" target="_blank">SafeHandle</a> which automatically wraps a pointer to an unmanaged resource. It also handles finalization for you. So this means writing a Finalizer now is very very uncommon. Check the article from Joe Duffy all the way back from 2005: <a href="http://joeduffyblog.com/2005/12/27/never-write-a-finalizer-again-well-almost-never/" target="_blank">Never write a finalizer again (well, almost never)</a></p></li>
+<li><p>The whole purpose of IDisposable pattern is to accomodate Finalization and Disposition under a single solution. But because you may never ever write a finalizer again, the whole IDisposable pattern ends up being designed to cover a very very corner case. And it&rsquo;s unfortunate that nothing has changed since 2005&hellip;</p></li>
+</ul>
+
+
+<h2>Nicole Calinoiu&rsquo;s talk from NDC Oslo 2014</h2>
+
+<br/>
+
+
+<iframe src="http://hakantuncer.com//player.vimeo.com/video/97519508" width="100%" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Kiwi - Updates & First demo]]></title>
@@ -28,7 +189,7 @@
 
 <p>So first things first. Here is a ~6 minute demo below. Also read on if you&rsquo;re interested in the things that kept us busy in this period.</p>
 
-<iframe width="640" height="480" src="http://hakantuncer.com//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="480" src="http://hakantuncer.com//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
 
 
 <h2>TripleS vs NIPO format</h2>

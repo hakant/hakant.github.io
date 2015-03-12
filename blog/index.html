@@ -9,7 +9,7 @@
 	<meta name="author" content="Hakan Tuncer">
 
 	
-	<meta name="description" content="Follow @hakant Dec 8th, 2014 demo, kiwi, marketresearch Comments Kiwi - Updates & First Demo It&rsquo;s been more than a month since I first wrote &hellip;">
+	<meta name="description" content="Follow @hakant Mar 12th, 2015 .net, disposition, microsoft Comments Notes on Finalization and Disposition in .NET Have you ever thought why &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -123,6 +123,200 @@
   
 
 
+<time datetime="2015-03-12T22:04:15+01:00" data-updated="true" itemprop="datePublished">Mar 12<span>th</span>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dot-net/'>.net</a>, <a class='category' href='/blog/categories/disposition/'>disposition</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2015/03/12/finalization-and-disposition-in-net/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/03/12/finalization-and-disposition-in-net/" itemprop="url">Notes on Finalization and Disposition in .NET</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
+
+<p>Nicole Calinoiu&rsquo;s talk from NDC Oslo taught me many things one of which is how IDisposable pattern is designed and became the way it is. It&rsquo;s an awesome talk, one that I can strongly recommend. I&rsquo;ve embedded the video at the bottom of this page, make sure to check it out.</p>
+
+<p>I saw the talk twice and wanted to take notes for myself. Notes that I can revisit when the details get blurry in my head six months or a year down the path. I&rsquo;ve also double checked or dived into some other details through MSDN and included those in the notes as well.</p>
+
+<h2>Finalization</h2>
+
+<ul>
+<li><p>Never ever set any object to NULL to &ldquo;help&rdquo; Garbage Collector do his job. You&rsquo;re not helping him and even making things worse.</p></li>
+<li><p>Although .NET Runtime knows about cleaning up memory really well, it can&rsquo;t possibly know the shared resources (file system, network connections, registery etc&hellip;) that your objects are using. Finalization is the object&rsquo;s opportunity to cleanup those resources when it&rsquo;s about to be removed from the memory.</p></li>
+<li><p>If a .NET object overrides the method Object.Finalize(), the Garbage Collector will call the Finalize method before cleaning up the object from memory.</p></li>
+<li><p>If the object does not override the method Finalize, Garbage Collector doesn&rsquo;t finalize the object (obviously). Here is what <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says:</p></li>
+</ul>
+
+
+<blockquote><p>The garbage collector does not mark types derived from Object for finalization unless they override the Finalize method.</p></blockquote>
+
+<ul>
+<li>Now comes the part that&rsquo;s obscure in the MSDN documentation. <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says (emphasis mine):</li>
+</ul>
+
+
+<blockquote><p>You should override Finalize for a class that uses <strong>unmanaged resources</strong> such as file handles or database connections that must be released when the managed object that uses them is discarded during garbage collection.</p></blockquote>
+
+<ul>
+<li><p><strong>Unmanaged resources</strong> mentioned in the documentation are <strong>NOT</strong> the managed wrappers. If you have code that directly uses IntPtr and DllImport then you&rsquo;re using unmanaged resources and you need to be thinking about Finalization.</p></li>
+<li><p>Managed wrappers have their own Finalizers (hopefully) so it&rsquo;s not your responsibility to supply another Finalizer on top of that. But if you have any code in a class that looks like the one below, then you need a Finalizer for that specific class.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="na">[DllImport(&quot;advapi32.dll&quot;, CharSet= CharSet.Auto, SetLastError=true)]</span>
+</div><div class='line'><span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">int</span> <span class="nf">RegOpenKeyEx</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hKey</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="n">String</span> <span class="n">lpSubKey</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="kt">int</span> <span class="n">ulOptions</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="kt">int</span> <span class="n">samDesired</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="k">out</span> <span class="n">IntPtr</span> <span class="n">phkResult</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<ul>
+<li><p>Writing an <strong>unnecessary</strong> Finalizer comes with a cost: delaying the cleanup process of your objects. Finalization brings extra steps to the cleaning process (adding those objects to Finalization queue and running their Finalization logic in a separate thread) which delay freeing up memory for those objects. So beware.</p></li>
+<li><p>Finalizers should not access any managed resources. Any managed resource at that point could already be harvested by garbage collector. So basically none of the managed objects can be trusted to exist. Finalizers should only cleanup the unmanaged resources and return.</p></li>
+</ul>
+
+
+<h2>Disposition</h2>
+
+<ul>
+<li><p>Finalization happens when the Garbage Collector &ldquo;feels like it&rdquo;. In general you don&rsquo;t have (and shouldn&rsquo;t take) any control on when the GC is running or not. But wouldn&rsquo;t it be nice to cleanup and let go of those shared resources when they&rsquo;re not needed anymore? Hell yeah. It would be terrible to keep locking a file and wait until GC comes to clean it up. This is exactly why Disposition exists.</p></li>
+<li><p>When a class implements IDisposable it is basically declaring that it needs to be cleaned up. Whenever you&rsquo;re done with an IDisposable class and you know you&rsquo;re the <strong>only</strong> one using it or the <strong>owner</strong> of its lifecycle, you need to call its Dispose method to clean it up.</p></li>
+<li><p>While Disposing a class and releasing its shared resources, we also want to call Finalize if our class is Finalizable. If you try to do that though, compiler gives an error message: &ldquo;Destructors and Finalize can not be called directly&rdquo;. That&rsquo;s why there is a pattern called IDisposable pattern.</p></li>
+<li><p><a href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx" target="_blank">MSDN documentation on IDisposable interface</a> includes a C# code sample showing how the pattern should be implemented. Notice that because Finalize can not be called directly, another Dispose method is introduced that takes a boolean argument which determines whether the class is being disposed or finalized.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+<span class='line'>19</span>
+<span class='line'>20</span>
+<span class='line'>21</span>
+<span class='line'>22</span>
+<span class='line'>23</span>
+<span class='line'>24</span>
+<span class='line'>25</span>
+<span class='line'>26</span>
+<span class='line'>27</span>
+<span class='line'>28</span>
+<span class='line'>29</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</div><div class='line'><span class="k">class</span> <span class="nc">BaseClass</span> <span class="p">:</span> <span class="n">IDisposable</span>
+</div><div class='line'><span class="p">{</span>
+</div><div class='line'>   <span class="c1">// Flag: Has Dispose already been called? </span>
+</div><div class='line'>   <span class="kt">bool</span> <span class="n">disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</div><div class='line'>   <span class="c1">// Public implementation of Dispose pattern callable by consumers. </span>
+</div><div class='line'>   <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</div><div class='line'>      <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'>   <span class="c1">// Protected implementation of Dispose pattern. </span>
+</div><div class='line'>   <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposed</span><span class="p">)</span>
+</div><div class='line'>         <span class="k">return</span><span class="p">;</span>
+</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span> <span class="p">{</span>
+</div><div class='line'>         <span class="c1">// Free any other managed objects here. </span>
+</div><div class='line'>         <span class="c1">//</span>
+</div><div class='line'>      <span class="p">}</span>
+</div><div class='line'>      <span class="c1">// Free any unmanaged objects here. </span>
+</div><div class='line'>      <span class="c1">//</span>
+</div><div class='line'>      <span class="n">disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'>   <span class="p">~</span><span class="n">BaseClass</span><span class="p">()</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'><span class="p">}</span></div></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Let&rsquo;s look at a few important aspects of this implementation:
+
+<ul>
+<li>Class keeps track of whether it has been disposed or not and prevents being disposed more than once.</li>
+<li>When a class is being Disposed, the Finalization logic also runs. So it tells the Garbage Collector not to bother Finalizing this object anymore (performance gain):</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>These days writing a Finalizer is fairly uncommon. Most .NET applications doesn&rsquo;t require a usage of direct pointer to an unmanaged resource. On top of that, now there is a class called <a href="https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.safehandle%28v=vs.100%29.aspx" target="_blank">SafeHandle</a> which automatically wraps a pointer to an unmanaged resource. It also handles finalization for you. So this means writing a Finalizer now is very very uncommon. Check the article from Joe Duffy all the way back from 2005: <a href="http://joeduffyblog.com/2005/12/27/never-write-a-finalizer-again-well-almost-never/" target="_blank">Never write a finalizer again (well, almost never)</a></p></li>
+<li><p>The whole purpose of IDisposable pattern is to accomodate Finalization and Disposition under a single solution. But because you may never ever write a finalizer again, the whole IDisposable pattern ends up being designed to cover a very very corner case. And it&rsquo;s unfortunate that nothing has changed since 2005&hellip;</p></li>
+</ul>
+
+
+<h2>Nicole Calinoiu&rsquo;s talk from NDC Oslo 2014</h2>
+
+<br/>
+
+
+<iframe src="//player.vimeo.com/video/97519508" width="100%" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2014-12-08T19:50:48+01:00" data-updated="true" itemprop="datePublished">Dec 8<span>th</span>, 2014</time></div>
 		<div class="tags">
 
@@ -148,7 +342,7 @@
 
 <p>So first things first. Here is a ~6 minute demo below. Also read on if you&rsquo;re interested in the things that kept us busy in this period.</p>
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="480" src="//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
 
 
 <h2>TripleS vs NIPO format</h2>
@@ -1804,80 +1998,11 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 
 </article>
 
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-20T20:52:30+02:00" data-updated="true" itemprop="datePublished">Oct 20<span>th</span>, 2010</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/startups/'>startups</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2010/10/20/startup-weekend-amsterdam-experience/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2010/10/20/startup-weekend-amsterdam-experience/" itemprop="url">Startup Weekend Amsterdam Experience</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>A few weeks ago I attended Startup Weeekend Amsterdam. I should say, it was really a weekend full of ideas, creativity, productivity and nice people.</p>
-
-<p>To describe very briefly, Startup Weekend events are short, weekend long events that are organized all around the world where attenders join together to pitch ideas and build products/services around those ideas. It is all self-contained. Everything is done by the attenders, from pitching ideas to forming teams, working over the weekend to realize those ideas and presenting them to the panelists. The organization behind Startup Weekend  provides place, food and the panelists. ;) ..and by the way, as far as I heard, they’re not earning money from these events.</p>
-
-<p><img src="/assets/StartupWeekendAmsterdam/img_1674.jpg" alt="Startup Weekend Amsterdam" /></p>
-
-<p>I payed around €60 and bought a software developer ticket for myself. Tickets are simply attached to roles like marketing, sales, law, software development etc.. There was also one called “Jack of all Trades” for those who wanted to cheat a little bit.</p>
-
-<p>Friday evening, event started with a brief introduction talk and afterwards, attenders with ideas started taking turns and presenting their ideas. Everybody had like a minute and a half to introduce their ideas. Around 40 people made a pitch, which I heard is a pretty good number compared to the number of ideas presented in other Startup Weekend sessions around the world. This idea pitching section was followed by a short break and a voting session.</p>
-
-<p>Owners of 8-10 ideas receiving the highest number of votes took turns again to talk for another 30 seconds and call people to join their team. This part was especially fun because idea owners were trying to do all kinds of things to attract other people to work for them over the weekend.</p>
-
-<p>I watched teams evolve in about 45 minutes.. It was like a party where everybody was talking to each other. Once a group of people form a team, they were moving to the study room, which was a quite cool place. There were no any sort of rules for forming teams.. No restrictions. Whoever had their teams ready, were moving on.</p>
-
-<p>I worked in two teams throughout the weekend and kept an eye on other teams. Just for fun.. Watching how things were developing from being bare concepts / ideas in to something concrete was really interesting.. These people didn’t know each other few hours before and now they were working together to accomplish something.</p>
-
-<p>On Sunday evening, teams presented their business ideas along with their weekend accomplishments to the panelists. Every team had 3 minutes to show their magic. From there on, panelists made their decisions about the winners. There were technologists, entrepreneurs, lawyers and investors among the panelists (you can find them on Startup Weekend Amsterdam).</p>
-
-<p>A couple of  ideas I liked:</p>
-
-<ul>
-<li>Japps.me (Job application management tool): Having hard time following and managing your job applications? Using this tool you might have kept track of your job applications, related conversations, statuses etc.. I think it is a very good idea, but of course the implementation matters a lot.
-Pulsetree (Social idea mining tool): Now it is very obvious to me that this is going to be a very hot/big concept soon.</li>
-<li><p>It is about hooking up to social networks, blogs etc. (via API’s) to sniff opinions about products or companies and preferably allowing companies to engage with the opinion makers. Catching the opinions about their products and engaging with the opinion makers will be something vital for large companies.</p></li>
-<li><p>123 Dress me: The idea was mainly started with an iPhone application in which users can put the photos of their clothes in their closet in a top, middle and bottom manner. Then this application will allow them to match their clothes and give them an idea about what new combinations they can try. This opens many possibilities like displaying ads from stores, and now you can match your existing clothes with pieces from stores, and even order them with a single tap maybe..</p></li>
-<li><p>Alter-Ego (a smart phone game about sustainability) : Inspired by mobile games that are tightly integrated with player’s real life, these guys are putting real life goals for the players and letting them earn points based on their real life accomplishments. Although verifying many types of accomplishments are impossible and made me very skeptic about this game’s future, the idea really fits well into the current trend. (Some accomplishments are like taking the public transportation instead of your car, or using nature friendly commodities and helping the sustainability). These guys were chosen as winners and won free office space in Amsterdam for a year.</p></li>
-</ul>
-
-
-<p>The location was a courtesy of “Kennedy Van der Laan”. And organizers said that it was the best place they’d ever gotten so far.. Indeed the building was very nicely decorated. I should say, it was a right place to start a company. :)</p>
-
-		
-		
-	</div>
-
-</article>
-
 </div>
 <nav id="pagenavi">
     
+    
+        <a href="/blog/page/2/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
