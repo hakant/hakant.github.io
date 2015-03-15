@@ -3,6 +3,7 @@ layout: page
 comments: false
 sharing: false
 footer: true
+description: I'm Hakan. A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands.
 ---
 
 <h2 class="title">I'm Hakan</h2>

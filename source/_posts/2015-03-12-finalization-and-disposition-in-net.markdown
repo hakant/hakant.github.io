@@ -6,6 +6,8 @@ comments: true
 categories: [.net, microsoft, disposition]
 footer: true
 sharing: true
+description: Have you ever thought why disposition pattern is designed the way it is? Read on to find out.
+image: http://www.dotnetperls.com/gc.png
 ---
 
 Have you ever thought why disposition pattern is designed the way it is? I hadn't. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we're told so or because it just worked so far and we never looked back.

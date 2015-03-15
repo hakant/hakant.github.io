@@ -4,22 +4,32 @@
 {% else %}
 <html>
 {% endif %}
+
+{% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+
+{% capture title %}{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}{% endcapture %}
+
+{% capture image %}{% if page.image %}{{ page.image }}{% else %}http://www.gravatar.com/avatar/3d40c44707af5a8f606fb9b7ba553749{% endif %}{% endcapture %}
+
+{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
+
 <head>
 	<meta charset="utf-8">
-	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+	<title>{{ title }}</title>
 	<meta name="author" content="{{ site.author }}">
-
-	{% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
 	<meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
 	{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+	<!-- http://t.co/dKP3o1e -->
+  	<meta name="HandheldFriendly" content="True">
+  	<meta name="MobileOptimized" content="320">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
-	{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:150 }}" />
+    <meta property="og:url" content="{{ canonical }}" />
+    <meta property="og:image" content="{{ image }}" />
+	
+	<link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">	
 	<link rel="canonical" href="{{ canonical }}">
 	<link href="{{ root_url }}/favicon.png" rel="shortcut icon">
 	<link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
