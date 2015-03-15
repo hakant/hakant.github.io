@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Nfield | Hakan Tuncer's Blog]]></title>
-  <link href="http://hakantuncer.com/blog/categories/nfield/atom.xml" rel="self"/>
-  <link href="http://hakantuncer.com/"/>
-  <updated>2015-03-15T15:56:20+01:00</updated>
-  <id>http://hakantuncer.com/</id>
+  <link href="http://www.hakantuncer.com/blog/categories/nfield/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2015-03-15T15:59:30+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A Simple Nfield.SDK App]]></title>
-    <link href="http://hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app/"/>
     <updated>2014-04-15T20:14:15+02:00</updated>
-    <id>http://hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app</id>
+    <id>http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app</id>
     <content type="html"><![CDATA[<p>In a previous blog post I covered the step by step process of <a href="/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/">publishing Nfield.SDK to NuGet</a>.</p>
 
 <p>After publishing Nfield.SDK, a natural follow up is to create a simple app that installs Nfield.SDK through NuGet and does something useful with it.</p>
@@ -202,9 +202,9 @@ registerTransient(typeof(IFileSystem), typeof(FileSystem));
   
   <entry>
     <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
-    <link href="http://hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
     <updated>2014-04-13T18:34:32+02:00</updated>
-    <id>http://hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
+    <id>http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
     <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
 
 <h2>What is Nfield SDK</h2>

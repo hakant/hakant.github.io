@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Demo | Hakan Tuncer's Blog]]></title>
-  <link href="http://hakantuncer.com/blog/categories/demo/atom.xml" rel="self"/>
-  <link href="http://hakantuncer.com/"/>
-  <updated>2015-03-15T15:56:20+01:00</updated>
-  <id>http://hakantuncer.com/</id>
+  <link href="http://www.hakantuncer.com/blog/categories/demo/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2015-03-15T15:59:30+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Kiwi - Updates & First Demo]]></title>
-    <link href="http://hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo/"/>
     <updated>2014-12-08T19:50:48+01:00</updated>
-    <id>http://hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo</id>
+    <id>http://www.hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been more than a month since I first wrote about Kiwi. <a href="/blog/2014/11/01/building-kiwi/">In that post</a> I had a &ldquo;demo&rdquo; section where I wrote:</p>
 
 <blockquote><p>I was planning to create a screencast to demonstrate how Kiwi works and what it does but didn&rsquo;t get around doing it as part of this blog post. That&rsquo;s high on my to-do list. Another post will be on its way soon.</p></blockquote>
@@ -28,7 +28,7 @@
 
 <p>So first things first. Here is a ~6 minute demo below. Also read on if you&rsquo;re interested in the things that kept us busy in this period.</p>
 
-<iframe width="100%" height="480" src="http://hakantuncer.com//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="480" src="http://www.hakantuncer.com//www.youtube.com/embed/S1QcnZmyNpA" frameborder="0" allowfullscreen></iframe>
 
 
 <h2>TripleS vs NIPO format</h2>

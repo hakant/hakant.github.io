@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Architecture | Hakan Tuncer's Blog]]></title>
-  <link href="http://hakantuncer.com/blog/categories/architecture/atom.xml" rel="self"/>
-  <link href="http://hakantuncer.com/"/>
-  <updated>2015-03-15T15:56:20+01:00</updated>
-  <id>http://hakantuncer.com/</id>
+  <link href="http://www.hakantuncer.com/blog/categories/architecture/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2015-03-15T15:59:30+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Playing Around With Redis & SignalR - (Part 1)]]></title>
-    <link href="http://hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
     <updated>2014-10-26T19:32:27+01:00</updated>
-    <id>http://hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
+    <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
 <p>So as part of the assignment I&rsquo;ve been doing some interesting reasearch and prototyping so why not blog about it as well I thought. As long as no confidential information is shared it should be OK. This can easily become a couple of posts. So I&rsquo;ll call this Part 1.</p>
@@ -164,9 +164,9 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   
   <entry>
     <title type="html"><![CDATA[Disaster Recovery on Azure]]></title>
-    <link href="http://hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
     <updated>2014-04-27T19:30:37+02:00</updated>
-    <id>http://hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
+    <id>http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
     <content type="html"><![CDATA[<p>There are things we tend to ignore. Things that we don&rsquo;t want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.</p>
 
 <p>Because I&rsquo;m working with Microsoft Azure on a daily basis as part of my job, I&rsquo;ll be focusing on Azure but the fundamental principles and concepts should be universal for every cloud platform, or even for on premises type scenarios.</p>
@@ -273,7 +273,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/hakant">@hakant</a> <a href="https://twitter.com/Azure">@Azure</a> yes I&#39;m pretty sure it is</p>&mdash; Scott Guthrie (@scottgu) <a href="https://twitter.com/scottgu/statuses/460180886915276801">April 26, 2014</a></blockquote>
 
 
-<script async src="http://hakantuncer.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="http://www.hakantuncer.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>So we&rsquo;re on the right track here.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Startup | Hakan Tuncer's Blog]]></title>
-  <link href="http://hakantuncer.com/blog/categories/startup/atom.xml" rel="self"/>
-  <link href="http://hakantuncer.com/"/>
-  <updated>2015-03-15T15:56:20+01:00</updated>
-  <id>http://hakantuncer.com/</id>
+  <link href="http://www.hakantuncer.com/blog/categories/startup/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2015-03-15T15:59:30+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Building Kiwi]]></title>
-    <link href="http://hakantuncer.com/blog/2014/11/01/building-kiwi/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/11/01/building-kiwi/"/>
     <updated>2014-11-01T10:27:02+01:00</updated>
-    <id>http://hakantuncer.com/blog/2014/11/01/building-kiwi</id>
+    <id>http://www.hakantuncer.com/blog/2014/11/01/building-kiwi</id>
     <content type="html"><![CDATA[<p>I think it was sometime around February 2014 when Deniz Orsel, my colleague from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, came to me and said &ldquo;I need you to build something&hellip;&rdquo;. Later it became apparent that he also already had discussed his idea with <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a>, another colleague of mine in <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> and convinced him.</p>
 
 <p>&ldquo;Our customers are frequently asking for a tool like this yet it doesn&rsquo;t really fall under the category of &lsquo;Data collection&rsquo; that&rsquo;s why NIPO Software does not invest in this&rdquo; he said. As he explained, I realized it was a good opportunity and also a win &ndash; win situation for us and NIPO Software. I was convinced.</p>

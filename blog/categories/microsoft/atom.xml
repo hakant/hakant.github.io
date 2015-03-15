@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Microsoft | Hakan Tuncer's Blog]]></title>
-  <link href="http://hakantuncer.com/blog/categories/microsoft/atom.xml" rel="self"/>
-  <link href="http://hakantuncer.com/"/>
-  <updated>2015-03-15T15:56:20+01:00</updated>
-  <id>http://hakantuncer.com/</id>
+  <link href="http://www.hakantuncer.com/blog/categories/microsoft/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2015-03-15T15:59:30+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
     <email><![CDATA[hakantuncer@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Notes on Finalization and Disposition in .NET]]></title>
-    <link href="http://hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net/"/>
+    <link href="http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net/"/>
     <updated>2015-03-12T22:04:15+01:00</updated>
-    <id>http://hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net</id>
+    <id>http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net</id>
     <content type="html"><![CDATA[<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
 
 <p>Nicole Calinoiu&rsquo;s talk from NDC Oslo taught me many things one of which is how IDisposable pattern is designed and became the way it is. It&rsquo;s an awesome talk, one that I can strongly recommend. I&rsquo;ve embedded the video at the bottom of this page, make sure to check it out.</p>
@@ -152,7 +152,7 @@ GC.SuppressFinalize(this);
 <br/>
 
 
-<iframe src="http://hakantuncer.com//player.vimeo.com/video/97519508" width="100%" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="http://www.hakantuncer.com//player.vimeo.com/video/97519508" width="100%" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 
@@ -161,9 +161,9 @@ GC.SuppressFinalize(this);
   
   <entry>
     <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
-    <link href="http://hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
+    <link href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
     <updated>2014-04-13T18:34:32+02:00</updated>
-    <id>http://hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
+    <id>http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
     <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
 
 <h2>What is Nfield SDK</h2>
@@ -362,9 +362,9 @@ nuget push Nfield.SDK.1.0.0.0.nupkg
   
   <entry>
     <title type="html"><![CDATA[Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights]]></title>
-    <link href="http://hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights/"/>
+    <link href="http://www.hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights/"/>
     <updated>2012-11-18T18:29:03+01:00</updated>
-    <id>http://hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights</id>
+    <id>http://www.hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights</id>
     <content type="html"><![CDATA[<p>Microsoft is heading towards a new era with it’s Windows ecosystem and Azure cloud platform.</p>
 
 <h2>Azure adoption on fire</h2>
