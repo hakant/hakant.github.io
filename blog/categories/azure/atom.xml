@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Azure | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/azure/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-03-15T16:17:57+01:00</updated>
+  <updated>2015-04-04T19:32:16+03:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Disaster Recovery on Azure]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
-    <updated>2014-04-27T19:30:37+02:00</updated>
+    <updated>2014-04-27T20:30:37+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
     <content type="html"><![CDATA[<p>There are things we tend to ignore. Things that we don&rsquo;t want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.</p>
 

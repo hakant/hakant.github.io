@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-03-15T16:17:57+01:00</updated>
+  <updated>2015-04-04T19:32:16+03:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Notes on Finalization and Disposition in .NET]]></title>
     <link href="http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net/"/>
-    <updated>2015-03-12T22:04:15+01:00</updated>
+    <updated>2015-03-12T23:04:15+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net</id>
     <content type="html"><![CDATA[<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
 
@@ -177,7 +177,7 @@
   <entry>
     <title type="html"><![CDATA[Kiwi - Updates & First demo]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo/"/>
-    <updated>2014-12-08T19:50:48+01:00</updated>
+    <updated>2014-12-08T20:50:48+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been more than a month since I first wrote about Kiwi. <a href="http://www.hakantuncer.com/blog/2014/11/01/building-kiwi/">In that post</a> I had a &ldquo;demo&rdquo; section where I wrote:</p>
 
@@ -248,7 +248,7 @@
   <entry>
     <title type="html"><![CDATA[Building Kiwi]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/11/01/building-kiwi/"/>
-    <updated>2014-11-01T10:27:02+01:00</updated>
+    <updated>2014-11-01T11:27:02+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/11/01/building-kiwi</id>
     <content type="html"><![CDATA[<p>I think it was sometime around February 2014 when Deniz Orsel, my colleague from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, came to me and said &ldquo;I need you to build something&hellip;&rdquo;. Later it became apparent that he also already had discussed his idea with <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a>, another colleague of mine in <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> and convinced him.</p>
 
@@ -302,7 +302,7 @@
   <entry>
     <title type="html"><![CDATA[Playing around with Redis & SignalR - (Part 1)]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
-    <updated>2014-10-26T19:32:27+01:00</updated>
+    <updated>2014-10-26T20:32:27+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
@@ -449,7 +449,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[After NDC Oslo 2014]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/06/08/after-ndc-oslo-2014/"/>
-    <updated>2014-06-08T15:39:52+02:00</updated>
+    <updated>2014-06-08T16:39:52+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/06/08/after-ndc-oslo-2014</id>
     <content type="html"><![CDATA[<p>It&rsquo;s over. I&rsquo;m back in Amsterdam after an awesome week in Oslo. Great sessions, lots of smart people, delicious food and very good coffee. Inspirations everywhere.</p>
 
@@ -633,7 +633,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[NDC Oslo 2014]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/05/13/ndc-oslo-2014/"/>
-    <updated>2014-05-13T22:24:08+02:00</updated>
+    <updated>2014-05-13T23:24:08+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/05/13/ndc-oslo-2014</id>
     <content type="html"><![CDATA[<p>Yes! It&rsquo;s happening. We will be at <a href="http://www.ndcoslo.com/" target="_blank">NDC Oslo 2014</a> with 3 developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>. <a href="https://twitter.com/bjorn_coltof" target="_blank">Bjorn Coltof</a>, <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a> and I are going to be there between 2-6th of June. We&rsquo;ll be attending the conference as well as the pre-conference workshops. We&rsquo;re all pretty excited and it&rsquo;s going to be awesome. Connect with us if you&rsquo;re also going to be there! We can have a chat over a beer or two. All beers are on NIPO Software! (just testing if Jeroen Noordman, our CEO, is reading this post. I should soon find out).</p>
 
@@ -695,7 +695,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Disaster Recovery on Azure]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
-    <updated>2014-04-27T19:30:37+02:00</updated>
+    <updated>2014-04-27T20:30:37+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
     <content type="html"><![CDATA[<p>There are things we tend to ignore. Things that we don&rsquo;t want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.</p>
 
@@ -884,7 +884,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[A simple Nfield.SDK app]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app/"/>
-    <updated>2014-04-15T20:14:15+02:00</updated>
+    <updated>2014-04-15T21:14:15+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app</id>
     <content type="html"><![CDATA[<p>In a previous blog post I covered the step by step process of <a href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/">publishing Nfield.SDK to NuGet</a>.</p>
 
@@ -1126,7 +1126,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
-    <updated>2014-04-13T18:34:32+02:00</updated>
+    <updated>2014-04-13T19:34:32+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
     <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
 
@@ -1373,7 +1373,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights]]></title>
     <link href="http://www.hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights/"/>
-    <updated>2012-11-18T18:29:03+01:00</updated>
+    <updated>2012-11-18T19:29:03+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights</id>
     <content type="html"><![CDATA[<p>Microsoft is heading towards a new era with it’s Windows ecosystem and Azure cloud platform.</p>
 
@@ -1580,7 +1580,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Startup Weekend Amsterdam Experience]]></title>
     <link href="http://www.hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience/"/>
-    <updated>2010-10-20T20:52:30+02:00</updated>
+    <updated>2010-10-20T21:52:30+03:00</updated>
     <id>http://www.hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience</id>
     <content type="html"><![CDATA[<p>A few weeks ago I attended Startup Weeekend Amsterdam. I should say, it was really a weekend full of ideas, creativity, productivity and nice people.</p>
 

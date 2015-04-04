@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Redis | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/redis/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-03-15T16:17:57+01:00</updated>
+  <updated>2015-04-04T19:32:16+03:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Playing Around With Redis & SignalR - (Part 1)]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
-    <updated>2014-10-26T19:32:27+01:00</updated>
+    <updated>2014-10-26T20:32:27+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
