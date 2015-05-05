@@ -12,7 +12,7 @@ image: http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/anglebrac
 
 It's conference season again! Developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> were in [Build 2014](http://channel9.msdn.com/Events/Build/2014) and [NDC Oslo 2014](http://www.ndcoslo.com) last year. This year we'll be in [NDC Oslo](http://www.ndcoslo.com) again but this time I myself will be heading to [DevIntersection](http://devintersection.com) & [AngleBrackets](https://anglebrackets.org/) joint conferences.
 
-Norwegian Developers Conference is I think one of the best and I'd really enjoyed it last year. For this year I thought it's better to get more diversity out of our conference experiences so I decided to head towards Phoenix instead.
+Norwegian Developers Conference (NDC) is I think one of the best and I'd really enjoyed it last year. But change is good. 
 
 Following a deep consideration I reckon that I can't go to Norway again... Not after all those shrimps I had to sit face to face in Oslo (see OsloFjord Cruises). My friend Bjorn is very disciplined about reminding that to me consistently.
 <br/>
@@ -20,13 +20,13 @@ Following a deep consideration I reckon that I can't go to Norway again... Not a
 
 ## What's going to happen there
 
-DevIntersection has a number of tracks which they call "intersections":
+DevIntersection has a number of tracks which are called "intersections":
 
 ![DevIntersection Tracks](/assets/AngleBrackets_DevIntersection/devintersection_tracks.png)
 
-ASP.NET, Visual Studio and Azure intersections are grouped together since they're highly related to each other. This group of tracks will be my main interest in Phonenix together with the bonus open web event: [anglebrackets](https://anglebrackets.org/).
+ASP.NET, Visual Studio and Azure intersections are grouped together since they're highly related to each other. This group of tracks will be my main interest in Phoenix together with the bonus open web event: [anglebrackets](https://anglebrackets.org/).
 
-An exciting aspect of DevIntersection 2015 is that it's the first conference after [Build 2015](http://channel9.msdn.com/Events/Build/2015) event in which Microsoft made [a number of big announcements](http://venturebeat.com/2015/04/29/everything-that-happened-at-the-2015-microsoft-build-developer-conference/). There's a more detailed list and link aggregation about Build 2015 [here](http://blog.cwa.me.uk/2015/04/30/the-morning-brew-1851/) and [here](http://blog.cwa.me.uk/2015/05/01/the-morning-brew-1852/).
+An exciting aspect of DevIntersection 2015 is that it's the first conference after [Build 2015](http://channel9.msdn.com/Events/Build/2015) at which Microsoft made [a number of big announcements](http://venturebeat.com/2015/04/29/everything-that-happened-at-the-2015-microsoft-build-developer-conference/). There's a more detailed list and link aggregation about Build 2015 [here](http://blog.cwa.me.uk/2015/04/30/the-morning-brew-1851/) and [here](http://blog.cwa.me.uk/2015/05/01/the-morning-brew-1852/) which I highly recommend.
 
 Here is a piece from the official event site:
 
@@ -40,7 +40,7 @@ I'll be attending three workshops. Two of them are before the conference and las
 ---
 ![DevIntersection Tracks](/assets/AngleBrackets_DevIntersection/DevIntersection Workshops_2.png)
 ---
-And for the conference itself, I've looked at the schedule and marked the sessions I'm interested in so far. For a number of slots I've picked more than one session - I'll have to pick one of them at the spot.
+And for the conference itself, I've looked at the schedule and marked the sessions I'm interested in so far. For a number of slots I've picked more than one session for now - I'll have to pick one of them on the spot.
 
 ![DevIntersection Tracks](/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Tuesday.png)
 ---
@@ -48,9 +48,12 @@ And for the conference itself, I've looked at the schedule and marked the sessio
 ---
 ![DevIntersection Tracks](/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Thursday.png)
 
-TODO:
 
-2. Take a look at the brochure. See if there is any extra information there.
+As usual I'll be sharing my experiences from the event on twitter and facebook. You can follow me on twitter using [@hakant](https://twitter.com/hakant). And in case you're reading this and also going to DevIntersection in May let's connect and meet there!
+
+Hakan
+
+
 
 
 
