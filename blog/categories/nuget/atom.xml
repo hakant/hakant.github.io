@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Nuget | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/nuget/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-04-04T20:00:15+03:00</updated>
+  <updated>2015-05-05T10:23:44+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[A Simple Nfield.SDK App]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app/"/>
-    <updated>2014-04-15T21:14:15+03:00</updated>
+    <updated>2014-04-15T20:14:15+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app</id>
     <content type="html"><![CDATA[<p>In a previous blog post I covered the step by step process of <a href="/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/">publishing Nfield.SDK to NuGet</a>.</p>
 
@@ -203,7 +203,7 @@ registerTransient(typeof(IFileSystem), typeof(FileSystem));
   <entry>
     <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
-    <updated>2014-04-13T19:34:32+03:00</updated>
+    <updated>2014-04-13T18:34:32+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
     <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
 

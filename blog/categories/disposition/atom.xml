@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Disposition | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/disposition/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-04-04T20:00:15+03:00</updated>
+  <updated>2015-05-05T10:23:44+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Notes on Finalization and Disposition in .NET]]></title>
     <link href="http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net/"/>
-    <updated>2015-03-12T23:04:15+02:00</updated>
+    <updated>2015-03-12T22:04:15+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net</id>
     <content type="html"><![CDATA[<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
 

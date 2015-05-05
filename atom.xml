@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-04-04T20:00:15+03:00</updated>
+  <updated>2015-05-05T10:23:44+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -14,9 +14,64 @@
 
   
   <entry>
+    <title type="html"><![CDATA[DevIntersection &amp; AngleBrackets in Phoenix]]></title>
+    <link href="http://www.hakantuncer.com/blog/2015/05/02/devintersection-and-anglebrackets-in-phoenix/"/>
+    <updated>2015-05-02T13:46:06+02:00</updated>
+    <id>http://www.hakantuncer.com/blog/2015/05/02/devintersection-and-anglebrackets-in-phoenix</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s conference season again! Developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> were in <a href="http://channel9.msdn.com/Events/Build/2014">Build 2014</a> and <a href="http://www.ndcoslo.com">NDC Oslo 2014</a> last year. This year we&rsquo;ll be in <a href="http://www.ndcoslo.com">NDC Oslo</a> again but this time I myself will be heading to <a href="http://devintersection.com">DevIntersection</a> &amp; <a href="https://anglebrackets.org/">AngleBrackets</a> joint conferences.</p>
+
+<p>Norwegian Developers Conference (NDC) is I think one of the best and I&rsquo;d really enjoyed it last year. But change is good.</p>
+
+<p>Following a deep consideration I reckon that I can&rsquo;t go to Norway again&hellip; Not after all those shrimps I had to sit face to face in Oslo (see OsloFjord Cruises). My friend Bjorn is very disciplined about reminding that to me consistently.</p>
+
+<br/>
+
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hakant">@hakant</a> &quot;We are eagerly awaiting your visit Mr Tuncer&#8230;&quot; <a href="http://t.co/JuG6axnSsO">pic.twitter.com/JuG6axnSsO</a></p>&mdash; Bjorn Coltof (@bjorn_coltof) <a href="https://twitter.com/bjorn_coltof/status/593866800149995521">April 30, 2015</a></blockquote>
+
+
+<p> <script async src="http://www.hakantuncer.com//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2>What&rsquo;s going to happen there</h2>
+
+<p>DevIntersection has a number of tracks which are called &ldquo;intersections&rdquo;:</p>
+
+<p><img src="http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/devintersection_tracks.png" alt="DevIntersection Tracks" /></p>
+
+<p>ASP.NET, Visual Studio and Azure intersections are grouped together since they&rsquo;re highly related to each other. This group of tracks will be my main interest in Phoenix together with the bonus open web event: <a href="https://anglebrackets.org/">anglebrackets</a>.</p>
+
+<p>An exciting aspect of DevIntersection 2015 is that it&rsquo;s the first conference after <a href="http://channel9.msdn.com/Events/Build/2015">Build 2015</a> at which Microsoft made <a href="http://venturebeat.com/2015/04/29/everything-that-happened-at-the-2015-microsoft-build-developer-conference/">a number of big announcements</a>. There&rsquo;s a more detailed list and link aggregation about Build 2015 <a href="http://blog.cwa.me.uk/2015/04/30/the-morning-brew-1851/">here</a> and <a href="http://blog.cwa.me.uk/2015/05/01/the-morning-brew-1852/">here</a> which I highly recommend.</p>
+
+<p>Here is a piece from the official event site:</p>
+
+<blockquote><p>We invite you to the most dynamic developer event in our industry at the next DEVintersection, May 2015. This event is POST BUILD and IGNITE which will allow our presenters to go deep into the new releases and technologies announced. We will focus on Visual Studio, ASP.net, HTML5, Microsoft Azure, XAML, ALM, Architecture, Design and in the bonus co-located open web event anglebrackets we feature Angular JS, HTML5, CSS, Java Script, SPA, SEO, Speech enabled Mobile Apps, Design and much more.</p></blockquote>
+
+<h2>The Schedule</h2>
+
+<p>I&rsquo;ll be attending three workshops. Two of them are before the conference and last one is after the conference on Friday. Each workshop is a day long.</p>
+
+<h2><img src="http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/DevIntersection%20Workshops_1.png" alt="DevIntersection Tracks" /></h2>
+
+<h2><img src="http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/DevIntersection%20Workshops_2.png" alt="DevIntersection Tracks" /></h2>
+
+<p>And for the conference itself, I&rsquo;ve looked at the schedule and marked the sessions I&rsquo;m interested in so far. For a number of slots I&rsquo;ve picked more than one session for now &ndash; I&rsquo;ll have to pick one of them on the spot.</p>
+
+<h2><img src="http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Tuesday.png" alt="DevIntersection Tracks" /></h2>
+
+<h2><img src="http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Wednesday.png" alt="DevIntersection Tracks" /></h2>
+
+<p><img src="http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Thursday.png" alt="DevIntersection Tracks" /></p>
+
+<p>As usual I&rsquo;ll be sharing my experiences from the event on twitter and facebook. You can follow me on twitter using <a href="https://twitter.com/hakant">@hakant</a>. And in case you&rsquo;re reading this and also going to DevIntersection in May let&rsquo;s connect and meet there!</p>
+
+<p>Hakan</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Notes on Finalization and Disposition in .NET]]></title>
     <link href="http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net/"/>
-    <updated>2015-03-12T23:04:15+02:00</updated>
+    <updated>2015-03-12T22:04:15+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2015/03/12/finalization-and-disposition-in-net</id>
     <content type="html"><![CDATA[<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
 
@@ -177,7 +232,7 @@
   <entry>
     <title type="html"><![CDATA[Kiwi - Updates & First demo]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo/"/>
-    <updated>2014-12-08T20:50:48+02:00</updated>
+    <updated>2014-12-08T19:50:48+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/12/08/kiwi-updates-and-first-demo</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been more than a month since I first wrote about Kiwi. <a href="http://www.hakantuncer.com/blog/2014/11/01/building-kiwi/">In that post</a> I had a &ldquo;demo&rdquo; section where I wrote:</p>
 
@@ -248,7 +303,7 @@
   <entry>
     <title type="html"><![CDATA[Building Kiwi]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/11/01/building-kiwi/"/>
-    <updated>2014-11-01T11:27:02+02:00</updated>
+    <updated>2014-11-01T10:27:02+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/11/01/building-kiwi</id>
     <content type="html"><![CDATA[<p>I think it was sometime around February 2014 when Deniz Orsel, my colleague from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, came to me and said &ldquo;I need you to build something&hellip;&rdquo;. Later it became apparent that he also already had discussed his idea with <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a>, another colleague of mine in <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> and convinced him.</p>
 
@@ -302,7 +357,7 @@
   <entry>
     <title type="html"><![CDATA[Playing around with Redis & SignalR - (Part 1)]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
-    <updated>2014-10-26T20:32:27+02:00</updated>
+    <updated>2014-10-26T19:32:27+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
@@ -449,7 +504,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[After NDC Oslo 2014]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/06/08/after-ndc-oslo-2014/"/>
-    <updated>2014-06-08T16:39:52+03:00</updated>
+    <updated>2014-06-08T15:39:52+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/06/08/after-ndc-oslo-2014</id>
     <content type="html"><![CDATA[<p>It&rsquo;s over. I&rsquo;m back in Amsterdam after an awesome week in Oslo. Great sessions, lots of smart people, delicious food and very good coffee. Inspirations everywhere.</p>
 
@@ -633,7 +688,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[NDC Oslo 2014]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/05/13/ndc-oslo-2014/"/>
-    <updated>2014-05-13T23:24:08+03:00</updated>
+    <updated>2014-05-13T22:24:08+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/05/13/ndc-oslo-2014</id>
     <content type="html"><![CDATA[<p>Yes! It&rsquo;s happening. We will be at <a href="http://www.ndcoslo.com/" target="_blank">NDC Oslo 2014</a> with 3 developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>. <a href="https://twitter.com/bjorn_coltof" target="_blank">Bjorn Coltof</a>, <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a> and I are going to be there between 2-6th of June. We&rsquo;ll be attending the conference as well as the pre-conference workshops. We&rsquo;re all pretty excited and it&rsquo;s going to be awesome. Connect with us if you&rsquo;re also going to be there! We can have a chat over a beer or two. All beers are on NIPO Software! (just testing if Jeroen Noordman, our CEO, is reading this post. I should soon find out).</p>
 
@@ -695,7 +750,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Disaster Recovery on Azure]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
-    <updated>2014-04-27T20:30:37+03:00</updated>
+    <updated>2014-04-27T19:30:37+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
     <content type="html"><![CDATA[<p>There are things we tend to ignore. Things that we don&rsquo;t want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.</p>
 
@@ -884,7 +939,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[A simple Nfield.SDK app]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app/"/>
-    <updated>2014-04-15T21:14:15+03:00</updated>
+    <updated>2014-04-15T20:14:15+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/15/a-simple-nfield-dot-sdk-app</id>
     <content type="html"><![CDATA[<p>In a previous blog post I covered the step by step process of <a href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/">publishing Nfield.SDK to NuGet</a>.</p>
 
@@ -1126,7 +1181,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
-    <updated>2014-04-13T19:34:32+03:00</updated>
+    <updated>2014-04-13T18:34:32+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
     <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
 
@@ -1373,7 +1428,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights]]></title>
     <link href="http://www.hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights/"/>
-    <updated>2012-11-18T19:29:03+02:00</updated>
+    <updated>2012-11-18T18:29:03+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights</id>
     <content type="html"><![CDATA[<p>Microsoft is heading towards a new era with it’s Windows ecosystem and Azure cloud platform.</p>
 
@@ -1580,7 +1635,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Startup Weekend Amsterdam Experience]]></title>
     <link href="http://www.hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience/"/>
-    <updated>2010-10-20T21:52:30+03:00</updated>
+    <updated>2010-10-20T20:52:30+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience</id>
     <content type="html"><![CDATA[<p>A few weeks ago I attended Startup Weeekend Amsterdam. I should say, it was really a weekend full of ideas, creativity, productivity and nice people.</p>
 

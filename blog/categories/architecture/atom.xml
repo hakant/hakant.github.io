@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Architecture | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/architecture/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-04-04T20:00:15+03:00</updated>
+  <updated>2015-05-05T10:23:44+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Playing Around With Redis & SignalR - (Part 1)]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
-    <updated>2014-10-26T20:32:27+02:00</updated>
+    <updated>2014-10-26T19:32:27+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
@@ -165,7 +165,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Disaster Recovery on Azure]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
-    <updated>2014-04-27T20:30:37+03:00</updated>
+    <updated>2014-04-27T19:30:37+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
     <content type="html"><![CDATA[<p>There are things we tend to ignore. Things that we don&rsquo;t want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.</p>
 
