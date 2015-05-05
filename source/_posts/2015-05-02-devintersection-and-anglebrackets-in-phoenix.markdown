@@ -6,8 +6,8 @@ comments: true
 categories: [conference, anglebrackets, devintersection]
 footer: true
 sharing: true
-description: I'll be at AngleBrackets & DevIntersection Conferences in Phoenix
-image: http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/anglebrackets.png
+description: I will be at AngleBrackets &amp; DevIntersection Conferences in Phoenix
+image: http://www.hakantuncer.com/assets/AngleBrackets_DevIntersection/anglebrackets_main.png
 ---
 
 It's conference season again! Developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> were in [Build 2014](http://channel9.msdn.com/Events/Build/2014) and [NDC Oslo 2014](http://www.ndcoslo.com) last year. This year we'll be in [NDC Oslo](http://www.ndcoslo.com) again but this time I myself will be heading to [DevIntersection](http://devintersection.com) & [AngleBrackets](https://anglebrackets.org/) joint conferences.
