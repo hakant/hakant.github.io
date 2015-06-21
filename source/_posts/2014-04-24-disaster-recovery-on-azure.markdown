@@ -7,6 +7,10 @@ categories: [azure, architecture]
 footer: true
 sharing: true
 ---
+<br/><br/>
+
+>####UPDATE: 
+Things keep changing & improving on Azure. This post may not reflect the latest capabilities in terms of Disaster Recovery for Azure Applications. Make sure to read the subject on [MSDN](https://msdn.microsoft.com/en-us/library/azure/dn251004.aspx) as well.
 
 There are things we tend to ignore. Things that we don't want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.
 
