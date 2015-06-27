@@ -64,7 +64,7 @@ If you would learn one thing from this entire course this should be it, Juval me
 This is the universal principle of good design says Juval. Encapsulate change to insulate. Do not resonate with change. Functional decomposition on the other hand maximizes the impact of change because it's coupled to it.
 <br/>
 ####Challenges with Volatility-Based Decomposition
-There are challenges in creating a Volatility-Based Decomposition. First of all it usually takes longer than functional because volatility is not often self evident. On the other hand features are kept thrown at your face. People around you will be feature thirsty, they'll keep asking their features like cannibals. You should instead fight the insanity and focus on the bigger picture and volatilities. Getting the management support is usually another challenge. Juval said architects should be responsible and fight against this insanity.
+There are challenges in creating a Volatility-Based Decomposition. First of all it usually takes longer than functional because volatility is not often self evident. On the other hand features are kept thrown at your face. People around you will be feature thirsty, they'll keep asking their features like cannibals. You should instead fight the insanity and focus on the bigger picture and volatilities. Getting the management support is usually another challenge. Juval said architects should be responsible, fight against these opposing forces and do what is right.
 <br/>
 ####Axes of volatility
 There are two axes of volatility.
@@ -74,22 +74,54 @@ There are two axes of volatility.
 
 These axes should be independent from each other. So encapsulate them from each other as well. When they're not independent it's a sign of functional decomposition.
 
-Prior to architecture and decomposition, as part of requirements gathering and analysis, prepare a list of areas of volatility. Ask what could change along axes of volatility.
+Prior to architecture and decomposition, as part of requirements gathering and analysis, prepare a list of areas of volatility. Ask what could change along the axes of volatility.
 <br/>
 ####Example of Volatility-Based Decomposition
 
+Below, you'll find 5 slides from the workshop that brainstorms on possible volatilities of a trading system. Here are some guidelines for capturing volatility:
+
+* The objective is to have a mindset of "what could possibly change?"
+* Capturing the areas of volatility earlier is better than later. The later you figure it out the more it will cost you.
+* Once settled on the ares of volatility encapsulate them in components of architecture.
+* You don't need an exhaustive list. This is a process of diminishing returns. Don't overdo it.
+* Some volatile areas may relate too much to the nature of your business. This type of volatility is out of your scope.
 
 <img src="/assets/Zen_of_Architecture/IMG_2026.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2027.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2028.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2029.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2030.jpg" style="border: solid;">
-<img src="/assets/Zen_of_Architecture/IMG_2031.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2032.jpg" style="border: solid;">
-<img src="/assets/Zen_of_Architecture/IMG_2033.jpg" style="border: solid;">
+<br/>
+####Let's analyze this decomposition.
+
+Transition from list of areas of volatility to services is hardly ever pure 1:1. Sometimes a single service encapsulates multiple areas. Some areas may map to an operational concept or may be encapsulated in a third party component.
+
+Always encapsulate the data storage volatility behind data access services. Encapsulate where the storage is, what technology is used to access it and refer your storage as storage, not as database.
+
+Following 3 slides do further analysis of the decomposition in this example. Please refer to the diagram above as you read the key points:
+
 <img src="/assets/Zen_of_Architecture/IMG_2034.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2035.jpg" style="border: solid;">
 <img src="/assets/Zen_of_Architecture/IMG_2036.jpg" style="border: solid;">
+
+##Decomposition and Business
+
+Avoid encapsulating changes to the nature of your business. Because
+
+* you'll need it very rarely
+* you'll be diving into speculation and speculation based design trap
+* when you do it you'll probably do it very poorly because there are too many unknowns
+
+While designing a system for your business don't only focus on your own also keep your competitor in mind. Design both for you and your competitor. This is a useful posture in designing systems and it's not about features or functionality but it's about understanding the nature of the business. Keeping your competitors in mind and not only focusing on your own business will help you understand the nature of the business even better. This way you can have a better judgement about what is volatile and what is not.
+
+##Decomposition and Longevity
+
+Volatility is very closely tied to longetivy. The longer things do not change the longer they have till they do change or are replaced. The more frequently things change the more likely they would change in the future.
+
+You must take into account impact from change regardless of your requirements. Ask yourself what has changed over the past 5-7 years and what will change in the next 5-7 years. Encapsulate things that would change within the life of your system.
+
+
 
 
 
