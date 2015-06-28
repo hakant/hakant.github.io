@@ -1,0 +1,411 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+
+
+
+
+
+
+
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Zen of Architecture - Hakan Tuncer's Blog</title>
+	<meta name="author" content="Hakan Tuncer">
+	<meta name="description" content="Follow @hakant Jun 28th, 2015 architecture, devintersection, workshop Comments Zen of Architecture I was at DevIntersection Conference in Phoenix &hellip;">
+	
+	<!-- http://t.co/dKP3o1e -->
+  	<meta name="HandheldFriendly" content="True">
+  	<meta name="MobileOptimized" content="320">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Zen of Architecture - Hakan Tuncer's Blog" />
+    <meta property="og:description" content="Follow @hakant Jun 28th, 2015 architecture, devintersection, workshop Comments Zen of Architecture I was at DevIntersection Conference in Phoenix &hellip;" />
+    <meta property="og:url" content="http://www.hakantuncer.com/blog/2015/06/28/zen-of-architecture/" />
+    <meta property="og:image" content="http://www.hakantuncer.com/assets/Zen_of_Architecture/ZenOfArchitecture.jpg" />
+	
+	<link href="/atom.xml" rel="alternate" title="Hakan Tuncer's Blog" type="application/atom+xml">	
+	<link rel="canonical" href="http://www.hakantuncer.com/blog/2015/06/28/zen-of-architecture/">
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("hakantuncer@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<hgroup>
+  <h1><a href="/">Nothing will work, unless you do</a></h1>
+  
+    <h2>“Whatever you can do, or dream you can, begin it. Boldness has genius, magic, and power in it. Begin it now.”</h2>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">home</a></li>
+  <li><a href="/blog">blog</a></li>
+  <li><a href="/blog/archives">archives</a></li>
+  <li><a href="/portfolio">portfolio</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:hakantuncer@gmail.com" title="Email">Email</a>
+		
+		
+			<a class="facebook" href="http://www.facebook.com/hakantuncer" target="_blank" title="Facebook">Facebook</a>
+		
+		
+		
+			<a class="twitter" href="http://twitter.com/hakant" target="_blank" title="Twitter">Twitter</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/hakantuncer" target="_blank" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/hakant" target="_blank" title="GitHub">GitHub</a>
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-28T13:19:40+02:00" data-updated="true" itemprop="datePublished">Jun 28<span>th</span>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/architecture/'>architecture</a>, <a class='category' href='/blog/categories/devintersection/'>devintersection</a>, <a class='category' href='/blog/categories/workshop/'>workshop</a>
+
+
+</div>
+		
+			<span class="comments"><a href="#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name">Zen of Architecture</h1>
+	<div class="entry-content" itemprop="articleBody"><p><a href="/blog/2015/05/02/devintersection-and-anglebrackets-in-phoenix/">I was at DevIntersection Conference</a> in Phoenix around mid May 2015. Apart from the regular conference schedule, I took a few interesting workshops one of which was &ldquo;Zen of Architecture&rdquo; by <a href="http://www.oreilly.com/pub/au/741">Juval Lowy</a>.</p>
+
+<p>As the name clearly implies one day workshop was all about software architecture and the ways to approach it. Juval talked about a method that he uses for decomposing systems and making design decisions.</p>
+
+<p>It was a full day of content storm with as little breaks in between as possible (this is the Juval style I suppose). I&rsquo;ve been reviewing my notes and presentation slides thinking this can become a book if I try to write everything. So instead, this post focuses on a certain part of the workshop which I think covers the core idea.</p>
+
+<h2>The Method</h2>
+
+<p>Juval introduces a method which he calls &ldquo;The Method&rdquo; for decomposing a system. Achieving the right decomposition of a system is one of the most important things in software architecture. The end result of your decomposition is your architecture.</p>
+
+<blockquote><p>For the beginner architect, there are many options<br/>
+For the master architect, there are only a few</p></blockquote>
+
+<h2>Functional Decomposition</h2>
+
+<p>The biggest sin of any software architect. Never ever do functional decomposition!</p>
+
+<br/>
+
+
+<h4>What is it?</h4>
+
+<ul>
+<li>This is also known as the flow-chart decomposition.</li>
+<li>Basing services and system components on the order of logical steps in use cases.</li>
+<li>Decomposing the system based on features, functional requirements and time.</li>
+</ul>
+
+
+<p>Juval emotionally talks about &ldquo;functional decomposition&rdquo; easily for more than an hour. Can&rsquo;t repeat enough how bad it is and how we&rsquo;re all guilty of doing it from time to time and why we should be very conscious about resisting our bad habits. Say &ldquo;functional decomposition&rdquo; to Juval one more time and he&rsquo;ll kill you right there without blinking.</p>
+
+<br/>
+
+
+<h4>Why is it so bad?</h4>
+
+<ul>
+<li>It leads to duplicating behaviors across services.</li>
+<li>It leads to explosion and bloating of services and intricate relationships inside and between them.</li>
+<li>It couples multiple services to data contract.</li>
+<li>Promotes implementing use cases in higher level terms thus difficult to reuse same behavior in another use case.</li>
+<li>Couples services to order and current use cases.</li>
+<li>Prevents single point of entry.</li>
+</ul>
+
+
+<br/>
+
+
+<h4>Example of Functional Decomposition</h4>
+
+<p>Here are  a few slides from the workshop that shows Functional Decomposition in action.</p>
+
+<p><img src="/assets/Zen_of_Architecture/IMG_2021.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2023.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2024.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2025.jpg" style="border: solid;"></p>
+
+<h2>Volatility-Based Decomposition</h2>
+
+<p>If you would learn one thing from this entire course this should be it, Juval mentioned repeatedly. <strong>You should always decompose a system based on volatility.</strong></p>
+
+<ul>
+<li>Identify areas of potential change and encapsulate them in services.</li>
+<li>Look for functional potential changes but <strong>not domain functional</strong>. Meaning that while looking for volatility, don&rsquo;t speculate on potential changes to the nature of the business. Don&rsquo;t overdo it.</li>
+<li>Implement behavior as interactions between services or subsystems.</li>
+<li>Create your milestones based on integration of these services not features.</li>
+</ul>
+
+
+<p>This is the universal principle of good design says Juval. Encapsulate change to insulate. Do not resonate with change. Functional decomposition on the other hand maximizes the impact of change because it&rsquo;s coupled to it.</p>
+
+<br/>
+
+
+<h4>Challenges with Volatility-Based Decomposition</h4>
+
+<p>There are challenges in creating a Volatility-Based Decomposition. First of all it usually takes longer than functional because volatility is not often self evident. On the other hand features are kept thrown at your face. People around you are feature thirsty, they&rsquo;ll keep asking for their features. You should instead fight the insanity and focus on the bigger picture and volatilities. Getting the management support is usually another challenge. Juval said architects should be responsible, fight against these opposing forces and do what is right.</p>
+
+<br/>
+
+
+<h4>Axes of volatility</h4>
+
+<p>There are two axes of volatility.</p>
+
+<ul>
+<li>At the same customer over time</li>
+<li>At the same time across customers</li>
+</ul>
+
+
+<p>These axes should be independent from each other. So encapsulate them from each other as well. When they&rsquo;re not independent it&rsquo;s a sign of functional decomposition.</p>
+
+<p>Prior to architecture and decomposition, as part of requirements gathering and analysis, prepare a list of areas of volatility. Ask what could change along the axes of volatility.</p>
+
+<br/>
+
+
+<h4>Example of Volatility-Based Decomposition</h4>
+
+<p>Below, you&rsquo;ll find 5 slides from the workshop that brainstorms on possible volatilities of a trading system. Here are some guidelines for capturing volatility:</p>
+
+<ul>
+<li>The objective is to have a mindset of &ldquo;what could possibly change?&rdquo;</li>
+<li>Capturing the areas of volatility earlier is better than later. The later you figure it out the more it will cost you.</li>
+<li>Once settled on the ares of volatility encapsulate them in components of architecture.</li>
+<li>You don&rsquo;t need an exhaustive list. This is a process of diminishing returns. Don&rsquo;t overdo it.</li>
+<li>Some volatile areas may relate too much to the nature of your business. This type of volatility is out of your scope.</li>
+</ul>
+
+
+<p><img src="/assets/Zen_of_Architecture/IMG_2026.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2027.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2028.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2029.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2030.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2032.jpg" style="border: solid;"></p>
+
+<br/>
+
+
+<h4>Let&rsquo;s analyze this decomposition.</h4>
+
+<p>Transition from list of areas of volatility to services is hardly ever pure 1:1. Sometimes a single service encapsulates multiple areas. Some areas may map to an operational concept or may be encapsulated in a third party component.</p>
+
+<p>Always encapsulate the data storage volatility behind data access services. Encapsulate where the storage is, what technology is used to access it and refer your storage as storage, not as database or whatever the actual technology is.</p>
+
+<p>Following 3 slides do further analysis of the decomposition in this example. Please refer to the diagram above as you read the key points:</p>
+
+<p><img src="/assets/Zen_of_Architecture/IMG_2034.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2035.jpg" style="border: solid;">
+<img src="/assets/Zen_of_Architecture/IMG_2036.jpg" style="border: solid;"></p>
+
+<h2>Decomposition and Business</h2>
+
+<p>Avoid encapsulating changes to the nature of your business. Because</p>
+
+<ul>
+<li>you&rsquo;ll need it very rarely</li>
+<li>you&rsquo;ll be diving into speculation and speculation based design trap</li>
+<li>when you do it you&rsquo;ll probably do it very poorly because there are too many unknowns (and again speculations)</li>
+</ul>
+
+
+<p>While designing a system for your business don&rsquo;t only focus on your own also keep your competitor in mind. Design both for you and your competitor. This is a useful posture in designing systems and it&rsquo;s not about features or functionality but it&rsquo;s about understanding the nature of the business. Keeping your competitors in mind and not only focusing on your own business will help you understand the nature of the business even better. This way you can have a better judgement about what is volatile and what is not.</p>
+
+<h2>Decomposition and Longevity</h2>
+
+<p>Volatility is very closely tied to longevity. The longer things do not change the longer they have till they do change or are replaced. The more frequently things change the more likely they would change in the future.</p>
+
+<p>You must take into account impact from change regardless of your requirements. Ask yourself what has changed over the past 5-7 years and what will change in the next 5-7 years. Encapsulate things that would change within the life of your system.</p>
+
+<h2>Further topics</h2>
+
+<p>For the rest of the day Juval dived into</p>
+
+<ul>
+<li>layered architectures</li>
+<li>typical layers</li>
+<li>definition of managers, engines, resource access services and differences between them</li>
+<li>open and closed architectures</li>
+<li>what not to do when using &ldquo;the method&rdquo;</li>
+<li>creating call graphs within system components and observing/revealing anti-patterns</li>
+<li>a bonus section called &ldquo;what about agile?&rdquo;</li>
+</ul>
+
+
+<p>All in all it was a mind tickling workshop and I hope I could give you more than only a taste. I may write other posts about the bullet points above if/when I find the time.</p>
+
+<p>Thanks for reading</p>
+
+<p>Hakan</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - Hakan Tuncer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+</footer>
+			
+
+<script type="text/javascript">
+      var disqus_shortname = 'hakantuncer';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.hakantuncer.com/blog/2015/06/28/zen-of-architecture/';
+        var disqus_url = 'http://www.hakantuncer.com/blog/2015/06/28/zen-of-architecture/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+		</div>
+	</div>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48149810-1', 'hakantuncer.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
