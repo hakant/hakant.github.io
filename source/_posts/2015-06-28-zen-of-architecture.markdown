@@ -6,7 +6,7 @@ comments: true
 categories: [workshop, devintersection, architecture]
 footer: true
 sharing: true
-description: A taste from a workshop for software architects.
+description: A taste from a workshop for software architects
 image: http://www.hakantuncer.com/assets/Zen_of_Architecture/ZenOfArchitecture.jpg
 ---
 
