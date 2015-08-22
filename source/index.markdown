@@ -8,21 +8,24 @@ description: I'm Hakan. A software engineer, web enthusiast, rock guitar player,
 
 <h2 class="title">I'm Hakan</h2>
 
-A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - usually not together.
+A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - never together though.
 
-I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software for various <a href="{{ root_url }}/portfolio">companies & projects</a>. Over the past years I've been particularly interested in Microsoft .NET stack and the tools around it but in the recent years things are changing within our industry. Different technologies live together side by side as it has never been before. Freedom of choice is the king.
+I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software for various <a href="{{ root_url }}/portfolio">companies & projects</a>. Over the past years I've been particularly interested in Microsoft .NET stack and the tools around it but in recent years things are changing within our industry. Different technologies live together side by side as it has never been before. Open source and freedom of choice is the king.
 
-I moved to Amsterdam around 6 years ago and I'm currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for the market research industry.
+I moved to Amsterdam around 7 years ago and I'm currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for market research companies.
 
 <h2 class="title">I'm working on a couple of projects</h2>
 <br/>
 >Always have a side project. 
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* **A new Startup:** For about 6 months me and two of my colleagues are working on a startup. We're building a product focused on market research. It's name is Kiwi. We're going to have a public website for the company and the product soon. I'll put it up here when it's available but I've also written two blog posts about it so far. <a href="{{ root_url }}/blog/2014/11/01/building-kiwi/">Building Kiwi</a> and <a href="{{ root_url }}/blog/2014/12/08/kiwi-updates-and-first-demo/">Kiwi - Updates & First Demo</a>. Take a look at them if it sounds any interesting. I'm learning a lot from this whole experience, both technical and non-technical.
+* **A new Startup - Ottobytes:** For more than a year me and two of my colleagues are working on a startup. We're building a product focused on market research. It's name is Kiwi. Visit the <a href="http://www.ottobytes.com/" target="_blank">
+Ottobytes Website
+</a> for more information about the company and its product Kiwi. I've also written two blog posts about it so far. <a href="{{ root_url }}/blog/2014/11/01/building-kiwi/">Building Kiwi</a> and <a href="{{ root_url }}/blog/2014/12/08/kiwi-updates-and-first-demo/">Kiwi - Updates & First Demo</a>. Take a look at them if it sounds any interesting. I'm learning a lot from this whole experience, both technical and non-technical.
 
-* **Reviewing a book about Azure Storage:** I'm currently reviewing an upcoming book from <a href="https://www.packtpub.com/" target="_blank">Packt Publishing</a> titled "Azure Storage Essentials". They've asked me if I could review this book for them and I said why not. My short-bio will be in the reviewers section. Yay! :p
-It's taking me quite some time to properly review this book but I'm learning a lot while doing it. So no regrets there.
+<a href="http://www.ottobytes.com/" target="_blank">
+![Ottobytes Website](/assets/HomePage/Ottobytes.png =600x)
+</a>
 
 * **This Blog:** I'd like to think of blogging as a side project too. This blog is made using Octopress (based on Jekyll) on a Mac. I've always been a Windows user, I still am. But since 2012 my main machine is a Mac. I'm learning Bash and trying to balance my time with Windows and Mac as a developer.
 
@@ -47,13 +50,6 @@ It's taking me quite some time to properly review this book but I'm learning a l
 ![Startup Podcast](/assets/HomePage/StartupPodcast.jpeg =120x120)
 ![Freelancer's Show](/assets/HomePage/FreelancersShow.jpeg =120x120)
 
-<h2 class="title">Books I'm currently reading</h2>
-<br />
-
-* **"Daily Rituals: How Artists Work"**: I'm really enjoying reading this book. It contains daily rituals of 161 inspiring minds (novelists, poets, playwrights, painters, philosophers, scientists, and mathematicians) who have made great impact on our lives. The author covers each artist in a couple of pages. Fun and smooth reading.
-
-![Daily Rituals: How Artists Work](http://ecx.images-amazon.com/images/I/517lOS%2BzzmL.jpg =240x240)
-
 <h2 class="title">A few of my favorite books</h2>
 <br />
 
@@ -68,3 +64,7 @@ It's taking me quite some time to properly review this book but I'm learning a l
 * **Charisma Myth** really demystifies the charismatic behaviors in the sense that it classifies the types of charisma, the kind of behaviors that leads to charisma and how to get there as a person without transforming your fundamental personality. This is a kind of book I want to keep next to me and remind myself of these best practices over and over again until they stick.
 
 ![Charisma Myth](http://ecx.images-amazon.com/images/I/51DY8Mb84XL.jpg =240x240)
+
+* **Daily Rituals: How Artists Work**: I really enjoyed reading this book. It contains daily rituals of 161 inspiring minds (novelists, poets, playwrights, painters, philosophers, scientists, and mathematicians) who have made great impact on our lives. The author covers each artist in a couple of pages. Fun and smooth reading.
+
+![Daily Rituals: How Artists Work](http://ecx.images-amazon.com/images/I/517lOS%2BzzmL.jpg =240x240)
