@@ -9,8 +9,8 @@ sharing: true
 ---
 <br/><br/>
 
->####UPDATE: 
-Things keep changing & improving on Azure. This post may not reflect the latest capabilities in terms of Disaster Recovery for Azure Applications. Make sure to read the subject on [MSDN](https://msdn.microsoft.com/en-us/library/azure/dn251004.aspx) as well.
+>####UPDATE:
+Things keep changing & improving really FAST on Azure. This post may not reflect the latest capabilities in terms of Disaster Recovery for Azure Applications. Make sure to read the subject on [MSDN](https://msdn.microsoft.com/en-us/library/azure/dn251004.aspx) as well.
 
 There are things we tend to ignore. Things that we don't want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.
 
@@ -24,7 +24,7 @@ Recovery Time Objective is the maximum amount of time allocated for restoring ap
 This is usually a requirement coming from the business. Basically the question is how critical is your platform and how much down time can you tolerate in such a catastrophic event?
 
 >##### Recovery Point Objective (RPO)
-The recovery point objective (RPO) is the acceptable time window of lost data due to the recovery process. 
+The recovery point objective (RPO) is the acceptable time window of lost data due to the recovery process.
 
 For example, if the RPO is one hour, you must completely back up or replicate the data at least every hour. Once you bring up the application in an alternate datacenter, the backup data may be missing up to an hour of data. Like RTO, critical applications target a much smaller RPO.
 
@@ -52,9 +52,9 @@ When there are backups available outside the datacenter, the environment can be 
 
 ![Redeploy to another datacenter](/assets/Disaster_Recovery_On_Azure/Redeploy_Azure_Datacenter.png)
 
-This is called "redeploy" recovery model and as you might already guess has a long recovery time objective. All the individual pieces of the environment needs to be moved to another datacenter and redeployed. 
+This is called "redeploy" recovery model and as you might already guess has a long recovery time objective. All the individual pieces of the environment needs to be moved to another datacenter and redeployed.
 
-## How to backup Azure data (together with RPO and RTO considerations) 
+## How to backup Azure data (together with RPO and RTO considerations)
 <br><br>
 #### 1. Azure Storage
 The good news is that Azure Storage Service has built-in replication strategies. Two of them are geographical redundancy, meaning that all storage data is replicated across datacenters. That's exactly what disaster recovery is about.
@@ -85,7 +85,7 @@ Let's look at each option and see what it means:
 
 ##### Automatic Database Export:
 
-Actually there are a couple of ways to replicate or backup a database. But most of these options have their own shortcomings for disaster recovery. There is a feature called [Database Copy](http://msdn.microsoft.com/en-US/library/azure/ff951624.aspx) which creates a [transactionally consistent replica](http://technet.microsoft.com/en-us/library/ms151176.aspx) of the source database in __the same datacenter.__ Because the replica resides in the same datacenter there is no geo-redundancy. But after the copying is completed, this database can be exported to a storage account in another datacenter. 
+Actually there are a couple of ways to replicate or backup a database. But most of these options have their own shortcomings for disaster recovery. There is a feature called [Database Copy](http://msdn.microsoft.com/en-US/library/azure/ff951624.aspx) which creates a [transactionally consistent replica](http://technet.microsoft.com/en-us/library/ms151176.aspx) of the source database in __the same datacenter.__ Because the replica resides in the same datacenter there is no geo-redundancy. But after the copying is completed, this database can be exported to a storage account in another datacenter.
 
 This is exactly what __Automatic Database Export__ feature does. It first replicates the database with a copy operation, thus getting a transactionally consistent copy of the database, then exports it to the storage account that is configured. To see how it is configured you can visit [this blog post](http://blogs.msdn.com/b/sql-bi-sap-cloud-crm_all_in_one_place/archive/2013/07/24/sql-azure-automated-database-export.aspx).
 
@@ -105,7 +105,7 @@ So far so good... But what determines RTO and RPO for Automatic Database Export?
 
 - _Exporting to a separate storage account on another datacenter:_
 
-In this scenario, the RPO will simply be around [Database Export Frequency]. If the database is exported every 6 hours, in the worst case scenario 6 hours of data may be lost. 
+In this scenario, the RPO will simply be around [Database Export Frequency]. If the database is exported every 6 hours, in the worst case scenario 6 hours of data may be lost.
 
 RTO is simply the [Database Restore Duration]. No need to wait for Microsoft to execute the Azure Storage failover process. The database export file is immediately available on the storage account in the other datacenter.
 <br>
@@ -114,7 +114,7 @@ RTO is simply the [Database Restore Duration]. No need to wait for Microsoft to 
 
 In this scenario, we're relying on the Automated Azure Storage Geo-Replication to get the exported database transferred to another datacenter. Since this scenario uses the geo-replication feature of the storage account there won't be any additional costs for geo-reduntant storage. This is nice indeed.
 
-But in the worst case scenario the RPO can go as far as [2 * Database Export Frequency] if the datacenter happens to fail during the geo-replication process. In that case, the last export file won't be available after the failure but only the one before that will be. 
+But in the worst case scenario the RPO can go as far as [2 * Database Export Frequency] if the datacenter happens to fail during the geo-replication process. In that case, the last export file won't be available after the failure but only the one before that will be.
 
 On the other hand, the RTO is [Estimated Azure Storage Geo-Failover Time + Database Restore Duration]. Again, Microsoft's estimation for Azure Storage geo-failover is around 24 hours.
 
@@ -147,12 +147,3 @@ Most information on this blog post is obtained from the following MSDN pages. So
 * [Copying Databases in Azure SQL Database](http://msdn.microsoft.com/en-US/library/azure/ff951624.aspx)
 * [How to: Import and Export a Database (Azure SQL Database)](http://msdn.microsoft.com/en-US/library/azure/hh335292.aspx)
 * [SQL Database updates coming soon to the Premium preview](http://blogs.msdn.com/b/windowsazure/archive/2014/04/04/sql-database-updates-coming-soon-to-the-premium-preview.aspx)
-
-
-
-
-
-
-
-
-

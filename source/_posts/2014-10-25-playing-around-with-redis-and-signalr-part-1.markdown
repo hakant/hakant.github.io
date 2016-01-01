@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Playing around with Redis & SignalR - (Part 1)"
+title: "Playing around with Redis & SignalR"
 date: 2014-10-26 20:32:27 +0200
 comments: true
 categories: [redis, architecture]
@@ -10,7 +10,7 @@ sharing: true
 
 A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn't allow any further room for the new requirements they had - he told me during our skype conversation. I thought it was fun and took the offer. R&D and freelancing.. not bad huh!
 
-So as part of the assignment I've been doing some interesting reasearch and prototyping so why not blog about it as well I thought. As long as no confidential information is shared it should be OK. This can easily become a couple of posts. So I'll call this Part 1.
+So as part of the assignment I've been doing some interesting reasearch and prototyping so why not blog about it as well I thought.
 
 ##Going technical:
 
@@ -99,7 +99,7 @@ There are <a href="http://redis.io/clients" target="_blank">a bunch of clients</
 
 I've picked the ServiceStack client over StackExchange because of the richer and nicer to use library. It looks like the StackExchange client is claiming to be the fastest though.
 
-Right after starting to use the latest ServiceStack Redis client I've noticed that they've switched to a commercial license with version 4. But <a href="https://github.com/ServiceStackV3/ServiceStackV3" target="_blank">the previous version 3</a> continues to be BSD license. So I fell back to this version after finding that out. Version 3 is also a pretty complete library and for my current purposes it doesn't really matter. 
+Right after starting to use the latest ServiceStack Redis client I've noticed that they've switched to a commercial license with version 4. But <a href="https://github.com/ServiceStackV3/ServiceStackV3" target="_blank">the previous version 3</a> continues to be BSD license. So I fell back to this version after finding that out. Version 3 is also a pretty complete library and for my current purposes it doesn't really matter.
 
 Here is how the API looks like (click <a href="http://mono.servicestack.net/img/Redis-annotated.png" target="_blank">here</a> for a version that you can zoom):
 
@@ -107,18 +107,11 @@ Here is how the API looks like (click <a href="http://mono.servicestack.net/img/
 
 ##A User Scenario
 
-One of the scenarios that needs to be implemented with this prototype is as follows (remember the architecture diagram from the beginning of this post):
+One of the scenarios that can be implemented with this prototype is as follows (remember the architecture diagram from the beginning of this post):
 
 * When a user adds a record to the system through the Web UI (management site) the App Server needs to know about that record without going to the database.
 * When something interesting happens on the App Server the Web UI needs to be notified and then it should refresh the information on the connected clients' browsers. A typical dashboard scenario which should not require manual page refresh.
 
-In the next blog post I'll write about how to implement these features using Redis and SignalR.
-
-Until then, take care.
+Thanks for reading.
 
 Hakan
-
-
-
-
-

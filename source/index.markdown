@@ -3,23 +3,28 @@ layout: page
 comments: false
 sharing: false
 footer: true
-description: I'm Hakan. A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands.
+description: I'm Hakan. A software craftsman/architect, web developer, electric guitar player, traveller and an expatriate living in the Netherlands.
 ---
 
 <h2 class="title">I'm Hakan</h2>
 
-A software engineer, web enthusiast, rock guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - never together though.
+A software craftsman/architect, web developer, electric guitar player, traveller and an expatriate living in the Netherlands. I love fast cars and whiskey - although never at the same time ;)
 
-I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then I've been building software for various <a href="{{ root_url }}/portfolio">companies & projects</a>. Over the past years I've been particularly interested in Microsoft .NET stack and the tools around it but in recent years things are changing within our industry. Different technologies live together side by side as it has never been before. Open source and freedom of choice is the king.
+I’ve graduated from <a href="http://www.sabanciuniv.edu/en/" target="_blank">Sabanci University</a> with a "Computer Science & Engineering" bachelor's degree in 2005. Since then, I've been building software for various <a href="{{ root_url }}/portfolio">companies & projects</a>. Over the past years I've been particularly interested in Microsoft .NET stack and the tools around it but in recent years I started growing interest in Javascript, both as a back-end and front-end language. These days I'm spending a lot of time with [node.js](https://nodejs.org/en/) and client side frameworks like [AngularJS](https://angularjs.org), [React.js](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
 
 I moved to Amsterdam around 7 years ago and I'm currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for market research companies.
 
 <h2 class="title">I'm working on a couple of projects</h2>
 <br/>
->Always have a side project. 
+>Always have a side project.
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* **A new Startup - Ottobytes:** For more than a year me and two of my colleagues are working on a startup. We're building a product focused on market research. It's name is Kiwi. Visit the <a href="http://www.ottobytes.com/" target="_blank">
+* **Hackathon Planner** I'm looking for excuse projects to use and improve my node.js skills. At
+NIPO Software we're organizing hackathon events a couple of times a year to have fun and create
+interesting things that we can benefit from. I'm planning to create a web app that can ease the
+planning phase of these hackathons. The ingredients will be [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) and [ES6 Javascript](http://es6-features.org).
+
+* **Ottobytes:** For more than a year me and two of my colleagues are working on a startup. We're building a product focused on market research. It's name is Kiwi. Visit the <a href="http://www.ottobytes.com/" target="_blank">
 Ottobytes Website
 </a> for more information about the company and its product Kiwi. I've also written two blog posts about it so far. <a href="{{ root_url }}/blog/2014/11/01/building-kiwi/">Building Kiwi</a> and <a href="{{ root_url }}/blog/2014/12/08/kiwi-updates-and-first-demo/">Kiwi - Updates & First Demo</a>. Take a look at them if it sounds any interesting. I'm learning a lot from this whole experience, both technical and non-technical.
 
@@ -57,7 +62,7 @@ Ottobytes Website
 
 ![The War of Art](http://www.brainpickings.org/wp-content/uploads/2011/09/thewarofart.png =240x240)
 
-* **$100 Startup** is a fantastic book for learning to create and sell value while doing what you love. This book is full of inspirational examples and sound strategies. 
+* **$100 Startup** is a fantastic book for learning to create and sell value while doing what you love. This book is full of inspirational examples and sound strategies.
 
 ![$100 Startup](http://ecx.images-amazon.com/images/I/51xrSIGzOdL._SY344_PJ-v2,TopRight,1,0_SH20_BO1,204,203,200_.jpg)
 
