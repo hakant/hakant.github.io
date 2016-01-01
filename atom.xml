@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2015-08-22T12:27:50+02:00</updated>
+  <updated>2016-01-01T17:41:28+01:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -536,13 +536,13 @@ For the master architect, there are only a few</p></blockquote>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Playing around with Redis & SignalR - (Part 1)]]></title>
+    <title type="html"><![CDATA[Playing around with Redis & SignalR]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
     <updated>2014-10-26T19:32:27+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
-<p>So as part of the assignment I&rsquo;ve been doing some interesting reasearch and prototyping so why not blog about it as well I thought. As long as no confidential information is shared it should be OK. This can easily become a couple of posts. So I&rsquo;ll call this Part 1.</p>
+<p>So as part of the assignment I&rsquo;ve been doing some interesting reasearch and prototyping so why not blog about it as well I thought.</p>
 
 <h2>Going technical:</h2>
 
@@ -666,7 +666,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 
 <h2>A User Scenario</h2>
 
-<p>One of the scenarios that needs to be implemented with this prototype is as follows (remember the architecture diagram from the beginning of this post):</p>
+<p>One of the scenarios that can be implemented with this prototype is as follows (remember the architecture diagram from the beginning of this post):</p>
 
 <ul>
 <li>When a user adds a record to the system through the Web UI (management site) the App Server needs to know about that record without going to the database.</li>
@@ -674,9 +674,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 </ul>
 
 
-<p>In the next blog post I&rsquo;ll write about how to implement these features using Redis and SignalR.</p>
-
-<p>Until then, take care.</p>
+<p>Thanks for reading.</p>
 
 <p>Hakan</p>
 ]]></content>
@@ -938,7 +936,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 
 <blockquote><h4>UPDATE:</h4>
 
-<p>Things keep changing &amp; improving on Azure. This post may not reflect the latest capabilities in terms of Disaster Recovery for Azure Applications. Make sure to read the subject on <a href="https://msdn.microsoft.com/en-us/library/azure/dn251004.aspx">MSDN</a> as well.</p></blockquote>
+<p>Things keep changing &amp; improving really FAST on Azure. This post may not reflect the latest capabilities in terms of Disaster Recovery for Azure Applications. Make sure to read the subject on <a href="https://msdn.microsoft.com/en-us/library/azure/dn251004.aspx">MSDN</a> as well.</p></blockquote>
 
 <p>There are things we tend to ignore. Things that we don&rsquo;t want to spend time on or think about because there are no immediate benefits. Disaster recovery is one of those topics. The chances are fairly low, but the impact on our business is catastrophic. The consequences can go as far as losing the business completely. Unless there is some sort of a disaster recovery plan in place.</p>
 
