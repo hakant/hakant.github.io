@@ -16,7 +16,7 @@ On the other hand, in the last couple of years I started growing interest in [Ja
 
 I moved to Amsterdam around 7 years ago and I'm currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for market research companies.
 
-<h2 class="title">I'm working on a couple of projects</h2>
+<h2 class="title">I'm working on a few projects</h2>
 <br/>
 >Always have a side project.
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
