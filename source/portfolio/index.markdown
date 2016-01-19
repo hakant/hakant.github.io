@@ -10,7 +10,7 @@ footer: true
 I've worked at several companies. Five to be exact. I learned new things in each experience and I'm grateful for that.
 
 <h2 class="title">2011 - now</h2>
-I've been working at NIPO Software in Amsterdam since the beginning of 2011. We have 3 SCRUM teams delivering for the same product: NFIELD.
+I've been working at NIPO Software in Amsterdam since the beginning of 2011. We have 4 SCRUM teams delivering for the same product: NFIELD.
 
 **NFIELD Web & Mobile:**
 
