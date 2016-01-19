@@ -18,7 +18,7 @@ NFIELD is a data collection platform. It's back-end is running on Microsoft Azur
 
 The app and the services targeting Android devices are collectively called <a href="http://www.nfieldmr.com/" target="_blank">NFIELD CAPI</a> (computer assisted personal interviewing). The product website is <a href="http://www.nfieldmr.com/" target="_blank">www.nfieldmr.com</a>.
 
-**Social Media Integrations:** 
+**Social Media Integrations:**
 
 First 6-8 months of my time in NIPO Software is spent on building social media integrations for the existing data collection products. Facebook and Twitter were the two platforms that we chose to connect with. These products have become the leading examples of how market research software is done in the world of social media.
 
@@ -32,32 +32,35 @@ First 6-8 months of my time in NIPO Software is spent on building social media i
 </object>
 </p>
 
-**Some technical details about what's keeping me busy at the office:**
+__Some technical details about what's keeping me busy here:__
 
-* Using Visual Studio 2013.
+1. Using Visual Studio 2015 and Visual Studio Code.
 
-* Using Visual Studio Online (TFS in the cloud) for Version Control, Product Backlog, Canvas Board and Application Lifecycle Management activities.
+2. Using Visual Studio Team Services (TFS in the cloud) for Version Control, Product Backlog, Canvas Board and Application Lifecycle Management activities.
 
-* Backend development. Scalability, resilience and fail­over scenarios are very important in the cloud. We use Service Bus, Message Queues, Cache Service, NoSQL and Blob data storage together with Azure SQL Databases.
+3. Just like VS Team Services, we’re also using GitHub for certain parts of our software.
 
-* We’re building around PaaS capabilities of Windows Azure. Our platform consists of various cloud service nodes with different types (web and worker roles). We’re closely watching every new feature in Azure since it’s the cloud platform of our choice.
+4. Back-end development. Scalability, resilience and fault tolerance are very important in the cloud. We use Service Bus, Message Queues, Cache Service, NoSQL and Blob data storage together with Azure SQL Databases.
 
-* ASP.NET MVC 4 and 5. Using C# and Razor View Engine. Heavily using Web API’s. Recently investigating and playing around with Katana and OWIN.
+5. We’re building around PaaS capabilities of Windows Azure. Our platform consists of various cloud service nodes with different types (web and worker roles). We’re closely watching every new feature in Azure since it’s the cloud platform of our choice.
 
-* Writing a lot of Javascript. The client facing websites we’re building are completely driven by
-Javascript and all data is received and sent via AJAX calls to the back end (Web API’s).
+6. ASP.NET MVC 4 and 5. Using C# and Razor View Engine. Heavily using Web API’s and the OWIN pipeline.
 
-* Using MVVM pattern on client side with Knockout.js. Talking to Web API’s in JSON. Parts of the UI are written using other Javascript templating libraries. Specifically JSRender and Handlebars.
+7. Writing a lot of Javascript. The client facing websites we’re building are completely driven by Javascript and all data is received and sent via AJAX calls to the back end (Web API’s).
 
-* Working in a SCRUM environment. Product Backlog, User Stories, Grooming Sessions, Spikes, Epics, 2 week sprints are often used terms in my daily life.
+7. Using MVVM pattern on client side with Knockout.js. Talking to Web API’s in JSON. Parts of the UI are written using other Javascript templating libraries. Specifically JSRender and Handlebars.
 
-* Unit Testing using the Moq Framework and XUnit family runners (sometimes MSTest too). We’re trying to cover as much code as possible. I like tools like NCrunch that continuously runs tests in the background as I write code.
+8. Working in a SCRUM environment. Product Backlog, User Stories, Grooming Sessions, Spikes, Epics, 2 week sprints are often used terms in my daily life.
 
-* Apart from Unit Tests we also create Integration Tests. We’re using both Selenium IDE and Selenium WebDriver. We’re gradually moving everything to WebDriver though. We create our tests using the “Page Objects Pattern”. Although we have one dedicated tester per team, in SCRUM life every type of work is meant for the whole team, so it’s common that a test task is picked up by a developer. I myself write integration tests almost every sprint.
+9. Unit Testing using the Moq Framework and XUnit family runners (sometimes MSTest too). We’re trying to cover as much code as possible. I like tools like NCrunch that continuously runs tests in the background as I write code.
 
-* Practicing TDD both for Unit and Integration Testing whenever it fits nicely with the code / feature that I’m working on. Considering tests as design tools and relying on those tests to dictate what code you need to write is a very interesting idea. This approach works pretty well for me when writing core business logic of my applications and not so when writing boilerplate framework specific code. It’s always fun to gradually convert those red tests to green though, just like checking items on a to do list.
+10. Apart from Unit Tests we also create Integration Tests. We’re using both Selenium IDE and Selenium WebDriver. We’re gradually moving everything to WebDriver though. We create our tests using the “Page Objects Pattern”. Although we have one dedicated tester per team, in SCRUM life every type of work is meant for the whole team, so it’s common that a test task is picked up by a developer. I myself write integration tests almost every sprint.
 
-* We're also actively working on a mobile application for Android devices. Using Xamarin, C# and Nancy. This is a WebView centric Android application where interviewers can run interviews on Android devices out in the field and synchronize the data they collected with the back­end when they have connection. iOS and Windows Phone will probably be our next stops.
+11. Practicing TDD both for Unit and Integration Testing whenever it fits nicely with the code / feature that I’m working on. Considering tests as design tools and relying on those tests to dictate what code you need to write is a very interesting idea. This approach works pretty well for me when writing core business logic of my applications and not so when writing boilerplate framework specific code. It’s always fun to gradually convert those red tests to green though, just like checking items on a to do list.
+
+12. We're also actively working on a mobile application for Android devices. Using Xamarin, C# and Nancy. This is a WebView centric Android application where interviewers can run interviews on Android devices out in the field and synchronize the data they collected with the back-end when they have connection. iOS and Windows Phone will probably be our next stops.
+
+13. Apart from mobile revolution, market research is recently also affected heavily by Social Media. I’ve worked on extending company's existing products with social media extensions. I’ve built two extension applications targeting Facebook and Twitter platforms. I’ve got experience with various aspects of these development platforms.
 
 
 <h2 class="title">2007 - 2011</h2>
@@ -69,7 +72,7 @@ UPDATE: I noticed that some of these sites don't exist anymore. Well, quite norm
 * **Friendhunter** – <a href="http://www.friendhunter.nl" target="_blank">www.friendhunter.nl</a>
 Friendhunter is a social employment website, where users (networkers) can introduce their friends (candidates) to job positions and earn some predefined bonus if the candidate is accepted by the company at the end of the interview process.
 
-* **Captain Cruise**  - <a href="http://www.captaincruise.nl" target="_blank">www.captaincruise.nl</a> 
+* **Captain Cruise**  - <a href="http://www.captaincruise.nl" target="_blank">www.captaincruise.nl</a>
 With Captain Cruise, users can find and book reservations in cruise ships.  There is a detailed reservation process where users can pick their own cabins, meals and bed types. Along with a cruise reservation, users can book flights for connections, make hotel reservations and get travel insurances.
 
 * **Perseuss** - <a href="http://www.perseuss.com" target="_blank">www.perseuss.com</a>
@@ -108,4 +111,3 @@ You can buy full package trips for events like concerts, football games, theater
 
 * **Martinair** – Batch emailing and payment service (no public URL available).
 An internal service was built for Martinair so that the airline company can send emails for payment requests to it’s customers. Emails include a link that points to a location where customers can make their online payments. That web application was also built within this project.
-
