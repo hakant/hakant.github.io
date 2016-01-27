@@ -8,6 +8,10 @@ footer: true
 published: false
 ---
 
+Below is the list of things that I can do for you or your company. You can always shoot me
+an [email](mailto:hakantuncer@gmail.com) or a [tweet](https://twitter.com/hakant) to contact
+me. You can also find a list of my other online profiles at the bottom left corner of this page.
+
 ## Custom software development
 
 I love writing code, so obviously, I'd also like writing code for you. I can work in a team, or by myself, as necessary; remote or on-site. These days, I prefer working with
@@ -33,18 +37,18 @@ I'd also be interested in working with other platforms or languages but I'd firs
 
 ## Software architecture
 
-Apart from experience with hands-on coding and all the details around doing that, I also have experience with system architecture. If you need help with the big picture, I may be able to help as well.
+Apart from my experience with hands-on coding and all the little details around doing that, I also have experience with system architecture. If you need help with the big picture, I may be able to help as well.
 
 I like architectural discussions around [scalability](https://en.wikipedia.org/wiki/Scalability), [idempotence](https://en.wikipedia.org/wiki/Idempotence), [message passing](https://en.wikipedia.org/wiki/Message_passing),
-testability and tradeoffs within the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html). I always like looking at things from a tradeoff perspective or a kind of "it depends" perspective if you will, and even more so when it comes to software architecture. I know that there is no silver bullet.
+testability and tradeoffs within the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html). I  like looking at things from a tradeoff perspective or a kind of "it depends" perspective if you will, and even more so when it comes to software architecture. I know that there is no silver bullet.
 
 ## Automated Testing
 
 Working inside SCRUM teams taught me one important thing: to be multi-disciplined. As a result
-of this I've written many integration tests and UI tests while building new features.
+of this, I've written many integration tests and UI tests along with building new features.
 
 I can help your team getting started with unit testing, component & integration testing or UI testing. I can also setup test frameworks for your projects. If you in fact want me to write
-tests for your projects, I'll also be happy to do so.
+tests for your projects, I'd also be happy to do so.
 
 ## Code reviews
 
