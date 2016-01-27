@@ -60,7 +60,7 @@ Ottobytes Website
 <h2 class="title">A few of my favorite books</h2>
 <br />
 
-* **The War of Art**: This is maybe the book that has made the biggest impact in my life. The author Steven Pressfield has a soul-touching writing style that is both effective and expressive. This book thought me how to recognize my inner resistance, pay respect to it and keep beating it every single day.
+* **The War of Art**: This is perhaps the book that has made the biggest impact in my life. The author Steven Pressfield has a soul-touching writing style that is both effective and expressive. This book thought me how to recognize my inner resistance, pay respect to it and keep beating it every single day!
 
 ![The War of Art](http://www.brainpickings.org/wp-content/uploads/2011/09/thewarofart.png =240x240)
 
@@ -68,7 +68,7 @@ Ottobytes Website
 
 ![$100 Startup](http://ecx.images-amazon.com/images/I/51xrSIGzOdL._SY344_PJ-v2,TopRight,1,0_SH20_BO1,204,203,200_.jpg)
 
-* **Charisma Myth** really demystifies the charismatic behaviors in the sense that it classifies the types of charisma, the kind of behaviors that leads to charisma and how to get there as a person without transforming your fundamental personality. This is a kind of book I want to keep next to me and remind myself of these best practices over and over again until they stick.
+* **Charisma Myth** really demystifies the charismatic behaviors in the sense that it classifies the types of charisma, the kind of behaviors that leads to charisma and how to get there as a person without transforming your fundamental personality.
 
 ![Charisma Myth](http://ecx.images-amazon.com/images/I/51DY8Mb84XL.jpg =240x240)
 
