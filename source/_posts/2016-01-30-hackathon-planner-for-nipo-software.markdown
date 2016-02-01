@@ -30,12 +30,12 @@ One of the ideas during this hackathon was building a "Hackathon Planner". Didn'
 
 A minimum viable hackathon planner;
 
-* should be open source (not only [NIPO Software](http://niposoftware.com/), anyone should be able to make use of it).
+* should be open source (not only [NIPO Software](http://niposoftware.com/), anyone or any company should be able to make use of it if they want to do so).
 * should allow capturing of ideas in a modern way (I hear [SPAs](https://en.wikipedia.org/wiki/Single-page_application), [Markdown](https://en.wikipedia.org/wiki/Markdown), subtle animations, web sockets, responsive design).
-* should allow simple ways of reacting to those ideas (i.e sending likes and later on comments).
+* should allow simple ways of reacting to those ideas (i.e sending likes and possibly comments in the future).
 * should be simple to sign up and login (built in GitHub authentication?).
-* should allow a simple way of forming teams (mark the idea/team that you want to join and work with).
-* should allow live monitoring as teams form and evolve. It makes the team formation process much more exciting to follow. Watching as ideas live and die. OK, actually it's just an excuse to use something like signalR or socket.io : )
+* should allow a simple way of forming teams (mark the idea/team that you want to join and done!).
+* should allow live monitoring of teams as they form and evolve. It makes the team formation process much more exciting to follow. Watching as ideas live and die. Well.. OK I'll be honest with you, actually it's just an excuse to use something like [signalR](http://www.asp.net/signalr) or [socket.io](http://socket.io/).
 
 Based on these thoughts above I've created a very [basic clickable mockup](https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22) that can give a general idea and show some of the basic interactions:
 
@@ -51,6 +51,6 @@ I saw [@jbogard](https://twitter.com/jbogard/) putting it nicely:
 
 I recently have this theory: How cool a platform, framework, database or a language is directly proportional to the amount of pain one will get during production support.
 
-So we’ll see how this one goes with the choices that I made. If I can stop slacking and get to finish the MVP of course.
+So we’ll see how this one goes with the choices that I made. If I can stop slacking off and get to finish the MVP of course.
 
 ~Hakan
