@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Nodejs | Hakan Tuncer's Blog]]></title>
+  <link href="http://www.hakantuncer.com/blog/categories/nodejs/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2016-02-01T21:25:56+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
+  <author>
+    <name><![CDATA[Hakan Tuncer]]></name>
+    <email><![CDATA[hakantuncer@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hackathon Planner for <br/> { NIPO Software }]]></title>
+    <link href="http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software/"/>
+    <updated>2016-01-30T09:29:33+01:00</updated>
+    <id>http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software</id>
+    <content type="html"><![CDATA[<p>I learn best by practicing. When I only read (i.e no practicing, no note taking), I almost completely forget what I learned after a month or two. I think most people are wired this way. Think about a book you read 6 months ago and see how much of it you can still remember. It&rsquo;s scary.</p>
+
+<p>Learning something new in programming is no different. Maybe even worse. But there&rsquo;s good news, because in programming <a href="http://jamesclear.com/learning-vs-practicing">learning by practicing</a> is very easy. You just need a computer and that&rsquo;s it! And hey, now we&rsquo;re in the cloud era. If you need more, go and get what you need with a couple of clicks! It&rsquo;s crazy how much programmers can do these days while sitting on a couch with a cup of coffee. You just need some time and passion. The rest is simply there available for you to grab.</p>
+
+<h2>Hackathons</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Hackathon">Hackathons</a> are a great way of <a href="http://news.uchicago.edu/article/2015/04/29/learning-doing-helps-students-perform-better-science">learning by doing</a> and we at <a href="http://niposoftware.com/">NIPO Software</a> have started making this a company tradition for a year or so, thanks to my colleague <a href="https://twitter.com/qaidj">Qa'id Jacobs</a> who took the first initiative and continues to put effort into organizing them. Below are some pictures from our last hackathon around summer of 2015.</p>
+
+<p><img src="/assets/Hackathon_Planner/Hackathon_NIPO_1.jpg" alt="NIPO Software Summer 2015 Hackathon 1" /></p>
+
+<p><img src="/assets/Hackathon_Planner/Hackathon_NIPO_2.jpg" alt="NIPO Software Summer 2015 Hackathon 2" /></p>
+
+<p><img src="/assets/Hackathon_Planner/Hackathon_NIPO_3.jpg" alt="NIPO Software Summer 2015 Hackathon 3" /></p>
+
+<p>One of the ideas during this hackathon was building a &ldquo;Hackathon Planner&rdquo;. It didn&rsquo;t get enough love, so was never picked up. Currently all ideas and team compositions are kept and maintained in an Excel file &ndash; the best and the worst tool of all times in computing history. So how about building a planner that can help people capturing ideas and forming teams around those ideas in a fun way?</p>
+
+<h2>A Hackathon Planner &ndash; <a href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP</a></h2>
+
+<p>A minimum viable hackathon planner;</p>
+
+<ul>
+<li>should be open source (not only <a href="http://niposoftware.com/">NIPO Software</a>, anyone or any company should be able to make use of it if they want to do so).</li>
+<li>should allow capturing of ideas in a modern way (I hear <a href="https://en.wikipedia.org/wiki/Single-page_application">SPAs</a>, <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, subtle animations, web sockets, responsive design).</li>
+<li>should allow simple ways of reacting to those ideas (i.e sending likes and possibly comments in the future).</li>
+<li>should be simple to sign up and login (built in GitHub authentication?).</li>
+<li>should allow a simple way of forming teams (mark the idea/team that you want to join and done!).</li>
+<li>should allow live monitoring of teams as they form and evolve. It makes the team formation process more exciting to follow. Watching as ideas live and die (<a href="http://www.asp.net/signalr">signalR</a>,  <a href="http://socket.io/">socket.io</a> ?).</li>
+</ul>
+
+
+<p>Based on these thoughts above I&rsquo;ve created a very <a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22">basic clickable mockup</a> that can give a general idea and show some of the basic interactions:</p>
+
+<p><a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22"><img src="https://hackathonplanner.mybalsamiq.com/mockups/4089623.png" alt="Hackathon Planner - Mockup" /></a></p>
+
+<h2>Ingredients</h2>
+
+<p>I&rsquo;m very much into <a href="http://aurelia.io/">Aurelia</a> and <a href="https://nodejs.org/">node.js</a> these days. So that&rsquo;s what I&rsquo;ll be using. Sure I&rsquo;ll throw in a NoSQL database too and see how much these decisions will hurt me during production.</p>
+
+<p>I saw <a href="https://twitter.com/jbogard/">@jbogard</a> putting it nicely:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">one thing i try very hard to do is to not promote any tool/language/framework/platform/pattern until i&#39;ve had to support it in production</p>&mdash; Jimmy Bogard (@jbogard) <a href="https://twitter.com/jbogard/status/691992462483677184">January 26, 2016</a></blockquote>
+
+
+<p> <script async src="http://www.hakantuncer.com//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>I recently have this theory: How cool a platform, framework, database or a language is directly proportional to the amount of pain one will get during production support.</p>
+
+<p>So we’ll see how this one goes with the choices that I made.. if I can stop slacking off and get to finish the MVP of course.</p>
+
+<p>~Hakan</p>
+]]></content>
+  </entry>
+  
+</feed>
