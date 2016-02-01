@@ -10,7 +10,7 @@ description: Building an open source hackathon planner
 image:
 ---
 
-I learn best by reading and practicing. When I only read (i.e no practicing, no note taking), I almost completely forget what I learned after a month or two. I think most people are wired this way. Think about a book you read 6 months ago and see how much of it you can still remember. It's scary.
+I learn best by practicing. When I only read (i.e no practicing, no note taking), I almost completely forget what I learned after a month or two. I think most people are wired this way. Think about a book you read 6 months ago and see how much of it you can still remember. It's scary.
 
 Learning something new in programming is no different. Maybe even worse. But there's good news, because in programming [learning by practicing](http://jamesclear.com/learning-vs-practicing) is very easy. You just need a computer and that's it! And hey, now we're in the cloud era. If you need more, go and get what you need with a couple of clicks! It's crazy how much programmers can do these days while sitting on a couch with a cup of coffee. You just need some time and passion. The rest is simply there available for you to grab.
 
@@ -35,7 +35,7 @@ A minimum viable hackathon planner;
 * should allow simple ways of reacting to those ideas (i.e sending likes and possibly comments in the future).
 * should be simple to sign up and login (built in GitHub authentication?).
 * should allow a simple way of forming teams (mark the idea/team that you want to join and done!).
-* should allow live monitoring of teams as they form and evolve. It makes the team formation process much more exciting to follow. Watching as ideas live and die. Well.. OK I'll be honest with you, actually it's just an excuse to use something like [signalR](http://www.asp.net/signalr) or [socket.io](http://socket.io/).
+* should allow live monitoring of teams as they form and evolve. It makes the team formation process more exciting to follow. Watching as ideas live and die ([signalR](http://www.asp.net/signalr),  [socket.io](http://socket.io/) ?).
 
 Based on these thoughts above I've created a very [basic clickable mockup](https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22) that can give a general idea and show some of the basic interactions:
 
@@ -51,6 +51,6 @@ I saw [@jbogard](https://twitter.com/jbogard/) putting it nicely:
 
 I recently have this theory: How cool a platform, framework, database or a language is directly proportional to the amount of pain one will get during production support.
 
-So we’ll see how this one goes with the choices that I made. If I can stop slacking off and get to finish the MVP of course.
+So we’ll see how this one goes with the choices that I made.. if I can stop slacking off and get to finish the MVP of course.
 
 ~Hakan
