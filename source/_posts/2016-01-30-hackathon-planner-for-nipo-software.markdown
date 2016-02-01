@@ -12,11 +12,11 @@ image:
 
 I learn best by reading and practicing. When I only read (i.e no practicing, no note taking), I almost completely forget what I learned after a month or two. I think most people are wired this way. Think about a book you read 6 months ago and see how much of it you can still remember. It's scary.
 
-Learning something new in programming is no different. Maybe even worse. But there's good news, because in programming [learning by practicing](http://jamesclear.com/learning-vs-practicing) is very easy. You just need a computer and that's it! And hey, now we're in the cloud era. If you need more, go and get what you need with a couple of clicks! It's crazy how much programmers can do these days while sitting on a couch with a cup of coffee. You just need the passion. The rest is simply there available for you to grab.
+Learning something new in programming is no different. Maybe even worse. But there's good news, because in programming [learning by practicing](http://jamesclear.com/learning-vs-practicing) is very easy. You just need a computer and that's it! And hey, now we're in the cloud era. If you need more, go and get what you need with a couple of clicks! It's crazy how much programmers can do these days while sitting on a couch with a cup of coffee. You just need some time and passion. The rest is simply there available for you to grab.
 
 ## Hackathons
 
-[Hackathons](https://en.wikipedia.org/wiki/Hackathon) are a great way of [learning by doing](http://news.uchicago.edu/article/2015/04/29/learning-doing-helps-students-perform-better-science) and we at [NIPO Software](http://niposoftware.com/) have started making this a company tradition for a year or so, thanks to my colleague [Qa'id Jacobs](https://twitter.com/qaidj) who took the first initiative and continues putting effort into organizing them. Below are some pictures from our last hackathon around summer of 2015.
+[Hackathons](https://en.wikipedia.org/wiki/Hackathon) are a great way of [learning by doing](http://news.uchicago.edu/article/2015/04/29/learning-doing-helps-students-perform-better-science) and we at [NIPO Software](http://niposoftware.com/) have started making this a company tradition for a year or so, thanks to my colleague [Qa'id Jacobs](https://twitter.com/qaidj) who took the first initiative and continues to put effort into organizing them. Below are some pictures from our last hackathon around summer of 2015.
 
 ![NIPO Software Summer 2015 Hackathon 1](/assets/Hackathon_Planner/Hackathon_NIPO_1.jpg)
 
@@ -24,7 +24,7 @@ Learning something new in programming is no different. Maybe even worse. But the
 
 ![NIPO Software Summer 2015 Hackathon 3](/assets/Hackathon_Planner/Hackathon_NIPO_3.jpg)
 
-One of the ideas during this hackathon was building a "Hackathon Planner". Didn't get enough love, so was never picked up. Currently all ideas and team compositions are kept and maintained in an Excel file - the best and the worst tool of all times in computing history. So how about building a planner that can help people capturing ideas and forming teams around those ideas in a fun way?
+One of the ideas during this hackathon was building a "Hackathon Planner". It didn't get enough love, so was never picked up. Currently all ideas and team compositions are kept and maintained in an Excel file - the best and the worst tool of all times in computing history. So how about building a planner that can help people capturing ideas and forming teams around those ideas in a fun way?
 
 ## A Hackathon Planner - [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product)
 
