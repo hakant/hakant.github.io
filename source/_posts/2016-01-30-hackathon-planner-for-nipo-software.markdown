@@ -3,7 +3,7 @@ layout: post
 title: "Hackathon Planner for <br/> { NIPO Software }"
 date: 2016-01-30 09:29:33 +0100
 comments: true
-categories: [hackathon, aurelia, nodejs, aws]
+categories: [hackathon, aurelia, nodejs]
 footer: true
 sharing: true
 description: Building an open source hackathon planner
@@ -24,7 +24,7 @@ Learning something new in programming is no different. Maybe even worse. But the
 
 ![NIPO Software Summer 2015 Hackathon 3](/assets/Hackathon_Planner/Hackathon_NIPO_3.jpg)
 
-One of the ideas during this hackathon was building a "Hackathon Planner". That time around it didn't get enough love, so was never picked up. Currently all ideas and team compositions are kept and maintained in an Excel file - the best and the worst tool of all times in computing history. So how about building a planner that can help people capturing ideas and forming teams around those ideas in a fun way?
+One of the ideas during this hackathon was building a "Hackathon Planner". Didn't get enough love, so was never picked up. Currently all ideas and team compositions are kept and maintained in an Excel file - the best and the worst tool of all times in computing history. So how about building a planner that can help people capturing ideas and forming teams around those ideas in a fun way?
 
 ## A Hackathon Planner - [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product)
 
@@ -37,15 +37,19 @@ A minimum viable hackathon planner;
 * should allow a simple way of forming teams (mark the idea/team that you want to join and work with).
 * should allow live monitoring as teams form and evolve. It makes the team formation process much more exciting to follow. Watching as ideas live and die. OK, actually it's just an excuse to use something like signalR or socket.io : )
 
+Based on these thoughts above I've created a very [basic clickable mockup](https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22) that can give a general idea and show some of the basic interactions:
+
+[![Hackathon Planner - Mockup](https://hackathonplanner.mybalsamiq.com/mockups/4089623.png)](https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22)
+
 ## Ingredients
 
-At the start of this post I wrote about practicing and how it's crucial for learning new programming skills. I'm very much into [Aurelia](http://aurelia.io/) and [node.js](https://nodejs.org/) these days. Sure I'll throw in a NoSQL database too and see how much of these decisions will hurt during production.
+I'm very much into [Aurelia](http://aurelia.io/) and [node.js](https://nodejs.org/) these days. So that's what I'll be using. Sure I'll throw in a NoSQL database too and see how much these decisions will hurt me during production.
 
 I saw [@jbogard](https://twitter.com/jbogard/) putting it nicely:
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">one thing i try very hard to do is to not promote any tool/language/framework/platform/pattern until i&#39;ve had to support it in production</p>&mdash; Jimmy Bogard (@jbogard) <a href="https://twitter.com/jbogard/status/691992462483677184">January 26, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I recently have a theory: How cool a platform, framework, database or a language is directly proportional to the amount of pain one will get during production support.
+I recently have this theory: How cool a platform, framework, database or a language is directly proportional to the amount of pain one will get during production support.
 
 So we’ll see how this one goes with the choices that I made. If I can stop slacking and get to finish the MVP of course.
 
