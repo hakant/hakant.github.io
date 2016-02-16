@@ -8,11 +8,11 @@ footer: true
 published: false
 ---
 
-Below is the list of things that I can do for you or your company. You can always shoot me
+Here is the list of things that I can do for you. You can always shoot me
 an [email](mailto:hakantuncer@gmail.com) or a [tweet](https://twitter.com/hakant) to contact
-me. You can also find a list of my other online profiles at the bottom left corner of this page.
+me. I'll be happy to talk to you or answer your questions.
 
-## Custom software development
+## Software development
 
 I love writing code, so obviously, I'd also like writing code for you. I can work in a team, or by myself, as necessary; remote or on-site. These days, I prefer working with
 
@@ -40,7 +40,8 @@ I'd also be interested in working with other platforms or languages but I'd firs
 Apart from my experience with hands-on coding and all the little details around doing that, I also have experience with system architecture. If you need help with the big picture, I may be able to help as well.
 
 I like architectural discussions around [scalability](https://en.wikipedia.org/wiki/Scalability), [idempotence](https://en.wikipedia.org/wiki/Idempotence), [message passing](https://en.wikipedia.org/wiki/Message_passing),
-testability and tradeoffs within the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html). I  like looking at things from a tradeoff perspective or a kind of "it depends" perspective if you will, and even more so when it comes to software architecture. I know that there is no silver bullet.
+testability and tradeoffs within each layer of the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html). One of the things that I'm finding interesting lately is the [Reactive Manifesto](http://www.reactivemanifesto.org/). 
+I  like looking at things from an "it depends" perspective, and even more so when it comes to software architecture.
 
 ## Automated Testing
 
@@ -56,6 +57,6 @@ If you want me to review your code, I can gladly do that too. I particularly loo
 
 ## Other platforms or languages outside my comfort zone?
 
-If you are not in a terrible rush, I can also work on something that is totally new to me, or that I'm less comfortable with. Because of my experience with different technologies in software development, I generally feel comfortable about learning new things.
+I can also work on something that is totally new to me, or that I'm less comfortable with. Because of my experience with different technologies in software development, I generally feel comfortable about learning new things.
 
 Since I also get the opportunity to learn something new from this experience, I may be glad to give you a discount on my rate, or we can apply the "no cure no pay" rule. It all depends on the circumstances and project details.

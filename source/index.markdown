@@ -26,9 +26,7 @@ NIPO Software we're organizing hackathon events a couple of times a year to have
 interesting things that we can benefit from. I'm planning to create a web app that can ease the
 planning phase of these hackathons. The ingredients will be [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) and [ES6 Javascript](http://es6-features.org).
 
-* **Ottobytes:** For more than a year me and two of my colleagues are working on a startup. We're building a product focused on market research. It's name is Kiwi. Visit the <a href="http://www.ottobytes.com/" target="_blank">
-Ottobytes Website
-</a> for more information about the company and its product Kiwi. I've also written two blog posts about it so far. <a href="{{ root_url }}/blog/2014/11/01/building-kiwi/">Building Kiwi</a> and <a href="{{ root_url }}/blog/2014/12/08/kiwi-updates-and-first-demo/">Kiwi - Updates & First Demo</a>. Take a look at them if it sounds any interesting. I'm learning a lot from this whole experience, both technical and non-technical.
+* **Ottobytes**: Startup that I created (together with two other colleagues). We built a product called Kiwi, a data transformation solution for market research companies. Kiwi is now acquired by NIPO Software. I'm not actively working on this product anymore but I've learnt a lot from this experience. You can visit the [Ottobytes Website](http://ottobytes.com/) for more information. I also wrote [two blog posts](./blog/categories/kiwi/) about it.
 
 <a href="http://www.ottobytes.com/" target="_blank">
 ![Ottobytes Website](/assets/HomePage/Ottobytes.png =600x)
