@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Architecture | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/architecture/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2016-02-26T17:04:43+02:00</updated>
+  <updated>2016-04-06T20:01:26+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Zen of Architecture]]></title>
     <link href="http://www.hakantuncer.com/blog/2015/06/28/zen-of-architecture/"/>
-    <updated>2015-06-28T14:19:40+03:00</updated>
+    <updated>2015-06-28T13:19:40+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2015/06/28/zen-of-architecture</id>
     <content type="html"><![CDATA[<p><a href="/blog/2015/05/02/devintersection-and-anglebrackets-in-phoenix/">I was at DevIntersection Conference</a> in Phoenix around mid May 2015. Apart from the regular conference schedule, I took a few interesting workshops one of which was &ldquo;Zen of Architecture&rdquo; by <a href="http://www.oreilly.com/pub/au/741">Juval Lowy</a>.</p>
 
@@ -197,7 +197,7 @@ For the master architect, there are only a few</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Playing Around With Redis & SignalR]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1/"/>
-    <updated>2014-10-26T20:32:27+02:00</updated>
+    <updated>2014-10-26T19:32:27+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/10/26/playing-around-with-redis-and-signalr-part-1</id>
     <content type="html"><![CDATA[<p>A good friend of mine contacted me a couple of weeks ago and asked if I would accept a freelancing project. Around research and prototyping. Possibly leading to a new architecture for their existing product. The existing architecture didn&rsquo;t allow any further room for the new requirements they had &ndash; he told me during our skype conversation. I thought it was fun and took the offer. R&amp;D and freelancing.. not bad huh!</p>
 
@@ -344,7 +344,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   <entry>
     <title type="html"><![CDATA[Disaster Recovery on Azure]]></title>
     <link href="http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure/"/>
-    <updated>2014-04-27T20:30:37+03:00</updated>
+    <updated>2014-04-27T19:30:37+02:00</updated>
     <id>http://www.hakantuncer.com/blog/2014/04/27/disaster-recovery-on-azure</id>
     <content type="html"><![CDATA[<br/><br/>
 

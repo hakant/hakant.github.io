@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Nodejs | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2016-02-26T17:04:43+02:00</updated>
+  <updated>2016-04-06T20:01:26+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Hackathon Planner for <br/> { NIPO Software }]]></title>
     <link href="http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software/"/>
-    <updated>2016-01-30T10:29:33+02:00</updated>
+    <updated>2016-01-30T09:29:33+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software</id>
     <content type="html"><![CDATA[<p>I learn best by practicing. When I only read (i.e no practicing, no note taking), I almost completely forget what I learned after a month or two. I think most people are wired this way. Think about a book you read 6 months ago and see how much of it you can still remember. It&rsquo;s scary.</p>
 
@@ -48,9 +48,9 @@
 </ul>
 
 
-<p>Based on these thoughts above I&rsquo;ve created a very <a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22">basic clickable mockup</a> that can give a general idea and show some of the basic interactions:</p>
+<p>Based on these thoughts above I&rsquo;ve created a very basic sketch that can give a general idea:</p>
 
-<p><a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22"><img src="https://hackathonplanner.mybalsamiq.com/mockups/4089623.png" alt="Hackathon Planner - Mockup" /></a></p>
+<p><img src="/assets/Hackathon_Planner/Hackathon_Idea_Details.png" alt="Hackathon Planner - Mockup" /></p>
 
 <h2>Ingredients</h2>
 

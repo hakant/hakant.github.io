@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<title>Hakan Tuncer's Blog</title>
 	<meta name="author" content="Hakan Tuncer">
-	<meta name="description" content="Follow @hakant Jan 30th, 2016 aurelia, hackathon, nodejs Comments Hackathon Planner for { NIPO Software } I learn best by practicing. When I only &hellip;">
+	<meta name="description" content="Follow @hakant Apr 6th, 2016 aurelia, aws, hackathon, javascript Comments Hackathon Planner &amp; My Experience With Aurelia So Far ~2 months ago I &hellip;">
 	
 	<!-- http://t.co/dKP3o1e -->
   	<meta name="HandheldFriendly" content="True">
@@ -24,7 +24,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Hakan Tuncer's Blog" />
-    <meta property="og:description" content="Follow @hakant Jan 30th, 2016 aurelia, hackathon, nodejs Comments Hackathon Planner for { NIPO Software } I learn best by practicing. When I only &hellip;" />
+    <meta property="og:description" content="Follow @hakant Apr 6th, 2016 aurelia, aws, hackathon, javascript Comments Hackathon Planner &amp; My Experience With Aurelia So Far ~2 months ago I &hellip;" />
     <meta property="og:url" content="http://www.hakantuncer.com/blog/" />
     <meta property="og:image" content="https://media.licdn.com/media/p/4/005/027/329/2633870.jpg" />
 	
@@ -134,7 +134,193 @@
   
 
 
-<time datetime="2016-01-30T10:29:33+02:00" data-updated="true" itemprop="datePublished">Jan 30<span>th</span>, 2016</time></div>
+<time datetime="2016-04-06T02:00:00+02:00" data-updated="true" itemprop="datePublished">Apr 6<span>th</span>, 2016</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/aurelia/'>aurelia</a>, <a class='category' href='/blog/categories/aws/'>aws</a>, <a class='category' href='/blog/categories/hackathon/'>hackathon</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2016/04/06/hackathon-planner-and-my-experience-with-aurelia-so-far/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2016/04/06/hackathon-planner-and-my-experience-with-aurelia-so-far/" itemprop="url">Hackathon Planner &amp; My Experience With Aurelia So Far</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>~2 months ago <a href="/blog/2016/01/30/hackathon-planner-for-nipo-software/">I wrote about Hackathon Planner</a>
+and hustled the idea as a candidate project for the next hackathon at NIPO Software. Then the hackathon day arrived.
+We formed a team of 6 and spent a day working on it. Rutger shot a time lapse video from that day.</p>
+
+<br/>
+
+
+
+
+<iframe width="700" height="393" src="https://www.youtube.com/embed/GMK8vvJm87A" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Since then, I continue working on the Hackathon Planner whenever I find some free time here and there. Rutger also
+occasionally shows up in the commit history contributing with his CSS superpowers.</p>
+
+<p>I use <a href="https://azure.microsoft.com/en-us/">Azure</a> everyday at work and this time I want to experiement with
+<a href="https://aws.amazon.com/">AWS</a>. I&rsquo;ve put up an <a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">early preview of Hackathon Planner</a>
+on Amazon S3. I&rsquo;ll keep updating it from this point on. At the time of this writing, it&rsquo;s only a client
+side preview &ndash; actions are only saved on the local storage of the browser. Not very useful yet but it soon will be.
+<a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">Check it out.</a></p>
+
+<h2>Aurelia</h2>
+
+<p><a href="http://aurelia.io/">Aurelia</a> has been my framework of choice for this
+<a href="https://en.wikipedia.org/wiki/Single-page_application">single page application</a>. It truly is a great framework in
+the sense that it really gets out of your way. After I learned some of the fundamentals of Aurelia, I was basically
+good to go. Some periods I even forgot that I was using a framework because it is simply not in your face. Let me
+show you some code samples from the project.</p>
+
+<br/>
+
+
+<h4>ES6 and ES7 in action</h4>
+
+<p>Aurelia takes advantage of the latest javascript standards as much as possible. Take a look at this &ldquo;nav-bar&rdquo;
+component from the Hackathon Planner.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/27562e37df6d7bf59f24fd12b316045a.js"></script>
+
+
+<ul>
+<li>First three lines are an example of <a href="https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import">ES6 module importing</a>.
+This is how a javascript module can make use of code from external libraries.</li>
+<li>Line #5 is an example of an <a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841#.5obmn2df6">ES7 Decorator</a> that is in this case
+<a href="http://eisenbergeffect.bluespire.com/aurelia-update-with-decorators-ie9-and-more/">used by Aurelia for dependency injection</a>.
+Basically we&rsquo;re telling Aurelia to pass those components as constructor arguments to the NavBar component.</li>
+<li>And the rest of the code is the NavBar class that is written based on the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">ES6 class specification</a>.
+See how clean this component is &ndash; it&rsquo;s pure javascript.</li>
+</ul>
+
+
+<br/>  
+
+
+<h4>Dynamic application root</h4>
+
+<p>Code below is the entry point to the Hackathon Planner: &ldquo;main.js&rdquo;.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/8c94080e4c61ea04bfaf1a009dbcc25b.js"></script>
+
+
+<ul>
+<li>Line #2 imports a custom authentication service that I wrote and it gets resolved as a singleton instance at line #13.
+In Aurelia all dependencies are registered as singleton by default (unless you specify it otherwise).</li>
+<li>Based on the authentication status (line #14) aurelia app root is set either to the app or to the login
+component. The ability to set arbitrary application roots is a powerful feature of Aurelia that enables some
+<a href="http://patrickwalters.net/creating-multipage-apps-using-aurelia-2/">interesting scenarios</a>.</li>
+<li>I borrowed this idea from <a href="http://davismj.me/blog/aurelia-auth-pt2/">Matthew James Davis</a>.</li>
+</ul>
+
+
+<br/>
+
+
+<h4>Validation</h4>
+
+<p>Aurelia also comes with a <a href="https://github.com/aurelia/validation">validation plugin</a> and <a href="http://blog.durandal.io/2016/03/23/aurelia-babel-6-and-jspm-update/">it&rsquo;s currently undergoing some big refactoring</a>.
+It still wouldn&rsquo;t hurt to show how it looks like at the moment. Note that the @ensure decorator is recently
+deprecated (which means I&rsquo;ll also need to adapt this code going forward).</p>
+
+<p>This is a stripped down version of the project class in Hackathon Planner:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/69363eaf32e2052d2d2697335704555e.js"></script>
+
+
+<ul>
+<li>Line #8 and #10 sets validation rules on those properties and line #20 initializes the validation for this
+object.</li>
+</ul>
+
+
+<p>And this event handler in &ldquo;new-card.js&rdquo; validates a project before adding or updating it:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/bbb87af2f2306724bbd1981973b8d83f.js"></script>
+
+
+<br/>
+
+
+<h4>Beautiful components</h4>
+
+<p>In Aurelia, user interface components are composed of <a href="http://aurelia.io/docs.html#/aurelia/framework/1.0.0-beta.1.1.4/doc/article/creating-components">view and view-model pairs</a>.
+These two are created by Aurelia&rsquo;s dependency injection framework and gets linked to each other via data binding.</p>
+
+<p>Here is one of those pairs from the Hackathon Planner. This is how the overview page is rendered:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/6ab1a376f50b80bd115f765e16a551f4.js"></script>
+
+
+
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/7296309c6a7166254ac701a6b27caf47.js"></script>
+
+
+<p></p>
+
+<ul>
+<li>Notice how a component is required into a template at line #2.</li>
+<li>And then all projects are looped through and each one is rendered into another component called &ldquo;idea-card&rdquo;
+at line #5.</li>
+</ul>
+
+
+<p>Thank you for reading and make sure you check out the <a href="https://github.com/hakant/HackathonPlanner">Hackathon Planner on GitHub</a>
+and <a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">its early preview deployment</a>.</p>
+
+<p>~Hakan</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-01-30T09:29:33+01:00" data-updated="true" itemprop="datePublished">Jan 30<span>th</span>, 2016</time></div>
 		<div class="tags">
 
 
@@ -179,9 +365,9 @@
 </ul>
 
 
-<p>Based on these thoughts above I&rsquo;ve created a very <a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22">basic clickable mockup</a> that can give a general idea and show some of the basic interactions:</p>
+<p>Based on these thoughts above I&rsquo;ve created a very basic sketch that can give a general idea:</p>
 
-<p><a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22"><img src="https://hackathonplanner.mybalsamiq.com/mockups/4089623.png" alt="Hackathon Planner - Mockup" /></a></p>
+<p><img src="/assets/Hackathon_Planner/Hackathon_Idea_Details.png" alt="Hackathon Planner - Mockup" /></p>
 
 <h2>Ingredients</h2>
 
@@ -225,7 +411,7 @@
   
 
 
-<time datetime="2016-01-27T20:20:16+02:00" data-updated="true" itemprop="datePublished">Jan 27<span>th</span>, 2016</time></div>
+<time datetime="2016-01-27T19:20:16+01:00" data-updated="true" itemprop="datePublished">Jan 27<span>th</span>, 2016</time></div>
 		<div class="tags">
 
 
@@ -324,7 +510,7 @@ On the other hand it&rsquo;s a well known idea &amp; <a href="https://m.signalvn
   
 
 
-<time datetime="2015-06-28T14:19:40+03:00" data-updated="true" itemprop="datePublished">Jun 28<span>th</span>, 2015</time></div>
+<time datetime="2015-06-28T13:19:40+02:00" data-updated="true" itemprop="datePublished">Jun 28<span>th</span>, 2015</time></div>
 		<div class="tags">
 
 
@@ -538,7 +724,7 @@ For the master architect, there are only a few</p></blockquote>
   
 
 
-<time datetime="2015-05-02T14:46:06+03:00" data-updated="true" itemprop="datePublished">May 2<span>nd</span>, 2015</time></div>
+<time datetime="2015-05-02T13:46:06+02:00" data-updated="true" itemprop="datePublished">May 2<span>nd</span>, 2015</time></div>
 		<div class="tags">
 
 
@@ -600,200 +786,6 @@ For the master architect, there are only a few</p></blockquote>
 <p>As usual I&rsquo;ll be sharing my experiences from the event on twitter and facebook. You can follow me on twitter using <a href="https://twitter.com/hakant">@hakant</a>. And in case you&rsquo;re reading this and also going to DevIntersection in May let&rsquo;s connect and meet there!</p>
 
 <p>Hakan</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-03-12T23:04:15+02:00" data-updated="true" itemprop="datePublished">Mar 12<span>th</span>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/dot-net/'>.net</a>, <a class='category' href='/blog/categories/disposition/'>disposition</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2015/03/12/finalization-and-disposition-in-net/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/03/12/finalization-and-disposition-in-net/" itemprop="url">Notes on Finalization and Disposition in .NET</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
-
-<p>Nicole Calinoiu&rsquo;s talk from NDC Oslo taught me many things one of which is how IDisposable pattern is designed and became the way it is. It&rsquo;s an awesome talk, one that I can strongly recommend. I&rsquo;ve embedded the video at the bottom of this page, make sure to check it out.</p>
-
-<p>I saw the talk twice and wanted to take notes for myself. Notes that I can revisit when the details get blurry in my head six months or a year down the path. I&rsquo;ve also double checked or dived into some other details through MSDN and included those in the notes as well.</p>
-
-<h2>Finalization</h2>
-
-<ul>
-<li><p>Never ever set any object to NULL to &ldquo;help&rdquo; Garbage Collector do his job. You&rsquo;re not helping him and even making things worse.</p></li>
-<li><p>Although .NET Runtime knows about cleaning up memory really well, it can&rsquo;t possibly know the shared resources (file system, network connections, registery etc&hellip;) that your objects are using. Finalization is the object&rsquo;s opportunity to cleanup those resources when it&rsquo;s about to be removed from the memory.</p></li>
-<li><p>If a .NET object overrides the method Object.Finalize(), the Garbage Collector will call the Finalize method before cleaning up the object from memory.</p></li>
-<li><p>If the object does not override the method Finalize, Garbage Collector doesn&rsquo;t finalize the object (obviously). Here is what <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says:</p></li>
-</ul>
-
-
-<blockquote><p>The garbage collector does not mark types derived from Object for finalization unless they override the Finalize method.</p></blockquote>
-
-<ul>
-<li>Now comes the part that&rsquo;s obscure in the MSDN documentation. <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says (emphasis mine):</li>
-</ul>
-
-
-<blockquote><p>You should override Finalize for a class that uses <strong>unmanaged resources</strong> such as file handles or database connections that must be released when the managed object that uses them is discarded during garbage collection.</p></blockquote>
-
-<ul>
-<li><p><strong>Unmanaged resources</strong> mentioned in the documentation are <strong>NOT</strong> the managed wrappers. If you have code that directly uses IntPtr and DllImport then you&rsquo;re using unmanaged resources and you need to be thinking about Finalization.</p></li>
-<li><p>Managed wrappers have their own Finalizers (hopefully) so it&rsquo;s not your responsibility to supply another Finalizer on top of that. But if you have any code in a class that looks like the one below, then you need a Finalizer for that specific class.</p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="na">[DllImport(&quot;advapi32.dll&quot;, CharSet= CharSet.Auto, SetLastError=true)]</span>
-</div><div class='line'><span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">int</span> <span class="nf">RegOpenKeyEx</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hKey</span><span class="p">,</span>
-</div><div class='line'>                                       <span class="n">String</span> <span class="n">lpSubKey</span><span class="p">,</span>
-</div><div class='line'>                                       <span class="kt">int</span> <span class="n">ulOptions</span><span class="p">,</span>
-</div><div class='line'>                                       <span class="kt">int</span> <span class="n">samDesired</span><span class="p">,</span>
-</div><div class='line'>                                       <span class="k">out</span> <span class="n">IntPtr</span> <span class="n">phkResult</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<ul>
-<li><p>Writing an <strong>unnecessary</strong> Finalizer comes with a cost: delaying the cleanup process of your objects. Finalization brings extra steps to the cleaning process (adding those objects to Finalization queue and running their Finalization logic in a separate thread) which delay freeing up memory for those objects. So beware.</p></li>
-<li><p>Finalizers should not access any managed resources. Any managed resource at that point could already be harvested by garbage collector. So basically none of the managed objects can be trusted to exist. Finalizers should only cleanup the unmanaged resources and return.</p></li>
-</ul>
-
-
-<h2>Disposition</h2>
-
-<ul>
-<li><p>Finalization happens when the Garbage Collector &ldquo;feels like it&rdquo;. In general you don&rsquo;t have (and shouldn&rsquo;t take) any control on when the GC is running or not. But wouldn&rsquo;t it be nice to cleanup and let go of those shared resources when they&rsquo;re not needed anymore? Hell yeah. It would be terrible to keep locking a file and wait until GC comes to clean it up. This is exactly why Disposition exists.</p></li>
-<li><p>When a class implements IDisposable it is basically declaring that it needs to be cleaned up. Whenever you&rsquo;re done with an IDisposable class and you know you&rsquo;re the <strong>only</strong> one using it or the <strong>owner</strong> of its lifecycle, you need to call its Dispose method to clean it up.</p></li>
-<li><p>While Disposing a class and releasing its shared resources, we also want to call Finalize if our class is Finalizable. If you try to do that though, compiler gives an error message: &ldquo;Destructors and Finalize can not be called directly&rdquo;. That&rsquo;s why there is a pattern called IDisposable pattern.</p></li>
-<li><p><a href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx" target="_blank">MSDN documentation on IDisposable interface</a> includes a C# code sample showing how the pattern should be implemented. Notice that because Finalize can not be called directly, another Dispose method is introduced that takes a boolean argument which determines whether the class is being disposed or finalized.</p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-<span class='line'>19</span>
-<span class='line'>20</span>
-<span class='line'>21</span>
-<span class='line'>22</span>
-<span class='line'>23</span>
-<span class='line'>24</span>
-<span class='line'>25</span>
-<span class='line'>26</span>
-<span class='line'>27</span>
-<span class='line'>28</span>
-<span class='line'>29</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</div><div class='line'><span class="k">class</span> <span class="nc">BaseClass</span> <span class="p">:</span> <span class="n">IDisposable</span>
-</div><div class='line'><span class="p">{</span>
-</div><div class='line'>   <span class="c1">// Flag: Has Dispose already been called? </span>
-</div><div class='line'>   <span class="kt">bool</span> <span class="n">disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
-</div><div class='line'>   <span class="c1">// Public implementation of Dispose pattern callable by consumers. </span>
-</div><div class='line'>   <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
-</div><div class='line'>   <span class="p">{</span>
-</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
-</div><div class='line'>      <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-</div><div class='line'>   <span class="p">}</span>
-</div><div class='line'>   <span class="c1">// Protected implementation of Dispose pattern. </span>
-</div><div class='line'>   <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
-</div><div class='line'>   <span class="p">{</span>
-</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposed</span><span class="p">)</span>
-</div><div class='line'>         <span class="k">return</span><span class="p">;</span>
-</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span> <span class="p">{</span>
-</div><div class='line'>         <span class="c1">// Free any other managed objects here. </span>
-</div><div class='line'>         <span class="c1">//</span>
-</div><div class='line'>      <span class="p">}</span>
-</div><div class='line'>      <span class="c1">// Free any unmanaged objects here. </span>
-</div><div class='line'>      <span class="c1">//</span>
-</div><div class='line'>      <span class="n">disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-</div><div class='line'>   <span class="p">}</span>
-</div><div class='line'>   <span class="p">~</span><span class="n">BaseClass</span><span class="p">()</span>
-</div><div class='line'>   <span class="p">{</span>
-</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-</div><div class='line'>   <span class="p">}</span>
-</div><div class='line'><span class="p">}</span></div></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Let&rsquo;s look at a few important aspects of this implementation:
-
-<ul>
-<li>Class keeps track of whether it has been disposed or not and prevents being disposed more than once.</li>
-<li>When a class is being Disposed, the Finalization logic also runs. So it tells the Garbage Collector not to bother Finalizing this object anymore (performance gain):</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><p>These days writing a Finalizer is fairly uncommon. Most .NET applications doesn&rsquo;t require a usage of direct pointer to an unmanaged resource. On top of that, now there is a class called <a href="https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.safehandle%28v=vs.100%29.aspx" target="_blank">SafeHandle</a> which automatically wraps a pointer to an unmanaged resource. It also handles finalization for you. So this means writing a Finalizer now is very very uncommon. Check the article from Joe Duffy all the way back from 2005: <a href="http://joeduffyblog.com/2005/12/27/never-write-a-finalizer-again-well-almost-never/" target="_blank">Never write a finalizer again (well, almost never)</a></p></li>
-<li><p>The whole purpose of IDisposable pattern is to accomodate Finalization and Disposition under a single solution. But because you may never ever write a finalizer again, the whole IDisposable pattern ends up being designed to cover a very very corner case. And it&rsquo;s unfortunate that nothing has changed since 2005&hellip;</p></li>
-</ul>
-
-
-<h2>Nicole Calinoiu&rsquo;s talk from NDC Oslo 2014</h2>
-
-<br/>
-
-
-<iframe src="//player.vimeo.com/video/97519508" width="100%" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-
-
 
 		
 		

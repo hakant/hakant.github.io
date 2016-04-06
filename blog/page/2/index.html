@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<title>Hakan Tuncer's Blog</title>
 	<meta name="author" content="Hakan Tuncer">
-	<meta name="description" content="Follow @hakant Dec 8th, 2014 demo, kiwi, marketresearch Comments Kiwi - Updates & First Demo It&rsquo;s been more than a month since I first wrote &hellip;">
+	<meta name="description" content="Follow @hakant Mar 12th, 2015 .net, disposition, microsoft Comments Notes on Finalization and Disposition in .NET Have you ever thought why &hellip;">
 	
 	<!-- http://t.co/dKP3o1e -->
   	<meta name="HandheldFriendly" content="True">
@@ -24,7 +24,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Hakan Tuncer's Blog" />
-    <meta property="og:description" content="Follow @hakant Dec 8th, 2014 demo, kiwi, marketresearch Comments Kiwi - Updates & First Demo It&rsquo;s been more than a month since I first wrote &hellip;" />
+    <meta property="og:description" content="Follow @hakant Mar 12th, 2015 .net, disposition, microsoft Comments Notes on Finalization and Disposition in .NET Have you ever thought why &hellip;" />
     <meta property="og:url" content="http://www.hakantuncer.com/blog/page/2/" />
     <meta property="og:image" content="https://media.licdn.com/media/p/4/005/027/329/2633870.jpg" />
 	
@@ -134,7 +134,201 @@
   
 
 
-<time datetime="2014-12-08T20:50:48+02:00" data-updated="true" itemprop="datePublished">Dec 8<span>th</span>, 2014</time></div>
+<time datetime="2015-03-12T22:04:15+01:00" data-updated="true" itemprop="datePublished">Mar 12<span>th</span>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/dot-net/'>.net</a>, <a class='category' href='/blog/categories/disposition/'>disposition</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2015/03/12/finalization-and-disposition-in-net/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/03/12/finalization-and-disposition-in-net/" itemprop="url">Notes on Finalization and Disposition in .NET</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Have you ever thought why disposition pattern is designed the way it is? I hadn&rsquo;t. Sometimes we learn things along the way and never question its basics or roots again. We do it that way because we&rsquo;re told so or because it just worked so far and we never looked back.</p>
+
+<p>Nicole Calinoiu&rsquo;s talk from NDC Oslo taught me many things one of which is how IDisposable pattern is designed and became the way it is. It&rsquo;s an awesome talk, one that I can strongly recommend. I&rsquo;ve embedded the video at the bottom of this page, make sure to check it out.</p>
+
+<p>I saw the talk twice and wanted to take notes for myself. Notes that I can revisit when the details get blurry in my head six months or a year down the path. I&rsquo;ve also double checked or dived into some other details through MSDN and included those in the notes as well.</p>
+
+<h2>Finalization</h2>
+
+<ul>
+<li><p>Never ever set any object to NULL to &ldquo;help&rdquo; Garbage Collector do his job. You&rsquo;re not helping him and even making things worse.</p></li>
+<li><p>Although .NET Runtime knows about cleaning up memory really well, it can&rsquo;t possibly know the shared resources (file system, network connections, registery etc&hellip;) that your objects are using. Finalization is the object&rsquo;s opportunity to cleanup those resources when it&rsquo;s about to be removed from the memory.</p></li>
+<li><p>If a .NET object overrides the method Object.Finalize(), the Garbage Collector will call the Finalize method before cleaning up the object from memory.</p></li>
+<li><p>If the object does not override the method Finalize, Garbage Collector doesn&rsquo;t finalize the object (obviously). Here is what <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says:</p></li>
+</ul>
+
+
+<blockquote><p>The garbage collector does not mark types derived from Object for finalization unless they override the Finalize method.</p></blockquote>
+
+<ul>
+<li>Now comes the part that&rsquo;s obscure in the MSDN documentation. <a href="https://msdn.microsoft.com/en-us/library/system.object.finalize%28v=vs.110%29.aspx" target="_blank">MSDN</a> says (emphasis mine):</li>
+</ul>
+
+
+<blockquote><p>You should override Finalize for a class that uses <strong>unmanaged resources</strong> such as file handles or database connections that must be released when the managed object that uses them is discarded during garbage collection.</p></blockquote>
+
+<ul>
+<li><p><strong>Unmanaged resources</strong> mentioned in the documentation are <strong>NOT</strong> the managed wrappers. If you have code that directly uses IntPtr and DllImport then you&rsquo;re using unmanaged resources and you need to be thinking about Finalization.</p></li>
+<li><p>Managed wrappers have their own Finalizers (hopefully) so it&rsquo;s not your responsibility to supply another Finalizer on top of that. But if you have any code in a class that looks like the one below, then you need a Finalizer for that specific class.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="na">[DllImport(&quot;advapi32.dll&quot;, CharSet= CharSet.Auto, SetLastError=true)]</span>
+</div><div class='line'><span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">int</span> <span class="nf">RegOpenKeyEx</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hKey</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="n">String</span> <span class="n">lpSubKey</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="kt">int</span> <span class="n">ulOptions</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="kt">int</span> <span class="n">samDesired</span><span class="p">,</span>
+</div><div class='line'>                                       <span class="k">out</span> <span class="n">IntPtr</span> <span class="n">phkResult</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<ul>
+<li><p>Writing an <strong>unnecessary</strong> Finalizer comes with a cost: delaying the cleanup process of your objects. Finalization brings extra steps to the cleaning process (adding those objects to Finalization queue and running their Finalization logic in a separate thread) which delay freeing up memory for those objects. So beware.</p></li>
+<li><p>Finalizers should not access any managed resources. Any managed resource at that point could already be harvested by garbage collector. So basically none of the managed objects can be trusted to exist. Finalizers should only cleanup the unmanaged resources and return.</p></li>
+</ul>
+
+
+<h2>Disposition</h2>
+
+<ul>
+<li><p>Finalization happens when the Garbage Collector &ldquo;feels like it&rdquo;. In general you don&rsquo;t have (and shouldn&rsquo;t take) any control on when the GC is running or not. But wouldn&rsquo;t it be nice to cleanup and let go of those shared resources when they&rsquo;re not needed anymore? Hell yeah. It would be terrible to keep locking a file and wait until GC comes to clean it up. This is exactly why Disposition exists.</p></li>
+<li><p>When a class implements IDisposable it is basically declaring that it needs to be cleaned up. Whenever you&rsquo;re done with an IDisposable class and you know you&rsquo;re the <strong>only</strong> one using it or the <strong>owner</strong> of its lifecycle, you need to call its Dispose method to clean it up.</p></li>
+<li><p>While Disposing a class and releasing its shared resources, we also want to call Finalize if our class is Finalizable. If you try to do that though, compiler gives an error message: &ldquo;Destructors and Finalize can not be called directly&rdquo;. That&rsquo;s why there is a pattern called IDisposable pattern.</p></li>
+<li><p><a href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx" target="_blank">MSDN documentation on IDisposable interface</a> includes a C# code sample showing how the pattern should be implemented. Notice that because Finalize can not be called directly, another Dispose method is introduced that takes a boolean argument which determines whether the class is being disposed or finalized.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+<span class='line'>2</span>
+<span class='line'>3</span>
+<span class='line'>4</span>
+<span class='line'>5</span>
+<span class='line'>6</span>
+<span class='line'>7</span>
+<span class='line'>8</span>
+<span class='line'>9</span>
+<span class='line'>10</span>
+<span class='line'>11</span>
+<span class='line'>12</span>
+<span class='line'>13</span>
+<span class='line'>14</span>
+<span class='line'>15</span>
+<span class='line'>16</span>
+<span class='line'>17</span>
+<span class='line'>18</span>
+<span class='line'>19</span>
+<span class='line'>20</span>
+<span class='line'>21</span>
+<span class='line'>22</span>
+<span class='line'>23</span>
+<span class='line'>24</span>
+<span class='line'>25</span>
+<span class='line'>26</span>
+<span class='line'>27</span>
+<span class='line'>28</span>
+<span class='line'>29</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</div><div class='line'><span class="k">class</span> <span class="nc">BaseClass</span> <span class="p">:</span> <span class="n">IDisposable</span>
+</div><div class='line'><span class="p">{</span>
+</div><div class='line'>   <span class="c1">// Flag: Has Dispose already been called? </span>
+</div><div class='line'>   <span class="kt">bool</span> <span class="n">disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</div><div class='line'>   <span class="c1">// Public implementation of Dispose pattern callable by consumers. </span>
+</div><div class='line'>   <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</div><div class='line'>      <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'>   <span class="c1">// Protected implementation of Dispose pattern. </span>
+</div><div class='line'>   <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposed</span><span class="p">)</span>
+</div><div class='line'>         <span class="k">return</span><span class="p">;</span>
+</div><div class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span> <span class="p">{</span>
+</div><div class='line'>         <span class="c1">// Free any other managed objects here. </span>
+</div><div class='line'>         <span class="c1">//</span>
+</div><div class='line'>      <span class="p">}</span>
+</div><div class='line'>      <span class="c1">// Free any unmanaged objects here. </span>
+</div><div class='line'>      <span class="c1">//</span>
+</div><div class='line'>      <span class="n">disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'>   <span class="p">~</span><span class="n">BaseClass</span><span class="p">()</span>
+</div><div class='line'>   <span class="p">{</span>
+</div><div class='line'>      <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</div><div class='line'>   <span class="p">}</span>
+</div><div class='line'><span class="p">}</span></div></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Let&rsquo;s look at a few important aspects of this implementation:
+
+<ul>
+<li>Class keeps track of whether it has been disposed or not and prevents being disposed more than once.</li>
+<li>When a class is being Disposed, the Finalization logic also runs. So it tells the Garbage Collector not to bother Finalizing this object anymore (performance gain):</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></div></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>These days writing a Finalizer is fairly uncommon. Most .NET applications doesn&rsquo;t require a usage of direct pointer to an unmanaged resource. On top of that, now there is a class called <a href="https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.safehandle%28v=vs.100%29.aspx" target="_blank">SafeHandle</a> which automatically wraps a pointer to an unmanaged resource. It also handles finalization for you. So this means writing a Finalizer now is very very uncommon. Check the article from Joe Duffy all the way back from 2005: <a href="http://joeduffyblog.com/2005/12/27/never-write-a-finalizer-again-well-almost-never/" target="_blank">Never write a finalizer again (well, almost never)</a></p></li>
+<li><p>The whole purpose of IDisposable pattern is to accomodate Finalization and Disposition under a single solution. But because you may never ever write a finalizer again, the whole IDisposable pattern ends up being designed to cover a very very corner case. And it&rsquo;s unfortunate that nothing has changed since 2005&hellip;</p></li>
+</ul>
+
+
+<h2>Nicole Calinoiu&rsquo;s talk from NDC Oslo 2014</h2>
+
+<br/>
+
+
+<iframe src="//player.vimeo.com/video/97519508" width="100%" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-08T19:50:48+01:00" data-updated="true" itemprop="datePublished">Dec 8<span>th</span>, 2014</time></div>
 		<div class="tags">
 
 
@@ -238,7 +432,7 @@
   
 
 
-<time datetime="2014-11-01T11:27:02+02:00" data-updated="true" itemprop="datePublished">Nov 1<span>st</span>, 2014</time></div>
+<time datetime="2014-11-01T10:27:02+01:00" data-updated="true" itemprop="datePublished">Nov 1<span>st</span>, 2014</time></div>
 		<div class="tags">
 
 
@@ -325,7 +519,7 @@
   
 
 
-<time datetime="2014-10-26T20:32:27+02:00" data-updated="true" itemprop="datePublished">Oct 26<span>th</span>, 2014</time></div>
+<time datetime="2014-10-26T19:32:27+01:00" data-updated="true" itemprop="datePublished">Oct 26<span>th</span>, 2014</time></div>
 		<div class="tags">
 
 
@@ -503,7 +697,7 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
   
 
 
-<time datetime="2014-06-08T16:39:52+03:00" data-updated="true" itemprop="datePublished">Jun 8<span>th</span>, 2014</time></div>
+<time datetime="2014-06-08T15:39:52+02:00" data-updated="true" itemprop="datePublished">Jun 8<span>th</span>, 2014</time></div>
 		<div class="tags">
 
 
@@ -694,101 +888,6 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 
 
 <p>This is what I want to share right now. Maybe I can dive into a number of these topics in some of my next blog posts. Thanks for reading.</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-13T23:24:08+03:00" data-updated="true" itemprop="datePublished">May 13<span>th</span>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ndc/'>NDC</a>, <a class='category' href='/blog/categories/oslo/'>Oslo</a>, <a class='category' href='/blog/categories/conferences/'>conferences</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2014/05/13/ndc-oslo-2014/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/05/13/ndc-oslo-2014/" itemprop="url">NDC Oslo 2014</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Yes! It&rsquo;s happening. We will be at <a href="http://www.ndcoslo.com/" target="_blank">NDC Oslo 2014</a> with 3 developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>. <a href="https://twitter.com/bjorn_coltof" target="_blank">Bjorn Coltof</a>, <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a> and I are going to be there between 2-6th of June. We&rsquo;ll be attending the conference as well as the pre-conference workshops. We&rsquo;re all pretty excited and it&rsquo;s going to be awesome. Connect with us if you&rsquo;re also going to be there! We can have a chat over a beer or two. All beers are on NIPO Software! (just testing if Jeroen Noordman, our CEO, is reading this post. I should soon find out).</p>
-
-<p>Let&rsquo;s get to the conference content. The sessions are so great that you wish you could have mitosis and attend at least a couple of them at the same time. But again life is all about priorities. Clarifying the priorities is tough.</p>
-
-<p>My thought process involved asking myself these questions:</p>
-
-<ul>
-<li>Am I particularly interested in the main subject of this session? (Doh!)</li>
-<li>Is this session content something I can find in books, online documents or Pluralsight courses? How original is it?</li>
-<li>..and of course it&rsquo;s preferable that I can apply this knowledge somewhere in the office like on <a href="http://nfieldmr.com/get-started.aspx" target="_blank">Nfield</a>.</li>
-</ul>
-
-
-<p>There is a bunch of <a href="http://www.ndcoslo.com/pre-conference-workshops" target="_blank">pre-conference workshops</a> that will take place in the first 2 days, right before the conference starts. First choice had to be made here. This is something you can&rsquo;t change afterwards. It&rsquo;s printed on the ticket.</p>
-
-<p>In the end Bjorn and I picked <a href="http://www.ndcoslo.com/pre-conference-workshop/identity-workshop/1750" target="_blank">Identity and access control for modern web applications and APIs (Dominick Baier &ndash; Brock Allen)</a> and Serif chose to stay away from us by enrolling in <a href="http://www.ndcoslo.com/pre-conference-workshop/angularjs-workshop/1865" target="_blank">AngularJS workshop (Scott Allen)</a>. Can&rsquo;t really blame him, I love Scott Allen&rsquo;s <a href="http://pluralsight.com/training/Authors/Details/scott-allen" target="_blank">Pluralsight courses.</a></p>
-
-<p>The most tricky part in this selection is that all &ldquo;interesting&rdquo; single day workshops are set for 3rd of June. So it becomes very hard to pick two separate single day workshops. This also goes as a feedback to NDC organizers. Don&rsquo;t do that again!</p>
-
-<p>After we hack enough code during these 2 day workshops the actual conference will start. Here are screenshots from the agenda together with my selections based on priority. I&rsquo;ve color coded the talks on the calender:</p>
-
-<br>
-
-
-<ul>
-<li><span style="color:red">Highest priority.</span></li>
-<li><span style="color:orange">Middle priority. Go to this one if you can&rsquo;t somehow make the one above.</span></li>
-<li><span style="color:green">Low priority. Go to this one if you can&rsquo;t make neither of above.</span></li>
-</ul>
-
-
-<p><img src="/assets/NDCOslo2014/NDCOslo_Wednesday.png" alt="NDC Oslo Wednesday Sessions" /></p>
-
-<br>
-
-
-<hr>
-
-
-<p><img src="/assets/NDCOslo2014/NDCOslo_Thursday.png" alt="NDC Oslo Thursday Sessions" /></p>
-
-<br>
-
-
-<hr>
-
-
-<p><img src="/assets/NDCOslo2014/NDCOslo_Friday.png" alt="NDC Oslo Friday Sessions" /></p>
-
-<p>This is obviously A LOT OF new stuff. Here is the list of technologies I should get myself familiar with to avoid showing up clueless in the sessions:</p>
-
-<p><img src="/assets/NDCOslo2014/NDCOslo_LearningList.png" alt="NDC Oslo Learning List" /></p>
-
-<p>That&rsquo;s it for now. Probably more posts will follow during and after the conference.</p>
 
 		
 		

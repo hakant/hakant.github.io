@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Hackathon | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/hackathon/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2016-02-26T17:04:43+02:00</updated>
+  <updated>2016-04-06T20:01:26+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -14,9 +14,162 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Hackathon Planner &amp; My Experience With Aurelia So Far]]></title>
+    <link href="http://www.hakantuncer.com/blog/2016/04/06/hackathon-planner-and-my-experience-with-aurelia-so-far/"/>
+    <updated>2016-04-06T02:00:00+02:00</updated>
+    <id>http://www.hakantuncer.com/blog/2016/04/06/hackathon-planner-and-my-experience-with-aurelia-so-far</id>
+    <content type="html"><![CDATA[<p>~2 months ago <a href="/blog/2016/01/30/hackathon-planner-for-nipo-software/">I wrote about Hackathon Planner</a>
+and hustled the idea as a candidate project for the next hackathon at NIPO Software. Then the hackathon day arrived.
+We formed a team of 6 and spent a day working on it. Rutger shot a time lapse video from that day.</p>
+
+<br/>
+
+
+
+
+<iframe width="700" height="393" src="https://www.youtube.com/embed/GMK8vvJm87A" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Since then, I continue working on the Hackathon Planner whenever I find some free time here and there. Rutger also
+occasionally shows up in the commit history contributing with his CSS superpowers.</p>
+
+<p>I use <a href="https://azure.microsoft.com/en-us/">Azure</a> everyday at work and this time I want to experiement with
+<a href="https://aws.amazon.com/">AWS</a>. I&rsquo;ve put up an <a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">early preview of Hackathon Planner</a>
+on Amazon S3. I&rsquo;ll keep updating it from this point on. At the time of this writing, it&rsquo;s only a client
+side preview &ndash; actions are only saved on the local storage of the browser. Not very useful yet but it soon will be.
+<a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">Check it out.</a></p>
+
+<h2>Aurelia</h2>
+
+<p><a href="http://aurelia.io/">Aurelia</a> has been my framework of choice for this
+<a href="https://en.wikipedia.org/wiki/Single-page_application">single page application</a>. It truly is a great framework in
+the sense that it really gets out of your way. After I learned some of the fundamentals of Aurelia, I was basically
+good to go. Some periods I even forgot that I was using a framework because it is simply not in your face. Let me
+show you some code samples from the project.</p>
+
+<br/>
+
+
+<h4>ES6 and ES7 in action</h4>
+
+<p>Aurelia takes advantage of the latest javascript standards as much as possible. Take a look at this &ldquo;nav-bar&rdquo;
+component from the Hackathon Planner.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/27562e37df6d7bf59f24fd12b316045a.js"></script>
+
+
+<ul>
+<li>First three lines are an example of <a href="https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import">ES6 module importing</a>.
+This is how a javascript module can make use of code from external libraries.</li>
+<li>Line #5 is an example of an <a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841#.5obmn2df6">ES7 Decorator</a> that is in this case
+<a href="http://eisenbergeffect.bluespire.com/aurelia-update-with-decorators-ie9-and-more/">used by Aurelia for dependency injection</a>.
+Basically we&rsquo;re telling Aurelia to pass those components as constructor arguments to the NavBar component.</li>
+<li>And the rest of the code is the NavBar class that is written based on the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">ES6 class specification</a>.
+See how clean this component is &ndash; it&rsquo;s pure javascript.</li>
+</ul>
+
+
+<br/>  
+
+
+<h4>Dynamic application root</h4>
+
+<p>Code below is the entry point to the Hackathon Planner: &ldquo;main.js&rdquo;.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/8c94080e4c61ea04bfaf1a009dbcc25b.js"></script>
+
+
+<ul>
+<li>Line #2 imports a custom authentication service that I wrote and it gets resolved as a singleton instance at line #13.
+In Aurelia all dependencies are registered as singleton by default (unless you specify it otherwise).</li>
+<li>Based on the authentication status (line #14) aurelia app root is set either to the app or to the login
+component. The ability to set arbitrary application roots is a powerful feature of Aurelia that enables some
+<a href="http://patrickwalters.net/creating-multipage-apps-using-aurelia-2/">interesting scenarios</a>.</li>
+<li>I borrowed this idea from <a href="http://davismj.me/blog/aurelia-auth-pt2/">Matthew James Davis</a>.</li>
+</ul>
+
+
+<br/>
+
+
+<h4>Validation</h4>
+
+<p>Aurelia also comes with a <a href="https://github.com/aurelia/validation">validation plugin</a> and <a href="http://blog.durandal.io/2016/03/23/aurelia-babel-6-and-jspm-update/">it&rsquo;s currently undergoing some big refactoring</a>.
+It still wouldn&rsquo;t hurt to show how it looks like at the moment. Note that the @ensure decorator is recently
+deprecated (which means I&rsquo;ll also need to adapt this code going forward).</p>
+
+<p>This is a stripped down version of the project class in Hackathon Planner:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/69363eaf32e2052d2d2697335704555e.js"></script>
+
+
+<ul>
+<li>Line #8 and #10 sets validation rules on those properties and line #20 initializes the validation for this
+object.</li>
+</ul>
+
+
+<p>And this event handler in &ldquo;new-card.js&rdquo; validates a project before adding or updating it:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/bbb87af2f2306724bbd1981973b8d83f.js"></script>
+
+
+<br/>
+
+
+<h4>Beautiful components</h4>
+
+<p>In Aurelia, user interface components are composed of <a href="http://aurelia.io/docs.html#/aurelia/framework/1.0.0-beta.1.1.4/doc/article/creating-components">view and view-model pairs</a>.
+These two are created by Aurelia&rsquo;s dependency injection framework and gets linked to each other via data binding.</p>
+
+<p>Here is one of those pairs from the Hackathon Planner. This is how the overview page is rendered:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/6ab1a376f50b80bd115f765e16a551f4.js"></script>
+
+
+
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/7296309c6a7166254ac701a6b27caf47.js"></script>
+
+
+<p></p>
+
+<ul>
+<li>Notice how a component is required into a template at line #2.</li>
+<li>And then all projects are looped through and each one is rendered into another component called &ldquo;idea-card&rdquo;
+at line #5.</li>
+</ul>
+
+
+<p>Thank you for reading and make sure you check out the <a href="https://github.com/hakant/HackathonPlanner">Hackathon Planner on GitHub</a>
+and <a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">its early preview deployment</a>.</p>
+
+<p>~Hakan</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hackathon Planner for <br/> { NIPO Software }]]></title>
     <link href="http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software/"/>
-    <updated>2016-01-30T10:29:33+02:00</updated>
+    <updated>2016-01-30T09:29:33+01:00</updated>
     <id>http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software</id>
     <content type="html"><![CDATA[<p>I learn best by practicing. When I only read (i.e no practicing, no note taking), I almost completely forget what I learned after a month or two. I think most people are wired this way. Think about a book you read 6 months ago and see how much of it you can still remember. It&rsquo;s scary.</p>
 
@@ -48,9 +201,9 @@
 </ul>
 
 
-<p>Based on these thoughts above I&rsquo;ve created a very <a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22">basic clickable mockup</a> that can give a general idea and show some of the basic interactions:</p>
+<p>Based on these thoughts above I&rsquo;ve created a very basic sketch that can give a general idea:</p>
 
-<p><a href="https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22"><img src="https://hackathonplanner.mybalsamiq.com/mockups/4089623.png" alt="Hackathon Planner - Mockup" /></a></p>
+<p><img src="/assets/Hackathon_Planner/Hackathon_Idea_Details.png" alt="Hackathon Planner - Mockup" /></p>
 
 <h2>Ingredients</h2>
 
