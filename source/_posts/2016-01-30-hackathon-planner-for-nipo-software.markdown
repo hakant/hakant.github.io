@@ -37,9 +37,9 @@ A minimum viable hackathon planner;
 * should allow a simple way of forming teams (mark the idea/team that you want to join and done!).
 * should allow live monitoring of teams as they form and evolve. It makes the team formation process more exciting to follow. Watching as ideas live and die ([signalR](http://www.asp.net/signalr),  [socket.io](http://socket.io/) ?).
 
-Based on these thoughts above I've created a very [basic clickable mockup](https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22) that can give a general idea and show some of the basic interactions:
+Based on these thoughts above I've created a very basic sketch that can give a general idea:
 
-[![Hackathon Planner - Mockup](https://hackathonplanner.mybalsamiq.com/mockups/4089623.png)](https://hackathonplanner.mybalsamiq.com/projects/hackathonplanner/prototype/Hackathon+Ideas?key=461d3fd4697bd193977050ca80bdbe84a1383d22)
+![Hackathon Planner - Mockup](/assets/Hackathon_Planner/Hackathon_Idea_Details.png)
 
 ## Ingredients
 

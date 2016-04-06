@@ -15,7 +15,7 @@ and hustled the idea as a candidate project for the next hackathon at NIPO Softw
 We formed a team of 6 and spent a day working on it. Rutger shot a time lapse video from that day.
 <br/>
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/GMK8vvJm87A" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="393" src="https://www.youtube.com/embed/GMK8vvJm87A" frameborder="0" allowfullscreen></iframe>
 
 Since then, I continue working on the Hackathon Planner whenever I find some free time here and there. Rutger also 
 occasionally shows up in the commit history contributing with his CSS superpowers.
@@ -68,7 +68,7 @@ component. The ability to set arbitrary application roots is a powerful feature 
 #### Validation
 Aurelia also comes with a [validation plugin](https://github.com/aurelia/validation) and [it's currently undergoing some big refactoring](http://blog.durandal.io/2016/03/23/aurelia-babel-6-and-jspm-update/).
 It still wouldn't hurt to show how it looks like at the moment. Note that the @ensure decorator is recently 
-deprecated. 
+deprecated (which means I'll also need to adapt this code going forward).
 
 This is a stripped down version of the project class in Hackathon Planner:
 
