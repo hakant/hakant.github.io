@@ -21,8 +21,7 @@ I love writing code, so obviously, I'd also like writing code for you. I can wor
   * Web API
   * SQL and NOSQL databases
 * [node.js](https://nodejs.org/)
-  * [Express.js](http://expressjs.com/)
-  * [Jade](http://jade-lang.com/), [EJS](http://www.embeddedjs.com/), [Vash](https://github.com/kirbysayshi/vash)  
+  * [Express.js](http://expressjs.com/)  
 * or with client side javascript frameworks for building [SPAs](https://en.wikipedia.org/wiki/Single-page_application):
   * [AngularJS](https://angularjs.org/)
   * [Aurelia](http://aurelia.io)

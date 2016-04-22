@@ -21,10 +21,9 @@ I moved to Amsterdam around 7 years ago and I'm currently working at <a href="ht
 >Always have a side project.
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* **Hackathon Planner** I'm looking for excuse projects to use and improve my node.js skills. At
+* **Hackathon Planner** I'm looking for projects to use and improve my [node.js](https://nodejs.org/en/) & [SPA](https://en.wikipedia.org/wiki/Single-page_application) skills. At
 NIPO Software we're organizing hackathon events a couple of times a year to have fun and create
-interesting things that we can benefit from. I'm planning to create a web app that can ease the
-planning phase of these hackathons. The ingredients will be [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) and [ES6 Javascript](http://es6-features.org).
+interesting tools & ideas that we can benefit from. I'm currently working on a web application that can ease the planning phase of these hackathons. The ingredients will be [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) and [ES6 Javascript](http://es6-features.org).
 
 * **Ottobytes**: Startup that I created (together with two other colleagues). We built a product called Kiwi, a data transformation solution for market research companies. Kiwi is now acquired by NIPO Software. I'm not actively working on this product anymore but I've learnt a lot from this experience. You can visit the [Ottobytes Website](http://ottobytes.com/) for more information. I also wrote [two blog posts](./blog/categories/kiwi/) about it.
 
