@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<title>Hakan Tuncer's Blog</title>
 	<meta name="author" content="Hakan Tuncer">
-	<meta name="description" content="Follow @hakant Apr 6th, 2016 aurelia, aws, hackathon, javascript Comments Hackathon Planner &amp; My Experience With Aurelia So Far ~2 months ago I &hellip;">
+	<meta name="description" content="Follow @hakant Apr 20th, 2016 aurelia, hackathon, javascript, ux Comments Implementing an App Walkthrough I think most professionals who design &hellip;">
 	
 	<!-- http://t.co/dKP3o1e -->
   	<meta name="HandheldFriendly" content="True">
@@ -24,7 +24,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Hakan Tuncer's Blog" />
-    <meta property="og:description" content="Follow @hakant Apr 6th, 2016 aurelia, aws, hackathon, javascript Comments Hackathon Planner &amp; My Experience With Aurelia So Far ~2 months ago I &hellip;" />
+    <meta property="og:description" content="Follow @hakant Apr 20th, 2016 aurelia, hackathon, javascript, ux Comments Implementing an App Walkthrough I think most professionals who design &hellip;" />
     <meta property="og:url" content="http://www.hakantuncer.com/blog/" />
     <meta property="og:image" content="https://media.licdn.com/media/p/4/005/027/329/2633870.jpg" />
 	
@@ -114,6 +114,120 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-04-20T22:23:47+02:00" data-updated="true" itemprop="datePublished">Apr 20<span>th</span>, 2016</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/aurelia/'>aurelia</a>, <a class='category' href='/blog/categories/hackathon/'>hackathon</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/ux/'>ux</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2016/04/20/implementing-an-app-walkthrough/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2016/04/20/implementing-an-app-walkthrough/" itemprop="url">Implementing an App Walkthrough</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I think most professionals who design product interfaces (both physical or software interfaces) will agree
+that simplicity and discoverability of an interface is a big winning factor. Simple and discoverable
+interfaces are usually self explanatory and for this very reason they tend to provide great user
+experiences.</p>
+
+<p>On the other hand, this doesn&rsquo;t mean we should stop providing documentation or user manuals for our
+products. A discoverable user interface with a clean, easily accessible documentation is I think what
+every product deserves.</p>
+
+<p>When it comes to user manuals or guides, I&rsquo;m so much in favor of a user manual that&rsquo;s deeply connected or
+embedded to the user interface rather than a pile of content parked somewhere completely disconnected from
+the actual product.</p>
+
+<p>UI embedded manuals can be designed in many ways, one of which is through a concept called &ldquo;App Walkthrough&rdquo;.</p>
+
+<h2>App Walkthrough</h2>
+
+<p>From a conceptual point of view I knew what an app walkthrough is for a very long time but before I sat down
+to write this post I was tempted to call it &ldquo;in-app tutorials&rdquo;. After some searching around the topic, I
+discovered that it actually has a <a href="http://www.dtelepathy.com/blog/design/ux-flows-how-when-to-design-app-walkthrough">common name</a>.</p>
+
+<blockquote><p>A walkthrough is the process of intentionally revealing functionality to a user.</p></blockquote>
+
+<p>Implementing a successful app walkthrough is <a href="https://www.nngroup.com/articles/mobile-instructional-overlay/">not an easy endeavour at all</a>.
+It&rsquo;s like a double edged sword. If you <a href="http://www.webdesignerdepot.com/2014/07/how-to-design-a-successful-web-app-walkthrough/">get it right</a>
+it&rsquo;s all unicorns and butterflies. If you get it wrong you can do more harm than good.</p>
+
+<h2>Implementing one for Hackathon Planner</h2>
+
+<p>A couple of days ago I started flirting with the idea of implementing a walkthough for the <a href="https://github.com/hakant/HackathonPlanner">Hackathon
+Planner</a>. This is what came out:</p>
+
+<p><img src="/assets/App_Walkthrough/Hackathon-Planner-Walkthrough.gif" alt="Hackathon Planner Walkthrough" /></p>
+
+<p>You can try it by visiting the <a href="http://hackathonplanner.s3-website.eu-central-1.amazonaws.com/">Hackathon Planner preview website</a>.
+It is designed to be viewed only once and then gets out of the way forever. There are two things that I still
+want to add to this:</p>
+
+<ul>
+<li>A quick opt out button on each individual step of the walkthough so that users have an easy way to exit
+the tutorial without being forced to complete it.</li>
+<li>An overlay that makes the UI frozen while the tooltips are running. If a user doesn&rsquo;t follow the
+tooltip popovers and starts clicking around, things get messy (and this is bound to happen if I
+know a thing or two about users).</li>
+</ul>
+
+
+<h2>Show me the code</h2>
+
+<p>Inside the Aurelia app, I&rsquo;ve created a component called &ldquo;<em>TooltipService</em>&rdquo; which is responsible for
+orchestrating the walkthrough. There&rsquo;s also a separate data holder class &ldquo;<em>Tooltips</em>&rdquo; that declaratively defines all walkthrough
+steps and their contents, positions etc.</p>
+
+<p>Tooltips are created using the <a href="http://v4-alpha.getbootstrap.com/components/popovers/">popover component from Bootstrap 4</a>
+(still in alpha at the time of this writing).</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/48a5b7c5a4e4f34102f393fbd80dc783.js"></script>
+
+
+
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/36345d12467d304e29e444430a8bf747.js"></script>
+
+
+<p></p>
+
+<p>~Hakan</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -696,94 +810,6 @@ For the master architect, there are only a few</p></blockquote>
 <p>All in all it was a mind tickling workshop and I hope I could give you more than only a taste. I may write other posts about the bullet points above if/when I find the time.</p>
 
 <p>Thanks for reading</p>
-
-<p>Hakan</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-02T13:46:06+02:00" data-updated="true" itemprop="datePublished">May 2<span>nd</span>, 2015</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/anglebrackets/'>anglebrackets</a>, <a class='category' href='/blog/categories/conference/'>conference</a>, <a class='category' href='/blog/categories/devintersection/'>devintersection</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2015/05/02/devintersection-and-anglebrackets-in-phoenix/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/05/02/devintersection-and-anglebrackets-in-phoenix/" itemprop="url">DevIntersection &amp; AngleBrackets in Phoenix</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>It&rsquo;s conference season again! Developers from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> were in <a href="http://channel9.msdn.com/Events/Build/2014">Build 2014</a> and <a href="http://www.ndcoslo.com">NDC Oslo 2014</a> last year. This year we&rsquo;ll be at <a href="http://www.ndcoslo.com">NDC Oslo</a> again but this time I myself will be heading to <a href="http://devintersection.com">DevIntersection</a> &amp; <a href="https://anglebrackets.org/">AngleBrackets</a> joint conferences.</p>
-
-<p>Norwegian Developers Conference (NDC) is I think one of the best and I&rsquo;d really enjoyed it last year. But change is good.</p>
-
-<p>Following a deep consideration I reckon that I can&rsquo;t go to Norway again&hellip; Not after all those shrimps I had to sit face to face in Oslo (see OsloFjord Cruises). My friend Bjorn is very disciplined about reminding that to me consistently.</p>
-
-<br/>
-
-
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hakant">@hakant</a> &quot;We are eagerly awaiting your visit Mr Tuncer&#8230;&quot; <a href="http://t.co/JuG6axnSsO">pic.twitter.com/JuG6axnSsO</a></p>&mdash; Bjorn Coltof (@bjorn_coltof) <a href="https://twitter.com/bjorn_coltof/status/593866800149995521">April 30, 2015</a></blockquote>
-
-
-<p> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<h2>What&rsquo;s going to happen there</h2>
-
-<p>DevIntersection has a number of tracks which are called &ldquo;intersections&rdquo;:</p>
-
-<p><img src="/assets/AngleBrackets_DevIntersection/devintersection_tracks.png" alt="DevIntersection Tracks" /></p>
-
-<p>ASP.NET, Visual Studio and Azure intersections are grouped together since they&rsquo;re highly related to each other. This group of tracks will be my main interest in Phoenix together with the bonus open web event: <a href="https://anglebrackets.org/">anglebrackets</a>.</p>
-
-<p>An exciting aspect of DevIntersection 2015 is that it&rsquo;s the first conference after <a href="http://channel9.msdn.com/Events/Build/2015">Build 2015</a> at which Microsoft made <a href="http://venturebeat.com/2015/04/29/everything-that-happened-at-the-2015-microsoft-build-developer-conference/">a number of big announcements</a>. There&rsquo;s a more detailed list and link aggregation about Build 2015 <a href="http://blog.cwa.me.uk/2015/04/30/the-morning-brew-1851/">here</a> and <a href="http://blog.cwa.me.uk/2015/05/01/the-morning-brew-1852/">here</a> which I highly recommend.</p>
-
-<p>Here is a piece from the official event site:</p>
-
-<blockquote><p>We invite you to the most dynamic developer event in our industry at the next DEVintersection, May 2015. This event is POST BUILD and IGNITE which will allow our presenters to go deep into the new releases and technologies announced. We will focus on Visual Studio, ASP.net, HTML5, Microsoft Azure, XAML, ALM, Architecture, Design and in the bonus co-located open web event anglebrackets we feature Angular JS, HTML5, CSS, Java Script, SPA, SEO, Speech enabled Mobile Apps, Design and much more.</p></blockquote>
-
-<h2>The Schedule</h2>
-
-<p>I&rsquo;ll be attending three workshops. Two of them are before the conference and last one is after the conference on Friday. Each workshop is a day long.</p>
-
-<h2><img src="/assets/AngleBrackets_DevIntersection/DevIntersection%20Workshops_1.png" alt="DevIntersection Tracks" /></h2>
-
-<h2><img src="/assets/AngleBrackets_DevIntersection/DevIntersection%20Workshops_2.png" alt="DevIntersection Tracks" /></h2>
-
-<p>And for the conference itself, I&rsquo;ve looked at the schedule and marked the sessions I&rsquo;m interested in so far. For a number of slots I&rsquo;ve picked more than one session for now &ndash; I&rsquo;ll have to pick one of them on the spot.</p>
-
-<h2><img src="/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Tuesday.png" alt="DevIntersection Tracks" /></h2>
-
-<h2><img src="/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Wednesday.png" alt="DevIntersection Tracks" /></h2>
-
-<p><img src="/assets/AngleBrackets_DevIntersection/DevIntersection_Schedule_Thursday.png" alt="DevIntersection Tracks" /></p>
-
-<p>As usual I&rsquo;ll be sharing my experiences from the event on twitter and facebook. You can follow me on twitter using <a href="https://twitter.com/hakant">@hakant</a>. And in case you&rsquo;re reading this and also going to DevIntersection in May let&rsquo;s connect and meet there!</p>
 
 <p>Hakan</p>
 
