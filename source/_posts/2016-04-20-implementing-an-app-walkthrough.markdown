@@ -50,9 +50,17 @@ want to add to this:
  
 * A quick opt out button on each individual step of the walkthough so that users have an easy way to exit 
 the tutorial without being forced to complete it.
+
+
+>__Update:__ Right after I wrote this blog post, I came across a tutorial that's built into GitHub Desktop (for
+>Mac). See the screenshot below. Clicking "Got it!" takes the user to the next step of the tutorial while
+>clicking the close button on the top left corner stops the tutorial. It's brilliant.
+><br/><br/>
+>![GitHub Desktop Walkthrough](/assets/App_Walkthrough/GitHub_Desktop_Walkthrough.png)
+
 * An overlay that makes the UI frozen while the tooltips are running. If a user doesn't follow the 
 tooltip popovers and starts clicking around, things get messy (and this is bound to happen if I 
-know a thing or two about users).
+know anything about users).
 
 ## Show me the code
 
