@@ -31,7 +31,7 @@ I love writing code, so obviously, I'd also like writing code for you. I can wor
 I love web programming, both front-end and back-end. I have a lot of experience
 with building and maintaining large [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) systems that are scalable, resilient and
 highly available. In recent years, building software for cloud platforms has been a big part of
-my professional life. Especially with [Microsoft Azure](https://azure.microsoft.com).
+my professional life - especially with [Microsoft Azure](https://azure.microsoft.com).
 
 I'd also be interested in working with other platforms or languages but I'd first need to ramp up on those.
 
@@ -57,7 +57,7 @@ projects. If you in fact want me to write tests for your projects, I'd also be h
 
 If you want me to review your code, I can gladly do that too. I particularly look for issues relating to readability, encapsulation, coupling, maintainability, etc.
 
-## Other platforms or languages outside my comfort zone?
+## Other platforms or languages outside my comfort zone
 
 I can also work on something that is totally new to me, or that I'm less comfortable with. Because of 
 my experience with different technologies in software development, I feel comfortable about learning 
