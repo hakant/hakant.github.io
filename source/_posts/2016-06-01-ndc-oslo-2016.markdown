@@ -136,7 +136,9 @@ Always nice to have a few drinks and meet new folks.
 * 16:20 - 17:20
   * [Talk: Software Testing for Failed Projects](http://ndcoslo.com/talk/software-testing-for-failed-projects/)
   * [Talk: Continuous Integration for Open Source Projects with Travis CI](http://ndcoslo.com/talk/continuous-integration-for-open-source-projects-with-travis-ci/)
-  * [Talk: Everything I know about computers, I learned from the movies: Reloaded](http://ndcoslo.com/talk/everything-i-know-about-computers-i-learned-from-the-movies-reloaded/) 
+  * [Talk: Everything I know about computers, I learned from the movies: Reloaded](http://ndcoslo.com/talk/everything-i-know-about-computers-i-learned-from-the-movies-reloaded/)
+  
+~ Hakan 
 
 
 
