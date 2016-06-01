@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Conferences | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/conferences/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2016-04-27T10:42:18+02:00</updated>
+  <updated>2016-06-01T22:10:56+02:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -12,6 +12,220 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NDC Oslo 2016]]></title>
+    <link href="http://www.hakantuncer.com/blog/2016/06/01/ndc-oslo-2016/"/>
+    <updated>2016-06-01T20:16:43+02:00</updated>
+    <id>http://www.hakantuncer.com/blog/2016/06/01/ndc-oslo-2016</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s time for NDC Oslo again &ndash; happening between 6-10 June 2016. I&rsquo;m excited to be going there once again
+this year.</p>
+
+<p>First two days I&rsquo;ll be taking a workshop on the topic of <a href="http://ndcoslo.com/workshop/microservice-development-with-examples-in-nservicebus/">microservice development (with examples in NServiceBus)</a>.
+Originally the speaker was <a href="https://twitter.com/UdiDahan">Udi Dahan</a> but today I saw that for
+personal reasons Udi is not going to make it to the conference anymore. Instead, now <a href="https://twitter.com/jbogard">Jimmy Bogard</a>
+is going to give the workshop and I&rsquo;m still up for it! I&rsquo;m hoping to learn more than a few good practices and ideas
+around building maintainable and resillient service oriented architectures.</p>
+
+<p>After the workshop 3 day long conference goodness starts. I&rsquo;ve been looking at the agenda for a while and marking
+the sessions that I&rsquo;m interested in. I&rsquo;ve put my list below. My plan is to attend the first session
+in each slot and see if I can watch the rest via recordings after the conference.</p>
+
+<p>And if you&rsquo;re going to be at NDC Oslo next week and don&rsquo;t mind talking to strangers <a href="https://twitter.com/hakant">send me a tweet</a>!
+Always nice to have a few drinks and meet new folks.</p>
+
+<h2>Wednesday</h2>
+
+<br/>
+
+
+<ul>
+<li><p>Keynote</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/keynote/">Talk: Keynote: Yesterday’s Technology is Dead, Today’s is on Life Support</a></li>
+</ul>
+</li>
+<li><p>10:20 &ndash; 11:20</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/dragons_in_new_javascript/">Talk: There Still Be Dragons in the New JavaScript</a></li>
+<li><a href="http://ndcoslo.com/talk/asp.net-core-1.0-deep-dive/">Talk: ASP.NET Core 1.0 Deep Dive</a></li>
+</ul>
+</li>
+<li><p>11:40 &ndash; 12:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/cross-platform-desktop-apps-with-electron/">Talk: Cross-Platform Desktop Apps with Electron</a></li>
+<li><a href="http://ndcoslo.com/talk/intro-to-azure-machine-learning-predict-who-survives-the-titanic/">Talk: Intro to Azure Machine Learning: Predict Who Survives the Titanic</a></li>
+</ul>
+</li>
+<li><p>13:40-14:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/my-favorite-azure-security-features-and-why-you-should-care/">Talk: My Favorite Azure Security Features &ndash; and why you should care</a></li>
+<li><a href="http://ndcoslo.com/talk/elastic-scaling-in-a-microservice-oriented-architecture/">Talk: Elastic scaling in a (micro)service oriented architecture</a></li>
+<li><a href="http://ndcoslo.com/talk/the-sane-way-to-build-cloud-infrastructure/">Talk: The sane way to build cloud infrastructure</a></li>
+</ul>
+</li>
+<li><p>15:00 &ndash; 16:00</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/scale-up-and-out-with-akka-net/">Talk: Scale up and out with Akka.NET</a></li>
+<li><a href="http://ndcoslo.com/talk/universal-web-with-npm-react-and-redux-using-webpack/">Talk: Universal web with npm, React and Redux using WebPack</a></li>
+</ul>
+</li>
+<li><p>16:20 &ndash; 17:20 (Holy cow! What a time slot&hellip;)</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/domain-driven-design-the-good-parts/">Talk: Domain-Driven Design: The Good Parts</a></li>
+<li><a href="http://ndcoslo.com/talk/asp.net-core-kestrel-adventures-in-building-a-fast-web-server/">Talk: ASP.NET Core Kestrel: Adventures in building a fast web server</a></li>
+<li><a href="http://ndcoslo.com/talk/data-modeling-with-document-stores/">Talk: Data Modeling with Document Stores</a></li>
+<li><a href="http://ndcoslo.com/talk/containers-as-a-service-comparing-ecs-gks-acs-and-others/">Talk: Containers As A Service &ndash; Comparing ECS, GKS, ACS and others</a></li>
+<li><a href="http://ndcoslo.com/talk/an-experience-report-from-building-a-large-react-js-redux-application/">Talk: An Experience Report from Building a Large React.js/Redux Application</a></li>
+</ul>
+</li>
+<li><p>17:40 &ndash; 18:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/a-high-performance-solution-to-microservices-ui-composition/">Talk: A High-Performance Solution to Microservices UI Composition</a></li>
+<li><a href="http://ndcoslo.com/talk/http-2-0-from-the-developers-viewpoint/">Talk: HTTP 2.0 from the Developer&rsquo;s Viewpoint</a></li>
+<li><a href="http://ndcoslo.com/talk/performance-optimizations-in-the-wild/">Talk: Performance Optimizations in the Wild</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Thursday</h2>
+
+<br/>
+
+
+<ul>
+<li><p>09:00 &ndash; 10:00</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/net-without-windows/">Talk: .NET without Windows</a></li>
+<li><a href="http://ndcoslo.com/talk/net-data-security-hope-is-not-a-strategy/">Talk: .NET Data Security : Hope is not a Strategy</a></li>
+<li><a href="http://ndcoslo.com/talk/working-distributed-how-does-it-even-work/">Talk: Working Distributed &ndash; How Does It Even Work?</a></li>
+</ul>
+</li>
+<li><p>10:20 &ndash; 11:20</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/is-your-code-ready-for-net-core/">Talk: Is your code ready for .NET Core?</a></li>
+<li><a href="http://ndcoslo.com/talk/stairway-to-cloud-orleans-framework-for-building-halo-scale-systems/">Talk: Stairway to Cloud: Orleans Framework for building Halo-scale systems</a></li>
+<li><a href="http://ndcoslo.com/talk/sensitive-data-in-the-cloud-you-cant-do-that/">Talk: Sensitive data in the cloud? You can’t do that!</a></li>
+<li><a href="http://ndcoslo.com/talk/performance-is-not-an-option-building-services-with-grpc-and-cassandra/">Talk: Performance is not an Option- Building services with GRPC and Cassandra</a></li>
+</ul>
+</li>
+<li><p>11:40 &ndash; 12:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/servicefabric-a-whole-lot-of-microservice-awesome/">Talk: ServiceFabric &ndash; a whole lot of microservice awesome!</a></li>
+<li><a href="http://ndcoslo.com/talk/micromonolith-top-anti-patterns-of-distributed-systems/">Talk: × MicroMonolith &ndash; Top anti-patterns of distributed systems</a></li>
+<li><a href="http://ndcoslo.com/talk/hacking-in-2016-how-is-our-systems-broken/">Talk: Hacking in 2016 &ndash; How is our systems broken?</a></li>
+<li><a href="http://ndcoslo.com/talk/optimizing-the-programmer-get-more-done-faster/">Talk: Optimizing the Programmer: Get More Done Faster</a></li>
+</ul>
+</li>
+<li><p>13:40 &ndash; 14:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/escaping-the-big-ball-of-mud/">Talk: Escaping the Big Ball of Mud</a></li>
+<li><a href="http://ndcoslo.com/talk/deploying-straight-to-production-a-guide-to-the-holy-grail/">Talk: Deploying Straight to Production: A guide to the Holy Grail</a></li>
+<li><a href="http://ndcoslo.com/talk/building-an-app-in-asp-net-core-and-mvc-6-for-the-raspberry-pi/">Talk: Building an app in ASP.NET Core and MVC 6 for the Raspberry Pi</a></li>
+<li><a href="http://ndcoslo.com/talk/dont-be-dilbert-survival-tactics-for-uninspiring-workplaces/">Talk: Don’t Be Dilbert: Survival Tactics for Uninspiring Workplaces</a></li>
+</ul>
+</li>
+<li><p>15:00 &ndash; 16:00</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/deploying-docker-containers-on-windows-server-2016/">Talk: Deploying Docker Containers on Windows Server 2016</a></li>
+<li><a href="http://ndcoslo.com/talk/sequential-concurrent-and-parallel-programming/">Talk: Sequential, Concurrent and Parallel Programming</a></li>
+<li><a href="http://ndcoslo.com/talk/web-application-security-lessons-learned/">Talk: Web Application Security: Lessons Learned</a></li>
+</ul>
+</li>
+<li><p>16:20 &ndash; 17:20</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/website-fuzziness/">Talk: Website Fuzziness</a></li>
+<li><a href="http://ndcoslo.com/talk/deploying-kubernetes-a-container-cluster-manager/">Talk: Deploying Kubernetes, a Container Cluster Manager</a></li>
+</ul>
+</li>
+<li><p>17:40 &ndash; 18:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/safe-at-any-speed/">Talk: Safe At Any Speed</a></li>
+<li><a href="http://ndcoslo.com/talk/lessons-from-a-quarter-of-a-billion-breached-records/">Talk: Lessons from a quarter of a billion breached records</a></li>
+<li><a href="http://ndcoslo.com/talk/debugging-your-communication-for-more-success-and-efficiency-in-devops/">Talk: Debugging your communication for more success and efficiency in DevOps</a></li>
+<li><a href="http://ndcoslo.com/talk/logging-makes-perfect-real-world-monitoring-and-visualizations-with-riemann-and-friends/">Talk: Logging makes perfect &ndash; real-world monitoring and visualizations with Riemann and friends</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Friday</h2>
+
+<br/>
+
+
+<ul>
+<li><p>09:00 &ndash; 10:00</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/load-testing-at-scale-with-azure/">Talk: Load Testing at Scale with Azure</a></li>
+<li><a href="http://ndcoslo.com/talk/c-today-and-tomorrow/">Talk: C# Today and Tomorrow</a></li>
+<li><a href="http://ndcoslo.com/talk/analysing-big-time-series-data-in-the-cloud/">Talk: Analysing Big Time-series Data in the Cloud</a></li>
+<li><a href="http://ndcoslo.com/talk/web-performance-2016-myths-and-truths/">Talk: Web Performance 2016: Myths and Truths</a></li>
+</ul>
+</li>
+<li><p>10:20 &ndash; 11:20</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/sherlock-homepage-a-detective-story-about-running-large-web-services/">Talk: Sherlock Homepage &ndash; A detective story about running large web services</a></li>
+<li><a href="http://ndcoslo.com/talk/phoenix_channels/">Talk: Phoenix Channels &ndash; a Distributed PubSub and Presence Platform</a></li>
+<li><a href="http://ndcoslo.com/talk/panel-launching-a-software-business/">Talk: Panel: Launching a Software Business</a></li>
+</ul>
+</li>
+<li><p>11:40 &ndash; 12:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/go-one-language-you-should-try/">Talk: Go &ndash; one language you should try</a></li>
+<li><a href="http://ndcoslo.com/talk/lightning-talks-2/">Talk: Lightning Talks</a></li>
+<li><a href="http://ndcoslo.com/talk/getting-into-the-zero-downtime-deployment-world/">Talk: Getting Into the Zero Downtime Deployment World</a></li>
+<li><a href="http://ndcoslo.com/talk/dns-for-developers/">Talk: DNS for Developers</a></li>
+</ul>
+</li>
+<li><p>13:40 &ndash; 14:40</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/you-dont-know-node-js/">Talk: &ldquo;You Don&rsquo;t Know Node.js&rdquo;</a></li>
+<li><a href="http://ndcoslo.com/talk/building-living-systems-with-hypermedia-actors/">Talk: Building living systems with hypermedia actors</a></li>
+<li><a href="http://ndcoslo.com/talk/write-once-run-everywhere-is-not-a-myth/">Talk: &ldquo;Write once, run everywhere&rdquo; is not a myth</a></li>
+</ul>
+</li>
+<li><p>15:00 &ndash; 16:00</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/choosing-a-javascript-framework/">Talk: Choosing a JavaScript Framework</a></li>
+<li><a href="http://ndcoslo.com/talk/upgrading-javascript-to-es6-and-using-typescript-as-a-shortcut/">Talk: Upgrading JavaScript to ES6 and using TypeScript as a shortcut</a></li>
+<li><a href="http://ndcoslo.com/talk/power-to-the-people/">Talk: Power to the people!</a></li>
+<li><a href="http://ndcoslo.com/talk/amdahl-to-zipf-the-physics-of-software/">Talk: Amdahl to Zipf: The Physics of Software</a></li>
+<li><a href="http://ndcoslo.com/talk/elixir-is-neat-but-what-can-you-actually-do-with-it/">Talk: Elixir Is Neat But What Can You Actually Do With It?</a></li>
+</ul>
+</li>
+<li><p>16:20 &ndash; 17:20</p>
+
+<ul>
+<li><a href="http://ndcoslo.com/talk/software-testing-for-failed-projects/">Talk: Software Testing for Failed Projects</a></li>
+<li><a href="http://ndcoslo.com/talk/continuous-integration-for-open-source-projects-with-travis-ci/">Talk: Continuous Integration for Open Source Projects with Travis CI</a></li>
+<li><a href="http://ndcoslo.com/talk/everything-i-know-about-computers-i-learned-from-the-movies-reloaded/">Talk: Everything I know about computers, I learned from the movies: Reloaded</a></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[After NDC Oslo 2014]]></title>
