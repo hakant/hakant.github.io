@@ -1,0 +1,142 @@
+---
+layout: post
+title: "NDC Oslo 2016"
+date: 2016-06-01 20:16:43 +0200
+comments: true
+categories: [conferences, NDC, Oslo, microservices]
+footer: true
+sharing: true
+description: Time for NDC Oslo again and I am excited to be there
+image: http://www.hakantuncer.com/assets/NDCOslo2016/NDC_Oslo_2016.png 
+---
+
+It's time for NDC Oslo again - happening between 6-10 June 2016. I'm excited to be going there once again 
+this year.
+
+First two days I'll be taking a workshop on the topic of [microservice development (with examples in NServiceBus)](http://ndcoslo.com/workshop/microservice-development-with-examples-in-nservicebus/).
+Originally the speaker was [Udi Dahan](https://twitter.com/UdiDahan) but today I saw that for 
+personal reasons Udi is not going to make it to the conference anymore. Instead, now [Jimmy Bogard](https://twitter.com/jbogard) 
+is going to give the workshop and I'm still up for it! I'm hoping to learn more than a few good practices and ideas
+around building maintainable and resillient service oriented architectures.
+
+After the workshop 3 day long conference goodness starts. I've been looking at the agenda for a while and marking 
+the sessions that I'm interested in. I've put my list below. My plan is to attend the first session 
+in each slot and see if I can watch the rest via recordings after the conference.
+
+And if you're going to be at NDC Oslo next week and don't mind talking to strangers [send me a tweet](https://twitter.com/hakant)! 
+Always nice to have a few drinks and meet new folks.
+
+## Wednesday
+<br/>
+* Keynote
+  * [Talk: Keynote: Yesterday’s Technology is Dead, Today’s is on Life Support](http://ndcoslo.com/talk/keynote/)
+
+* 10:20 - 11:20
+  * [Talk: There Still Be Dragons in the New JavaScript](http://ndcoslo.com/talk/dragons_in_new_javascript/)
+  * [Talk: ASP.NET Core 1.0 Deep Dive](http://ndcoslo.com/talk/asp.net-core-1.0-deep-dive/)
+  
+* 11:40 - 12:40
+  * [Talk: Cross-Platform Desktop Apps with Electron](http://ndcoslo.com/talk/cross-platform-desktop-apps-with-electron/)
+  * [Talk: Intro to Azure Machine Learning: Predict Who Survives the Titanic](http://ndcoslo.com/talk/intro-to-azure-machine-learning-predict-who-survives-the-titanic/)
+  
+* 13:40-14:40
+  * [Talk: My Favorite Azure Security Features - and why you should care](http://ndcoslo.com/talk/my-favorite-azure-security-features-and-why-you-should-care/)
+  * [Talk: Elastic scaling in a (micro)service oriented architecture](http://ndcoslo.com/talk/elastic-scaling-in-a-microservice-oriented-architecture/)
+  * [Talk: The sane way to build cloud infrastructure](http://ndcoslo.com/talk/the-sane-way-to-build-cloud-infrastructure/)
+  
+* 15:00 - 16:00
+  * [Talk: Scale up and out with Akka.NET](http://ndcoslo.com/talk/scale-up-and-out-with-akka-net/)
+  * [Talk: Universal web with npm, React and Redux using WebPack](http://ndcoslo.com/talk/universal-web-with-npm-react-and-redux-using-webpack/)
+  
+* 16:20 - 17:20 (Holy cow! What a time slot...)
+  * [Talk: Domain-Driven Design: The Good Parts](http://ndcoslo.com/talk/domain-driven-design-the-good-parts/)
+  * [Talk: ASP.NET Core Kestrel: Adventures in building a fast web server](http://ndcoslo.com/talk/asp.net-core-kestrel-adventures-in-building-a-fast-web-server/)
+  * [Talk: Data Modeling with Document Stores](http://ndcoslo.com/talk/data-modeling-with-document-stores/)
+  * [Talk: Containers As A Service - Comparing ECS, GKS, ACS and others](http://ndcoslo.com/talk/containers-as-a-service-comparing-ecs-gks-acs-and-others/)
+  * [Talk: An Experience Report from Building a Large React.js/Redux Application](http://ndcoslo.com/talk/an-experience-report-from-building-a-large-react-js-redux-application/)
+  
+* 17:40 - 18:40
+  * [Talk: A High-Performance Solution to Microservices UI Composition](http://ndcoslo.com/talk/a-high-performance-solution-to-microservices-ui-composition/)
+  * [Talk: HTTP 2.0 from the Developer's Viewpoint](http://ndcoslo.com/talk/http-2-0-from-the-developers-viewpoint/)
+  * [Talk: Performance Optimizations in the Wild](http://ndcoslo.com/talk/performance-optimizations-in-the-wild/)
+
+## Thursday
+<br/>
+
+* 09:00 - 10:00
+  * [Talk: .NET without Windows](http://ndcoslo.com/talk/net-without-windows/)
+  * [Talk: .NET Data Security : Hope is not a Strategy](http://ndcoslo.com/talk/net-data-security-hope-is-not-a-strategy/)
+  * [Talk: Working Distributed - How Does It Even Work?](http://ndcoslo.com/talk/working-distributed-how-does-it-even-work/)
+  
+* 10:20 - 11:20
+  * [Talk: Is your code ready for .NET Core?](http://ndcoslo.com/talk/is-your-code-ready-for-net-core/)
+  * [Talk: Stairway to Cloud: Orleans Framework for building Halo-scale systems](http://ndcoslo.com/talk/stairway-to-cloud-orleans-framework-for-building-halo-scale-systems/)
+  * [Talk: Sensitive data in the cloud? You can’t do that!](http://ndcoslo.com/talk/sensitive-data-in-the-cloud-you-cant-do-that/)
+  * [Talk: Performance is not an Option- Building services with GRPC and Cassandra](http://ndcoslo.com/talk/performance-is-not-an-option-building-services-with-grpc-and-cassandra/)
+  
+* 11:40 - 12:40
+  * [Talk: ServiceFabric - a whole lot of microservice awesome!](http://ndcoslo.com/talk/servicefabric-a-whole-lot-of-microservice-awesome/)
+  * [Talk: × MicroMonolith - Top anti-patterns of distributed systems](http://ndcoslo.com/talk/micromonolith-top-anti-patterns-of-distributed-systems/)
+  * [Talk: Hacking in 2016 - How is our systems broken?](http://ndcoslo.com/talk/hacking-in-2016-how-is-our-systems-broken/)
+  * [Talk: Optimizing the Programmer: Get More Done Faster](http://ndcoslo.com/talk/optimizing-the-programmer-get-more-done-faster/)
+  
+* 13:40 - 14:40
+  * [Talk: Escaping the Big Ball of Mud](http://ndcoslo.com/talk/escaping-the-big-ball-of-mud/)
+  * [Talk: Deploying Straight to Production: A guide to the Holy Grail](http://ndcoslo.com/talk/deploying-straight-to-production-a-guide-to-the-holy-grail/)
+  * [Talk: Building an app in ASP.NET Core and MVC 6 for the Raspberry Pi](http://ndcoslo.com/talk/building-an-app-in-asp-net-core-and-mvc-6-for-the-raspberry-pi/)
+  * [Talk: Don’t Be Dilbert: Survival Tactics for Uninspiring Workplaces](http://ndcoslo.com/talk/dont-be-dilbert-survival-tactics-for-uninspiring-workplaces/)
+  
+* 15:00 - 16:00
+  * [Talk: Deploying Docker Containers on Windows Server 2016](http://ndcoslo.com/talk/deploying-docker-containers-on-windows-server-2016/)
+  * [Talk: Sequential, Concurrent and Parallel Programming](http://ndcoslo.com/talk/sequential-concurrent-and-parallel-programming/)
+  * [Talk: Web Application Security: Lessons Learned](http://ndcoslo.com/talk/web-application-security-lessons-learned/)
+  
+* 16:20 - 17:20
+  * [Talk: Website Fuzziness](http://ndcoslo.com/talk/website-fuzziness/)
+  * [Talk: Deploying Kubernetes, a Container Cluster Manager](http://ndcoslo.com/talk/deploying-kubernetes-a-container-cluster-manager/)
+  
+* 17:40 - 18:40
+  * [Talk: Safe At Any Speed](http://ndcoslo.com/talk/safe-at-any-speed/)
+  * [Talk: Lessons from a quarter of a billion breached records](http://ndcoslo.com/talk/lessons-from-a-quarter-of-a-billion-breached-records/)
+  * [Talk: Debugging your communication for more success and efficiency in DevOps](http://ndcoslo.com/talk/debugging-your-communication-for-more-success-and-efficiency-in-devops/)
+  * [Talk: Logging makes perfect - real-world monitoring and visualizations with Riemann and friends](http://ndcoslo.com/talk/logging-makes-perfect-real-world-monitoring-and-visualizations-with-riemann-and-friends/)
+
+## Friday
+<br/>
+
+* 09:00 - 10:00
+  * [Talk: Load Testing at Scale with Azure](http://ndcoslo.com/talk/load-testing-at-scale-with-azure/)
+  * [Talk: C# Today and Tomorrow](http://ndcoslo.com/talk/c-today-and-tomorrow/)
+  * [Talk: Analysing Big Time-series Data in the Cloud](http://ndcoslo.com/talk/analysing-big-time-series-data-in-the-cloud/)
+  * [Talk: Web Performance 2016: Myths and Truths](http://ndcoslo.com/talk/web-performance-2016-myths-and-truths/)
+
+* 10:20 - 11:20
+  * [Talk: Sherlock Homepage - A detective story about running large web services](http://ndcoslo.com/talk/sherlock-homepage-a-detective-story-about-running-large-web-services/)
+  * [Talk: Phoenix Channels - a Distributed PubSub and Presence Platform](http://ndcoslo.com/talk/phoenix_channels/)
+  * [Talk: Panel: Launching a Software Business](http://ndcoslo.com/talk/panel-launching-a-software-business/)
+
+* 11:40 - 12:40
+  * [Talk: Go - one language you should try](http://ndcoslo.com/talk/go-one-language-you-should-try/)
+  * [Talk: Lightning Talks](http://ndcoslo.com/talk/lightning-talks-2/)
+  * [Talk: Getting Into the Zero Downtime Deployment World](http://ndcoslo.com/talk/getting-into-the-zero-downtime-deployment-world/)
+  * [Talk: DNS for Developers](http://ndcoslo.com/talk/dns-for-developers/)
+
+* 13:40 - 14:40
+  * [Talk: "You Don't Know Node.js"](http://ndcoslo.com/talk/you-dont-know-node-js/)
+  * [Talk: Building living systems with hypermedia actors](http://ndcoslo.com/talk/building-living-systems-with-hypermedia-actors/)
+  * [Talk: "Write once, run everywhere" is not a myth](http://ndcoslo.com/talk/write-once-run-everywhere-is-not-a-myth/)
+
+* 15:00 - 16:00
+  * [Talk: Choosing a JavaScript Framework](http://ndcoslo.com/talk/choosing-a-javascript-framework/)
+  * [Talk: Upgrading JavaScript to ES6 and using TypeScript as a shortcut](http://ndcoslo.com/talk/upgrading-javascript-to-es6-and-using-typescript-as-a-shortcut/)
+  * [Talk: Power to the people!](http://ndcoslo.com/talk/power-to-the-people/)
+  * [Talk: Amdahl to Zipf: The Physics of Software](http://ndcoslo.com/talk/amdahl-to-zipf-the-physics-of-software/)
+  * [Talk: Elixir Is Neat But What Can You Actually Do With It?](http://ndcoslo.com/talk/elixir-is-neat-but-what-can-you-actually-do-with-it/)
+
+* 16:20 - 17:20
+  * [Talk: Software Testing for Failed Projects](http://ndcoslo.com/talk/software-testing-for-failed-projects/)
+  * [Talk: Continuous Integration for Open Source Projects with Travis CI](http://ndcoslo.com/talk/continuous-integration-for-open-source-projects-with-travis-ci/)
+  * [Talk: Everything I know about computers, I learned from the movies: Reloaded](http://ndcoslo.com/talk/everything-i-know-about-computers-i-learned-from-the-movies-reloaded/) 
+
+
+
