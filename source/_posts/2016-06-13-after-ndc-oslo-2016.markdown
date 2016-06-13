@@ -1,0 +1,121 @@
+---
+layout: post
+title: "After NDC Oslo 2016"
+date: 2016-06-13 21:41:44 +0200
+comments: true
+categories: [conferences, NDC, Oslo]
+footer: true
+sharing: true
+description: My impressions from NDC Oslo 2016
+image:
+---
+
+In my [previous post](/blog/2016/06/01/ndc-oslo-2016/) I'd talked about my plans in NDC Oslo including  
+sessions and the 2-day workshop I was planning to attend (on microservice development). 
+
+I've come back with good memories and a pretty good experience. NDC conferences usually feature high quality
+content and good speakers, this one also lived up to expectations.
+
+I would like to share some of the highlights of the conference which, of course, are based on my perspective 
+and interests.
+
+## Workshop: "Microservice development"
+
+[Jimmy Bogard](https://twitter.com/jbogard) and two employees from [Particular Software](http://particular.net/nservicebus) ran the workshop. As it happens with all these type 
+of workshops, nearly half of the content was sort of a beginner to intermediate level while the other half was 
+covering more advanced and interesting scenarios.
+
+Here are some of my hightlights:
+
+* You can find all workshop exercises [here in GitHub](https://github.com/Particular/Workshop).
+
+* Services are automonous. They don't rely on other services to do their work. They also own their own 
+SLA & uptime. They should have explicit boundaries and own their own data.
+
+* Isolation of services enable using different language and software stack per service, although rather than the language it's more 
+useful to have services decide their own data store. Homogenity on the application side is more encouraged and 
+heterogenity on the data side is more encouraged. 
+
+* Creating service boundaries for actually solving business problems is a good idea. Take a good look at the 
+business domain and how it's compartmentalized within the company. Model your services around that structure. A 
+straightforward example of this is to create a service per business department.
+
+* We talked about messaging patterns. Many things are done for you by NServiceBus.
+  * Using commands only within a service boundary.
+  * Using events within and across service boundaries.
+  * Once you separate your service into a number of granular command and event handlers, inside each of these 
+  handlers try to write code that is as "dumb" as possible - using complex patterns and abstractions as little as 
+  possible (this at least is what Jimmy is advising).
+
+* When building an SOA (service oriented architecture), the rule of thumb is that the first line 
+service can call multiple services to aggregate data but those services should never call other services. 
+Thus, the depth of services that are called are never more than 1. This principle will help you avoid 
+complexity and possible high latency.
+
+* For this reason above (downstream services don't call other services) an example in the workshop used a 
+technique where a service codebase contains public interfaces which can be implemented by other services and shared 
+during development time (as nuget packages). [Check this code](https://github.com/Particular/Workshop/tree/master/exercises/src/04%20Integration/after/Divergent.ITOps.Interfaces) 
+for an example of this use case.
+
+  * As an example, if sales domain needs to get something from customer domain, sales service 
+  declares an interface and customer service supplies the implementation to that service.
+  * This means that one service doesn't call the other during runtime but instead runs its code directly.
+  * Note that this removes the runtime dependency but introduces development time dependency. If you're doing 
+  microservices for team independence, this might sound less attractive.
+
+## Conference Highlights
+<br/>
+
+### Erlang is cool, so as functional programming
+
+* Functional programming was a big and popular track in NDC Oslo. Created a lot of buzz for sure. This photo
+below was taken at the end of the first day. I believe at the end of the conference #fsharp and #erlang was sitting 
+at the first and second positions as most spoken technologies during the conference.
+
+![NDC Oslo Twitter Buzz](/assets/After_NDCOslo2016/NDC-Oslo-Twitter-Buzz.png)
+
+* I met [Erlang](https://en.wikipedia.org/wiki/Erlang_(programming_language)) for the first time and found it quite interesting. It
+is basically a language that has a bunch of stateful microservices concepts baked right into the language in a 
+very lightweight manner.
+  * Erlang runs in its own VM.
+  * Computation is based on many small lightweight processes doing
+  work, keeping state and messaging with each other.
+  * Based on first impression I found many similarities of Erlang
+  with Service Fabric. The idea of stateful and stateless services
+  messaging each other. Erlang doesn't have a concept of replicas 
+  (unlike SF), all process nodes are peers - no master. Which means 
+  if a process crashes the state is gone. Of course there are 
+  solutions for this - like Amnesia.
+
+  Does this sound any familiar? Welcome to cutting edge stateful microservices, from 1985. 
+
+### Head to head session
+
+* Both Scott Allen and Jimmy Bogard are proponents of testing 
+with less mocking. Jimmy says he doesn't use much in memory database
+tricks because he says that they missed many bugs due to those 
+unrealistic testing styles.
+  * Jimmy uses transactions without commiting in the end.
+  * He also uses a nuget package called SPAWN that can cleanup
+  the database in a clever manner (after each test).
+  * So he's all in with real database tests.
+
+### .NET Core is a game changer
+
+* ASP.NET Core looks very nice and beautiful even though the roadmap
+had its fair share of ups and downs for a pretty long while. The talk
+about making Kestrel web server performant is fantastic. Must watch.
+
+* From a similar perspective, most ASP.NET Core talks were very 
+interesting.
+
+* My picks (only based on what I saw live)
+  * Machine Learning talk
+  * All talks from Damien Edwards and David Fowler
+  * Head to head: Scott Allen & Jimmy Bogard
+  * .NET without Windows
+  * Is your code ready for .NET core
+  * Escaping the big ball of mud
+  * Sequential, concurrent and parallel programming
+  * C# Today and Tomorrow
+  * Elixir is neat but what can you actually do with it?
