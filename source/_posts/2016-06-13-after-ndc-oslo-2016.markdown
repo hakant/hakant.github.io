@@ -7,49 +7,48 @@ categories: [conferences, NDC, Oslo]
 footer: true
 sharing: true
 description: My impressions from NDC Oslo 2016
-image:
+image: http://www.hakantuncer.com/assets/NDCOslo2016/NDC_Oslo_2016.png
 ---
 
-In my [previous post](/blog/2016/06/01/ndc-oslo-2016/) I'd talked about my plans in NDC Oslo including  
-sessions and the 2-day workshop I was planning to attend (on microservice development). 
+In my [previous post](/blog/2016/06/01/ndc-oslo-2016/) I'd talked about my plans in NDC Oslo, including  
+all the sessions and the 2-day workshop I was planning to attend. 
 
-I've come back with good memories and a pretty good experience. NDC conferences usually feature high quality
-content and good speakers, this one also lived up to expectations.
+It's been a great experience. I came back with good memories and learned a few things too. NDC conferences usually 
+feature high quality content and good speakers, this one also lived up to the expectations.
 
 I would like to share some of the highlights of the conference which, of course, are based on my perspective 
 and interests.
 
 ## Workshop: "Microservice development"
 
+![Microservices Development Workshop](/assets/After_NDCOslo2016/Microservices-Development-Workshop-1.jpg)
+
 [Jimmy Bogard](https://twitter.com/jbogard) and two employees from [Particular Software](http://particular.net/nservicebus) ran the workshop. As it happens with all these type 
 of workshops, nearly half of the content was sort of a beginner to intermediate level while the other half was 
-covering more advanced and interesting scenarios.
-
-Here are some of my hightlights:
-
-* You can find all workshop exercises [here in GitHub](https://github.com/Particular/Workshop).
+covering more advanced and interesting scenarios. Here are some of my highlights:
 
 * Services are automonous. They don't rely on other services to do their work. They also own their own 
 SLA & uptime. They should have explicit boundaries and own their own data.
 
-* Isolation of services enable using different language and software stack per service, although rather than the language it's more 
-useful to have services decide their own data store. Homogenity on the application side is more encouraged and 
-heterogenity on the data side is more encouraged. 
+* Isolation of services enable the use of different languages and frameworks per service. However, rather than using the 
+freedom of choosing a different language, it is more useful to have services choose their own data store. Homogenity 
+on the application side and heterogenity on the data side is more encouraged. 
 
 * Creating service boundaries for actually solving business problems is a good idea. Take a good look at the 
-business domain and how it's compartmentalized within the company. Model your services around that structure. A 
-straightforward example of this is to create a service per business department.
+business domain and how it's compartmentalized within your company. Model your services around that structure. A 
+straightforward example of this is to create a service per business department or independent business unit.
 
-* We talked about messaging patterns. Many things are done for you by NServiceBus.
+* We talked about messaging patterns. A lot of boilerplate code around messaging is handled for you by a product 
+called [NServiceBus (from Particular Software)](http://particular.net/nservicebus).
   * Using commands only within a service boundary.
   * Using events within and across service boundaries.
-  * Once you separate your service into a number of granular command and event handlers, inside each of these 
-  handlers try to write code that is as "dumb" as possible - using complex patterns and abstractions as little as 
-  possible (this at least is what Jimmy is advising).
+  * Once you separate your service into a number of granular command and event handlers, try to be as "dumb" as 
+  possible inside each of these handlers - avoid using complex patterns and abstractions as much as possible 
+  (this at least is what Jimmy is advising).
 
-* When building an SOA (service oriented architecture), the rule of thumb is that the first line 
-service can call multiple services to aggregate data but those services should never call other services. 
-Thus, the depth of services that are called are never more than 1. This principle will help you avoid 
+* When building an SOA (service oriented architecture), the rule of thumb is that the first line public
+service can call multiple downstream services to aggregate data but those services should never call other services. 
+Thus, the depth of services that are called are never more than one. This principle will help you avoid 
 complexity and possible high latency.
 
 * For this reason above (downstream services don't call other services) an example in the workshop used a 
@@ -59,63 +58,129 @@ for an example of this use case.
 
   * As an example, if sales domain needs to get something from customer domain, sales service 
   declares an interface and customer service supplies the implementation to that service.
-  * This means that one service doesn't call the other during runtime but instead runs its code directly.
+  * This means that one service doesn't call the other one at runtime but instead runs that piece of code directly.
   * Note that this removes the runtime dependency but introduces development time dependency. If you're doing 
-  microservices for team independence, this might sound less attractive.
+  microservices mostly for reasons around team composition and independence, this might sound less attractive to 
+  you.
+
+* You can find all workshop exercises [here on GitHub](https://github.com/Particular/Workshop).
+
+![Microservices Development Workshop](/assets/After_NDCOslo2016/Microservices-Development-Workshop-2.jpg)
 
 ## Conference Highlights
 <br/>
 
-### Erlang is cool, so as functional programming
+### Erlang is cool, so is functional programming!
 
-* Functional programming was a big and popular track in NDC Oslo. Created a lot of buzz for sure. This photo
-below was taken at the end of the first day. I believe at the end of the conference #fsharp and #erlang was sitting 
-at the first and second positions as most spoken technologies during the conference.
+Functional programming was a large and popular track in NDC Oslo. Created a lot of buzz for sure. This photo
+below was taken at the end of conference day 1. I believe at the end of the conference _#fsharp_, _#erlang_, _#phoenix_ 
+and _#elixir_ were all sitting high in this top 10 list as some of the most spoken technologies.
 
 ![NDC Oslo Twitter Buzz](/assets/After_NDCOslo2016/NDC-Oslo-Twitter-Buzz.png)
 
-* I met [Erlang](https://en.wikipedia.org/wiki/Erlang_(programming_language)) for the first time and found it quite interesting. It
-is basically a language that has a bunch of stateful microservices concepts baked right into the language in a 
-very lightweight manner.
-  * Erlang runs in its own VM.
-  * Computation is based on many small lightweight processes doing
-  work, keeping state and messaging with each other.
-  * Based on first impression I found many similarities of Erlang
-  with Service Fabric. The idea of stateful and stateless services
-  messaging each other. Erlang doesn't have a concept of replicas 
-  (unlike SF), all process nodes are peers - no master. Which means 
-  if a process crashes the state is gone. Of course there are 
-  solutions for this - like Amnesia.
+I met <a href="https://en.wikipedia.org/wiki/Erlang_(programming_language)" target="_blank">Erlang</a> for the first time and found it 
+quite interesting. In Wikipedia, Erlang is described as:
+>Erlang is a general-purpose, concurrent, functional programming language. It is also a garbage-collected runtime system.
+>Erlang is known for its designs that are well suited for systems with the following characteristics:
+>
+>
+>* Distributed
+>* Fault-tolerant
+>* Soft real-time
+>* Highly available, non-stop applications
+>* Hot swapping, where code can be changed without stopping a system.
 
-  Does this sound any familiar? Welcome to cutting edge stateful microservices, from 1985. 
+Do any of these sound familiar? Welcome to the cutting edge stateful microservices technology, from 1986!
 
-### Head to head session
+Lightweight processes are the main building blocks of an Erlang application:
+>Processes are the primary means to structure an Erlang application. They are neither operating system processes 
+>nor operating system threads, but lightweight processes that are scheduled by Erlang's BEAM VM.
 
-* Both Scott Allen and Jimmy Bogard are proponents of testing 
-with less mocking. Jimmy says he doesn't use much in memory database
-tricks because he says that they missed many bugs due to those 
-unrealistic testing styles.
-  * Jimmy uses transactions without commiting in the end.
-  * He also uses a nuget package called SPAWN that can cleanup
-  the database in a clever manner (after each test).
-  * So he's all in with real database tests.
+Based on my first impressions I found many conceptual similarities between Erlang and [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/): the idea of 
+stateful and stateless services messaging each other. Erlang doesn't have the concept of replicas (unlike Service Fabric), 
+all process nodes are peers - no primary & secondary relationship. Which means if a process crashes the state is 
+gone. Of course there are solutions to this - like [Mnesia](https://en.wikipedia.org/wiki/Mnesia).
 
-### .NET Core is a game changer
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">My gut feeling after learning more about <a href="https://twitter.com/hashtag/erlang?src=hash">#erlang</a> in <a href="https://twitter.com/hashtag/ndcoslo?src=hash">#ndcoslo</a> : <a href="https://twitter.com/hashtag/servicefabric?src=hash">#servicefabric</a> is <a href="https://twitter.com/hashtag/erlang?src=hash">#erlang</a> plus some (large) churn.I still love <a href="https://twitter.com/hashtag/csharp?src=hash">#csharp</a> though</p>&mdash; Hakan Tuncer (@hakant) <a href="https://twitter.com/hakant/status/741296386856095744">June 10, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* ASP.NET Core looks very nice and beautiful even though the roadmap
-had its fair share of ups and downs for a pretty long while. The talk
-about making Kestrel web server performant is fantastic. Must watch.
+I think I'll be looking into Erlang, [Phoenix](http://www.phoenixframework.org/) and 
+[Elixir](http://elixir-lang.org/) because I'm sold to the idea that these things are pretty powerful to ignore.
+<br/>
 
-* From a similar perspective, most ASP.NET Core talks were very 
+### Head to head session with questions from Stack Overflow
+
+![Head to head with Scott and Jimmy](/assets/After_NDCOslo2016/head-to-head.jpg)
+
+Both [Scott Allen](https://twitter.com/odetocode) and [Jimmy Bogard](https://twitter.com/jbogard) are proponents of testing with less mocking. Jimmy said he doesn't like 
+using in memory database tricks or any other unrealistic testing styles. A few tricks that he spoke of were:
+
+  * Using database transactions without commiting in the end - to get back to a reset state after each test.
+  * Using a nuget package called [Respawn](https://github.com/jbogard/Respawn) that can cleanup the 
+  database after each test in a clever way.
+  * Using real storage during tests has been beneficial to these guys according to them (less unforeseen bugs).
+<br/>
+
+### .NET Core is shaping up nicely
+
+![.NET Core - Mark Rendle](/assets/After_NDCOslo2016/dot-net-core.jpg)
+
+ASP.NET Core looks beautiful even though the roadmap had its fair share of ups and downs for a long period. The 
+talk about making the Kestrel web server performant is fantastic. It turns out that creating a very performant web
+server takes ridiculous amount of code optimizations. Must watch. Actually most .NET Core talks were very 
 interesting.
 
-* My picks (only based on what I saw live)
-  * Machine Learning talk
-  * All talks from Damien Edwards and David Fowler
-  * Head to head: Scott Allen & Jimmy Bogard
-  * .NET without Windows
-  * Is your code ready for .NET core
-  * Escaping the big ball of mud
-  * Sequential, concurrent and parallel programming
-  * C# Today and Tomorrow
-  * Elixir is neat but what can you actually do with it?
+![Kestrel Web Server](/assets/After_NDCOslo2016/kestrel-web-server.jpg)
+<br/>
+
+### My picks
+
+* [Talk: ASP.NET Core 1.0 Deep Dive](http://ndcoslo.com/talk/asp.net-core-1.0-deep-dive/)
+* [Talk: Intro to Azure Machine Learning: Predict Who Survives the Titanic](http://ndcoslo.com/talk/intro-to-azure-machine-learning-predict-who-survives-the-titanic/)
+* [Talk: ASP.NET Core Kestrel: Adventures in building a fast web server](http://ndcoslo.com/talk/asp.net-core-kestrel-adventures-in-building-a-fast-web-server/)
+* [Talk: Head to Head #2: K. Scott Allen and Jimmy Bogard](http://ndcoslo.com/talk/play-by-play/)
+* [Talk: .NET without Windows](http://ndcoslo.com/talk/net-without-windows/)
+* [Talk: Is your code ready for .NET Core?](http://ndcoslo.com/talk/is-your-code-ready-for-net-core/)
+* [Talk: Escaping the Big Ball of Mud](http://ndcoslo.com/talk/escaping-the-big-ball-of-mud/)
+* [Talk: Sequential, Concurrent and Parallel Programming](http://ndcoslo.com/talk/sequential-concurrent-and-parallel-programming/)
+* [Talk: C# Today and Tomorrow](http://ndcoslo.com/talk/c-today-and-tomorrow/) 
+* [Talk: Elixir Is Neat But What Can You Actually Do With It?](http://ndcoslo.com/talk/elixir-is-neat-but-what-can-you-actually-do-with-it/)
+
+
+## Few more photos and resources
+
+Free ebook, if you're interested.
+
+![Distributed computing](/assets/After_NDCOslo2016/free-ebook.jpg)
+<br/>
+---
+
+Nice resources from the talk "Escaping the Big Ball of Mud":
+
+![Escaping the big ball of mud](/assets/After_NDCOslo2016/escaping-big-ball-of-mud.jpg)
+<br/>
+---
+
+FAQ slide from the talk "Scale up and out with Akka.NET":
+
+![Akka.NET](/assets/After_NDCOslo2016/akka-dot-net.jpg)
+<br/>
+---
+
+This BB-8 droid from Star Wars could be controlled via a tablet. I tried and miserably failed 
+against the challenging track. 
+
+![Star Wars](/assets/After_NDCOslo2016/star-wars.jpg)
+<br/>
+
+---
+
+My frequent stop. These guys were serving top class coffee:
+
+![Oslo loves coffee](/assets/After_NDCOslo2016/oslo-coffee-love.jpg)
+
+That's all I've got for now. Thanks for reading.
+
+~Hakan
+
+

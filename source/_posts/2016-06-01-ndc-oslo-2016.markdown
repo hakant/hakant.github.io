@@ -17,7 +17,7 @@ First two days I'll be taking a workshop on the topic of [microservice developme
 Originally the speaker was [Udi Dahan](https://twitter.com/UdiDahan) but today I saw that for 
 personal reasons Udi is not going to make it to the conference anymore. Instead, now [Jimmy Bogard](https://twitter.com/jbogard) 
 is going to give the workshop and I'm still up for it! I'm hoping to learn more than a few good practices and ideas
-around building maintainable and resillient service oriented architectures.
+around building maintainable and resilient service oriented architectures.
 
 After the workshop 3 day long conference goodness starts. I've been looking at the agenda for a while and marking 
 the sessions that I'm interested in. I've put my list below. My plan is to attend the first session 
