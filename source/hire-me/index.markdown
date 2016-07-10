@@ -56,6 +56,12 @@ your questions.
 </tr>
 <tr> 
 <th scope="row"> 
+<code>IoC, ORM</code> 
+</th> 
+<td>Ninject, Autofac, Simple Injector, LLBLGen, Entity Framework</td> 
+</tr>
+<tr> 
+<th scope="row"> 
 <code>Frontend Frameworks</code> 
 </th> 
 <td>AngularJS, Knockout.js, Aurelia</td> 
@@ -140,7 +146,7 @@ I'd also be interested in working with other platforms or languages but I'd firs
 Apart from my experience with hands-on coding and all the little details around doing that, I also have experience with system architecture. If you need help with the big picture, I may be able to help as well.
 
 I like architectural discussions around resilience, [scalability](https://en.wikipedia.org/wiki/Scalability), [idempotence](https://en.wikipedia.org/wiki/Idempotence), [message passing](https://en.wikipedia.org/wiki/Message_passing),
-testability and tradeoffs within each layer of the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html). One of the things that I'm finding interesting lately is the [Reactive Manifesto](http://www.reactivemanifesto.org/).
+testability and tradeoffs between each layer of the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html). One of the things that I'm finding interesting lately is the [Reactive Manifesto](http://www.reactivemanifesto.org/).
  
 I like looking at everything from an "it depends" perspective, and even more so when it comes to software architecture.
 
