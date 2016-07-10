@@ -8,9 +8,109 @@ footer: true
 published: false
 ---
 
-Here is the list of things that I can do for you. You can always shoot me
-an [email](mailto:hakantuncer@gmail.com) or a [tweet](https://twitter.com/hakant) to contact
-me. I'll be happy to talk to you or answer your questions.
+This page covers a list of my professional skills and interests. I'm always looking for new 
+and exciting projects where I can add significant value, meet new people and learn new things. 
+
+You can always shoot me an [email](mailto:hakantuncer@gmail.com) or a 
+[tweet](https://twitter.com/hakant) to contact me. I'll be happy to talk to you or answer 
+your questions.
+
+## Skill Matrix
+<br/>
+<div class="table-responsive"> 
+<table class="table table-bordered table-striped"> 
+<colgroup> 
+<col class="col-xs-1"> 
+<col class="col-xs-7"> 
+</colgroup> 
+<thead> 
+<tr> 
+<th></th>
+<th>Technology, Platform, Pattern (per category)</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<th scope="row"> 
+<code>Languages</code> 
+</th> 
+<td>C#, Javascript</td> 
+</tr>   
+<tr> 
+<th scope="row"> 
+<code>Environments</code> 
+</th> 
+<td>Windows, MacOS, Powershell, Bash</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Main Platforms</code> 
+</th> 
+<td>.NET, Node.js, Xamarin Android</td> 
+</tr> 
+<tr> 
+<th scope="row"> 
+<code>Backend Frameworks</code> 
+</th> 
+<td>ASP.NET MVC, ASP.NET Web API, ExpressJS, NancyFX</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Frontend Frameworks</code> 
+</th> 
+<td>AngularJS, Knockout.js, Aurelia</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Testing</code> 
+</th> 
+<td>WebDriver, Protractor, NUnit, XUnit, Jasmine</td> 
+</tr>
+<tr>
+<th scope="row"> 
+<code>SQL</code> 
+</th> 
+<td>Microsoft SQL Server, Azure SQL Database</td> 
+</tr>
+<tr>
+<th scope="row"> 
+<code>NoSQL</code> 
+</th> 
+<td>Azure DocumentDb, AWS DynamoDb, MongoDb, Redis</td> 
+</tr>
+<tr>
+<th scope="row"> 
+<code>Other Storage</code> 
+</th> 
+<td>Azure Blob Storage, AWS S3, Azure Table Storage </td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Cloud - Azure</code> 
+</th> 
+<td>Cloud Services, App Services, Service Fabric</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Cloud - AWS</code> 
+</th> 
+<td>AWS EC2, Elastic Beanstalk</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Architecture [1]</code> 
+</th> 
+<td>Component Based, N-Tier, Domain Driven Design</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>Architecture [2]</code> 
+</th> 
+<td>(Micro)Service Oriented, Message Bus, Event Driven</td> 
+</tr> 
+</tbody> 
+</table> 
+</div>
 
 ## Software development
 
