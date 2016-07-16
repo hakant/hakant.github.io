@@ -165,7 +165,7 @@ projects. If you in fact want me to write tests for your projects, I'd also be h
 
 If you want me to review your code, I can gladly do that too. I particularly look for issues relating to readability, encapsulation, coupling, maintainability, etc.
 
-## Other platforms or languages outside my comfort zone
+## Other platforms and languages
 
 I can also work on something that is totally new to me, or that I'm less comfortable with. Because of 
 my experience with different technologies in software development, I feel comfortable about learning 
