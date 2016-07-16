@@ -11,7 +11,7 @@ published: false
 This page covers a list of my professional skills and interests. I'm available for new projects where I 
 can add significant value, meet people and learn new things. 
 
-You can always shoot me an [email](mailto:hakantuncer@gmail.com) or a 
+You can shoot me an [email](mailto:hakantuncer@gmail.com) or a 
 [tweet](https://twitter.com/hakant) to contact me. I'll be happy to talk to you or answer 
 your questions.
 
