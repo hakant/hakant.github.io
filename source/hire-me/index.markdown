@@ -15,8 +15,11 @@ You can always shoot me an [email](mailto:hakantuncer@gmail.com) or a
 [tweet](https://twitter.com/hakant) to contact me. I'll be happy to talk to you or answer 
 your questions.
 
-## Skill Matrix
-<br/>
+## Skills
+
+The following table contains a list of technologies, platforms and patterns that I’ve got 
+hands-­on experience with:
+
 <div class="table-responsive"> 
 <table class="table table-bordered table-striped"> 
 <colgroup> 
@@ -139,8 +142,6 @@ with building and maintaining large [SaaS](https://en.wikipedia.org/wiki/Softwar
 highly available. In recent years, building software for cloud platforms has been a big part of
 my professional life - especially with [Microsoft Azure](https://azure.microsoft.com).
 
-I'd also be interested in working with other platforms or languages but I'd first need to ramp up on those.
-
 ## Software architecture
 
 Apart from my experience with hands-on coding and all the little details around doing that, I also have experience with system architecture. If you need help with the big picture, I may be able to help as well.
@@ -152,10 +153,11 @@ I like looking at everything from an "it depends" perspective, and even more so 
 
 ## Automated Testing
 
-Working in agile teams taught me one important thing: to be multi-disciplined. As a result, 
-I've written many types of tests (unit, component, integration, UI) while building new features.
+Getting automated testing right is crucial for anyone who wants to move faster without sacrificing quality.
 
-Getting automated testing right is crucial for any company who wants to move faster without sacrificing quality.
+I've written many types of tests (unit, component, integration, UI, end to end) and learned the pros and cons of 
+each one of them by experience. Getting fast and correct feedback is the ultimate goal of testing.
+
 I can help your team getting started with automated testing. I can also setup test frameworks for your 
 projects. If you in fact want me to write tests for your projects, I'd also be happy to do so.
 
