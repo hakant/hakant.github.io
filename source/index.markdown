@@ -21,9 +21,12 @@ I moved to Amsterdam around 7 years ago and I'm currently working at <a href="ht
 >Always have a side project.
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* **Hackathon Planner** I'm looking for projects to use and improve my [node.js](https://nodejs.org/en/) & [SPA](https://en.wikipedia.org/wiki/Single-page_application) skills. At
-NIPO Software we're organizing hackathon events a couple of times a year to have fun and create
-interesting tools & ideas that we can benefit from. I'm currently working on a web application that can ease the planning phase of these hackathons. The ingredients will be [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) and [ES6 Javascript](http://es6-features.org).
+* **Hackathon Planner** NIPO Software organizes hackathon events a couple of times a year to have fun and create
+interesting tools & ideas that the company as a whole can benefit from. I've been working on a web application 
+that can turn the planning phase of these hackathons into a social, fun and efficient process. The ingredients 
+are [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) & 
+[ES6 Javascript](http://es6-features.org), [AWS](https://aws.amazon.com/) and [NoSQL DynamoDb](https://aws.amazon.com/dynamodb/).
+You can <a href="/assets/Online_Quiz_Game/HackathonPlanner_Final.gif" target="_blank">see it in action here</a>.
 
 * **Ottobytes**: Startup that I created (together with two other colleagues). We built a product called Kiwi, a data transformation solution for market research companies. Kiwi is now acquired by NIPO Software. I'm not actively working on this product anymore but I've learnt a lot from this experience. You can visit the [Ottobytes Website](http://ottobytes.com/) for more information. I also wrote [two blog posts](./blog/categories/kiwi/) about it.
 

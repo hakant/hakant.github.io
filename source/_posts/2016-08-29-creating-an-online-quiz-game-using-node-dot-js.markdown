@@ -11,12 +11,12 @@ image: http://www.hakantuncer.com/assets/Online_Quiz_Game/Architecture-Diagram.p
 ---
 
 I've been writing about hackathons and the planner application I've been busy 
-with for a while now. The news is that [Hackathon Planner](https://github.com/hakant/HackathonPlanner) has been 
-live for a while and used during the last hackathon event on 25 August 2016 at [NIPO Software](http://niposoftware.com/). 
+with for a while now. The news is that [Hackathon Planner](https://github.com/hakant/HackathonPlanner) is live 
+and used during the last hackathon event on 25 August 2016 at [NIPO Software](http://niposoftware.com/). 
 36 hackathon ideas were created, voted and team compositions were made using the software. You can 
-<a href="/assets/Online_Quiz_Game/HackathonPlanner.gif" target="_blank">see it in action here</a>.
+<a href="/assets/Online_Quiz_Game/HackathonPlanner_Final.gif" target="_blank">see it in action here</a>.
 
-This post however, is about something else. It's about a crazy idea from my colleague Rutger de Jong and how we 
+This post however, is about something else. It's about a crazy idea of my colleague Rutger de Jong and how we 
 brought it to life during that last hackathon day: Converting [Nfield](https://www.niposoftware.com/Products/Nfield) into an online quiz game that 
 can be controlled by PlayStation Buzz controllers.
 
@@ -38,8 +38,8 @@ his head (on the left) thinking "what have I done..." : )
 
 * A shared screen with a browser is opened and an online interview is started by visiting a specific URL to Nfield. 
 This online interview is running our little quiz.
-* Each player grabs one of the PlayStation Buzz controllers that are connected to a computer, which happens to be a 
-Mac in our case, that is runing a node.js application to interpret inputs coming from the controllers.
+* Each player grabs one of the PlayStation Buzz controllers that are connected to a computer runing 
+a node.js application to interpret inputs coming from the controllers.
 * The online interview that was started in the browser is actually a quiz with a special template (CSS & Javascript).
 * A random sequence of questions start appearing on the screen, each for 10 seconds.
 * Players give their answers to each question simultaneously. These answers are received by a node.js application 
@@ -69,12 +69,12 @@ So that's what we did : )
 ![Hackathon - Nfield Quiz - Screenshot](/assets/Online_Quiz_Game/Quiz-Screenshot.png)
 
 All in all, once again, it was a great event at the NIPO Software office in Amsterdam. Who knows.. maybe in the very near future, 
-this fun little project can be put into actual use during various market research events. Without a doubt, it showcases the 
+this little fun project can be put into actual use during various market research events. Without a doubt, it showcases the 
 power of Nfield and how customizable it is for variety of scenarios.
 
 If you want to know more about each component and what it specifically does, read on.
 
-## Nfield Quiz Application Components
+## System Components
 <br/>
 
 #### Hyperdev.com / node.js
@@ -144,7 +144,11 @@ to indicate remaining time per question.
 
 When this template is activated on the interview, which is running our quiz, it connects to the socket.io server
 on hyperdev and starts listening to "button pressed" events from PlayStation Buzz controllers. When a button 
-is pressed it receives the event and selects the corresponding answer on the quiz for that contestant. 
+is pressed it receives the event and selects the corresponding answer on the quiz for that contestant.
+
+I had a lot of fun working on this project and also writing about it in this blog. Every
+technology company should make hackathons a part of their culture. The benefits might not be immediately clear
+in the beginning but all those doubts disappear after a few events.
 
 <br/>
 Thank you for reading.
