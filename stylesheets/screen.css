@@ -1631,6 +1631,10 @@ body {
     font-size: 1.5em;
 }
 
+.container .mid-col .mid-col-container #content article .entry-content h4 + p {
+    margin-top: 15px;
+}
+
 .container .mid-col .mid-col-container #content article .entry-content p {
     margin-top: 30px;
 }

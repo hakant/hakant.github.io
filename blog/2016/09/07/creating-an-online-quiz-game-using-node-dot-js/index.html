@@ -1,0 +1,401 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+
+
+
+
+
+
+
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Creating an online quiz game using Node.js, Hyperdev, PlayStation Buzz controllers, Raspberry PI and Nfield - Hakan Tuncer's Blog</title>
+	<meta name="author" content="Hakan Tuncer">
+	<meta name="description" content="How to convert Nfield into an online quiz game">
+	
+	<!-- http://t.co/dKP3o1e -->
+  	<meta name="HandheldFriendly" content="True">
+  	<meta name="MobileOptimized" content="320">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Creating an online quiz game using Node.js, Hyperdev, PlayStation Buzz controllers, Raspberry PI and Nfield - Hakan Tuncer's Blog" />
+    <meta property="og:description" content="How to convert Nfield into an online quiz game" />
+    <meta property="og:url" content="http://www.hakantuncer.com/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/" />
+    <meta property="og:image" content="http://www.hakantuncer.com/assets/Online_Quiz_Game/Architecture-Diagram.png" />
+	
+	<link href="/atom.xml" rel="alternate" title="Hakan Tuncer's Blog" type="application/atom+xml">	
+	<link rel="canonical" href="http://www.hakantuncer.com/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/">
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("hakantuncer@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<hgroup>
+  <h1><a href="/">Software Craftsman with a focus on .NET, node.js and Azure</a></h1>
+  
+    <h2>“Whatever you can do, or dream you can, begin it. Boldness has genius, magic, and power in it. Begin it now.” ~ Goethe</h2>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">home</a></li>
+  <li><a href="/blog">blog</a></li>
+  <li><a href="/blog/archives">archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:hakantuncer@gmail.com" title="Email">Email</a>
+		
+		
+			<a class="facebook" href="http://www.facebook.com/hakantuncer" target="_blank" title="Facebook">Facebook</a>
+		
+		
+		
+			<a class="twitter" href="http://twitter.com/hakant" target="_blank" title="Twitter">Twitter</a>
+		
+		
+		
+		
+			<a class="linkedin" href="http://www.linkedin.com/in/hakantuncer" target="_blank" title="LinkedIn">LinkedIn</a>
+		
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/hakant" target="_blank" title="GitHub">GitHub</a>
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-09-07T20:58:34+02:00" data-updated="true" itemprop="datePublished">Sep 7<span>th</span>, 2016</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/hyperdev/'>hyperdev</a>, <a class='category' href='/blog/categories/nfield/'>nfield</a>, <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>
+
+
+</div>
+		
+			<span class="comments"><a href="#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name">Creating an Online Quiz Game Using Node.js, Hyperdev, PlayStation Buzz Controllers, Raspberry PI and Nfield</h1>
+	<div class="entry-content" itemprop="articleBody"><p>I&rsquo;ve been writing about hackathons and the planner application I&rsquo;ve been busy
+with for a while now. The news is that <a href="https://github.com/hakant/HackathonPlanner">Hackathon Planner</a> is live
+and used during the last hackathon event on 25 August 2016 at <a href="http://niposoftware.com/">NIPO Software</a>.
+36 hackathon ideas were created, voted and team compositions were made using the software. You can
+<a href="/assets/Online_Quiz_Game/HackathonPlanner_Final.gif" target="_blank">see it in action here</a>.</p>
+
+<p>This post however, is about something else. It&rsquo;s about a crazy idea of my colleague Rutger de Jong and how we
+brought it to life during that last hackathon day: Converting <a href="https://www.niposoftware.com/Products/Nfield">Nfield</a> into an online quiz game that
+can be controlled by PlayStation Buzz controllers.</p>
+
+<p><img src="/assets/Online_Quiz_Game/PlayStationBuzz.jpg" alt="Quiz Game with Play Station Buzz" /></p>
+
+<h2>The Team</h2>
+
+<p>Rutger brought together five talented people from NIPO Software with diverse skills. Then he was scratching
+his head (on the left) thinking &ldquo;what have I done&hellip;&rdquo; : )</p>
+
+<p><img src="/assets/Online_Quiz_Game/team.jpg" alt="NIPO Software Hackathon - Team" /></p>
+
+<h2>The Architecture</h2>
+
+<p><img src="/assets/Online_Quiz_Game/Architecture-Diagram.png" alt="Quiz Game - Architecture Diagram" /></p>
+
+<h2>How it works</h2>
+
+<br/>
+
+
+<ul>
+<li>A shared screen with a browser is opened and an online interview is started by visiting a specific URL to Nfield.
+This online interview is running our little quiz.</li>
+<li>Each player grabs one of the PlayStation Buzz controllers that are connected to a computer runing
+a node.js application to interpret inputs coming from the controllers.</li>
+<li>The online interview that was started in the browser is actually a quiz with a special template (CSS &amp; Javascript).</li>
+<li>A random sequence of questions start appearing on the screen, each for 10 seconds.</li>
+<li>Players give their answers to each question simultaneously. These answers are received by a node.js application
+listening inputs from Buzz controllers and pushes events to the app running on Hyperdev.</li>
+<li>Application running on Hyperdev acts as a message hub and broadcaster. It relays the incoming messages to the quiz
+running on Nfield and also to the Raspberry PI.</li>
+<li>The quiz, running on the browser, receives these message (via our customized template) and picks the corresponding
+answers selected by players.</li>
+<li>As time is ticking away for each question, the customized template that&rsquo;s running the quiz emits events to the
+Raspberry PI, telling it to buzz and blink harder.</li>
+<li>Scores are continuously calculated as quiz progresses and in the end the winner is announced.</li>
+</ul>
+
+
+<h2>The code</h2>
+
+<p>You can find all the code that powers this project in the following repository on GitHub:
+<a href="https://github.com/hakant/NfieldQuizGame">https://github.com/hakant/NfieldQuizGame</a></p>
+
+<h2>Fun at the demo</h2>
+
+<p>The most obvious (and fun!) demo for a quiz game is to find a number of volunteers from the audience and run a contest!
+So that&rsquo;s what we did : )</p>
+
+<p><img src="/assets/Online_Quiz_Game/demo.jpg" alt="Hackathon - Demo" /></p>
+
+<p>&hellip; and here is a screenshot from the quiz:</p>
+
+<p><img src="/assets/Online_Quiz_Game/Quiz-Screenshot.png" alt="Hackathon - Nfield Quiz - Screenshot" /></p>
+
+<p>All in all, once again, it was a great event at the NIPO Software office in Amsterdam. Who knows.. maybe in the very near future,
+this little fun project can be put into actual use during various market research events. Without a doubt, it showcases the
+power of Nfield and how customizable it is for variety of scenarios.</p>
+
+<p>If you want to know more about each component and what it specifically does, read on.</p>
+
+<h2>System Components</h2>
+
+<br/>
+
+
+<h4>Hyperdev.com / node.js</h4>
+
+<p><a href="https://hyperdev.com">Hyperdev</a> is a prototyping environment where you can start up and develop a simple node.js application
+right within the browser and see your application up and running live in a matter of seconds. Every time you save a file
+in your project, hyperdev deploys it automatically in an amazing speed. It uses docker containers and AWS behind the scenes.
+It also supports https out of the box, which was important for our purposes (Nfield services run on https so should any
+integration or extension with it).</p>
+
+<p>This node.js app running on hyperdev is our orchestrator. It is basically responsible with broadcasting incoming websocket
+messages to all subscribers. Each piece of the puzzle (buzz controllers, raspberry pi and nfield) talk to this node app on
+hyperdev instead of directly talking to each other, which btw would complicate things as each application would then have to
+discover where the others are and be able to connect to them somehow.</p>
+
+<p>In the architecture above, as long as everyone can reach hyperdev, successful communication is guaranteed.</p>
+
+<br/>
+
+
+<h4>Mac with Buzz Controllers / node.js</h4>
+
+<p>While PlayStation buzz controllers are perfect for a quiz game, the immediate question for our little hackathon
+project was; how do we connect to and control these things?</p>
+
+<p><a href="https://www.youtube.com/watch?v=Qkkmz5VZoMQ">Node.js is everywhere</a>, it really is. There is a node package called
+<a href="https://github.com/node-hid/node-hid">node-hid</a> which allows you to access USB Human Interface Devices (HID) from
+node.js. It basically allows you to read from and write to these devices by using node buffers. We could even connect
+these buzzers to Raspberry PI but we ran into a few security issues and pivoted to using a mac instead.</p>
+
+<p>Of course, just being able to read the controller&rsquo;s input buffer doesn&rsquo;t automatically mean you know how to interpret it.
+It speaks a certain protocol which you have to understand. While scratching our heads, we found this article:
+<a href="http://www.developerfusion.com/article/84338/making-usb-c-friendly/">Working with USB devices in .NET and C#</a> where
+the author describes the protocol clearly, well somewhat clearly:</p>
+
+<p><img src="/assets/Online_Quiz_Game/buzz-protocol.jpg" alt="PlayStation Buzz - Protocol" /></p>
+
+<p>Long story short, each controller has a reserved space on a 6 byte area, inside which they flip bits on and off based
+on the state of their buttons.</p>
+
+<p>Here is a section of the node.js code running on the Mac that reads inputs from buzz controllers:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/7ee37ee00fccfbf487d2c6d3328f13dd.js"></script>
+
+
+
+
+<br/>
+
+
+<h4>Raspberry PI / node.js</h4>
+
+<p>Since we couldn&rsquo;t succeed in reading inputs from PlayStation Buzz controllers on our Raspberry PI, we had to come up with another very useful
+role for it &ndash; because we simply can&rsquo;t imagine a hackathon project without the PI (!).</p>
+
+<p>One of our teammates said &ldquo;let&rsquo;s use it to signal remaining time at each question &ndash; with some touch of tension&rdquo;.
+Then we went ahead and placed a bunch of lights on the PI and a loud buzzer. Using node.js and socket.io, it was
+listening to certain type of events to start buzzing with low and high frequencies. As contestants were running out of
+time while answering each question, the frequency of buzz and light effects were increasing.</p>
+
+<br/>
+
+
+<h4>Nfield Online Interviewing System / .NET, Azure</h4>
+
+<p>Nfield Online is a data collection platform powered by NIPO Software. A SaaS platform where market research companies
+can create surveys and reach their respondents. Nfield Online is bundled with a powerful domain specific
+language, ODIN, created for scripting simple or complex questionnaires. Nfield also has a powerful templating system
+where customers can create and run their own templates in their surveys (both for changing the look &amp; feel and behavior of
+their questionnaires).</p>
+
+<p>We used this templating system (HTML, CSS and Javascript) to tap into a running interview (in this case, our quiz) and
+control it via PlayStation Buzz controllers over the internet. We also used it to send messages to the Raspberry PI
+to indicate remaining time per question.</p>
+
+<p>When this template is activated on the interview, which is running our quiz, it connects to the socket.io server
+on hyperdev and starts listening to &ldquo;button pressed&rdquo; events from PlayStation Buzz controllers. When a button
+is pressed it receives the event and selects the corresponding answer on the quiz for that contestant.</p>
+
+<p>I had a lot of fun working on this project and also writing about it in this blog. Every
+technology company should make hackathons a part of their culture. The benefits might not be immediately clear
+in the beginning but all those doubts disappear after a few events.</p>
+
+<br/>
+
+
+<p>Thank you for reading.</p>
+
+<p>~ Hakan</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2016 - Hakan Tuncer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+</footer>
+			
+
+<script type="text/javascript">
+      var disqus_shortname = 'hakantuncer';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.hakantuncer.com/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/';
+        var disqus_url = 'http://www.hakantuncer.com/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+		</div>
+	</div>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48149810-1', 'hakantuncer.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

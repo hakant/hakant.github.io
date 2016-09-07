@@ -62,7 +62,7 @@
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/2016/01/27/flow-and-happiness/</loc>
-        <lastmod>2016-01-30T09:35:27+01:00</lastmod>
+        <lastmod>2016-09-03T17:16:27+02:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/2016/01/30/hackathon-planner-for-nipo-software/</loc>
@@ -87,8 +87,14 @@
         <lastmod>2016-06-14T23:35:09+02:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://www.hakantuncer.com/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/
+        </loc>
+        <lastmod>2016-09-08T00:19:34+02:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.hakantuncer.com/blog/archives/</loc>
-        <lastmod>2016-06-14T23:35:09+02:00</lastmod>
+        <lastmod>2016-09-08T00:19:34+02:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/categories/</loc>
@@ -96,7 +102,7 @@
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/</loc>
-        <lastmod>2016-06-14T23:35:09+02:00</lastmod>
+        <lastmod>2016-09-08T00:19:34+02:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/hire-me/</loc>
@@ -104,7 +110,7 @@
     </url>
     <url>
         <loc>http://www.hakantuncer.com/</loc>
-        <lastmod>2016-04-23T00:08:02+02:00</lastmod>
+        <lastmod>2016-09-07T23:52:28+02:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/portfolio/</loc>
