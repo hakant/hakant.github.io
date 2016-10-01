@@ -8,7 +8,7 @@ footer: true
 published: false
 ---
 
-This page covers a list of my professional skills and interests. I'm available for new projects where I 
+This page covers a list of my skills and interests. I'm available for new projects where I 
 can add significant value, meet people and learn new things. 
 
 You can shoot me an [email](mailto:hakantuncer@gmail.com) or a 
@@ -37,7 +37,7 @@ hands-­on experience with:
 <th scope="row"> 
 <code>Languages</code> 
 </th> 
-<td>C#, Javascript</td> 
+<td>C#, Javascript, TypeScript</td> 
 </tr>   
 <tr> 
 <th scope="row"> 
@@ -67,7 +67,7 @@ hands-­on experience with:
 <th scope="row"> 
 <code>Frontend Frameworks</code> 
 </th> 
-<td>AngularJS, Knockout.js, Aurelia</td> 
+<td>Angular, Aurelia, Knockout.js</td> 
 </tr>
 <tr> 
 <th scope="row"> 
@@ -132,7 +132,7 @@ I love writing code, so obviously, I'd also like writing code for you. I can wor
 * [node.js](https://nodejs.org/)
   * [Express.js](http://expressjs.com/)  
 * client side javascript frameworks for building [SPAs](https://en.wikipedia.org/wiki/Single-page_application)
-  * [AngularJS](https://angularjs.org/)
+  * [Angular](https://angularjs.org/)
   * [Aurelia](http://aurelia.io)
   * [Knockout.js](http://knockoutjs.com/)
 * cloud platforms like [Microsoft Azure](https://azure.microsoft.com), [Amazon AWS](https://aws.amazon.com/)

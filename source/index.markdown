@@ -8,13 +8,18 @@ description: I'm Hakan. Software Craftsman / Architect with a focus on .NET, Jav
 
 <h2 class="title">I'm Hakan</h2>
 
-I'm a professional programmer with more than 10 years of experience building software for various companies and projects.
+I'm a professional programmer with more than 10 years of experience building software for many companies 
+in various projects.
 
 Throughout my career I've spent a lot of time with [Microsoft .NET](https://www.microsoft.com/net) and the ecosystem around it. Working with [.NET](https://www.microsoft.com/net), [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language) and [Azure](https://azure.microsoft.com) is still a big part of my professional life.
 
-On the other hand, in the last couple of years I started growing interest in [Javascript](https://en.wikipedia.org/wiki/JavaScript), both for back-end and front-end purposes. These days I'm spending a lot of time with [node.js](https://nodejs.org/en/) and client side frameworks like [AngularJS](https://angularjs.org), [React.js](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
+On the other hand, I also have a lot of interest in [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+(and [TypeScript](https://www.typescriptlang.org/)), both for front-end and back-end purposes. These days I'm spending a lot of time with 
+[node.js](https://nodejs.org/en/) and client side frameworks like [Angular](https://angularjs.org), 
+[React](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
 
-I moved to Amsterdam around 7 years ago and I'm currently working at <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, building the next generation data collection platforms for market research companies.
+I live in Amsterdam and I'm currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a Loan Quality
+Assessment application that enables the Risk Department to make better decisions.  
 
 <h2 class="title">I'm working on a few projects</h2>
 <br/>
