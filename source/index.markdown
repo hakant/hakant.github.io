@@ -21,7 +21,7 @@ On the other hand, I also have a lot of interest in [Javascript](https://en.wiki
 I live in Amsterdam and I'm currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a Loan Quality
 Assessment application that enables the Risk Department to make better decisions.  
 
-<h2 class="title">I'm working on a few projects</h2>
+<h2 class="title">I'm working on a few side projects</h2>
 <br/>
 >Always have a side project.
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
