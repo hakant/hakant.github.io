@@ -3,7 +3,7 @@ layout: page
 comments: false
 sharing: false
 footer: true
-description: I'm Hakan. Software Craftsman / Architect with a focus on .NET, Javascript, node.js and Azure
+description: I'm Hakan. Software Craftsman / Architect with a focus on .NET, Javascript, Node.js and Azure
 ---
 
 <h2 class="title">I'm Hakan</h2>
@@ -15,11 +15,11 @@ Throughout my career I've spent a lot of time with [Microsoft .NET](https://www.
 
 On the other hand, I also have a lot of interest in [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 (and [TypeScript](https://www.typescriptlang.org/)), both for front-end and back-end purposes. These days I'm spending a lot of time with 
-[node.js](https://nodejs.org/en/) and client side frameworks like [Angular](https://angularjs.org), 
+[Node.js](https://nodejs.org/en/) and client side frameworks like [Angular](https://angularjs.org), 
 [React](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
 
-I live in Amsterdam and I'm currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a Loan Quality
-Assessment application that enables the Risk Department to make better decisions.  
+I live in Amsterdam and I'm currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a "Loan Quality
+Assessment" application that enables credit committees to make better decisions, faster and more efficiently.  
 
 <h2 class="title">I'm working on a few side projects</h2>
 <br/>
