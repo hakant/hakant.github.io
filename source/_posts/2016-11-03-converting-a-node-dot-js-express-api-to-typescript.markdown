@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "5 Quirks of Converting a Node.js Express API to TypeScript"
-date: 2016-11-03 22:32:05 +0100
+date: 2016-11-08 21:32:05 +0100
 comments: true
 categories: [typescript,node.js,express]
 footer: true
