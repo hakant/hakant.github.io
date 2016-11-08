@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Typescript | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/typescript/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2016-11-08T21:38:23+01:00</updated>
+  <updated>2016-11-08T21:40:57+01:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -64,7 +64,7 @@ Eventually, when the consumer (idea.js) is also converted to TypeScript, the pro
 <script src="https://gist.github.com/hakant/d68576a8d9cc9ed85e8d3c649ad8a856.js"></script>
 
 
-<h2>2. Adding Type Definition Files to Your Projects</h2>
+<h2>2. Adding Type Definition Files to a Project</h2>
 
 <p>Type definition files let you consume third party libraries as if they were written in TypeScript. So
 you get all the benefits of type checking, intellisense and all other TypeScript design &amp; compile time
