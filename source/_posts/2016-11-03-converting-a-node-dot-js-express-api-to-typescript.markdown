@@ -51,7 +51,7 @@ Eventually, when the consumer (idea.js) is also converted to TypeScript, the pro
 
 <script src="https://gist.github.com/hakant/d68576a8d9cc9ed85e8d3c649ad8a856.js"></script>
 
-## 2. Adding Type Definition Files to Your Projects
+## 2. Adding Type Definition Files to a Project
 
 Type definition files let you consume third party libraries as if they were written in TypeScript. So 
 you get all the benefits of type checking, intellisense and all other TypeScript design & compile time
