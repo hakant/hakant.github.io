@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2016-10-09T19:27:22+02:00</updated>
+  <updated>2016-11-08T21:38:23+01:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -12,6 +12,205 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[5 Quirks of Converting a Node.js Express API to TypeScript]]></title>
+    <link href="http://www.hakantuncer.com/blog/2016/11/08/converting-a-node-dot-js-express-api-to-typescript/"/>
+    <updated>2016-11-08T21:32:05+01:00</updated>
+    <id>http://www.hakantuncer.com/blog/2016/11/08/converting-a-node-dot-js-express-api-to-typescript</id>
+    <content type="html"><![CDATA[<p>I started using TypeScript as part of a project I&rsquo;m working on. If you&rsquo;re new to TypeScript or
+aren&rsquo;t yet sure about the benefits it can bring to your Javascript codebases, I recommend seeing
+<a href="https://channel9.msdn.com/Events/Build/2016/B881">this presentation from Anders Hejlsberg (Build 2016)</a>.</p>
+
+<p>One thing I really like about TypeScript is that it&rsquo;s a superset of Javascript, which means all Javascript
+you wrote until now is already valid TypeScript. This makes it possible for anyone to come
+into TypeScript and adopt it as much or as little as they want. Anders calls this &ldquo;turning the knob&rdquo;
+experience. If you want to go all the way in with the type system, you can do so. Or if you only want to
+use it in certain parts of your codebase, you can do that too.</p>
+
+<p>As I learned more about TypeScript, I got convinced that I can benefit from it in most of my Javascript projects,
+in particular, the ones that involve rich business domains. As an experiment, I started
+converting <a href="https://github.com/hakant/HackathonPlannerAPI">the backend of Hackathon Planner</a>, written in <a href="https://nodejs.org/en/">Node.js</a>
+and <a href="http://expressjs.com/">Express</a>, into TypeScript.</p>
+
+<p>All in all, it&rsquo;s been a smooth experience but if
+you&rsquo;re a developer yourself, you know that this type of refactorings never happen on a straight line, there
+are always bumps and quirks along the way.</p>
+
+<p>Here are a number of things I experienced as I gradually converted all of the codebase from ES6 Javascript
+to TypeScript. This repository is open source and on <a href="https://github.com/hakant/HackathonPlannerAPI">GitHub</a>.
+TypeScript version of the code might still be on a separate branch if I haven&rsquo;t merged it yet.</p>
+
+<h2>1. At transition, module loading can get tricky in Node.js</h2>
+
+<p>TypeScript shares the <a href="https://www.typescriptlang.org/docs/handbook/modules.html">same concept of a module as ES6</a>.
+TypeScript&rsquo;s module import and export syntax is very similar to its ES6 counterpart but the <a href="https://nodejs.org/docs/latest/api/modules.html">CommonJS
+module system</a> that Node.js uses is different.</p>
+
+<p>I wanted to slowly port my Javascript to TypeScript so that I can continue making releases in between.
+Obviously, this means that part of the code would be transpiled from TypeScript while the other part is
+originally Javascript. In many occasions I had to load a module from a .js file and the target
+module was transpiled from a .ts (TypeScript) file. <a href="https://github.com/Microsoft/TypeScript/issues/2719">This can cause issues</a>.</p>
+
+<p>Look at the code below and see what happens when &ldquo;ideas.js&rdquo; has to load a module from &ldquo;AdminRepository.ts&rdquo;.
+All of a sudden you have to use the &ldquo;default&rdquo; property to be able to access the exported object.
+Eventually, when the consumer (idea.js) is also converted to TypeScript, the problem will go away.</p>
+
+<br/>
+
+
+
+
+<script src="https://gist.github.com/hakant/d68576a8d9cc9ed85e8d3c649ad8a856.js"></script>
+
+
+<h2>2. Adding Type Definition Files to Your Projects</h2>
+
+<p>Type definition files let you consume third party libraries as if they were written in TypeScript. So
+you get all the benefits of type checking, intellisense and all other TypeScript design &amp; compile time
+goodness even when the third party library is written in pure Javascript.</p>
+
+<p>Before 2.0 release of TypeScript, finding and using these type definition files could get a bit <a href="https://www.davevoyles.com/2016/02/16/how-to-add-type-definitions-to-a-typescript-project/">painful and
+confusing</a> &ndash;
+same goes for <a href="https://medium.com/@mweststrate/how-to-create-strongly-typed-npm-modules-1e1bda23a7f4#.7ur75n1hf">creating them</a>.
+TypeScript 2.0 fixed some of these issues by introducing a <a href="https://blogs.msdn.microsoft.com/typescript/2016/09/22/announcing-typescript-2-0/#simplified-declaration-file-dts-acquisition">simplified declaration file
+acquisition model</a>.</p>
+
+<p>In node.js, in order to grab the underscore.js package, you&rsquo;d use:</p>
+
+<blockquote><p>npm install underscore &mdash;save</p></blockquote>
+
+<p>Now, if you also want to use this package from TypeScript, with strong typing, you&rsquo;ll have to download
+the necessary type declaration file as well:</p>
+
+<blockquote><p>npm install @types/underscore &mdash;save</p></blockquote>
+
+<p>Starting with TypeScript 2.0, these type definition files are regular npm packages.</p>
+
+<p>After downloading the type definition file, VS Code stops complaining. Furthermore, I get all type safety
+features and intellisense while using this library, which is what I want and why I use TypeScript.</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/types_packages.png" alt="Types Packages" /></p>
+
+<p>On the other hand, sometimes a library you&rsquo;re using might not have a type definition file. For example, I&rsquo;m using
+a passport extension library called &ldquo;passport-github2&rdquo; which doesn&rsquo;t have a definition file yet
+(and probably never will). Inside any TypeScript file that uses this library, VSCode complains that it doesn&rsquo;t
+understand this library. TypeScript compilation also results in the same error. But even though the typing file
+is missing, the actual library is there and it works during run-time.</p>
+
+<p>But of course we&rsquo;ve a problem here. The problem is that the TypeScript compiler will complain about this missing type definition file
+forever. Being a good developer, what you want to do is to avoid having these kinds of error messages lying around
+and being ignored.</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/missing_typing.png" alt="Missing Typings" /></p>
+
+<p>Having said this, it&rsquo;s worth mentioning that
+<a href="https://medium.com/@sam.verschueren/the-one-thing-that-keeps-me-from-using-typescript-839e9bd464d7#.fg5tvva5g">people are complaining</a>
+about this aggressive behavior of TypeScript, as it eagerly wants all 3rd party packages to have type definition files. But
+there&rsquo;s probably <a href="https://github.com/Microsoft/TypeScript/pull/11446">a solution coming</a>.</p>
+
+<p>Until then, there are 2 possible solutions:</p>
+
+<ul>
+<li>Set &ldquo;allowJs&rdquo; compiler option to true (in ts.config file). Although I should warn you that this will not only allow
+third party packages to be consumed without type definitions, it will also allow any developer to put pure
+javascript code into your project.</li>
+<li>Another solution is to declare an <a href="https://www.typescriptlang.org/docs/handbook/modules.html#ambient-modules">ambient module</a>
+for that library in a separate file &ndash; either marking it with &lsquo;any&rsquo; keyword or with proper types.</li>
+</ul>
+
+
+<p>I chose the latter, because I noticed that &ldquo;allowJs&rdquo; flag has far bigger consequences. It silences a bunch of
+other types of errors/warnings which I would like to be informed about. Here is how those ambient modules
+look like:</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/ambient_modules.png" alt="Ambient Modules" /></p>
+
+<h2>3. Incorrect / Incomplete Type Definition Files</h2>
+
+<p>Sometimes a type definition file (.d.ts file) turns out to be incorrect or incomplete. The screenshot
+below shows a situation where the package &ldquo;aws-sdk&rdquo; has an incomplete type definition. It doesn&rsquo;t
+know that &ldquo;endpoint&rdquo; property exists even though it does exist in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.01.html">AWS documentation</a>.</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/incorrect_d.ts_file.png" alt="Incorrect type declarations" /></p>
+
+<p>I literally went into the type declaration file I downloaded via npm and added the field &ldquo;endpoint&rdquo;
+in there to fix the problem. Probably I have to commit this file into source control now. Unfortunately
+I couldn&rsquo;t find a best practice that explains how to properly handle these situations. For now, I&rsquo;ll go
+with the solution of manually fixing the definition file and adding it into the source control. Below you
+can see the patch I made to the declaration file of AWS-SDK (line commented out).</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/clientconfigpartial_d.ts.png" alt="ClientConfigPartial-AWS-SDK" /></p>
+
+<h2>4. Dynamic Augmentation of Javascript Objects</h2>
+
+<p>A very common pattern in javascript is to dynamically extend or augment an object with new or complementary
+behavior. Here below, I&rsquo;m using <a href="http://bluebirdjs.com">bluebird.js</a> to convert a callback oriented API
+to a Promise based API. All of a sudden though, TypeScript doesn&rsquo;t know about these new &ldquo;async&rdquo; methods that
+bluebird has plugged into the dynamodb client.</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/promisify_all.png" alt="Bluebird-Promisify-All" /></p>
+
+<p>The solution is to either declare this object as a new interface or mark it as &ldquo;any&rdquo;,
+as suggested <a href="https://github.com/Microsoft/TypeScript/issues/8685">here</a>). I&rsquo;ve chosen the first, a more type-safe
+approach, and declared my new type in the &ldquo;aws-sdk&rdquo; type declaration file, which solved the problem in
+a nicer way imho. See the DynamoDBAsyncClient interface definition below:</p>
+
+<p><img src="http://www.hakantuncer.com/assets/Node_Express_TypeScript/dynamodb_async_client_declaration.png" alt="DynamoDB_Async_Client_Declaration" /></p>
+
+<h2>5. Using import or export in your TypeScript file turns it into a module</h2>
+
+<p>Both in TypeScript and ES6, any file containing a top-level import or export is considered a module. So
+right after you use one of these keywords in your Javascript or TypeScript file, it will start behaving like
+a module. I stumbled upon this while I was trying to implement an interface that I had created in a separate
+file.</p>
+
+<p>Let&rsquo;s first look at a simple case that doesn&rsquo;t make use of modules. Here below there&rsquo;s an interface and its
+implementation right below it. See how AdminRepository.ts refers to IAdminRepository interface without
+any ceremony.</p>
+
+<br/>
+
+
+
+
+<script src="https://gist.github.com/hakant/ce9a6521a16d871bb652c2f41299312d.js"></script>
+
+
+
+
+<script src="https://gist.github.com/hakant/7c25b55660deffb5556df2357ab5708b.js"></script>
+
+
+<p>Now look at these other two files, in which the interface exposes a third party object and therefore has to
+import that third party module. Note that index.ts can&rsquo;t just refer to that interface anymore, without
+actually importing it.</p>
+
+<br/>
+
+
+
+
+<script src="https://gist.github.com/hakant/126bbcdaa477680e4ace2021f9dedd3e.js"></script>
+
+
+
+
+<script src="https://gist.github.com/hakant/88d0907ab7f3c090b4d4404a31c079c5.js"></script>
+
+
+<p>By the way, I also noticed that <a href="https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines">TypeScript coding guidelines</a>
+do not recommend using &ldquo;I&rdquo; as a prefix for interface names. So I need to hold my C# reflexes.</p>
+
+<p>There are more than a few things that one has to do in order to make the TypeScript compiler happy. For anyone
+with a &ldquo;Javascript mindset&rdquo; this may feel like unnecessary burden. But once you make this investment,
+the amount of help and insight you get from the TypeScript compiler and tooling around it is amazing.</p>
+
+<p>Thanks for reading.</p>
+
+<p>~ Hakan</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating an online quiz game using Node.js, Hyperdev, PlayStation Buzz controllers, Raspberry PI and Nfield]]></title>
@@ -2786,44 +2985,6 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 <p><img src="http://www.hakantuncer.com/assets/BuildConference_2012/img_0329.jpg" alt="Seattle Space Needle" /></p>
 
 <p><img src="http://www.hakantuncer.com/assets/BuildConference_2012/img_0338.jpg" alt="Seattle Space Needle" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Startup Weekend Amsterdam Experience]]></title>
-    <link href="http://www.hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience/"/>
-    <updated>2010-10-20T20:52:30+02:00</updated>
-    <id>http://www.hakantuncer.com/blog/2010/10/20/startup-weekend-amsterdam-experience</id>
-    <content type="html"><![CDATA[<p>A few weeks ago I attended Startup Weeekend Amsterdam. I should say, it was really a weekend full of ideas, creativity, productivity and nice people.</p>
-
-<p>To describe very briefly, Startup Weekend events are short, weekend long events that are organized all around the world where attenders join together to pitch ideas and build products/services around those ideas. It is all self-contained. Everything is done by the attenders, from pitching ideas to forming teams, working over the weekend to realize those ideas and presenting them to the panelists. The organization behind Startup Weekend  provides place, food and the panelists. ;) ..and by the way, as far as I heard, they’re not earning money from these events.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/StartupWeekendAmsterdam/img_1674.jpg" alt="Startup Weekend Amsterdam" /></p>
-
-<p>I payed around €60 and bought a software developer ticket for myself. Tickets are simply attached to roles like marketing, sales, law, software development etc.. There was also one called “Jack of all Trades” for those who wanted to cheat a little bit.</p>
-
-<p>Friday evening, event started with a brief introduction talk and afterwards, attenders with ideas started taking turns and presenting their ideas. Everybody had like a minute and a half to introduce their ideas. Around 40 people made a pitch, which I heard is a pretty good number compared to the number of ideas presented in other Startup Weekend sessions around the world. This idea pitching section was followed by a short break and a voting session.</p>
-
-<p>Owners of 8-10 ideas receiving the highest number of votes took turns again to talk for another 30 seconds and call people to join their team. This part was especially fun because idea owners were trying to do all kinds of things to attract other people to work for them over the weekend.</p>
-
-<p>I watched teams evolve in about 45 minutes.. It was like a party where everybody was talking to each other. Once a group of people form a team, they were moving to the study room, which was a quite cool place. There were no any sort of rules for forming teams.. No restrictions. Whoever had their teams ready, were moving on.</p>
-
-<p>I worked in two teams throughout the weekend and kept an eye on other teams. Just for fun.. Watching how things were developing from being bare concepts / ideas in to something concrete was really interesting.. These people didn’t know each other few hours before and now they were working together to accomplish something.</p>
-
-<p>On Sunday evening, teams presented their business ideas along with their weekend accomplishments to the panelists. Every team had 3 minutes to show their magic. From there on, panelists made their decisions about the winners. There were technologists, entrepreneurs, lawyers and investors among the panelists (you can find them on Startup Weekend Amsterdam).</p>
-
-<p>A couple of  ideas I liked:</p>
-
-<ul>
-<li>Japps.me (Job application management tool): Having hard time following and managing your job applications? Using this tool you might have kept track of your job applications, related conversations, statuses etc.. I think it is a very good idea, but of course the implementation matters a lot.
-Pulsetree (Social idea mining tool): Now it is very obvious to me that this is going to be a very hot/big concept soon.</li>
-<li><p>It is about hooking up to social networks, blogs etc. (via API’s) to sniff opinions about products or companies and preferably allowing companies to engage with the opinion makers. Catching the opinions about their products and engaging with the opinion makers will be something vital for large companies.</p></li>
-<li><p>123 Dress me: The idea was mainly started with an iPhone application in which users can put the photos of their clothes in their closet in a top, middle and bottom manner. Then this application will allow them to match their clothes and give them an idea about what new combinations they can try. This opens many possibilities like displaying ads from stores, and now you can match your existing clothes with pieces from stores, and even order them with a single tap maybe..</p></li>
-<li><p>Alter-Ego (a smart phone game about sustainability) : Inspired by mobile games that are tightly integrated with player’s real life, these guys are putting real life goals for the players and letting them earn points based on their real life accomplishments. Although verifying many types of accomplishments are impossible and made me very skeptic about this game’s future, the idea really fits well into the current trend. (Some accomplishments are like taking the public transportation instead of your car, or using nature friendly commodities and helping the sustainability). These guys were chosen as winners and won free office space in Amsterdam for a year.</p></li>
-</ul>
-
-
-<p>The location was a courtesy of “Kennedy Van der Laan”. And organizers said that it was the best place they’d ever gotten so far.. Indeed the building was very nicely decorated. I should say, it was a right place to start a company. :)</p>
 ]]></content>
   </entry>
   

@@ -93,8 +93,14 @@
         <lastmod>2016-09-08T00:19:34+02:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://www.hakantuncer.com/blog/2016/11/08/converting-a-node-dot-js-express-api-to-typescript/
+        </loc>
+        <lastmod>2016-11-08T21:37:54+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.hakantuncer.com/blog/archives/</loc>
-        <lastmod>2016-09-08T00:19:34+02:00</lastmod>
+        <lastmod>2016-11-08T21:37:54+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/categories/</loc>
@@ -102,7 +108,7 @@
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/</loc>
-        <lastmod>2016-09-08T00:19:34+02:00</lastmod>
+        <lastmod>2016-11-08T21:37:54+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/hire-me/</loc>
@@ -110,7 +116,7 @@
     </url>
     <url>
         <loc>http://www.hakantuncer.com/</loc>
-        <lastmod>2016-10-09T19:26:18+02:00</lastmod>
+        <lastmod>2016-11-06T17:35:46+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/portfolio/</loc>
