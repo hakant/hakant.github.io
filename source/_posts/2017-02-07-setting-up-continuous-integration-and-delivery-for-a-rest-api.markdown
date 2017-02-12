@@ -144,16 +144,19 @@ One big reason (heck, maybe the only reason) why people will tell you to design 
 way that you can swap out your database in favor of a test double (f.ex a repository pattern) is the speed 
 of tests.
 
-<!--Talk about test pyramid too-->
-
 This could be a necessary evil back in the days where databases and infrastructure was bulky and slow. But is 
 this still true? I'll talk about this in a bit more detail in my next post, but for [HackathonPlannerAPI](https://github.com/hakant/HackathonPlannerAPI) 
 I wrote 15 tests which execute all application scenarios against a [DynamoDb Local Emulator](https://aws.amazon.com/blogs/aws/dynamodb-local-for-desktop-development/),
 so nothing is being swapped in or out but each test sets up and tears down the NOSQL document store so that 
 all tests are completely isolated from each other. 
 
-The result is amazing. It takes ~2 seconds to run all the tests. If my application grows in size in the future and I had 
-to execute 300 tests, it would still take me below a minute to run all the tests.
+The result is amazing. It takes ~2 seconds to run all the tests. If my application grows in size in the future and 
+I had to execute 300 tests, it would still take me below a minute to run all the tests!
+
+I know this may not be the same for every project for different sorts of reasons but this perspective 
+definitely blurs the lines between "Service" and "Unit" tests in [the test pyramid](https://martinfowler.com/bliki/TestPyramid.html):
+
+![Test-Pyramid](https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png =400x)
 
 
 
