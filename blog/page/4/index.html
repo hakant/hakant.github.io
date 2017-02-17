@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<title>Hakan Tuncer's Blog</title>
 	<meta name="author" content="Hakan Tuncer">
-	<meta name="description" content="Follow @hakant May 13th, 2014 NDC, Oslo, conferences Comments NDC Oslo 2014 Yes! It&rsquo;s happening. We will be at NDC Oslo 2014 with 3 developers &hellip;">
+	<meta name="description" content="Follow @hakant Jun 8th, 2014 NDC, Oslo, conferences Comments After NDC Oslo 2014 It&rsquo;s over. I&rsquo;m back in Amsterdam after an awesome week &hellip;">
 	
 	<!-- http://t.co/dKP3o1e -->
   	<meta name="HandheldFriendly" content="True">
@@ -24,7 +24,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Hakan Tuncer's Blog" />
-    <meta property="og:description" content="Follow @hakant May 13th, 2014 NDC, Oslo, conferences Comments NDC Oslo 2014 Yes! It&rsquo;s happening. We will be at NDC Oslo 2014 with 3 developers &hellip;" />
+    <meta property="og:description" content="Follow @hakant Jun 8th, 2014 NDC, Oslo, conferences Comments After NDC Oslo 2014 It&rsquo;s over. I&rsquo;m back in Amsterdam after an awesome week &hellip;" />
     <meta property="og:url" content="http://www.hakantuncer.com/blog/page/4/" />
     <meta property="og:image" content="https://media.licdn.com/media/p/4/005/027/329/2633870.jpg" />
 	
@@ -111,6 +111,223 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-08T15:39:52+02:00" data-updated="true" itemprop="datePublished">Jun 8<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ndc/'>NDC</a>, <a class='category' href='/blog/categories/oslo/'>Oslo</a>, <a class='category' href='/blog/categories/conferences/'>conferences</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2014/06/08/after-ndc-oslo-2014/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/06/08/after-ndc-oslo-2014/" itemprop="url">After NDC Oslo 2014</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>It&rsquo;s over. I&rsquo;m back in Amsterdam after an awesome week in Oslo. Great sessions, lots of smart people, delicious food and very good coffee. Inspirations everywhere.</p>
+
+<p>I didn&rsquo;t know Norwegians were this much into coffee drinking. I can easily say that I didn&rsquo;t drink a single cup of bad coffee in Oslo in 7 days. One of the world&rsquo;s best coffee shop <a href="https://timwendelboe.no/">Tim Wendelboe</a> is also located in Oslo. But more on that later.</p>
+
+<p>I&rsquo;ve seen a lot of stuff and spent time with very smart people.</p>
+
+<p>Like I did with my previous conference visit in Microsoft / Seattle, I&rsquo;ll write down all the sessions I&rsquo;ve attended, together with the links to the video recordings.</p>
+
+<p>I didn&rsquo;t know the sessions in NDC were recorded. That was a bit of a nice surprise in the beginning of the conference. Deciding which sessions to attended became a lot easier afterwards. Now I can basically see anything I missed if I want.</p>
+
+<h2>Workshops</h2>
+
+<p>Attending the workshops was the best decision we&rsquo;ve made. By far the most educative part of the conference. 2 days of workshop gives enough time to properly dive into a broad topic, allows a good deal of Q/A and lab time.</p>
+
+<p>The workshop I attended was titled as &ldquo;Identity and Access Control for modern web applications and API&rsquo;s&rdquo;. From <a href="https://twitter.com/leastprivilege">Dominick Baier</a> and <a href="https://twitter.com/BrockLAllen">Brock Allen</a>. 10 out of 10 for those guys. They were well prepared. They were also very responsive to the questions from the attendees.</p>
+
+<p>Unfortunately there is no video recording here. I have pdf&rsquo;s and lab solutions which I&rsquo;ll share in a next blog post.</p>
+
+<p>We&rsquo;ve covered everything from the old security techniques to the modern ones. Here are some of the main points:</p>
+
+<ul>
+<li>Using security tokens and claims based authentication &amp; authorization is the way to go in to the future.</li>
+<li>Separating authentication to another shared service is a good technique once you have multiple services in your deployment. This security service will issue access tokens for other services in the system to consume. This avoids repetition of security related code in every other service in the system. Enables DRY. Single point of configuration and control. Good stuff.</li>
+<li>Microsoft is already moving in this direction with <a href="http://owin.org/">OWIN</a> and <a href="http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana">Katana</a>. Claims based identity is baked into the framework at the moment. And there are a number of Katana middlewares that implement token based authentication.</li>
+</ul>
+
+
+<p>I&rsquo;ve left the workshop with some ideas and improvements that can be applied to <a href="http://nfieldmr.com/get-started.aspx" target="_blank">Nfield</a>. Ideas that can enable securer access scenarios and can make security implementation more elegant.</p>
+
+<h2>Keynote</h2>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/97305189" target="_blank">It’s a Write/Read (Mobile) Web</a></li>
+</ul>
+
+
+<p>If you&rsquo;re doing anything remotely related to UI or UX design you have to see this keynote. Period.</p>
+
+<p>More and more companies are realizing that the intuitiveness and ease of use of their applications are very critical to their competitive advantage. How many taps or clicks does it take to achieve something in your mobile application? Think again. It&rsquo;s a matter of people using or quiting it.</p>
+
+<p>Luke Wroblewski will blow your mind with the statistics and examples he puts up on the screen.</p>
+
+<h2>Sessions &ndash; 4 June 2014</h2>
+
+<br>
+
+
+<ul>
+<li><p><a href="http://vimeo.com/97315938" target="_blank">Immutability, State and Scale &ndash; Functional, Distributed Applications in Azure</a></p></li>
+<li><p><a href="http://vimeo.com/97318800" target="_blank">Banish Your Inner Critic</a></p></li>
+</ul>
+
+
+<p>I&rsquo;d read a couple of essays written by <a href="https://twitter.com/denisejacobs">Denise Jacobs</a> about creativity and productivity. I wanted to attend one of her sessions. She explains how to stop (or ignore) your inner critic that tries its best to scare you from failure and to kill your creativity.</p>
+
+<ul>
+<li><p><a href="http://vimeo.com/97329157" target="_blank">Seven Ineffective Coding Habits of Many Programmers</a></p></li>
+<li><p><a href="http://vimeo.com/97337304" target="_blank">Async C# 5.0 &ndash; Patters For Real World Use</a></p></li>
+<li><p><a href="http://vimeo.com/97344528" target="_blank">Builders versus breakers – 10 online attacks we could have easily prevented</a></p></li>
+</ul>
+
+
+<p><a href="https://twitter.com/troyhunt">Troy Hunt</a>&rsquo;s talks are like exciting science fiction movies. You don&rsquo;t want it to end, but time flies quickly. The title of the talk is self explanatory. It&rsquo;s about a bunch of very interesting online attacks happened in history and most destructive ones have happened in the last 2 years. Maybe this is a sign for what&rsquo;s about to come in the future. Data theft at its best.</p>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/97349267" target="_blank">Managing Asynchronicity</a></li>
+</ul>
+
+
+<p>One doesn&rsquo;t get to see <a href="http://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a> in person everyday. Functional programming and asynchronicity are two hot topics of the new era. Crockford talks about what asynchronicity is, its effects to our programs and how we can best test these async scenarios using a testing tool called <a href="http://www.jscheck.org">JSCheck</a>.</p>
+
+<h2>Sessions &ndash; 5 June 2014</h2>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/97408202" target="_blank">Javascript Combinators</a></li>
+</ul>
+
+
+<p>I&rsquo;m finding Javascript combinators very interesting. Javascript has <a href="http://en.wikipedia.org/wiki/First-class_function">first class functions</a> meaning that a lot of interesting things can be done with them. Once you start combining and decorating functions with other functions, very interesting ways of expressing programs start to appear.</p>
+
+<p>Surprisingly programs become DSL-like and more readable because instead of &ldquo;HOW&rdquo; the program syntax starts to tell &ldquo;WHAT&rdquo;. Making it more declarative than imperative.</p>
+
+<p>I really loved this session and the way <a href="https://twitter.com/raganwald">Reginald Braithwaite</a> presented it. I&rsquo;m hoping to find time to read his book <a href="http://www.amazon.com/Javascript-Allong%C3%A9-Reginald-Braithwaite-ebook/dp/B00FLKRCVO">JavaScript Allonge</a>.</p>
+
+<ul>
+<li><p><a href="http://vimeo.com/97415351" target="_blank">An Actor&rsquo;s Life for Me – An introduction to the TPL Dataflow Library and asynchronous programming blocks</a></p></li>
+<li><p><a href="http://vimeo.com/97419151" target="_blank">Zone out, check in, move on</a></p></li>
+</ul>
+
+
+<p>As programmers our &ldquo;flow&rdquo; is something sacred to us. When we&rsquo;re concentrated and in flow we must not be interrupted because it annoys us and costs us too much time to get back into flow again.</p>
+
+<p><a href="https://twitter.com/ploeh">Mark Seemann</a> thinks interruptions are going to happen no matter what. Instead of trying to avoid them he focuses on ways of working that will allow him to get back into flow easier and much faster.</p>
+
+<p>I&rsquo;ve come across a nice <a href="http://gallarotti.github.io/digitalian/commentary/how-to-minimize-distractions-recovery-time/">summary blog post</a> about this session.</p>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/97473703" target="_blank">GitHub Power Tools</a></li>
+</ul>
+
+
+<p>This is a useful hands-on session on using GitHub. It&rsquo;s not focused on Git but more about what you can do with GitHub itself. GitHub is more than only Git and has many features for letting developers collaborate on open source projects effectively.</p>
+
+<ul>
+<li><p><a href="http://vimeo.com/97501414" target="_blank">Node.JS Tools For Front-End Developers</a></p></li>
+<li><p><a href="http://vimeo.com/97505678" target="_blank">The Future of ASP.NET Part II</a></p></li>
+<li><p><a href="http://vimeo.com/97507560" target="_blank">From Code Monkey to Boss Man</a></p></li>
+<li><p><a href="http://vimeo.com/97454683" target="_blank">Fun with JavaScript</a></p></li>
+</ul>
+
+
+<h2>Sessions &ndash; 6 June 2014</h2>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/84676527" target="_blank">Functional Programming: What? Why? When?</a></li>
+</ul>
+
+
+<p>Just like with Douglas Crockford, you don&rsquo;t leave a conference without attending a session given by <a href="https://twitter.com/unclebobmartin">Bob Martin</a>. This is one of those talks with some &ldquo;aha&rdquo; moments about functional programming.</p>
+
+<p>One thing that I found really interesting is a book that Uncle Bob mentions during his talk. The book is called <a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">Structure and Interpretation of Computer Programs</a> which he praised a lot. At some point during his talk he said something along the lines of the following:</p>
+
+<blockquote><p>..almost near the end of the book the authors wrote a couple of pages worth apologies on what&rsquo;s about to come, and then they introduced the assignment statement..</p></blockquote>
+
+<p>This amazed me. They could write almost the whole book without the assignment statement (read as pure functional) and then they introduced it like as if it was a defect in software programs. Funny.</p>
+
+<ul>
+<li><p><a href="http://vimeo.com/97516214" target="_blank">Data Modeling Examples in the Real World with MongoDB</a></p></li>
+<li><p><a href="http://vimeo.com/97519532" target="_blank">Transforming your C# code to functional style</a></p></li>
+</ul>
+
+
+<p>One of the most effective and indulging sessions I&rsquo;ve attended in this conference. I highly recommend everybody to see it. Don&rsquo;t expect complex code examples. <a href="https://twitter.com/venkat_s">Venkat Subramaniam</a> uses simple examples to make his point. Just listen to what he has to say about functional programming, he&rsquo;ll open up your mind.</p>
+
+<br>
+
+
+<ul>
+<li><a href="http://vimeo.com/97530814" target="_blank">How I hacked my way to Norway</a></li>
+</ul>
+
+
+<p>Another Troy Hunt show off session. He talks about a couple of highly effective web attacks. Watch it if you&rsquo;re looking for fun, but basically it all comes down to a couple of main points:</p>
+
+<ol>
+<li><p>Never ever display a login form on an HTTP connection. Even if you&rsquo;re posting that form to an HTTPS endpoint. A man in the middle can change the form to somewhere else and steal your credentials without you knowing it. Turns out that Iranian government used this technique to steal its citizens&#8217; Facebook credentials for a while before Facebook woke up and made their login page HTTPS only.</p></li>
+<li><p>Always be careful with SQL injection. If you&rsquo;re using latest frameworks you&rsquo;re mostly covered.</p></li>
+<li><p>Make sure your username &amp; password challenge is computationally costly and time-consuming. If an attacker gets a hold of your user database and decides to convert them to clean text, he should be slowed down. It turns out that simple hashing and salting algorithms are easy to break with rainbow table attacks. Even the ASP.NET Membership implementation from 2010.</p></li>
+</ol>
+
+
+<br>
+
+
+<ul>
+<li><p><a href="http://vimeo.com/97537675" target="_blank">Towards an Evolutionary Architecture</a></p></li>
+<li><p><a href="http://vimeo.com/97541185" target="_blank">Core Software Design Principles</a></p></li>
+</ul>
+
+
+<p>This is what I want to share right now. Maybe I can dive into a number of these topics in some of my next blog posts. Thanks for reading.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -991,246 +1208,6 @@
 
 </article>
 
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-18T18:29:03+01:00" data-updated="true" itemprop="datePublished">Nov 18<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/conferences/'>conferences</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2012/11/18/microsoft-build-conference-2012-thoughts-and-highlights/" itemprop="url">Microsoft BUILD Conference 2012 – Thoughts &amp; Highlights</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Microsoft is heading towards a new era with it’s Windows ecosystem and Azure cloud platform.</p>
-
-<h2>Azure adoption on fire</h2>
-
-
-<p>It’s been repeated several times during the conference that Microsoft is surprised by the demand to their Windows Azure cloud computing platform. In his session, Mark Russinovich mentioned that getting a new  Azure datacenter up and running from the decision phase to reality takes about one and a half years and at the moment they’re constantly investing in new datacenters.</p>
-
-<h2>Weak Windows Store App ecosystem</h2>
-
-
-<p>On the other hand, the new Windows ecosystem, Windows RT and Windows Phone, are pretty latecomers in the market where iOS and Android devices heavily dominate. These new Windows operating systems and devices have been taken very positively by the tech media  in general but with one big question: Will the Windows app ecosystem be able to catch the momentum and compete with it’s competitors? This has been declared as the weakest spot of the new generation of Windows devices and Microsoft is well aware of it.</p>
-
-<h2>Microsoft is Opening Up – A Mindset Shift</h2>
-
-
-<p>This is the reason why Microsoft is doing everything it can to get developers on board and convince them building applications for the Windows store. They’ve been trying to present a compelling development story from design stage to submitting the app to the Windows Store, trying to make this a joyful experience for developers building Windows Store apps. They’re educating developers, giving them free ebooks, devices and a lot of sample applications. Everything is done for creating a rapid development momentum that will enrich the Windows Store with many applications.</p>
-
-<p>Another part of this story is about  the steps that Microsoft is taking with it’s technical stack. For many years Microsoft had been very exclusionary of software languages and stacks that were not “invented” under it’s control. Every solution Microsoft was offering needed to be 100% Microsoft.</p>
-
-<p>This “not invented here” mentality seems to be fading away. Microsoft has been investing heavily on Javascript. Chakra engine of IE, the TypeScript language and the Javascript API’s of Windows RT are clear examples of this investment. Strange enough, a Windows 8 application can now completely be written using Javascript, CSS and HTML. Smart move to get more developer support, which is now very critical for Microsoft.</p>
-
-<p>Who would think one day someone would be able to run Linux servers on Microsoft datacenters? Or Azure Command Line Tools would be written in Javascript using Node.js. Microsoft is definitely opening up.</p>
-
-<h2>Some Highlights from the Trip</h2>
-
-
-
-
-<br>
-
-
-<h5>Monday – October 29</h5>
-
-
-<ul>
-<li>It was somewhat stressful to fly on the worst day of Hurricane Sandy. Fortunately the flight was not cancelled. The route was over the Greenland and there was quite some scene through the window.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/MountainsFromPlane.JPG" alt="Mountains from the plane" /></p>
-
-<p><img src="/assets/BuildConference_2012/Flight_Map.JPG" alt="Flight map" /></p>
-
-<p><img src="/assets/BuildConference_2012/IceEverywhere.JPG" alt="Ice everywhere" /></p>
-
-<br>
-
-
-<ul>
-<li>First day was only about registration. There was a long registration queue all day but fortunately it  got much shorter later around 19:00. And I got my badge.</li>
-</ul>
-
-
-<br>
-
-
-<p><img src="/assets/BuildConference_2012/BuildBadge.jpg" alt="Build Badge" /></p>
-
-<h5>Tuesday – October 30</h5>
-
-
-<ul>
-<li>Heading to the tent for breakfast. Further down, there is a much bigger tent with a Windows logo on it. That’s where keynotes will take place.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/TreesRedmond.JPG" alt="BigTent" /></p>
-
-<ul>
-<li><p>First keynote was given by Steve Ballmer, CEO of Microsoft. It was about the most important delivery of Microsoft: Windows 8. About how the family of Windows 8 PC’s and mobile devices live in harmony together, with SkyDrive backing them up.</p></li>
-<li><p>Steve Ballmer actually gave a demo himself, which was unusual but I think very positive. It’s a general expectation these days: CEO of a high tech company should be “hands on” with the technology. Technically savvy managers are more popular indeed. It looks like Steve also pushes himself towards that direction.</p></li>
-<li><p>You can watch the whole show here:</p></li>
-</ul>
-
-
-<p> <a href="http://channel9.msdn.com/Events/Build/2012/1-001">http://channel9.msdn.com/Events/Build/2012/1-001</a></p>
-
-<p><img src="/assets/BuildConference_2012/IMG_0091.JPG" alt="BallmerOnStage" /></p>
-
-<ul>
-<li><p>This first day was completely about Windows 8. In fact, Azure Cloud Platform would be the topic of the second keynote on the second day of BUILD conference.</p></li>
-<li><p>We were having breakfast and lunch in the big tents that were built right next to the conference buildings. Yes, tents are not very exciting but the food was.</p></li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/photo1.jpg" alt="Good Food" /></p>
-
-<h5>Wednesday – October 31</h5>
-
-
-<ul>
-<li>The second keynote of the BUILD conference was about the other important pursuit of Microsoft, the Azure Cloud, and the applications that developers can build into it. Applications that can be built lego style, using the tools and pulling the libraries as you like.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0122.JPG" alt="Second Keynote" /></p>
-
-<ul>
-<li>Scott Guthrie presented Azure Mobile &amp; Media Services and Hanselman gave a short demo of new ASP.NET features and support for known social networks. All applications written during demos are eventually getting deployed on Azure. So basically now Azure plays a role in every server side technology of Microsoft.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0127.JPG" alt="Scott Guthrie" /></p>
-
-<p><img src="/assets/BuildConference_2012/IMG_0128.JPG" alt="Hanselman" /></p>
-
-<ul>
-<li>After the keynote, heading towards the session buildings. And the red trees of Seattle…</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0131.JPG" alt="Redmond Red Trees" /></p>
-
-<h5>Thursday – November 1</h5>
-
-
-<ul>
-<li>There were four rooms where you can borrow some brain from the experts. Everyone had certain office hours. This was not a very easy experience though. For some of these brains one had to wait a long time in the queue.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/photo.jpg" alt="Brain Box" /></p>
-
-<ul>
-<li>Channel9 broadcasting studio. It was in the same building where some of the sessions took place.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0108.JPG" alt="Channel 9" /></p>
-
-<ul>
-<li>BUILD conference map on the ground.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0109.jpg" alt="Conference Map" /></p>
-
-<h5>Friday – November 2</h5>
-
-
-<p></p>
-
-<ul>
-<li>Two public figures Scott Hanselman and Jon Galloway preparing for the last session of the BUILD.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0211.JPG" alt="Build Last Session" /></p>
-
-<ul>
-<li>This strange sign took my attention.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0203.jpg" alt="Strange Notification" /></p>
-
-<h5>Saturday – November 3</h5>
-
-
-<ul>
-<li><p>At the final day of my trip, after the conference, I found some time to hang around in Seattle.</p></li>
-<li><p>A Windows Store in Seattle. At the time of this writing, there are around 60 of these in various states  in U.S.</p></li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/img_0057.jpg" alt="Windows Store in Seattle" /></p>
-
-<ul>
-<li>Seattle is the birthplace of Starbucks. As a matter of fact, this Starbucks shop is where it all started.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/IMG_0267.JPG" alt="Birthplace of Starbucks" /></p>
-
-<ul>
-<li>Somewhere in Seattle, a building on which everybody is sticking gums. I don’t know the reason or the story behind it. But it was really disgusting to be there next to it…</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/img_02821.jpg" alt="Gum Wall" /></p>
-
-<ul>
-<li>Space Needle is one of the symbols of Seattle. I also went up there, obviously a great view.</li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/img_0350.jpg" alt="Seattle Space Needle" /></p>
-
-<ul>
-<li>I’ve also seen Chihuly’s Garden &amp; Glass Exhibition. The art here was truly amazing.
-<a href="http://www.chihulygardenandglass.com/" target="_blank">Chihuly Garden And Glass &ndash; Website</a></li>
-</ul>
-
-
-<p><img src="/assets/BuildConference_2012/img_0361.jpg" alt="Seattle Space Needle" /></p>
-
-<p><img src="/assets/BuildConference_2012/img_0329.jpg" alt="Seattle Space Needle" /></p>
-
-<p><img src="/assets/BuildConference_2012/img_0338.jpg" alt="Seattle Space Needle" /></p>
-
-		
-		
-	</div>
-
-</article>
-
 </div>
 <nav id="pagenavi">
     
@@ -1243,7 +1220,7 @@
 </nav></div>
 			</div>
 			<footer id="footer" class="inner"><p>
-  Copyright &copy; 2016 - Hakan Tuncer <br/><br/>
+  Copyright &copy; 2017 - Hakan Tuncer <br/><br/>
   Disclaimer: The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way.
 </p>
 </footer>
