@@ -6,8 +6,8 @@ comments: true
 categories: [architecture,testing, CI]
 footer: true
 sharing: true
-description: 
-image:  
+description: A few months back I decided to convert my hobby project - Hackathon Planner API - from pure Javascript to TypeScript. This time I sat down to build an Automated Test Suite and a Continuous Delivery pipeline around it.
+image: http://www.hakantuncer.com/assets/ContinuousIntegration_Part1/CI.jpg
 ---
 
 ## Introduction
