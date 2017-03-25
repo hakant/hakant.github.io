@@ -3,7 +3,7 @@ layout: post
 title: "Setting up Continuous Delivery for a Node.js REST API - Part 1"
 date: 2017-02-17 22:01:28 +0100
 comments: true
-categories: [architecture,testing, CI]
+categories: [architecture,testing,CI]
 footer: true
 sharing: true
 description: A few months back I decided to convert my hobby project - Hackathon Planner API - from pure Javascript to TypeScript. This time I sat down to build an Automated Test Suite and a Continuous Delivery pipeline around it.
@@ -173,35 +173,3 @@ but when it does, it definitely blurs the line between "Service" and "Unit" test
 Thanks for reading. In Part 2 there will be code, I promise.
 
 ~Hakan
-
-
-
-<!--Share these articles also the pictures. Then link to Scott Allen's podcast and post. Then share MediatR.
-Maybe then share your TS mediator. Then end with Udi Dahan's Reuse talk.
-
-https://medium.com/@rdsubhas/10-modern-software-engineering-mistakes-bc67fbef4fc8#.k139s48qo
-
-
-* Jimmy Bogard
-* Post of Scott Allen
-* Mediatr
-* Reuse talk from Udi Dahan-->
-
-
-<!--Use this sentence in your next post-->
-<!--With these thoughts in mind, I sat down to refactor the existing REST API to make it architecturally cleaner and 
-more testable. I also aimed to write a bunch of stable and fast tests to be plugged into the CI pipeline.-->
-
-<!--Here are some of those areas of interest:
-
-  - What is clean architecture 
-  - Ways of structuring the business domain
-  - Re-evaluating the idea of "reuse" in software projects
-  - Re-evaluating the needs around building "generic" software
-  - Traditional n-tier architecture and its pros & cons
-  - Testability of an application
-  - Stability, correctness and speed of tests
-  - Types of tests and the famous test pyramid
-
-and all these things in the context of CI, CD and DevOps, which I believe are truly valuable concepts.-->
-
