@@ -3,18 +3,18 @@ layout: page
 comments: false
 sharing: false
 footer: true
-description: I'm Hakan. Software Craftsman / Architect with a focus on .NET, Javascript, Node.js and Azure
+description: I'm Hakan. Full Stack Developer / Architect with a focus on .NET, JavaScript, Node.js and Azure
 image: http://www.gravatar.com/avatar/3d40c44707af5a8f606fb9b7ba553749?s=160
 ---
 
 <h2 class="title">Hi, I'm Hakan</h2>
 
-I'm a professional programmer with more than 10 years of experience building software for many companies 
+I'm a professional programmer with more than a decade of experience building software for many companies 
 in various projects.
 
 Throughout my career I've spent a lot of time with [Microsoft .NET](https://www.microsoft.com/net) and the ecosystem around it. Working with [.NET](https://www.microsoft.com/net), [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language) and [Azure](https://azure.microsoft.com) is still a big part of my professional life.
 
-On the other hand, I also have a lot of interest in [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+On the other hand, I also have a lot of interest in [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 (and [TypeScript](https://www.typescriptlang.org/)), both for front-end and back-end purposes. These days I'm spending a lot of time with 
 [Node.js](https://nodejs.org/en/) and client side frameworks like [Angular](https://angularjs.org), 
 [React](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
@@ -27,14 +27,14 @@ Assessment" application that enables credit committees to make better decisions,
 >Always have a side project.
 <a href="http://www.scotthyoung.com/blog/2011/01/07/day-jobs-vs-side-projects/" target="_blank">There are many reasons why.</a>
 
-* **Hackathon Planner** NIPO Software organizes hackathon events a couple of times a year to have fun and create
+* **Hackathon Planner**: NIPO Software organizes hackathon events a couple of times a year to have fun and create
 interesting tools & ideas that the company as a whole can benefit from. I've been working on a web application 
 that can turn the planning phase of these hackathons into a social, fun and efficient process. The ingredients 
-are [node.js](https://nodejs.org/en/), [expressjs](http://expressjs.com), [Aurelia](http://aurelia.io) & 
-[ES6 Javascript](http://es6-features.org), [AWS](https://aws.amazon.com/) and [NoSQL DynamoDb](https://aws.amazon.com/dynamodb/).
+are [Node.js](https://nodejs.org/en/), [ExpressJS](http://expressjs.com), [Aurelia](http://aurelia.io) & 
+[TypeScript](https://www.typescriptlang.org/), [AWS](https://aws.amazon.com/) and [NoSQL DynamoDb](https://aws.amazon.com/dynamodb/).
 You can <a href="/assets/Online_Quiz_Game/HackathonPlanner_Final.gif" target="_blank">see it in action here</a>.
 
-* **Ottobytes**: Startup that I created together with two of my colleagues. We built a product called Kiwi, a data transformation solution for market research companies. Kiwi is now acquired by NIPO Software. I'm not actively working on this product anymore but I've learnt a lot from this experience. You can visit the [Ottobytes Website](http://ottobytes.com/) for more information. I also wrote [two blog posts](./blog/categories/kiwi/) about it.
+* **Ottobytes**: Startup that I created together with two of my colleagues. We built a product called Kiwi, a data transformation solution for market research companies. Kiwi is now acquired by NIPO Software. I'm not actively working on this product anymore but I've learnt a lot from this experience. You can visit the [Ottobytes Website](http://ottobytes.com/) for more information. I also wrote [a few blog posts](./blog/categories/kiwi/) about it.
 
 <a href="http://www.ottobytes.com/" target="_blank">
 ![Ottobytes Website](/assets/HomePage/Ottobytes.png =600x)
