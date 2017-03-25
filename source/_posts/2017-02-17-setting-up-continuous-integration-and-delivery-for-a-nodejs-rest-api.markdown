@@ -172,4 +172,9 @@ but when it does, it definitely blurs the line between "Service" and "Unit" test
 
 Thanks for reading. In Part 2 there will be code, I promise.
 
+> __Update__:
+> <br/><br/>
+>
+> Part 2 is now available! You can [reach it here](/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2/).
+
 ~Hakan
