@@ -4,7 +4,7 @@
   <title><![CDATA[Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2017-02-17T21:58:12+01:00</updated>
+  <updated>2017-03-25T12:47:16+01:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -12,6 +12,126 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up Continuous Delivery for a Node.js REST API - Part 2]]></title>
+    <link href="http://www.hakantuncer.com/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2/"/>
+    <updated>2017-03-25T09:48:02+01:00</updated>
+    <id>http://www.hakantuncer.com/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p><a href="http://www.hakantuncer.com/blog/2017/02/17/setting-up-continuous-integration-and-delivery-for-a-nodejs-rest-api/">In the first part</a> of this blog post, I shared some fundamental ideas that form as background information for what I want to achieve here. So if you haven’t read that one yet, I recommend you to <a href="http://www.hakantuncer.com/blog/2017/02/17/setting-up-continuous-integration-and-delivery-for-a-nodejs-rest-api/">check it out</a>.</p>
+
+<p>A few months back, I decided to convert my <a href="https://github.com/hakant/HackathonPlannerAPI">hobby project — Hackathon Planner API</a> from pure Javascript to TypeScript and <a href="http://www.hakantuncer.com/blog/2016/11/08/converting-a-node-dot-js-express-api-to-typescript/">wrote a blog post about it</a>. This time I sat down to build an Automated Test Suite and a <a href="https://www.martinfowler.com/articles/continuousIntegration.html">Continuous Delivery (CD)</a> pipeline around it.</p>
+
+<p>Effective automated testing is a natural prerequisite for Continuous Integration &amp; Delivery. How can it not be? If you’re not getting quick and broad feedback from your software, how can you delivery frequently? So having a testable architecture and an effective test strategy is very crucial. Let’s dive in.</p>
+
+<h2>Right Architecture for Subcutaneous Testing</h2>
+
+<p>I’m a huge fan of <a href="https://martinfowler.com/bliki/SubcutaneousTest.html">subcutaneous testing</a>. This type of testing starts right under the UI layer with a large scope (which preferably spans all the way down to the data store) can have a great return on investment. On <a href="https://m.facebook.com/notes/kent-beck/making-making-manifesto/857477870951745/">Kent Beck’s feedback chart</a> it would score high up and to the right: <strong>fast and broad feedback</strong>.</p>
+
+<p><img src="http://www.hakantuncer.com/assets/ContinuousIntegration_Part2/Kent_Beck_Feedback_Chart.png" alt="Kent Beck's Feedback Chart" /></p>
+
+<p>So now that we want to target our automated tests below the delivery mechanism layer (UI, Network etc.), this is where an important architectural decision comes into question. What is the main boundary of my application? Where does my significant business logic start? Plus, how can I make my application boundary very visible and clear to all developers? If you follow down this path of thinking, one nice place to end up is a combination of <a href="https://en.wikipedia.org/wiki/Command_pattern">command</a> and <a href="https://en.wikipedia.org/wiki/Mediator_pattern">mediator</a> patterns.</p>
+
+<p>The combination of these patterns is about sending commands down through a very narrow facade, where every command has a very clean input and output “<a href="https://en.wikipedia.org/wiki/Data_transfer_object">data transfer objects</a>” or POCO’s, POJO’s.. whatever you like to call them depending on your stack of choice. They’re simply objects that carry data and no behavior. </p>
+
+<p>To be able to use this pattern in <a href="https://github.com/hakant/HackathonPlannerAPI">my REST API</a>, I’ve created a simple module in TypeScript that allows me to execute commands and optionally get results from them. It’s here: <a href="https://github.com/hakant/TypeScriptCommandPattern">TypeScriptCommandPattern</a>.</p>
+
+<p>In the example below, you can see how a test request is sent down to the executor and a result is returned back.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/837f08708feed35b2d02b99269f0e916.js"></script>
+
+
+<p>And here is how a “Hello World” style command handler looks like. Notice that it has a clean request and response definitions. At the end of the implementation we make sure that the handler is registered and mapped to the request. In this structure handlers are singleton objects and they can later be resolved by the type of the request and then get executed.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/c4c29c9d6e98fb3a85c674a4b0ad6b28.js"></script>
+
+
+<h2>Using this pattern in a real world Node.js REST API</h2>
+
+<p>One great architectural benefit of this pattern is that it allows you to nicely separate an application into many independent scenarios — <a href="https://lostechies.com/jimmybogard/2015/07/02/ndc-talk-on-solid-in-slices-not-layers-video-online/">vertical slices</a>. Take a look at <a href="https://github.com/hakant/HackathonPlannerAPI/tree/master/scenarios">these scenarios from Hackathon Planner</a>:</p>
+
+<p><img src="http://www.hakantuncer.com/assets/ContinuousIntegration_Part2/Hackathon_Planner_Scenarios.png" alt="Kent Beck's Feedback Chart" /></p>
+
+<p>Each of these TypeScript modules are a vertical slice. They’re the full story. Yes they make use of other external modules when necessary, but when developers read through these scenarios, they get the full picture. And if code sharing between these scenarios are done wisely (with correct abstractions), then a change in one scenario is contained and does not necessarily affect any others.</p>
+
+<p>Let’s take a look at the implementation of one of these scenarios and extract some key properties. Let’s pick the scenario in “GetIdeas.ts”:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/6c38b895807a4d721c8c367a5117826f.js"></script>
+
+
+<ul>
+<li><p>Line 3–4: Imports the base async command handling structure and also the container to register itself at the end of the file.</p></li>
+<li><p>Line 6–9: External modules that this handler uses.</p></li>
+<li><p>Line 11–12: A module that is used by multiple scenarios. Be careful, I say “used” not “reused”. Remember the “<a href="http://udidahan.com/2009/06/07/the-fallacy-of-reuse/">fallacy of reuse</a>”. This module (IdeaPrePostProcessor) is used to massage and sanitize the Idea entities before they’re sent to the user interface and before they’re written to the database. Multiple scenarios use this module the exact same way and for the same need. There are no slight variations per scenario, that’s why it’s a right abstraction and that’s why it’s “use”, not “reuse”.</p></li>
+<li><p>Line 14–16: Since our handler is an async one (because it’s accessing the database), it implements the AsyncCommandHandler&lt;TRequest, TResponse> and implements the HandleAsync method that returns a Promise of GetIdeasReponse object.</p></li>
+<li><p>Line 17–38: Complete vertical implementation of the handler. It’s basically scanning the database for all the ideas, sorting them based on an algorithm, encapsulating them in the response object and return. Notice that at line 25, the “await” keyword is used. It’s a simple and very readable way of representing asynchronous code. It exists in recent versions of TypeScript as well as in ES7.</p></li>
+<li><p>Line 42–47: Request and response objects that are used by this handler are defined and exported. These objects should be available to the rest of the application as well.</p></li>
+<li><p>Line 50–52: A singleton instance of the handler is instantiated and registered to the type of the request object. Based on application needs, this can be made more complex and sophisticated. Statically typed languages incorporate lots of ideas around IoC containers whereas dynamically typed languages like javascript, not so much. Also keep in mind that these TypeScript generic constructs only exist at design time. They don’t exist in the transpiled javascript and that makes it impossible to discover or scan these constructs at runtime.</p></li>
+</ul>
+
+
+<h2>Simple &amp; Stupid ExpressJS Routes</h2>
+
+<p>If you have experience with building MVC type web applications or REST API’s you’re probably familiar with the idea of controllers. Routes are the same concept in <a href="http://expressjs.com">ExpressJS</a>. Keeping your routes and controllers nice and clean is a good discipline to have. Remember, we want to contain our core application logic and try not to leak it outside as much as possible. Not to frameworks, not to external libraries.</p>
+
+<p>Hackathon Planner’s most significant route is the Ideas route where ideas are being CRUD and a few further actions are taken against them. Code below shows the routes defined in there. Notice how clean it reads and how all business logic is kept out of it. The only thing these routes do is to pass requests and responses up and down the stream.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/85fbfa3f3d77f82c2b17457a96356d09.js"></script>
+
+
+<h2>Testing all the Scenarios</h2>
+
+<p>The structure of the software created so far lends itself nicely to the subcutaneous testing style discussed earlier. So I take advantage of this by taking the following actions in the tests:</p>
+
+<ul>
+<li><p>Remove the ExpressJS layer that normally sits on top. This is a delivery mechanism and I don’t necessarily need it to test my business logic — since I’ve already separated that logic clearly out of this layer.</p></li>
+<li><p>Load all scenario handlers together with the real data store (or a realistic emulator).</p></li>
+<li><p>Shoot requests &amp; verify responses.</p></li>
+<li><p>In some cases, if verifying the response alone isn&rsquo;t sufficient, go further and directly check the data store for verifying the side effects. In my case it wasn’t necessary, I could both act and verify using my handlers alone.</p></li>
+</ul>
+
+
+<p>Let’s take a look at a few of these tests. Below is a part of <a href="https://jasmine.github.io/">jasmine</a> spec that tests inserting and fetching ideas by running several scenarios.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/a2d1c53fdaa5e7c0d99eeb8e8b4022e2.js"></script>
+
+
+<p>Here are a few key properties of these tests:</p>
+
+<ul>
+<li><p>Lines 17–26: Before each test new NoSql tables are created and after each test they’re dropped. This makes every test run in a sandbox isolated from one another. So they can all run in any random order. In general, this is a characteristic of a unit test, not an integration test. So here we have the best of both worlds!</p></li>
+<li><p>All tests run against a DynamoDb local emulator. So the feedback coming from the database is real. I trust that the Amazon team behind DynamoDb makes sure that the emulator behaves exactly the same as the real one in the cloud.</p></li>
+<li><p>Integration tests are slow right? No, not if you don’t test against user interfaces, or have many number of network calls, or use slow data storage devices. These tests don’t get into any complexity of testing against a UI; they don’t bring up a web server and make excessive number of network calls; and they make use of an in memory database emulator running on the same box. These 15 tests run in ~2 seconds even though each of them setup and tear down their data tables. So you can run quite a lot of these in a few minutes.</p></li>
+<li><p>By their nature, integration tests are broad. They give broad feedback. But this is a trade off because when they fail, you have to dig a little deeper to understand exactly what failed in comparison to the unit tests that are tiny and focused. But that’s a tradeoff I like to make in general.</p></li>
+<li><p>Having said that, I’m by no means trying to trash the value of unit tests here. If I see the need — like any piece of code that is significant for the system and does interesting things — I’ll go and unit test that part in isolation. Especially code that’s heavy on algorithmic work. So unit tests are valuable when they’re implemented for the right code against the right abstraction.</p></li>
+<li><p>Last but not least, these type of tests (i.e subcutaneous) interacts with the system right at the outside of the significant boundary. This means as long as feature requirements don’t change, these tests remain valid and useful. They can survive large refactorings because they’re not coupled to the implementation details! This is a huge deal in my opinion.</p></li>
+</ul>
+
+
+<p>In next and the last part of this series, I would like to write a few things about my experience with setting up a CD pipeline using <a href="https://circleci.com">CircleCI</a>, which transpiles all TypeScript files, installs dependencies, runs tests and deploys to <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>.</p>
+
+<p>Thanks for reading.</p>
+
+<p>~ Hakan</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setting up Continuous Delivery for a Node.js REST API - Part 1]]></title>
@@ -184,46 +304,12 @@ but when it does, it definitely blurs the line between &ldquo;Service&rdquo; and
 
 <p>Thanks for reading. In Part 2 there will be code, I promise.</p>
 
+<blockquote><p><strong>Update</strong>:
+<br/><br/></p>
+
+<p>Part 2 is now available! You can <a href="http://www.hakantuncer.com/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2/">reach it here</a>.</p></blockquote>
+
 <p>~Hakan</p>
-
-<!--Share these articles also the pictures. Then link to Scott Allen's podcast and post. Then share MediatR.
-Maybe then share your TS mediator. Then end with Udi Dahan's Reuse talk.
-
-https://medium.com/@rdsubhas/10-modern-software-engineering-mistakes-bc67fbef4fc8#.k139s48qo
-
-
-* Jimmy Bogard
-* Post of Scott Allen
-* Mediatr
-* Reuse talk from Udi Dahan-->
-
-
-
-
-<!--Use this sentence in your next post-->
-
-
-<!--With these thoughts in mind, I sat down to refactor the existing REST API to make it architecturally cleaner and 
-more testable. I also aimed to write a bunch of stable and fast tests to be plugged into the CI pipeline.-->
-
-
-
-
-<!--Here are some of those areas of interest:
-
-  - What is clean architecture 
-  - Ways of structuring the business domain
-  - Re-evaluating the idea of "reuse" in software projects
-  - Re-evaluating the needs around building "generic" software
-  - Traditional n-tier architecture and its pros & cons
-  - Testability of an application
-  - Stability, correctness and speed of tests
-  - Types of tests and the famous test pyramid
-
-and all these things in the context of CI, CD and DevOps, which I believe are truly valuable concepts.-->
-
-
-
 ]]></content>
   </entry>
   
@@ -2745,253 +2831,6 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 <p>I think that&rsquo;s a post. I hope I could shed some light on getting up and running with Nfield.SDK and the various things that you can do with it.</p>
 
 <p>Thanks for reading.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Publishing Nfield.SDK to NuGet]]></title>
-    <link href="http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/"/>
-    <updated>2014-04-13T18:34:32+02:00</updated>
-    <id>http://www.hakantuncer.com/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget</id>
-    <content type="html"><![CDATA[<p>A couple of days ago I published Nfield.SDK to NuGet. In this blog post I want to describe the steps that are involved. Obviously this process will equally apply to publishing / consuming any other software library or package using NuGet.</p>
-
-<h2>What is Nfield SDK</h2>
-
-<p>Me and my colleagues at <a href="http://www.niposoftware.com/">NIPO Software</a> are building the next generation data collection platform called <a href="http://www.nfieldmr.com/">Nfield</a>. Nfield has an <a href="https://github.com/NIPOSoftware/Nfield-SDK">open source SDK</a> that market research offices can use to streamline and automate setting up their research projects.</p>
-
-<h2>NuGet and Package Management Systems</h2>
-
-<p>If you&rsquo;re a .NET developer or familiar with Microsoft development environment you probably know what Nuget is. Nuget is an open source package manager for Microsoft development platform (including .NET). Package management systems make poor developers&#8217; lives rock (well almost). It eases everything about installing libraries and managing dependencies. It also opens up lots of automation possibilities &ndash; like integrating dependency management into the build process. The home of nuget is <a href="http://www.nuget.org">www.nuget.org</a>.</p>
-
-<p>Most platforms have their own package management systems. Ruby has <a href="https://rubygems.org">RubyGems</a>, Node.js has <a href="https://www.npmjs.org">npm</a>, Apache has <a href="http://maven.apache.org">Maven</a> and it works with multiple platforms but it&rsquo;s primarily used by the Java community. Package managers don&rsquo;t only exist in the context of software development. There are also system-wide package managers to install components and applications for operating systems. For more information check out <a href="http://en.wikipedia.org/wiki/Package_management_system">Package Management System</a> and <a href="http://en.wikipedia.org/wiki/List_of_software_package_management_systems">List of Package Management Systems</a> on Wikipedia.</p>
-
-<h2>Step by step &ndash; Publishing Nfield.SDK to NuGet</h2>
-
-<br><br>
-
-
-<h3>1. Cloning Nfield.SDK from GitHub</h3>
-
-<p>When it comes to Git I have a couple of ways to interact. I either directly use the Git commands from a shell or <a href="https://windows.github.com/">GitHub for Windows</a> and lately I&rsquo;m also very happy with the Git integration of Visual Studio 2013. In this case I&rsquo;ll just go ahead and use GitHub for Windows to clone Nfield.SDK to my local repository.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/NfieldSDK_GitHub_For_Windows.png" alt="Cloning Nfield SDK" /></p>
-
-<p>After cloning is finished, now all files are on my local repository.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/NfieldSDK_Folder.png" alt="Nfield SDK Folder" /></p>
-
-<br>
-
-
-<h3>2. Creating a .nuspec file for Nfield.SDK project</h3>
-
-<p>.nuspec files are XML manifests which describe nuget packages. A .nuspec manifest is used to build a nuget package and it&rsquo;s also stored inside the package after the package is created. There is a <a href="http://docs.nuget.org/docs/reference/nuspec-reference">.nuspec reference</a> in nuget.org.</p>
-
-<p>So whenever we want to create a nuget package, we first need to create a .nuspec file. Nuget.exe command line utility allows us to create .nuspec files from .csproj files. You can also create a blank .nuspec file but pointing to an existing .csproj file makes things a lot easier since it&rsquo;s automatically detecting some of the metadata for us.</p>
-
-<figure class='code'><figcaption><span>run this command on the directory where the .csproj file is located</span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>nuget spec</div></code></pre></td></tr></table></div></figure>
-
-
-<p>After running this nuget command NField.SDK.nuspec file is created for us under the same directory.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/nuspec_file.png" alt="Nfield SDK nuspec file" /></p>
-
-<p>Let&rsquo;s look at the .nuspec file that is generated:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-</pre></td><td class='code' width='100%'><pre><code class='xml'><div class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-</div><div class='line'><span class="nt">&lt;package</span> <span class="nt">&gt;</span>
-</div><div class='line'>  <span class="nt">&lt;metadata&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;id&gt;</span>$id$<span class="nt">&lt;/id&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;version&gt;</span>$version$<span class="nt">&lt;/version&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;title&gt;</span>$title$<span class="nt">&lt;/title&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;authors&gt;</span>$author$<span class="nt">&lt;/authors&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;owners&gt;</span>$author$<span class="nt">&lt;/owners&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;licenseUrl&gt;</span>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE<span class="nt">&lt;/licenseUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;projectUrl&gt;</span>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE<span class="nt">&lt;/projectUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;iconUrl&gt;</span>http://ICON_URL_HERE_OR_DELETE_THIS_LINE<span class="nt">&lt;/iconUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;requireLicenseAcceptance&gt;</span>false<span class="nt">&lt;/requireLicenseAcceptance&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;description&gt;</span>$description$<span class="nt">&lt;/description&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;releaseNotes&gt;</span>Summary of changes made in this release of the package.<span class="nt">&lt;/releaseNotes&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;copyright&gt;</span>Copyright 2014<span class="nt">&lt;/copyright&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;tags&gt;</span>Tag1 Tag2<span class="nt">&lt;/tags&gt;</span>
-</div><div class='line'>  <span class="nt">&lt;/metadata&gt;</span>
-</div><div class='line'><span class="nt">&lt;/package&gt;</span></div></code></pre></td></tr></table></div></figure>
-
-
-<p>First thing you&rsquo;ll notice is the variable names that start and end with a $ sign. In the next step, when we generate the actual package, the package generator will be told to grab these metadata from the assembly information.</p>
-
-<p>Here is how the assembly information of Nfield.SDK looks like:</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/Nfield.SDK_AssemblyInfo.png" alt="Nfield SDK Assembly info" /></p>
-
-<p>Other fields which don&rsquo;t contain variable names need to be filled in before generating the package. Here is the .nuspec file after I edited all these fields:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-</pre></td><td class='code' width='100%'><pre><code class='xml'><div class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-</div><div class='line'><span class="nt">&lt;package</span> <span class="nt">&gt;</span>
-</div><div class='line'>  <span class="nt">&lt;metadata&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;id&gt;</span>$id$<span class="nt">&lt;/id&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;version&gt;</span>$version$<span class="nt">&lt;/version&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;title&gt;</span>$title$<span class="nt">&lt;/title&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;authors&gt;</span>$author$<span class="nt">&lt;/authors&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;owners&gt;</span>$author$<span class="nt">&lt;/owners&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;licenseUrl&gt;</span>http://www.gnu.org/licenses<span class="nt">&lt;/licenseUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;projectUrl&gt;</span>https://github.com/NIPOSoftware/Nfield-SDK<span class="nt">&lt;/projectUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;iconUrl&gt;&lt;/iconUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;requireLicenseAcceptance&gt;</span>false<span class="nt">&lt;/requireLicenseAcceptance&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;description&gt;</span>$description$<span class="nt">&lt;/description&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;releaseNotes&gt;&lt;/releaseNotes&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;copyright&gt;</span>Copyright © NIPO Software 2013<span class="nt">&lt;/copyright&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;tags&gt;</span>nfield marketresearch capi cawi<span class="nt">&lt;/tags&gt;</span>
-</div><div class='line'>  <span class="nt">&lt;/metadata&gt;</span>
-</div><div class='line'><span class="nt">&lt;/package&gt;</span></div></code></pre></td></tr></table></div></figure>
-
-
-<br>
-
-
-<h3>3. Creating the actual nuget package (.nupkg) for Nfield.SDK</h3>
-
-<br>
-
-
-
-
-<figure class='code'><figcaption><span>executing the nuget package command for Nfield.SDK in release mode</span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>nuget pack Nfield.SDK.csproj -Prop <span class="nv">Configuration</span><span class="o">=</span>Release</div></code></pre></td></tr></table></div></figure>
-
-
-<p>Notice that &ldquo;nuget pack&rdquo; command is not executed on the .nuspec file but on the .csproj file. But according to the nuget documentation this command picks up both the .nuspec file and the .csproj file from the directory. After executing the pack command here is what I got:</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/Icon_URL_CanNotBeEmpty.png" alt="Nfield SDK - Icon Url Can't be empty" /></p>
-
-<p>For a moment, I thought ignoring the iconUrl entry in the .nuspec file would not be a big deal but I was wrong.</p>
-
-<p>This is what <a href="">.nuspec reference</a> says about the iconUrl:</p>
-
-<blockquote><p>A URL for the image to use as the icon for the package in the Manage NuGet Packages dialog box. This should be a 32x32-pixel .png file that has a transparent background.</p></blockquote>
-
-<p>I immediately headed to <a href="http://nfieldmr.com/">http://nfieldmr.com/</a> to steal an nfield icon and indeed I found one. I shrinked the size to 32x32 and then committed it to the root of Nfield.SDK github repository.. hoping to be able to get a public URL for it afterwards. And voila! check the image below. Clicking the &ldquo;Raw&rdquo; button gives me this URL for my new icon: <a href="https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png">https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png</a></p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/nfield-icon-on-github.png" alt="Nfield icon on github" /></p>
-
-<p>So after putting the icon URL into the .nuspec file here is what I have.. the final version of the .nuspec file:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-</pre></td><td class='code' width='100%'><pre><code class='xml'><div class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-</div><div class='line'><span class="nt">&lt;package</span> <span class="nt">&gt;</span>
-</div><div class='line'>  <span class="nt">&lt;metadata&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;id&gt;</span>$id$<span class="nt">&lt;/id&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;version&gt;</span>$version$<span class="nt">&lt;/version&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;title&gt;</span>$title$<span class="nt">&lt;/title&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;authors&gt;</span>$author$<span class="nt">&lt;/authors&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;owners&gt;</span>$author$<span class="nt">&lt;/owners&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;licenseUrl&gt;</span>http://www.gnu.org/licenses<span class="nt">&lt;/licenseUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;projectUrl&gt;</span>https://github.com/NIPOSoftware/Nfield-SDK<span class="nt">&lt;/projectUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;iconUrl&gt;</span>https://raw.githubusercontent.com/NIPOSoftware/Nfield-SDK/development/icon-nfield.png<span class="nt">&lt;/iconUrl&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;requireLicenseAcceptance&gt;</span>false<span class="nt">&lt;/requireLicenseAcceptance&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;description&gt;</span>$description$<span class="nt">&lt;/description&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;releaseNotes&gt;&lt;/releaseNotes&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;copyright&gt;</span>Copyright © NIPO Software 2013<span class="nt">&lt;/copyright&gt;</span>
-</div><div class='line'>    <span class="nt">&lt;tags&gt;</span>nfield marketresearch capi cawi<span class="nt">&lt;/tags&gt;</span>
-</div><div class='line'>  <span class="nt">&lt;/metadata&gt;</span>
-</div><div class='line'><span class="nt">&lt;/package&gt;</span></div></code></pre></td></tr></table></div></figure>
-
-
-<p>After running the same nuget pack command one more time, the package is successfully created.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_1.png" alt="Nfield SDK - Successful Package Creation 1" /></p>
-
-<p>And here is how the package (.nupkg) looks like in the library folder:</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/SuccessfulPackageCreation_2.png" alt="Nfield SDK - Successful Package Creation 2" /></p>
-
-<h3>4. Publishing the Nfield.SDK package to nuget</h3>
-
-<p>Now I have my nuget package file waiting to be published. Or wait&hellip; maybe I should test it before publishing it to the public NuGet repository. There is a way to create a local package repository on the local file system of the machine and test the package using this local nuget repository. But because this blog post is getting longer than I expected I will save it for another day.</p>
-
-<p>Let&rsquo;s assume that I&rsquo;ve tested the Nfield.SDK nuget package and I&rsquo;m ready to publish it. First thing that is necessary is to get the long due NIPO Software account on nuget.org.</p>
-
-<p>Checkout the screenshot below from nuget.org account page of NIPO Software. Two big buttons on the first row tells me that I can upload packages using nuget.org and I can also manage my existing packages. The other interesting information is the &ldquo;API Key&rdquo; at the bottom. This is a GUID that can be used from the nuget command utility. Using this key it&rsquo;s possible to publish nuget packages from the command line without signing in to nuget.org.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/NIPOSoftware-NuGet.png" alt="Nipo Software NuGet Account" /></p>
-
-<p>So this means it&rsquo;s possible to publish a nuget package both using nuget.exe from command line and using nuget.org. This is how nuget packages are pushed using nuget.exe:</p>
-
-<figure class='code'><figcaption><span>publishing Nfield.SDK using nuget.exe</span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-</pre></td><td class='code' width='100%'><pre><code class='bash'><div class='line'>nuget SetApiKey NIPOSoftware-API-Key
-</div><div class='line'>nuget push Nfield.SDK.1.0.0.0.nupkg</div></code></pre></td></tr></table></div></figure>
-
-
-<p>I took the other approach and directly uploaded the package using nuget.org web interface. After I uploaded the &ldquo;Nfield.SDK.1.0.0.0.nupkg&rdquo; file, nuget.org asked me to verify the details of the package before clicking publish the last time.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/VerifyingUpload_RightBeforePublish.png" alt="Nfield SDK - Verify NuGet Publish" /></p>
-
-<p>All seems fine for now and I click publish. The package is published for the world to see. Below you see the Nfield.SDK page from the NuGet Gallery. Using &ldquo;Install-Package Nfield.SDK&rdquo; command from the VS Package Manager Console will install Nfield SDK to your project. Also notice near the bottom there is a section called &ldquo;Dependencies&rdquo;. Nfield.SDK depends on one other nuget package and it&rsquo;s visible here. This was automatically handled by nuget when I created the package using the .csproj file.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/SuccessfullyUploadedNfield.SDK.png" alt="Nfield SDK - Successfully uploaded to Nuget" /></p>
-
-<p>So now as a final step, let&rsquo;s go to Visual Studio and find Nfield.SDK in package manager. Searching for Nfield brings me the Nfield.SDK package. Here is a screenshot right before I installed Nfield.SDK for my Nfield test project which I will discuss in my next blog post.</p>
-
-<p><img src="http://www.hakantuncer.com/assets/NfieldSDK_Nuget/NfieldSDK_Online_InNuget.png" alt="Nfield SDK - Online in NuGet" /></p>
-
-<p>Now that Nfield.SDK is online on NuGet, I can easily install and access it from my own projects. In the next blog post I&rsquo;ll show you how you can install Nfield.SDK and use it to do something useful &ndash; like adding an interviewer to your market research office.</p>
-
-<p>Until then, take care.</p>
 ]]></content>
   </entry>
   

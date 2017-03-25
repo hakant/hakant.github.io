@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CI | Hakan Tuncer's Blog]]></title>
   <link href="http://www.hakantuncer.com/blog/categories/ci/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
-  <updated>2017-02-17T21:58:12+01:00</updated>
+  <updated>2017-03-25T12:47:16+01:00</updated>
   <id>http://www.hakantuncer.com/</id>
   <author>
     <name><![CDATA[Hakan Tuncer]]></name>
@@ -12,6 +12,126 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Setting Up Continuous Delivery for a Node.js REST API - Part 2]]></title>
+    <link href="http://www.hakantuncer.com/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2/"/>
+    <updated>2017-03-25T09:48:02+01:00</updated>
+    <id>http://www.hakantuncer.com/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p><a href="/blog/2017/02/17/setting-up-continuous-integration-and-delivery-for-a-nodejs-rest-api/">In the first part</a> of this blog post, I shared some fundamental ideas that form as background information for what I want to achieve here. So if you haven’t read that one yet, I recommend you to <a href="/blog/2017/02/17/setting-up-continuous-integration-and-delivery-for-a-nodejs-rest-api/">check it out</a>.</p>
+
+<p>A few months back, I decided to convert my <a href="https://github.com/hakant/HackathonPlannerAPI">hobby project — Hackathon Planner API</a> from pure Javascript to TypeScript and <a href="/blog/2016/11/08/converting-a-node-dot-js-express-api-to-typescript/">wrote a blog post about it</a>. This time I sat down to build an Automated Test Suite and a <a href="https://www.martinfowler.com/articles/continuousIntegration.html">Continuous Delivery (CD)</a> pipeline around it.</p>
+
+<p>Effective automated testing is a natural prerequisite for Continuous Integration &amp; Delivery. How can it not be? If you’re not getting quick and broad feedback from your software, how can you delivery frequently? So having a testable architecture and an effective test strategy is very crucial. Let’s dive in.</p>
+
+<h2>Right Architecture for Subcutaneous Testing</h2>
+
+<p>I’m a huge fan of <a href="https://martinfowler.com/bliki/SubcutaneousTest.html">subcutaneous testing</a>. This type of testing starts right under the UI layer with a large scope (which preferably spans all the way down to the data store) can have a great return on investment. On <a href="https://m.facebook.com/notes/kent-beck/making-making-manifesto/857477870951745/">Kent Beck’s feedback chart</a> it would score high up and to the right: <strong>fast and broad feedback</strong>.</p>
+
+<p><img src="/assets/ContinuousIntegration_Part2/Kent_Beck_Feedback_Chart.png" alt="Kent Beck's Feedback Chart" /></p>
+
+<p>So now that we want to target our automated tests below the delivery mechanism layer (UI, Network etc.), this is where an important architectural decision comes into question. What is the main boundary of my application? Where does my significant business logic start? Plus, how can I make my application boundary very visible and clear to all developers? If you follow down this path of thinking, one nice place to end up is a combination of <a href="https://en.wikipedia.org/wiki/Command_pattern">command</a> and <a href="https://en.wikipedia.org/wiki/Mediator_pattern">mediator</a> patterns.</p>
+
+<p>The combination of these patterns is about sending commands down through a very narrow facade, where every command has a very clean input and output “<a href="https://en.wikipedia.org/wiki/Data_transfer_object">data transfer objects</a>” or POCO’s, POJO’s.. whatever you like to call them depending on your stack of choice. They’re simply objects that carry data and no behavior. </p>
+
+<p>To be able to use this pattern in <a href="https://github.com/hakant/HackathonPlannerAPI">my REST API</a>, I’ve created a simple module in TypeScript that allows me to execute commands and optionally get results from them. It’s here: <a href="https://github.com/hakant/TypeScriptCommandPattern">TypeScriptCommandPattern</a>.</p>
+
+<p>In the example below, you can see how a test request is sent down to the executor and a result is returned back.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/837f08708feed35b2d02b99269f0e916.js"></script>
+
+
+<p>And here is how a “Hello World” style command handler looks like. Notice that it has a clean request and response definitions. At the end of the implementation we make sure that the handler is registered and mapped to the request. In this structure handlers are singleton objects and they can later be resolved by the type of the request and then get executed.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/c4c29c9d6e98fb3a85c674a4b0ad6b28.js"></script>
+
+
+<h2>Using this pattern in a real world Node.js REST API</h2>
+
+<p>One great architectural benefit of this pattern is that it allows you to nicely separate an application into many independent scenarios — <a href="https://lostechies.com/jimmybogard/2015/07/02/ndc-talk-on-solid-in-slices-not-layers-video-online/">vertical slices</a>. Take a look at <a href="https://github.com/hakant/HackathonPlannerAPI/tree/master/scenarios">these scenarios from Hackathon Planner</a>:</p>
+
+<p><img src="/assets/ContinuousIntegration_Part2/Hackathon_Planner_Scenarios.png" alt="Kent Beck's Feedback Chart" /></p>
+
+<p>Each of these TypeScript modules are a vertical slice. They’re the full story. Yes they make use of other external modules when necessary, but when developers read through these scenarios, they get the full picture. And if code sharing between these scenarios are done wisely (with correct abstractions), then a change in one scenario is contained and does not necessarily affect any others.</p>
+
+<p>Let’s take a look at the implementation of one of these scenarios and extract some key properties. Let’s pick the scenario in “GetIdeas.ts”:</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/6c38b895807a4d721c8c367a5117826f.js"></script>
+
+
+<ul>
+<li><p>Line 3–4: Imports the base async command handling structure and also the container to register itself at the end of the file.</p></li>
+<li><p>Line 6–9: External modules that this handler uses.</p></li>
+<li><p>Line 11–12: A module that is used by multiple scenarios. Be careful, I say “used” not “reused”. Remember the “<a href="http://udidahan.com/2009/06/07/the-fallacy-of-reuse/">fallacy of reuse</a>”. This module (IdeaPrePostProcessor) is used to massage and sanitize the Idea entities before they’re sent to the user interface and before they’re written to the database. Multiple scenarios use this module the exact same way and for the same need. There are no slight variations per scenario, that’s why it’s a right abstraction and that’s why it’s “use”, not “reuse”.</p></li>
+<li><p>Line 14–16: Since our handler is an async one (because it’s accessing the database), it implements the AsyncCommandHandler&lt;TRequest, TResponse> and implements the HandleAsync method that returns a Promise of GetIdeasReponse object.</p></li>
+<li><p>Line 17–38: Complete vertical implementation of the handler. It’s basically scanning the database for all the ideas, sorting them based on an algorithm, encapsulating them in the response object and return. Notice that at line 25, the “await” keyword is used. It’s a simple and very readable way of representing asynchronous code. It exists in recent versions of TypeScript as well as in ES7.</p></li>
+<li><p>Line 42–47: Request and response objects that are used by this handler are defined and exported. These objects should be available to the rest of the application as well.</p></li>
+<li><p>Line 50–52: A singleton instance of the handler is instantiated and registered to the type of the request object. Based on application needs, this can be made more complex and sophisticated. Statically typed languages incorporate lots of ideas around IoC containers whereas dynamically typed languages like javascript, not so much. Also keep in mind that these TypeScript generic constructs only exist at design time. They don’t exist in the transpiled javascript and that makes it impossible to discover or scan these constructs at runtime.</p></li>
+</ul>
+
+
+<h2>Simple &amp; Stupid ExpressJS Routes</h2>
+
+<p>If you have experience with building MVC type web applications or REST API’s you’re probably familiar with the idea of controllers. Routes are the same concept in <a href="http://expressjs.com">ExpressJS</a>. Keeping your routes and controllers nice and clean is a good discipline to have. Remember, we want to contain our core application logic and try not to leak it outside as much as possible. Not to frameworks, not to external libraries.</p>
+
+<p>Hackathon Planner’s most significant route is the Ideas route where ideas are being CRUD and a few further actions are taken against them. Code below shows the routes defined in there. Notice how clean it reads and how all business logic is kept out of it. The only thing these routes do is to pass requests and responses up and down the stream.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/85fbfa3f3d77f82c2b17457a96356d09.js"></script>
+
+
+<h2>Testing all the Scenarios</h2>
+
+<p>The structure of the software created so far lends itself nicely to the subcutaneous testing style discussed earlier. So I take advantage of this by taking the following actions in the tests:</p>
+
+<ul>
+<li><p>Remove the ExpressJS layer that normally sits on top. This is a delivery mechanism and I don’t necessarily need it to test my business logic — since I’ve already separated that logic clearly out of this layer.</p></li>
+<li><p>Load all scenario handlers together with the real data store (or a realistic emulator).</p></li>
+<li><p>Shoot requests &amp; verify responses.</p></li>
+<li><p>In some cases, if verifying the response alone isn&rsquo;t sufficient, go further and directly check the data store for verifying the side effects. In my case it wasn’t necessary, I could both act and verify using my handlers alone.</p></li>
+</ul>
+
+
+<p>Let’s take a look at a few of these tests. Below is a part of <a href="https://jasmine.github.io/">jasmine</a> spec that tests inserting and fetching ideas by running several scenarios.</p>
+
+<br/>
+
+
+<script src="https://gist.github.com/hakant/a2d1c53fdaa5e7c0d99eeb8e8b4022e2.js"></script>
+
+
+<p>Here are a few key properties of these tests:</p>
+
+<ul>
+<li><p>Lines 17–26: Before each test new NoSql tables are created and after each test they’re dropped. This makes every test run in a sandbox isolated from one another. So they can all run in any random order. In general, this is a characteristic of a unit test, not an integration test. So here we have the best of both worlds!</p></li>
+<li><p>All tests run against a DynamoDb local emulator. So the feedback coming from the database is real. I trust that the Amazon team behind DynamoDb makes sure that the emulator behaves exactly the same as the real one in the cloud.</p></li>
+<li><p>Integration tests are slow right? No, not if you don’t test against user interfaces, or have many number of network calls, or use slow data storage devices. These tests don’t get into any complexity of testing against a UI; they don’t bring up a web server and make excessive number of network calls; and they make use of an in memory database emulator running on the same box. These 15 tests run in ~2 seconds even though each of them setup and tear down their data tables. So you can run quite a lot of these in a few minutes.</p></li>
+<li><p>By their nature, integration tests are broad. They give broad feedback. But this is a trade off because when they fail, you have to dig a little deeper to understand exactly what failed in comparison to the unit tests that are tiny and focused. But that’s a tradeoff I like to make in general.</p></li>
+<li><p>Having said that, I’m by no means trying to trash the value of unit tests here. If I see the need — like any piece of code that is significant for the system and does interesting things — I’ll go and unit test that part in isolation. Especially code that’s heavy on algorithmic work. So unit tests are valuable when they’re implemented for the right code against the right abstraction.</p></li>
+<li><p>Last but not least, these type of tests (i.e subcutaneous) interacts with the system right at the outside of the significant boundary. This means as long as feature requirements don’t change, these tests remain valid and useful. They can survive large refactorings because they’re not coupled to the implementation details! This is a huge deal in my opinion.</p></li>
+</ul>
+
+
+<p>In next and the last part of this series, I would like to write a few things about my experience with setting up a CD pipeline using <a href="https://circleci.com">CircleCI</a>, which transpiles all TypeScript files, installs dependencies, runs tests and deploys to <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>.</p>
+
+<p>Thanks for reading.</p>
+
+<p>~ Hakan</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setting Up Continuous Delivery for a Node.js REST API - Part 1]]></title>
@@ -184,46 +304,12 @@ but when it does, it definitely blurs the line between &ldquo;Service&rdquo; and
 
 <p>Thanks for reading. In Part 2 there will be code, I promise.</p>
 
+<blockquote><p><strong>Update</strong>:
+<br/><br/></p>
+
+<p>Part 2 is now available! You can <a href="/blog/2017/03/25/setting-up-continuous-delivery-for-a-node-dot-js-rest-api-part-2/">reach it here</a>.</p></blockquote>
+
 <p>~Hakan</p>
-
-<!--Share these articles also the pictures. Then link to Scott Allen's podcast and post. Then share MediatR.
-Maybe then share your TS mediator. Then end with Udi Dahan's Reuse talk.
-
-https://medium.com/@rdsubhas/10-modern-software-engineering-mistakes-bc67fbef4fc8#.k139s48qo
-
-
-* Jimmy Bogard
-* Post of Scott Allen
-* Mediatr
-* Reuse talk from Udi Dahan-->
-
-
-
-
-<!--Use this sentence in your next post-->
-
-
-<!--With these thoughts in mind, I sat down to refactor the existing REST API to make it architecturally cleaner and 
-more testable. I also aimed to write a bunch of stable and fast tests to be plugged into the CI pipeline.-->
-
-
-
-
-<!--Here are some of those areas of interest:
-
-  - What is clean architecture 
-  - Ways of structuring the business domain
-  - Re-evaluating the idea of "reuse" in software projects
-  - Re-evaluating the needs around building "generic" software
-  - Traditional n-tier architecture and its pros & cons
-  - Testability of an application
-  - Stability, correctness and speed of tests
-  - Types of tests and the famous test pyramid
-
-and all these things in the context of CI, CD and DevOps, which I believe are truly valuable concepts.-->
-
-
-
 ]]></content>
   </entry>
   
