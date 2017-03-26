@@ -9,15 +9,11 @@ image: http://www.gravatar.com/avatar/3d40c44707af5a8f606fb9b7ba553749?s=160
 
 <h2 class="title">Hi, I'm Hakan</h2>
 
-I'm a professional programmer with more than a decade of experience building software for many companies 
-in various projects.
+An entrepreneur and software developer with a passion for building quality software as effectively as possible. I have over a decade of experience building software for many companies in various projects.
 
-Throughout my career I've spent a lot of time with [Microsoft .NET](https://www.microsoft.com/net) and the ecosystem around it. Working with [.NET](https://www.microsoft.com/net), [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language) and [Azure](https://azure.microsoft.com) is still a big part of my professional life.
+Throughout my career I've spent a lot of time with [Microsoft .NET](https://www.microsoft.com/net) and the ecosystem around it. Working with [.NET](https://www.microsoft.com/net), [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language) and [Azure](https://azure.microsoft.com) is still a big part of my life.
 
-On the other hand, I also have a lot of interest in [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-(and [TypeScript](https://www.typescriptlang.org/)), both for front-end and back-end purposes. These days I'm spending a lot of time with 
-[Node.js](https://nodejs.org/en/) and client side frameworks like [Angular](https://angularjs.org), 
-[React](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
+Next to that, I love [JavaScript](https://en.wikipedia.org/wiki/JavaScript) (and [TypeScript](https://www.typescriptlang.org/)), both on the front-end and on the back-end. These days I'm spending a lot of time with [Node.js](https://nodejs.org/en/) and with client side frameworks like [Angular](https://angular.io), [React](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
 
 I live in Amsterdam and I'm currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a "Loan Quality
 Assessment" application that enables credit committees to make better decisions, faster and more efficiently.  
