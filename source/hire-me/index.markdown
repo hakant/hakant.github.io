@@ -73,7 +73,7 @@ hands-­on experience with:
 <th scope="row"> 
 <code>Testing</code> 
 </th> 
-<td>WebDriver, Protractor, NUnit, XUnit, Jasmine</td> 
+<td>WebDriver, Protractor, NUnit, XUnit, Jasmine, Testem</td> 
 </tr>
 <tr>
 <th scope="row"> 
@@ -104,6 +104,12 @@ hands-­on experience with:
 <code>Cloud - AWS</code> 
 </th> 
 <td>AWS EC2, Elastic Beanstalk</td> 
+</tr>
+<tr> 
+<th scope="row"> 
+<code>CI, CD Pipelines</code> 
+</th> 
+<td>TFS, VSTS, AppVeyor, CircleCI</td> 
 </tr>
 <tr> 
 <th scope="row"> 

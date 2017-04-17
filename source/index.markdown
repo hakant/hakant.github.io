@@ -59,18 +59,33 @@ You can <a href="/assets/Online_Quiz_Game/HackathonPlanner_Final.gif" target="_b
 <h2 class="title">A few of my favorite books</h2>
 <br />
 
-* **The War of Art**: This is perhaps the book that has made the biggest impact in my life. The author 
+* **The War of Art**: This is perhaps the book that has made the biggest impact to my life. The author 
 Steven Pressfield has a soul-touching writing style that is both effective and expressive. This book 
 thought me how to recognize my inner resistance, pay respect to it and continuously beat it every single day.
 
 ![The War of Art](http://www.brainpickings.org/wp-content/uploads/2011/09/thewarofart.png =240x240)
+
+* **As a Man Thinketh**: This 22 page book is a seminal piece on the power of thought. The author, 
+James Allen, uses a language that's so powerful it moves the reader in a profound way. He explains 
+and promotes the direct connection between what we think and the direction our lives take. "A man is literally what he thinks, his character being the complete sum of all his thoughts."
+
+![As a Man Thinketh](https://images-na.ssl-images-amazon.com/images/I/41b8O3r2CjL._SX331_BO1,204,203,200_.jpg =240x240)
+
+* **The Obstacle is the Way**: Inspired by the ancient Stoic philosophy and personal writings of Marcus Aurelius, Roman Emperor 161–180 CE, this book describes the timeless art of turning trials into triumph. Teaches how to see obstacles we come across in our lives for what they really are: opportunity to get better, stronger, and tougher. What stands in the way becomes the way.
+
+![The Obstacle is the Way](https://images-na.ssl-images-amazon.com/images/I/51xcOSxtYEL._SX352_BO1,204,203,200_.jpg =240x240)
+
+
+* **The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win**: One of the top recommended books for IT professionals. The Phoenix Project is a business allegory about how a fictional company becomes profitable after a crisis-driven change in its information technology management style. There are many gems in it; regarding agile workflows, devops, continuous delivery and a meaningful collaboration between IT and the business.
+
+![The Phoenix Project](https://images-na.ssl-images-amazon.com/images/I/51E8AO50Y7L._SX329_BO1,204,203,200_.jpg =240x240)
 
 * **$100 Startup** is a fantastic book for learning to create and sell value while doing what you love. 
 This book is full of inspirational examples and sound strategies.
 
 ![$100 Startup](http://ecx.images-amazon.com/images/I/51xrSIGzOdL._SY344_PJ-v2,TopRight,1,0_SH20_BO1,204,203,200_.jpg)
 
-* **Charisma Myth** demystifies the charismatic behaviors in the sense that it classifies the types of 
+<!--* **Charisma Myth** demystifies the charismatic behaviors in the sense that it classifies the types of 
 charisma, the kind of behaviors that leads to charisma and how to get there as a person without transforming 
 your fundamental personality.
 
@@ -81,4 +96,4 @@ inspiring minds (novelists, poets, playwrights, painters, philosophers, scientis
 have made great impact on our lives. The author covers each artist in a couple of pages. Fun and smooth 
 reading.
 
-![Daily Rituals: How Artists Work](http://ecx.images-amazon.com/images/I/517lOS%2BzzmL.jpg =240x240)
+![Daily Rituals: How Artists Work](http://ecx.images-amazon.com/images/I/517lOS%2BzzmL.jpg =240x240)-->
