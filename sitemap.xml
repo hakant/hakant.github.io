@@ -111,8 +111,14 @@
         <lastmod>2017-03-25T10:39:04+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://www.hakantuncer.com/blog/2017/05/25/continuous-deployment-with-node-dot-js/
+        </loc>
+        <lastmod>2017-05-31T19:24:29+02:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.hakantuncer.com/blog/archives/</loc>
-        <lastmod>2017-03-25T12:46:39+01:00</lastmod>
+        <lastmod>2017-05-31T19:24:29+02:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/categories/</loc>
@@ -120,7 +126,7 @@
     </url>
     <url>
         <loc>http://www.hakantuncer.com/blog/</loc>
-        <lastmod>2017-03-25T12:46:39+01:00</lastmod>
+        <lastmod>2017-05-31T19:24:29+02:00</lastmod>
     </url>
     <url>
         <loc>http://www.hakantuncer.com/hire-me/</loc>

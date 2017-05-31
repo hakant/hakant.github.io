@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: AWS | Hakan Tuncer's Blog]]></title>
-  <link href="http://www.hakantuncer.com/blog/categories/aws/atom.xml" rel="self"/>
+  <title><![CDATA[Category: DynamoDb | Hakan Tuncer's Blog]]></title>
+  <link href="http://www.hakantuncer.com/blog/categories/dynamodb/atom.xml" rel="self"/>
   <link href="http://www.hakantuncer.com/"/>
   <updated>2017-05-31T19:27:39+02:00</updated>
   <id>http://www.hakantuncer.com/</id>

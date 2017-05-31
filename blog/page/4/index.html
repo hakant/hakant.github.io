@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<title>Hakan Tuncer's Blog</title>
 	<meta name="author" content="Hakan Tuncer">
-	<meta name="description" content="Follow @hakant Oct 26th, 2014 architecture, redis Comments Playing Around With Redis & SignalR A good friend of mine contacted me a couple of weeks &hellip;">
+	<meta name="description" content="Follow @hakant Nov 1st, 2014 kiwi, marketresearch, startup Comments Building Kiwi I think it was sometime around February 2014 when Deniz Orsel, my &hellip;">
 	
 	<!-- http://t.co/dKP3o1e -->
   	<meta name="HandheldFriendly" content="True">
@@ -24,7 +24,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Hakan Tuncer's Blog" />
-    <meta property="og:description" content="Follow @hakant Oct 26th, 2014 architecture, redis Comments Playing Around With Redis & SignalR A good friend of mine contacted me a couple of weeks &hellip;" />
+    <meta property="og:description" content="Follow @hakant Nov 1st, 2014 kiwi, marketresearch, startup Comments Building Kiwi I think it was sometime around February 2014 when Deniz Orsel, my &hellip;" />
     <meta property="og:url" content="http://www.hakantuncer.com/blog/page/4/" />
     <meta property="og:image" content="https://media.licdn.com/media/p/4/005/027/329/2633870.jpg" />
 	
@@ -111,6 +111,93 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-01T10:27:02+01:00" data-updated="true" itemprop="datePublished">Nov 1<span>st</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/kiwi/'>kiwi</a>, <a class='category' href='/blog/categories/marketresearch/'>marketresearch</a>, <a class='category' href='/blog/categories/startup/'>startup</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2014/11/01/building-kiwi/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/11/01/building-kiwi/" itemprop="url">Building Kiwi</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I think it was sometime around February 2014 when Deniz Orsel, my colleague from <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a>, came to me and said &ldquo;I need you to build something&hellip;&rdquo;. Later it became apparent that he also already had discussed his idea with <a href="https://twitter.com/serifozcan" target="_blank">Serif Ozcan</a>, another colleague of mine in <a href="http://www.niposoftware.com/" target="_blank">NIPO Software</a> and convinced him.</p>
+
+<p>&ldquo;Our customers are frequently asking for a tool like this yet it doesn&rsquo;t really fall under the category of &lsquo;Data collection&rsquo; that&rsquo;s why NIPO Software does not invest in this&rdquo; he said. As he explained, I realized it was a good opportunity and also a win &ndash; win situation for us and NIPO Software. I was convinced.</p>
+
+<p>Startup life, starting a business and creating something valuable for people have always been interesting to me. I&rsquo;ve been developing software for almost 10 years now (wow time flies&hellip;) and I really enjoy doing it. But software by itself does not mean anything. It only finds its meaning in a context where it touches human lives.</p>
+
+<p>Switching between these two worlds: &ldquo;mechanics of software&rdquo; and &ldquo;the context it touches and changes people&rsquo;s lives&rdquo; gives more meaning to what I do and how I work. Starting a business around software and creating products demands this frequent switching and even many more skills related to different disciplines like marketing, sales, legal and trading rules in the country one operates.</p>
+
+<p>Even if we end up making no money or even wasting money, I knew we could learn a lot from this experience as a whole and that&rsquo;s what really matters to me and my friends.</p>
+
+<h2>Ok fine but what is Kiwi?</h2>
+
+<p><img src="/assets/Building_Kiwi/Kiwi_Highlights.png" alt="Kiwi Highlights" /></p>
+
+<p>Not everyone reading this blog is working in the area of market research let alone even familiar with the technical market research terminology. So instead of a single long technical definition I&rsquo;ll try to list some facts about Kiwi:</p>
+
+<ul>
+<li>Kiwi is a web based application that can be hosted in the cloud or in customer premises.</li>
+<li>Kiwi takes collected data that is either in NIPO or Triple-S format and transfers it to a SQL database in relational format and makes analysis &amp; monitoring a lot easier. Apart from the data itself, Kiwi will also create the questionnaire structure in the target SQL database as a reference.</li>
+<li>Kiwi can transfer closed and open data files. It also allows consecutive transfers where it will continue adding to the existing data set in SQL without changing it.</li>
+<li>For these reasons Kiwi can be used by any market research company that is utilizing data collection platforms built by NIPO Software or any other platform that supports Triple-S standard.</li>
+</ul>
+
+
+<h2>Demo</h2>
+
+<p>I was planning to create a screencast to demonstrate how Kiwi works and what it does but didn&rsquo;t get around doing it as part of this blog post. That&rsquo;s high on my to-do list. Another post will be on its way soon.</p>
+
+<h2>Going forward</h2>
+
+<p>We&rsquo;re software developers and technologists. Our biggest strength is our technical side. The first version of Kiwi is more or less completed. We&rsquo;re still in the process of making it more robust and user friendly. We&rsquo;re also preparing a strong documentation. Deploying and using Kiwi should be a piece of cake. As well as troubleshooting it.</p>
+
+<p>On the other hand we&rsquo;re totally newbies in a few other areas. We still need to:</p>
+
+<ul>
+<li><em>Start a company here in the Netherlands</em>. There are many things we need to figure out around taxation and legal aspects of starting a company and selling a product. It&rsquo;s currently a work in progress.</li>
+<li><em>Figure out a pricing strategy</em>. We&rsquo;ve been discussing about this for a while but haven&rsquo;t come to a final decision yet. We&rsquo;re also gathering ideas from friends in NIPO Software.  It turns out that pricing is a much bigger concept than just simply putting a price tag on a product. It involves a bit more than that. Things get especially complicated around the topic of customer support.</li>
+<li><em>Create a site for the product and decide on some kind of a payment methodology</em>. The company we&rsquo;re going to start will need a website. The product also needs a site of its own. When Kiwi becomes commercially available there will also be a payment system in place.</li>
+</ul>
+
+
+<p>Still a bunch of things to do. We&rsquo;ve been making steady progress but we&rsquo;re not in a hurry. Going at our own pace. Current target is to release Kiwi no later than 15th of January. No idea what happens next but one thing is clear: it will be adventurous.</p>
+
+<p>Thanks for reading and if you have any comments please don&rsquo;t hesitate to add them below.</p>
+
+<p>Hakan</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -824,281 +911,6 @@ Let&rsquo;s talk a bit about <a href="http://redis.io/" target="_blank">Redis</a
 <li><a href="http://blogs.msdn.com/b/windowsazure/archive/2014/04/04/sql-database-updates-coming-soon-to-the-premium-preview.aspx">SQL Database updates coming soon to the Premium preview</a></li>
 </ul>
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-15T20:14:15+02:00" data-updated="true" itemprop="datePublished">Apr 15<span>th</span>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/nfield/'>nfield</a>, <a class='category' href='/blog/categories/nuget/'>nuget</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2014/04/15/a-simple-nfield-dot-sdk-app/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/04/15/a-simple-nfield-dot-sdk-app/" itemprop="url">A Simple Nfield.SDK App</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>In a previous blog post I covered the step by step process of <a href="/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/">publishing Nfield.SDK to NuGet</a>.</p>
-
-<p>After publishing Nfield.SDK, a natural follow up is to create a simple app that installs Nfield.SDK through NuGet and does something useful with it.</p>
-
-<blockquote><p>To learn more about Nfield or to <a href="http://nfieldmr.com/get-started.aspx" target="_blank">get started</a> visit <a href="http://nfieldmr.com/" target="_blank">nfieldmr.com</a></p></blockquote>
-
-<h2>Installing Nfield.SDK in a Console Application</h2>
-
-<p>What is better than a windows console application to prove that it&rsquo;s really easy to install and use Nfield.SDK. Let&rsquo;s fire up Visual Studio, create a Console Application and install Nfield.SDK through NuGet.</p>
-
-<p>Opening the package manager for my console app and typing nfield in the search box brings me the Nfield.SDK NuGet package:</p>
-
-<p><img src="/assets/A_Simple_NfieldSDK_App/NfieldSDK_Online_InNuget.png" alt="Nfield SDK Online in Nuget" /></p>
-
-<p>After clicking install, I see that Nfield.SDK is automatically installed and referenced from my project.</p>
-
-<p><img src="/assets/A_Simple_NfieldSDK_App/NfieldSDK_In_My_Project.png" alt="Nfield SDK Installed In My Project" /></p>
-
-<p>Wait a moment&hellip; I only installed Nfield.SDK but now I see that &ldquo;Json.NET&rdquo;, &ldquo;Microsoft ASP.NET Web API Client Libraries&rdquo; and &ldquo;Microsoft .NET Framework 4 HTTP Client Libraries&rdquo; also got installed. As discussed in the <a href="/blog/2014/04/13/publishing-nfield-dot-sdk-to-nuget/">previos blog post</a> NuGet is smart enough to recursively install packages and all of their dependencies.</p>
-
-<p>In this case Nfield.SDK has a direct dependency to &ldquo;Microsoft ASP.NET Web API Client&rdquo;:</p>
-
-<p><img src="/assets/A_Simple_NfieldSDK_App/Nfield.SDK_Dependencies.png" alt="Nfield SDK Dependencies on NuGet" /></p>
-
-<p>And &ldquo;Microsoft ASP.NET Web API Client&rdquo; has direct dependency to the rest:</p>
-
-<p><img src="/assets/A_Simple_NfieldSDK_App/WebApiClient_Dependencies.png" alt="WebApi Client Dependencies on NuGet" /></p>
-
-<p>The point here is that NuGet took care of all the dependencies of my application in one click of an install button.</p>
-
-<h2>Getting ready for coding</h2>
-
-<p>Focusing back to the console application, I&rsquo;m going to create an app that is going to add an interviewer to my domain on Nfield. In order to do that, I need one more ingredient to take care of: an <a href="http://en.wikipedia.org/wiki/Inversion_of_control">Inversion of Control Container</a>.</p>
-
-<p>Nfield.SDK implementation is a little opinionated about the usage of an IoC Container together with it. It won&rsquo;t dictate you which one to use that&rsquo;s why it has an initializer that accepts some key registration methods:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'>   <span class="c1">/// &lt;summary&gt;</span>
-</div><div class='line'>    <span class="c1">/// Method that registers all known types by calling the delegates provided.</span>
-</div><div class='line'>    <span class="c1">/// This method must be called before using the SDK.</span>
-</div><div class='line'>    <span class="c1">/// &lt;/summary&gt;</span>
-</div><div class='line'>    <span class="c1">/// &lt;param name=&quot;registerTransient&quot;&gt;Method that registers a Transient type.&lt;/param&gt;</span>
-</div><div class='line'>    <span class="c1">/// &lt;param name=&quot;registerSingleton&quot;&gt;Method that registers a Singleton.&lt;/param&gt;</span>
-</div><div class='line'>    <span class="c1">/// &lt;param name=&quot;registerInstance&quot;&gt;Method that registers an instance.&lt;/param&gt;</span>
-</div><div class='line'>    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">Type</span><span class="p">&gt;</span> <span class="n">registerTransient</span><span class="p">,</span>
-</div><div class='line'>                                  <span class="n">Action</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">Type</span><span class="p">&gt;</span> <span class="n">registerSingleton</span><span class="p">,</span>
-</div><div class='line'>                                  <span class="n">Action</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">Object</span><span class="p">&gt;</span> <span class="n">registerInstance</span><span class="p">)</span></div></code></pre></td></tr></table></div></figure>
-
-
-<br>
-
-
-<blockquote><p>If you don&rsquo;t know what an IoC Container is there is nothing to worry about. If you just copy the short setup code that I&rsquo;m going to share in a second you&rsquo;re ready to use Nfield.SDK. You don&rsquo;t have to use IoC for your application logic. Again, if you&rsquo;re new to IoC Containers I recommend reading <a href="http://martinfowler.com/articles/injection.html">this paper from Martin Fowler</a>.</p></blockquote>
-
-<p>An IoC container that we frequently use at NIPO Software is <a href="http://www.ninject.org/">Ninject</a>. I&rsquo;ll install it to my project using NuGet again (only the top one in the list below is sufficient).</p>
-
-<p><img src="/assets/A_Simple_NfieldSDK_App/AddingNinjectToMyApp.png" alt="Adding Ninject To My App" /></p>
-
-<h2>Nfield.SDK in action</h2>
-
-<p>Good. Now I&rsquo;m ready to write my actual business logic. Signing into my Nfield domain and creating an interviewer. Here is how the code looks like:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-<span class='line'>19</span>
-<span class='line'>20</span>
-<span class='line'>21</span>
-<span class='line'>22</span>
-<span class='line'>23</span>
-<span class='line'>24</span>
-<span class='line'>25</span>
-<span class='line'>26</span>
-<span class='line'>27</span>
-<span class='line'>28</span>
-<span class='line'>29</span>
-<span class='line'>30</span>
-<span class='line'>31</span>
-<span class='line'>32</span>
-<span class='line'>33</span>
-<span class='line'>34</span>
-<span class='line'>35</span>
-<span class='line'>36</span>
-<span class='line'>37</span>
-<span class='line'>38</span>
-<span class='line'>39</span>
-<span class='line'>40</span>
-<span class='line'>41</span>
-<span class='line'>42</span>
-<span class='line'>43</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</div><div class='line'><span class="k">using</span> <span class="nn">Nfield.Infrastructure</span><span class="p">;</span>
-</div><div class='line'><span class="k">using</span> <span class="nn">Nfield.Models</span><span class="p">;</span>
-</div><div class='line'><span class="k">using</span> <span class="nn">Nfield.Services</span><span class="p">;</span>
-</div><div class='line'><span class="k">using</span> <span class="nn">Ninject</span><span class="p">;</span>
-</div><div class='line'><span class="k">namespace</span> <span class="nn">TestNfieldApp</span>
-</div><div class='line'><span class="p">{</span>
-</div><div class='line'>    <span class="k">class</span> <span class="nc">Program</span>
-</div><div class='line'>    <span class="p">{</span>
-</div><div class='line'>        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-</div><div class='line'>        <span class="p">{</span>
-</div><div class='line'>            <span class="k">using</span> <span class="p">(</span><span class="n">IKernel</span> <span class="n">kernel</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StandardKernel</span><span class="p">())</span>
-</div><div class='line'>            <span class="p">{</span>
-</div><div class='line'>                <span class="n">InitializeNfield</span><span class="p">(</span><span class="n">kernel</span><span class="p">);</span>
-</div><div class='line'>                <span class="k">const</span> <span class="kt">string</span> <span class="n">serverUrl</span> <span class="p">=</span> <span class="s">&quot;https://api.nfieldbeta.com/v1&quot;</span><span class="p">;</span>
-</div><div class='line'>                <span class="c1">// First step is to get an INfieldConnection which provides services used for data access and manipulation. </span>
-</div><div class='line'>                <span class="kt">var</span> <span class="n">connection</span> <span class="p">=</span> <span class="n">NfieldConnectionFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="k">new</span> <span class="n">Uri</span><span class="p">(</span><span class="n">serverUrl</span><span class="p">));</span>
-</div><div class='line'>                <span class="c1">// User must sign in to the Nfield server with the appropriate credentials prior to using any of the services.</span>
-</div><div class='line'>                <span class="n">connection</span><span class="p">.</span><span class="n">SignInAsync</span><span class="p">(</span><span class="s">&quot;H&quot;</span><span class="p">,</span> <span class="s">&quot;DA&quot;</span><span class="p">,</span> <span class="s">&quot;******&quot;</span><span class="p">).</span><span class="n">Wait</span><span class="p">();</span>
-</div><div class='line'>                <span class="kt">var</span> <span class="n">interviewersService</span> <span class="p">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">GetService</span><span class="p">&lt;</span><span class="n">INfieldInterviewersService</span><span class="p">&gt;();</span>
-</div><div class='line'>                <span class="n">interviewersService</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">Interviewer</span>
-</div><div class='line'>                <span class="p">{</span>
-</div><div class='line'>                    <span class="n">ClientInterviewerId</span> <span class="p">=</span> <span class="s">&quot;hakantun&quot;</span><span class="p">,</span>
-</div><div class='line'>                    <span class="n">UserName</span> <span class="p">=</span> <span class="s">&quot;hakant&quot;</span><span class="p">,</span>
-</div><div class='line'>                    <span class="n">FirstName</span> <span class="p">=</span> <span class="s">&quot;Hakan&quot;</span><span class="p">,</span>
-</div><div class='line'>                    <span class="n">LastName</span> <span class="p">=</span> <span class="s">&quot;Tuncer&quot;</span><span class="p">,</span>
-</div><div class='line'>                    <span class="n">EmailAddress</span> <span class="p">=</span> <span class="s">&quot;h.tuncer@niposoftware.com&quot;</span><span class="p">,</span>
-</div><div class='line'>                    <span class="n">Password</span> <span class="p">=</span> <span class="s">&quot;hakan12&quot;</span>
-</div><div class='line'>                <span class="p">}).</span><span class="n">Wait</span><span class="p">();</span>
-</div><div class='line'>            <span class="p">}</span>
-</div><div class='line'>        <span class="p">}</span>
-</div><div class='line'>        <span class="c1">/// &lt;summary&gt;</span>
-</div><div class='line'>        <span class="c1">/// Example of initializing the SDK with Ninject as the IoC container.</span>
-</div><div class='line'>        <span class="c1">/// &lt;/summary&gt;</span>
-</div><div class='line'>        <span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">InitializeNfield</span><span class="p">(</span><span class="n">IKernel</span> <span class="n">kernel</span><span class="p">)</span>
-</div><div class='line'>        <span class="p">{</span>
-</div><div class='line'>            <span class="n">DependencyResolver</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="n">type</span> <span class="p">=&gt;</span> <span class="n">kernel</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">type</span><span class="p">),</span> <span class="n">type</span> <span class="p">=&gt;</span> <span class="n">kernel</span><span class="p">.</span><span class="n">GetAll</span><span class="p">(</span><span class="n">type</span><span class="p">));</span>
-</div><div class='line'>            <span class="n">NfieldSdkInitializer</span><span class="p">.</span><span class="n">Initialize</span><span class="p">((</span><span class="n">bind</span><span class="p">,</span> <span class="n">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">kernel</span><span class="p">.</span><span class="n">Bind</span><span class="p">(</span><span class="n">bind</span><span class="p">).</span><span class="n">To</span><span class="p">(</span><span class="n">resolve</span><span class="p">).</span><span class="n">InTransientScope</span><span class="p">(),</span>
-</div><div class='line'>                                            <span class="p">(</span><span class="n">bind</span><span class="p">,</span> <span class="n">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">kernel</span><span class="p">.</span><span class="n">Bind</span><span class="p">(</span><span class="n">bind</span><span class="p">).</span><span class="n">To</span><span class="p">(</span><span class="n">resolve</span><span class="p">).</span><span class="n">InSingletonScope</span><span class="p">(),</span>
-</div><div class='line'>                                            <span class="p">(</span><span class="n">bind</span><span class="p">,</span> <span class="n">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">kernel</span><span class="p">.</span><span class="n">Bind</span><span class="p">(</span><span class="n">bind</span><span class="p">).</span><span class="n">ToConstant</span><span class="p">(</span><span class="n">resolve</span><span class="p">));</span>
-</div><div class='line'>        <span class="p">}</span>
-</div><div class='line'>    <span class="p">}</span>
-</div><div class='line'><span class="p">}</span></div></code></pre></td></tr></table></div></figure>
-
-
-<p>After I run this application and go to the interviewers page of my domain, I see that the inverviewer I just added is now listed there. Below is a screenshot from the beta version of <a href="https://manager.nfieldbeta.com/">Nfield Management Interface</a> (authentication required).</p>
-
-<p><img src="/assets/A_Simple_NfieldSDK_App/InterviewerAdded_Success.png" alt="Interviewer Added Successfuly" /></p>
-
-<p>The code I used gets a reference to INfieldInterviewersService and adds an interviewer using this interface.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="kt">var</span> <span class="n">interviewersService</span> <span class="p">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">GetService</span><span class="p">&lt;</span><span class="n">INfieldInterviewersService</span><span class="p">&gt;();</span>
-</div><div class='line'><span class="n">interviewersService</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">Interviewer</span>
-</div><div class='line'><span class="p">{</span>
-</div><div class='line'>    <span class="n">ClientInterviewerId</span> <span class="p">=</span> <span class="s">&quot;hakantun&quot;</span><span class="p">,</span>
-</div><div class='line'>    <span class="n">UserName</span> <span class="p">=</span> <span class="s">&quot;hakant&quot;</span><span class="p">,</span>
-</div><div class='line'>    <span class="n">FirstName</span> <span class="p">=</span> <span class="s">&quot;Hakan&quot;</span><span class="p">,</span>
-</div><div class='line'>    <span class="n">LastName</span> <span class="p">=</span> <span class="s">&quot;Tuncer&quot;</span><span class="p">,</span>
-</div><div class='line'>    <span class="n">EmailAddress</span> <span class="p">=</span> <span class="s">&quot;h.tuncer@niposoftware.com&quot;</span><span class="p">,</span>
-</div><div class='line'>    <span class="n">Password</span> <span class="p">=</span> <span class="s">&quot;hakan12&quot;</span>
-</div><div class='line'><span class="p">}).</span><span class="n">Wait</span><span class="p">();</span></div></code></pre></td></tr></table></div></figure>
-
-
-<p>Nfield.SDK has many service interfaces that allow clients to control various aspects of their research projects.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
-<span class='line'>2</span>
-<span class='line'>3</span>
-<span class='line'>4</span>
-<span class='line'>5</span>
-<span class='line'>6</span>
-<span class='line'>7</span>
-<span class='line'>8</span>
-<span class='line'>9</span>
-<span class='line'>10</span>
-<span class='line'>11</span>
-<span class='line'>12</span>
-<span class='line'>13</span>
-<span class='line'>14</span>
-<span class='line'>15</span>
-<span class='line'>16</span>
-<span class='line'>17</span>
-<span class='line'>18</span>
-<span class='line'>19</span>
-<span class='line'>20</span>
-</pre></td><td class='code' width='100%'><pre><code class='csharp'><div class='line'><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">Type</span><span class="p">&gt;</span> <span class="n">registerTransient</span><span class="p">,</span>
-</div><div class='line'>                                      <span class="n">Action</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">Type</span><span class="p">&gt;</span> <span class="n">registerSingleton</span><span class="p">,</span>
-</div><div class='line'>                                      <span class="n">Action</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">Object</span><span class="p">&gt;</span> <span class="n">registerInstance</span><span class="p">)</span>
-</div><div class='line'><span class="p">{</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">NfieldConnection</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldConnection</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldInterviewersService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldInterviewersService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldSurveysService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldSurveysService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldSurveyDataService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldSurveyDataService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldBackgroundTasksService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldBackgroundTasksService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldSurveyScriptService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldSurveyScriptService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldFieldworkOfficesService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldFieldworkOfficesService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldMediaFilesService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldMediaFilesService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldLanguagesService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldLanguagesService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldTranslationsService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldTranslationsService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldSurveySettingsService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldSurveySettingsService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldSurveyResponseCodesService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldSurveyResponseCodesService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldAddressesService</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldAddressesService</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INfieldHttpClient</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NfieldHttpClient</span><span class="p">));</span>
-</div><div class='line'>    <span class="n">registerTransient</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IFileSystem</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">FileSystem</span><span class="p">));</span>
-</div><div class='line'><span class="p">}</span></div></code></pre></td></tr></table></div></figure>
-
-
-<p>I think that&rsquo;s a post. I hope I could shed some light on getting up and running with Nfield.SDK and the various things that you can do with it.</p>
-
-<p>Thanks for reading.</p>
 
 		
 		
