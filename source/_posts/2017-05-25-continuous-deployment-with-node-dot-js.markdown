@@ -3,11 +3,11 @@ layout: post
 title: "Continuous Deployment with Node.js, DynamoDB, AWS Elastic Beanstalk and CircleCI"
 date: 2017-05-25 07:48:55 +0200
 comments: true
-categories: [architecture,testing,CI]
+categories: [CircleCi,ContinuousDelivery,NodeJS,AWS,DynamoDb]
 footer: true
 sharing: true
-description: 
-image: 
+description: In this post, I'm taking a deep dive into setting up a continuous delivery pipeline using CircleCI.
+image: https://cdn.scotch.io/1/KetK0AgfTuNR0bVTiVMn_continuous-integration-with-circle-ci.png
 ---
 
 These days everybody is talking about DevOps and CI pipelines. Unicorn tech companies are building DevOps tools and CI pipelines as a service and bragging about their user friendly design and how easy it is to setup these pipelines on their branded platforms. This is all nice and useful, however, I can’t help but see another [silver bullet syndrome](https://www.youtube.com/watch?v=qamzvLfX-Zo).
