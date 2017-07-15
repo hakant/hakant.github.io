@@ -61,7 +61,7 @@ hands-­on experience with:
 <th scope="row"> 
 <code>IoC, ORM</code> 
 </th> 
-<td>Ninject, Autofac, Simple Injector, LLBLGen, Entity Framework</td> 
+<td>Ninject, Autofac, Simple Injector, Unity, LLBLGen, Entity Framework</td> 
 </tr>
 <tr> 
 <th scope="row"> 
@@ -138,7 +138,7 @@ I love writing code, so obviously, I'd also like writing code for you. I can wor
 * [node.js](https://nodejs.org/)
   * [Express.js](http://expressjs.com/)  
 * client side javascript frameworks for building [SPAs](https://en.wikipedia.org/wiki/Single-page_application)
-  * [Angular](https://angularjs.org/)
+  * [Angular](https://angular.io)
   * [Aurelia](http://aurelia.io)
   * [Knockout.js](http://knockoutjs.com/)
 * cloud platforms like [Microsoft Azure](https://azure.microsoft.com), [Amazon AWS](https://aws.amazon.com/)
