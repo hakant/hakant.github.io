@@ -3,7 +3,7 @@ layout: page
 comments: false
 sharing: false
 footer: true
-description: I'm Hakan. Full Stack Developer / Architect with a focus on .NET, JavaScript, Node.js and Azure
+description: I'm Hakan. Full Stack Developer / Architect with a focus on .NET, JavaScript, Angular, Node.js and Azure
 image: http://www.gravatar.com/avatar/3d40c44707af5a8f606fb9b7ba553749?s=160
 ---
 
