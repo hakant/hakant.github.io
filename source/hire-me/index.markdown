@@ -8,17 +8,22 @@ footer: true
 published: false
 ---
 
-This page covers a list of my skills and interests. I'm available for new projects where I 
-can add significant value, meet people and learn new things. 
+Hi, I'm Hakan. I’m a software developer & architect with a passion for building quality software as effectively as possible.
+
+I have over a decade of experience building software applications and have served as a lead developer on a number of large software projects. Please take a look at [my LinkedIn profile](https://www.linkedin.com/in/hakantuncer/) for a list of recommendations that I've received.
+
+I'm available for new projects where I can add significant value, work with amazing people and build things that I'll be proud of.
 
 You can shoot me an [email](mailto:hakantuncer@gmail.com) or a 
 [tweet](https://twitter.com/hakant) to contact me. I'll be happy to talk to you or answer 
 your questions.
 
+Obviously this is by no means an exhaustive list but here are a few things that makes me tick and some ways that I can help you and your development team:
+
 ## Skills
 
 The following table contains a list of technologies, platforms and patterns that I’ve got 
-hands-­on experience with:
+__hands-­on__ experience with:
 
 <div class="table-responsive"> 
 <table class="table table-bordered table-striped"> 
@@ -127,28 +132,29 @@ hands-­on experience with:
 </table> 
 </div>
 
-## Software development
+## Software Development
 
 I love writing code, so obviously, I'd also like writing code for you. I can work in a team, or by myself, as necessary; remote or on-site. These days, I prefer working with
 
 * [.NET (C#)](https://www.microsoft.com/net)
+  * .NET Core
   * ASP.NET MVC
   * Web API
   * [Polyglot Persistence](http://www.jamesserra.com/archive/2015/07/what-is-polyglot-persistence/): SQL, NOSQL, Blob, Key-Value, Graph
-* [node.js](https://nodejs.org/)
+* [Node.js](https://nodejs.org/)
   * [Express.js](http://expressjs.com/)  
-* client side javascript frameworks for building [SPAs](https://en.wikipedia.org/wiki/Single-page_application)
+* Client side JavaScript frameworks for building [SPAs](https://en.wikipedia.org/wiki/Single-page_application)
   * [Angular](https://angular.io)
   * [Aurelia](http://aurelia.io)
   * [Knockout.js](http://knockoutjs.com/)
-* cloud platforms like [Microsoft Azure](https://azure.microsoft.com), [Amazon AWS](https://aws.amazon.com/)
+* Cloud platforms like [Microsoft Azure](https://azure.microsoft.com), [Amazon AWS](https://aws.amazon.com/)
 
 I love web programming, both front-end and back-end. I have a lot of experience
 with building and maintaining large [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) systems that are scalable, resilient and
 highly available. In recent years, building software for cloud platforms has been a big part of
 my professional life - especially with [Microsoft Azure](https://azure.microsoft.com).
 
-## Software architecture
+## Software Architecture
 
 Apart from my experience with hands-on coding and all the little details around doing that, I also have experience with system architecture. If you need help with the big picture, I may be able to help as well.
 
@@ -167,16 +173,6 @@ each one of them by experience. Getting fast and correct feedback is the ultimat
 I can help your team getting started with automated testing. I can also setup test frameworks for your 
 projects. If you in fact want me to write tests for your projects, I'd also be happy to do so.
 
-## Code reviews
+## Code Reviews
 
 If you want me to review your code, I can gladly do that too. I particularly look for issues relating to readability, encapsulation, coupling, maintainability, etc.
-
-## Other platforms and languages
-
-I can also work on something that is totally new to me, or that I'm less comfortable with. Because of 
-my experience with different technologies in software development, I feel comfortable about learning 
-new things.
-
-Since I also get the opportunity to learn something new from this experience, I may be glad to give 
-you a discount on my rate, or we can apply a "no cure no pay" rule. It all depends on the 
-circumstances and project details.
