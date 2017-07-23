@@ -11,13 +11,13 @@ image: http://www.gravatar.com/avatar/3d40c44707af5a8f606fb9b7ba553749?s=160
 
 I'm a software developer & architect with a passion for building quality software as effectively as possible.
 
-I have over a decade of experience building software applications and have served as a lead developer on a number of large software projects.
+I have over a decade of experience building software applications and have served as lead developer on a number of large software projects.
 
 Throughout my career I've spent a lot of time with [Microsoft .NET](https://www.microsoft.com/net) and the ecosystem around it. Working with [.NET](https://www.microsoft.com/net), [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language) and [Azure](https://azure.microsoft.com) is still a big part of my life.
 
 Next to that, I love [JavaScript](https://en.wikipedia.org/wiki/JavaScript) (and [TypeScript](https://www.typescriptlang.org/)), both on front-end and back-end. So I'm also working with [Node.js](https://nodejs.org/en/) and with client side frameworks like [Angular](https://angular.io), [React](https://facebook.github.io/react/) and [Aurelia](http://aurelia.io).
 
-I live in Amsterdam and I'm currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a "Loan Quality
+I live in Amsterdam and currently working on a project at <a href="https://www.rabobank.com/" target="_blank">Rabobank International</a>, building a "Loan Quality
 Assessment" application that enables credit committees to make better decisions, faster and more efficiently.  
 
 <h2 class="title">I'm working on a few side projects</h2>

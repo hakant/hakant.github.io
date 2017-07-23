@@ -10,15 +10,13 @@ published: false
 
 Hi, I'm Hakan. I’m a software developer & architect with a passion for building quality software as effectively as possible.
 
-I have over a decade of experience building software applications and have served as a lead developer on a number of large software projects. Please take a look at [my LinkedIn profile](https://www.linkedin.com/in/hakantuncer/) for a list of recommendations that I've received.
+I have over a decade of experience building software applications and have served as lead developer on a number of large software projects. Please take a look at [my LinkedIn profile](https://www.linkedin.com/in/hakantuncer/) for a list my recommendations.
 
 I'm available for new projects where I can add significant value, work with amazing people and build things that I'll be proud of.
 
-You can shoot me an [email](mailto:hakantuncer@gmail.com) or a 
-[tweet](https://twitter.com/hakant) to contact me. I'll be happy to talk to you or answer 
-your questions.
+To get in touch, drop me an [email](mailto:hakantuncer@gmail.com) or send me a tweet [@hakant](https://twitter.com/hakant). I'll be happy to talk to you or answer your questions.
 
-Obviously this is by no means an exhaustive list but here are a few things that makes me tick and some ways that I can help you and your development team:
+This is by no means an exhaustive list but here are a few things that makes me tick and some ways that I can help your development team:
 
 ## Skills
 
@@ -54,7 +52,7 @@ __hands-­on__ experience with:
 <th scope="row"> 
 <code>Main Platforms</code> 
 </th> 
-<td>.NET, Node.js, Xamarin Android</td> 
+<td>.NET, .NET Core, Node.js, Xamarin Android</td> 
 </tr> 
 <tr> 
 <th scope="row"> 
