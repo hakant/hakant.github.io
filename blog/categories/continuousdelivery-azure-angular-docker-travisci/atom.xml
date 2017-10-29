@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ContinuousDelivery,Azure,Angular,Docker,TravisCI | Hakan Tuncer's Blog]]></title>
+  <link href="http://www.hakantuncer.com/blog/categories/continuousdelivery-azure-angular-docker-travisci/atom.xml" rel="self"/>
+  <link href="http://www.hakantuncer.com/"/>
+  <updated>2017-10-29T09:12:05+01:00</updated>
+  <id>http://www.hakantuncer.com/</id>
+  <author>
+    <name><![CDATA[Hakan Tuncer]]></name>
+    <email><![CDATA[hakantuncer@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Continuous Deployment With Angular CLI, Docker, Travis CI and Azure]]></title>
+    <link href="http://www.hakantuncer.com/blog/2017/10/19/continuous-deployment-with-angular-cli/"/>
+    <updated>2017-10-19T09:39:36+02:00</updated>
+    <id>http://www.hakantuncer.com/blog/2017/10/19/continuous-deployment-with-angular-cli</id>
+    <content type="html"><![CDATA[<p>These days when I start writing code for a new project, I feel a sense of urgency to create an end to end development workflow as soon as possible. I love the phrase “<a href="http://alistair.cockburn.us/Walking+skeleton">walking skeleton</a>”. So think of this end to end workflow as a walking skeleton of a <a href="https://en.wikipedia.org/wiki/Continuous_delivery">continuous delivery pipeline</a>. It’s basically taking a smallest possible version of your application and setting up the necessary infrastructure to be able to continuously build, run analysis, test and deploy to a production-like environment.</p>
+
+<p>Please don’t confuse this idea with a waterfall concept. Your build, test and deployment scripts don’t have to be future proof. They don’t have to cover all the possible scenarios that you might need in the future. Far from it. The idea is to have (just) enough capability in the pipeline to be able to cover a (vertical) slice of your application. It should have enough “meat” to get you going.</p>
+
+<p>Also note that the definition of “vertical” has grown larger with the <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> way of doing things. You should probably not stop at automated deployments either. Can you also monitor this first small version of your application already — both in terms of usage and errors ? Do you already have a central place to track bugs, features and collaborate with other stakeholders? So yes, the idea is to really get your whole cycle up and running as soon as possible. But I digress..</p>
+
+<h2>.travis.yml file</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files have become a standard way of configuring continuous integration &amp; delivery pipelines. <a href="https://docs.travis-ci.com/user/customizing-the-build/">Travis CI is no different</a>.</p>
+
+<p>YAML file below tells Travis to;</p>
+
+<ul>
+<li>(lines 4-5) Install node 7.7.4</li>
+<li>(lines 7-8) Make docker available.</li>
+<li>(lines 10-20) Install and configure the latest stable version of Chrome</li>
+<li>(line 23) Download all javascript packages that the Angular app uses</li>
+<li>(line 26) Run all Angular component tests and do not watch files, quit immediately after.</li>
+<li>(line 27) Run all end to end protractor tests. Think of this like Selenium but a bit more specialised for Angular.</li>
+</ul>
+
+
+<br/>
+
+
+
+
+<script src="https://gist.github.com/hakant/35b9259651d2b03b3d73cb92be0aaadb.js"></script>
+
+
+<ul>
+<li>(lines 29–30) If the build is successful and branch is master, prepare for packaging and deployment.</li>
+<li>(line 31) Build the angular app using the CLI. This will transpile all .ts files and create .js bundles using <a href="https://webpack.github.io/">webpack</a>. It will eventually create a folder called “dist” which will include all the release artefacts that are ready for deployment.</li>
+<li>(line 32) Build a docker image with the specified name and based on the specified docker file. You can see the <a href="https://github.com/hakant/Roost-Angular/blob/master/.docker/nginx.dockerfile">docker file</a> and the <a href="https://github.com/hakant/Roost-Angular/blob/master/.docker/nginx.conf">nginx configuration</a> if you’re interested.</li>
+<li>(line 33) Tag the image that’s just been created using the SHA of the latest git commit. This way any docker file can be reverse engineered to it’s exact source version.</li>
+<li>(lines 34-35) Login to docker hub and push the image (using secret environment variables which I’d set earlier on Travis). You can see a list of images that I’ve already pushed on <a href="https://hub.docker.com/r/hakant/roost-angular/tags/">docker hub</a>.</li>
+</ul>
+
+
+<p><a href="https://travis-ci.org/hakant/Roost-Angular/builds">At the time of this writing there were 20 builds in the history</a>.</p>
+
+<p>So last step above pushes the brand new docker image to Docker Hub but how does it get deployed on Azure ?</p>
+
+<h2>Continuous Deployment of Docker Images to Azure</h2>
+
+<p>There’s one more step which is kinda invisible and that’s the deployment of the new docker image to an Azure Web App as a container. This is achieved through a <a href="https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-ci-cd">webhook that is setup behind the scenes in Docker Hub and Azure Portal</a>. There are a few commands that need to be executed against the Azure CLI:</p>
+
+<p>Enabling container continuous deployment feature:</p>
+
+<p><code>text
+az webapp deployment container config -n Roost-Angular -g Roost -e true
+</code></p>
+
+<p>Obtaining the WebHook URL:</p>
+
+<p><code>text
+az webapp deployment container show-cd-url -n roost-angular -g roost
+</code></p>
+
+<p>Pasting the WebHook URL on Docker Hub:</p>
+
+<p><img src="/assets/CD_Docker_Angular_Azure/DockerHub_WebHook.png" alt="Docker Hub WebHook" /></p>
+
+<p>Once this is done, whenever a new image is pushed into Docker Hub, this webhook is automatically invoked. I’ve noticed that if I make a GET call to this URL manually, it also kicks off a new deployment. Straightforward.</p>
+
+<p>And on Azure Portal there’s a designated “Docker Container” tab under the Azure Web App for this purpose. Notice the name of the image and the webhook url (which is concealed by default). One docker convention to keep in mind is that when a :tag is not specified it means :latest.</p>
+
+<p><img src="/assets/CD_Docker_Angular_Azure/DockerContainer_Tab_Azure.png" alt="Docker Container Tab Azure" /></p>
+
+<h2>More information</h2>
+
+<br/>
+
+
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-custom-docker-image">Run a custom Docker Hub image in Azure Web App for Containers</a></li>
+<li><a href="https://docs.travis-ci.com/user/docker/">Travis CI — Using Docker in Builds</a></li>
+<li><a href="https://docs.docker.com/docker-cloud/builds/push-images/">Push images to Docker Cloud</a></li>
+<li><a href="https://github.com/angular/angular-cli/wiki/stories">Stories describing how to do more with the Angular CLI</a></li>
+<li><a href="https://www.sitepoint.com/ultimate-angular-cli-reference/">The Ultimate Angular CLI Reference Guide</a></li>
+<li><a href="https://github.com/angular/angular-cli/wiki/test">ng test</a>, <a href="https://github.com/angular/angular-cli/wiki/e2e">ng e2e</a>, <a href="https://github.com/angular/angular-cli/wiki/build">ng build</a></li>
+</ul>
+
+
+<p>Thanks for reading.</p>
+
+<p>~Hakan</p>
+]]></content>
+  </entry>
+  
+</feed>

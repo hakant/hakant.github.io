@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<title>Hakan Tuncer's Blog</title>
 	<meta name="author" content="Hakan Tuncer">
-	<meta name="description" content="Follow @hakant May 25th, 2017 AWS, CircleCi, ContinuousDelivery, DynamoDb, NodeJS Comments Continuous Deployment With Node.js, DynamoDB, AWS Elastic &hellip;">
+	<meta name="description" content="Follow @hakant Oct 19th, 2017 ContinuousDelivery,Azure,Angular,Docker,TravisCI Comments Continuous Deployment With Angular CLI, Docker, Travis CI &hellip;">
 	
 	<!-- http://t.co/dKP3o1e -->
   	<meta name="HandheldFriendly" content="True">
@@ -24,7 +24,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Hakan Tuncer's Blog" />
-    <meta property="og:description" content="Follow @hakant May 25th, 2017 AWS, CircleCi, ContinuousDelivery, DynamoDb, NodeJS Comments Continuous Deployment With Node.js, DynamoDB, AWS Elastic &hellip;" />
+    <meta property="og:description" content="Follow @hakant Oct 19th, 2017 ContinuousDelivery,Azure,Angular,Docker,TravisCI Comments Continuous Deployment With Angular CLI, Docker, Travis CI &hellip;" />
     <meta property="og:url" content="http://www.hakantuncer.com/blog/" />
     <meta property="og:image" content="https://media.licdn.com/media/p/4/005/027/329/2633870.jpg" />
 	
@@ -111,6 +111,134 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="twitter">
+			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-10-19T09:39:36+02:00" data-updated="true" itemprop="datePublished">Oct 19<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/continuousdelivery-azure-angular-docker-travisci/'>ContinuousDelivery,Azure,Angular,Docker,TravisCI</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2017/10/19/continuous-deployment-with-angular-cli/#disqus_thread">Comments</a></span>
+		
+
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2017/10/19/continuous-deployment-with-angular-cli/" itemprop="url">Continuous Deployment With Angular CLI, Docker, Travis CI and Azure</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>These days when I start writing code for a new project, I feel a sense of urgency to create an end to end development workflow as soon as possible. I love the phrase “<a href="http://alistair.cockburn.us/Walking+skeleton">walking skeleton</a>”. So think of this end to end workflow as a walking skeleton of a <a href="https://en.wikipedia.org/wiki/Continuous_delivery">continuous delivery pipeline</a>. It’s basically taking a smallest possible version of your application and setting up the necessary infrastructure to be able to continuously build, run analysis, test and deploy to a production-like environment.</p>
+
+<p>Please don’t confuse this idea with a waterfall concept. Your build, test and deployment scripts don’t have to be future proof. They don’t have to cover all the possible scenarios that you might need in the future. Far from it. The idea is to have (just) enough capability in the pipeline to be able to cover a (vertical) slice of your application. It should have enough “meat” to get you going.</p>
+
+<p>Also note that the definition of “vertical” has grown larger with the <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> way of doing things. You should probably not stop at automated deployments either. Can you also monitor this first small version of your application already — both in terms of usage and errors ? Do you already have a central place to track bugs, features and collaborate with other stakeholders? So yes, the idea is to really get your whole cycle up and running as soon as possible. But I digress..</p>
+
+<h2>.travis.yml file</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files have become a standard way of configuring continuous integration &amp; delivery pipelines. <a href="https://docs.travis-ci.com/user/customizing-the-build/">Travis CI is no different</a>.</p>
+
+<p>YAML file below tells Travis to;</p>
+
+<ul>
+<li>(lines 4-5) Install node 7.7.4</li>
+<li>(lines 7-8) Make docker available.</li>
+<li>(lines 10-20) Install and configure the latest stable version of Chrome</li>
+<li>(line 23) Download all javascript packages that the Angular app uses</li>
+<li>(line 26) Run all Angular component tests and do not watch files, quit immediately after.</li>
+<li>(line 27) Run all end to end protractor tests. Think of this like Selenium but a bit more specialised for Angular.</li>
+</ul>
+
+
+<br/>
+
+
+
+
+<script src="https://gist.github.com/hakant/35b9259651d2b03b3d73cb92be0aaadb.js"></script>
+
+
+<ul>
+<li>(lines 29–30) If the build is successful and branch is master, prepare for packaging and deployment.</li>
+<li>(line 31) Build the angular app using the CLI. This will transpile all .ts files and create .js bundles using <a href="https://webpack.github.io/">webpack</a>. It will eventually create a folder called “dist” which will include all the release artefacts that are ready for deployment.</li>
+<li>(line 32) Build a docker image with the specified name and based on the specified docker file. You can see the <a href="https://github.com/hakant/Roost-Angular/blob/master/.docker/nginx.dockerfile">docker file</a> and the <a href="https://github.com/hakant/Roost-Angular/blob/master/.docker/nginx.conf">nginx configuration</a> if you’re interested.</li>
+<li>(line 33) Tag the image that’s just been created using the SHA of the latest git commit. This way any docker file can be reverse engineered to it’s exact source version.</li>
+<li>(lines 34-35) Login to docker hub and push the image (using secret environment variables which I’d set earlier on Travis). You can see a list of images that I’ve already pushed on <a href="https://hub.docker.com/r/hakant/roost-angular/tags/">docker hub</a>.</li>
+</ul>
+
+
+<p><a href="https://travis-ci.org/hakant/Roost-Angular/builds">At the time of this writing there were 20 builds in the history</a>.</p>
+
+<p>So last step above pushes the brand new docker image to Docker Hub but how does it get deployed on Azure ?</p>
+
+<h2>Continuous Deployment of Docker Images to Azure</h2>
+
+<p>There’s one more step which is kinda invisible and that’s the deployment of the new docker image to an Azure Web App as a container. This is achieved through a <a href="https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-ci-cd">webhook that is setup behind the scenes in Docker Hub and Azure Portal</a>. There are a few commands that need to be executed against the Azure CLI:</p>
+
+<p>Enabling container continuous deployment feature:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='text'><div class='line'>az webapp deployment container config -n Roost-Angular -g Roost -e true</div></code></pre></td></tr></table></div></figure>
+
+
+<p>Obtaining the WebHook URL:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table cellpadding="0" cellspacing="0"><tr><td class="gutter"><pre class="line-numbers"><span class='line'>1</span>
+</pre></td><td class='code' width='100%'><pre><code class='text'><div class='line'>az webapp deployment container show-cd-url -n roost-angular -g roost</div></code></pre></td></tr></table></div></figure>
+
+
+<p>Pasting the WebHook URL on Docker Hub:</p>
+
+<p><img src="/assets/CD_Docker_Angular_Azure/DockerHub_WebHook.png" alt="Docker Hub WebHook" /></p>
+
+<p>Once this is done, whenever a new image is pushed into Docker Hub, this webhook is automatically invoked. I’ve noticed that if I make a GET call to this URL manually, it also kicks off a new deployment. Straightforward.</p>
+
+<p>And on Azure Portal there’s a designated “Docker Container” tab under the Azure Web App for this purpose. Notice the name of the image and the webhook url (which is concealed by default). One docker convention to keep in mind is that when a :tag is not specified it means :latest.</p>
+
+<p><img src="/assets/CD_Docker_Angular_Azure/DockerContainer_Tab_Azure.png" alt="Docker Container Tab Azure" /></p>
+
+<h2>More information</h2>
+
+<br/>
+
+
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-custom-docker-image">Run a custom Docker Hub image in Azure Web App for Containers</a></li>
+<li><a href="https://docs.travis-ci.com/user/docker/">Travis CI — Using Docker in Builds</a></li>
+<li><a href="https://docs.docker.com/docker-cloud/builds/push-images/">Push images to Docker Cloud</a></li>
+<li><a href="https://github.com/angular/angular-cli/wiki/stories">Stories describing how to do more with the Angular CLI</a></li>
+<li><a href="https://www.sitepoint.com/ultimate-angular-cli-reference/">The Ultimate Angular CLI Reference Guide</a></li>
+<li><a href="https://github.com/angular/angular-cli/wiki/test">ng test</a>, <a href="https://github.com/angular/angular-cli/wiki/e2e">ng e2e</a>, <a href="https://github.com/angular/angular-cli/wiki/build">ng build</a></li>
+</ul>
+
+
+<p>Thanks for reading.</p>
+
+<p>~Hakan</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -1039,211 +1167,6 @@ with a &ldquo;Javascript mindset&rdquo; this may feel like unnecessary burden. B
 the amount of help and insight you get from the TypeScript compiler and tooling around it is amazing.</p>
 
 <p>Thanks for reading.</p>
-
-<p>~ Hakan</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="twitter">
-			<a href="https://twitter.com/hakant" class="twitter-follow-button" data-show-count="false">Follow @hakant</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-09-07T20:58:34+02:00" data-updated="true" itemprop="datePublished">Sep 7<span>th</span>, 2016</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/hyperdev/'>hyperdev</a>, <a class='category' href='/blog/categories/nfield/'>nfield</a>, <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/#disqus_thread">Comments</a></span>
-		
-
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2016/09/07/creating-an-online-quiz-game-using-node-dot-js/" itemprop="url">Creating an Online Quiz Game Using Node.js, Hyperdev, PlayStation Buzz Controllers, Raspberry PI and Nfield</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>I&rsquo;ve been writing about hackathons and the planner application I&rsquo;ve been busy
-with for a while now. The news is that <a href="https://github.com/hakant/HackathonPlanner">Hackathon Planner</a> is live
-and used during the last hackathon event on 25 August 2016 at <a href="http://niposoftware.com/">NIPO Software</a>.
-36 hackathon ideas were created, voted and team compositions were made using the software. You can
-<a href="/assets/Online_Quiz_Game/HackathonPlanner_Final.gif" target="_blank">see it in action here</a>.</p>
-
-<p>This post however, is about something else. It&rsquo;s about a crazy idea of my colleague Rutger de Jong and how we
-brought it to life during that last hackathon day: Converting <a href="https://www.niposoftware.com/Products/Nfield">Nfield</a> into an online quiz game that
-can be controlled by PlayStation Buzz controllers.</p>
-
-<p><img src="/assets/Online_Quiz_Game/PlayStationBuzz.jpg" alt="Quiz Game with Play Station Buzz" /></p>
-
-<h2>The Team</h2>
-
-<p>Rutger brought together five talented people from NIPO Software with diverse skills. Then he was scratching
-his head (on the left) thinking &ldquo;what have I done&hellip;&rdquo; : )</p>
-
-<p><img src="/assets/Online_Quiz_Game/team.jpg" alt="NIPO Software Hackathon - Team" /></p>
-
-<h2>The Architecture</h2>
-
-<p><img src="/assets/Online_Quiz_Game/Architecture-Diagram.png" alt="Quiz Game - Architecture Diagram" /></p>
-
-<h2>How it works</h2>
-
-<br/>
-
-
-<ul>
-<li>A shared screen with a browser is opened and an online interview is started by visiting a specific URL to Nfield.
-This online interview is running our little quiz.</li>
-<li>Each player grabs one of the PlayStation Buzz controllers that are connected to a computer runing
-a node.js application to interpret inputs coming from the controllers.</li>
-<li>The online interview that was started in the browser is actually a quiz with a special template (CSS &amp; Javascript).</li>
-<li>A random sequence of questions start appearing on the screen, each for 10 seconds.</li>
-<li>Players give their answers to each question simultaneously. These answers are received by a node.js application
-listening inputs from Buzz controllers and pushes events to the app running on Hyperdev.</li>
-<li>Application running on Hyperdev acts as a message hub and broadcaster. It relays the incoming messages to the quiz
-running on Nfield and also to the Raspberry PI.</li>
-<li>The quiz, running on the browser, receives these message (via our customized template) and picks the corresponding
-answers selected by players.</li>
-<li>As time is ticking away for each question, the customized template that&rsquo;s running the quiz emits events to the
-Raspberry PI, telling it to buzz and blink harder.</li>
-<li>Scores are continuously calculated as quiz progresses and in the end the winner is announced.</li>
-</ul>
-
-
-<h2>The code</h2>
-
-<p>You can find all the code that powers this project in the following repository on GitHub:
-<a href="https://github.com/hakant/NfieldQuizGame">https://github.com/hakant/NfieldQuizGame</a></p>
-
-<h2>Fun at the demo</h2>
-
-<p>The most obvious (and fun!) demo for a quiz game is to find a number of volunteers from the audience and run a contest!
-So that&rsquo;s what we did : )</p>
-
-<p><img src="/assets/Online_Quiz_Game/demo.jpg" alt="Hackathon - Demo" /></p>
-
-<p>&hellip; and here is a screenshot from the quiz:</p>
-
-<p><img src="/assets/Online_Quiz_Game/Quiz-Screenshot.png" alt="Hackathon - Nfield Quiz - Screenshot" /></p>
-
-<p>All in all, once again, it was a great event at the NIPO Software office in Amsterdam. Who knows.. maybe in the very near future,
-this little fun project can be put into actual use during various market research events. Without a doubt, it showcases the
-power of Nfield and how customizable it is for variety of scenarios.</p>
-
-<p>If you want to know more about each component and what it specifically does, read on.</p>
-
-<h2>System Components</h2>
-
-<br/>
-
-
-<h4>Hyperdev.com / node.js</h4>
-
-<p><a href="https://hyperdev.com">Hyperdev</a> is a prototyping environment where you can start up and develop a simple node.js application
-right within the browser and see your application up and running live in a matter of seconds. Every time you save a file
-in your project, hyperdev deploys it automatically in an amazing speed. It uses docker containers and AWS behind the scenes.
-It also supports https out of the box, which was important for our purposes (Nfield services run on https so should any
-integration or extension with it).</p>
-
-<p>This node.js app running on hyperdev is our orchestrator. It is basically responsible with broadcasting incoming websocket
-messages to all subscribers. Each piece of the puzzle (buzz controllers, raspberry pi and nfield) talk to this node app on
-hyperdev instead of directly talking to each other, which btw would complicate things as each application would then have to
-discover where the others are and be able to connect to them somehow.</p>
-
-<p>In the architecture above, as long as everyone can reach hyperdev, successful communication is guaranteed.</p>
-
-<br/>
-
-
-<h4>Mac with Buzz Controllers / node.js</h4>
-
-<p>While PlayStation buzz controllers are perfect for a quiz game, the immediate question for our little hackathon
-project was; how do we connect to and control these things?</p>
-
-<p><a href="https://www.youtube.com/watch?v=Qkkmz5VZoMQ">Node.js is everywhere</a>, it really is. There is a node package called
-<a href="https://github.com/node-hid/node-hid">node-hid</a> which allows you to access USB Human Interface Devices (HID) from
-node.js. It basically allows you to read from and write to these devices by using node buffers. We could even connect
-these buzzers to Raspberry PI but we ran into a few security issues and pivoted to using a mac instead.</p>
-
-<p>Of course, just being able to read the controller&rsquo;s input buffer doesn&rsquo;t automatically mean you know how to interpret it.
-It speaks a certain protocol which you have to understand. While scratching our heads, we found this article:
-<a href="http://www.developerfusion.com/article/84338/making-usb-c-friendly/">Working with USB devices in .NET and C#</a> where
-the author describes the protocol clearly, well somewhat clearly:</p>
-
-<p><img src="/assets/Online_Quiz_Game/buzz-protocol.jpg" alt="PlayStation Buzz - Protocol" /></p>
-
-<p>Long story short, each controller has a reserved space on a 6 byte area, inside which they flip bits on and off based
-on the state of their buttons.</p>
-
-<p>Here is a section of the node.js code running on the Mac that reads inputs from buzz controllers:</p>
-
-<br/>
-
-
-<script src="https://gist.github.com/hakant/7ee37ee00fccfbf487d2c6d3328f13dd.js"></script>
-
-
-
-
-<br/>
-
-
-<h4>Raspberry PI / node.js</h4>
-
-<p>Since we couldn&rsquo;t succeed in reading inputs from PlayStation Buzz controllers on our Raspberry PI, we had to come up with another very useful
-role for it &ndash; because we simply can&rsquo;t imagine a hackathon project without the PI (!).</p>
-
-<p>One of our teammates said &ldquo;let&rsquo;s use it to signal remaining time at each question &ndash; with some touch of tension&rdquo;.
-Then we went ahead and placed a bunch of lights on the PI and a loud buzzer. Using node.js and socket.io, it was
-listening to certain type of events to start buzzing with low and high frequencies. As contestants were running out of
-time while answering each question, the frequency of buzz and light effects were increasing.</p>
-
-<br/>
-
-
-<h4>Nfield Online Interviewing System / .NET, Azure</h4>
-
-<p>Nfield Online is a data collection platform powered by NIPO Software. A SaaS platform where market research companies
-can create surveys and reach their respondents. Nfield Online is bundled with a powerful domain specific
-language, ODIN, created for scripting simple or complex questionnaires. Nfield also has a powerful templating system
-where customers can create and run their own templates in their surveys (both for changing the look &amp; feel and behavior of
-their questionnaires).</p>
-
-<p>We used this templating system (HTML, CSS and Javascript) to tap into a running interview (in this case, our quiz) and
-control it via PlayStation Buzz controllers over the internet. We also used it to send messages to the Raspberry PI
-to indicate remaining time per question.</p>
-
-<p>When this template is activated on the interview, which is running our quiz, it connects to the socket.io server
-on hyperdev and starts listening to &ldquo;button pressed&rdquo; events from PlayStation Buzz controllers. When a button
-is pressed it receives the event and selects the corresponding answer on the quiz for that contestant.</p>
-
-<p>I had a lot of fun working on this project and also writing about it in this blog. Every
-technology company should make hackathons a part of their culture. The benefits might not be immediately clear
-in the beginning but all those doubts disappear after a few events.</p>
-
-<br/>
-
-
-<p>Thank you for reading.</p>
 
 <p>~ Hakan</p>
 
