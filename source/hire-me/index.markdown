@@ -112,7 +112,7 @@ __hands-­on__ experience with:
 <th scope="row"> 
 <code>CI, CD Pipelines</code> 
 </th> 
-<td>TFS, VSTS, AppVeyor, CircleCI</td> 
+<td>TFS, VSTS, AppVeyor, CircleCI, TravisCI</td> 
 </tr>
 <tr> 
 <th scope="row"> 
