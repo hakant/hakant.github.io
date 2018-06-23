@@ -1,4 +1,2 @@
 User-agent: *
-Disallow:
-
-Sitemap: http://www.hakantuncer.com/sitemap.xml 
+Disallow: /
